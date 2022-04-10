@@ -1,0 +1,45 @@
+@model _CurriculumManagerSystem.Models.Muctieu
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Muctieu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="noidung" class="control-label"></label>
+                <input asp-for="noidung" class="form-control" />
+                <span asp-validation-for="noidung" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mtchinh" class="control-label"></label>
+                <input asp-for="mtchinh" class="form-control" />
+                <span asp-validation-for="mtchinh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mtphu" class="control-label"></label>
+                <input asp-for="mtphu" class="form-control" />
+                <span asp-validation-for="mtphu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mahp" class="control-label"></label>
+                <input asp-for="mahp" class="form-control" />
+                <span asp-validation-for="mahp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

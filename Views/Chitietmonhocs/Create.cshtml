@@ -1,0 +1,50 @@
+@model _CurriculumManagerSystem.Models.Chitietmonhoc
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Chitietmonhoc</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="chiso" class="control-label"></label>
+                <input asp-for="chiso" class="form-control" />
+                <span asp-validation-for="chiso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tenchuong" class="control-label"></label>
+                <input asp-for="tenchuong" class="form-control" />
+                <span asp-validation-for="tenchuong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tietlt" class="control-label"></label>
+                <input asp-for="tietlt" class="form-control" />
+                <span asp-validation-for="tietlt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tietth" class="control-label"></label>
+                <input asp-for="tietth" class="form-control" />
+                <span asp-validation-for="tietth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mahp" class="control-label"></label>
+                <input asp-for="mahp" class="form-control" />
+                <span asp-validation-for="mahp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

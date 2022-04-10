@@ -1,0 +1,54 @@
+@model _CurriculumManagerSystem.Models.DeCuongchiTiet
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>DeCuongchiTiet</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tenhp_tviet)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tenhp_tviet)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tenhp_tanh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tenhp_tanh)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.sotc_lt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.sotc_lt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.sotc_th)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.sotc_th)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.yeucaukhacvoi_hocphan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.yeucaukhacvoi_hocphan)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tomtat_noidunghocphan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tomtat_noidunghocphan)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.mahp">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

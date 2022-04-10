@@ -1,0 +1,51 @@
+@model _CurriculumManagerSystem.Models.GiangVien
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>GiangVien</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="magv" />
+            <div class="form-group">
+                <label asp-for="hoten" class="control-label"></label>
+                <input asp-for="hoten" class="form-control" />
+                <span asp-validation-for="hoten" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="chucdanh" class="control-label"></label>
+                <input asp-for="chucdanh" class="form-control" />
+                <span asp-validation-for="chucdanh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hocham" class="control-label"></label>
+                <input asp-for="hocham" class="form-control" />
+                <span asp-validation-for="hocham" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hocvi" class="control-label"></label>
+                <input asp-for="hocvi" class="form-control" />
+                <span asp-validation-for="hocvi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="diachilienhe" class="control-label"></label>
+                <input asp-for="diachilienhe" class="form-control" />
+                <span asp-validation-for="diachilienhe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

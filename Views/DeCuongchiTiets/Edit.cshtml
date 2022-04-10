@@ -1,0 +1,56 @@
+@model _CurriculumManagerSystem.Models.DeCuongchiTiet
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>DeCuongchiTiet</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="mahp" />
+            <div class="form-group">
+                <label asp-for="tenhp_tviet" class="control-label"></label>
+                <input asp-for="tenhp_tviet" class="form-control" />
+                <span asp-validation-for="tenhp_tviet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tenhp_tanh" class="control-label"></label>
+                <input asp-for="tenhp_tanh" class="form-control" />
+                <span asp-validation-for="tenhp_tanh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sotc_lt" class="control-label"></label>
+                <input asp-for="sotc_lt" class="form-control" />
+                <span asp-validation-for="sotc_lt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sotc_th" class="control-label"></label>
+                <input asp-for="sotc_th" class="form-control" />
+                <span asp-validation-for="sotc_th" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="yeucaukhacvoi_hocphan" class="control-label"></label>
+                <input asp-for="yeucaukhacvoi_hocphan" class="form-control" />
+                <span asp-validation-for="yeucaukhacvoi_hocphan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tomtat_noidunghocphan" class="control-label"></label>
+                <input asp-for="tomtat_noidunghocphan" class="form-control" />
+                <span asp-validation-for="tomtat_noidunghocphan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

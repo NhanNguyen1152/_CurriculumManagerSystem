@@ -1,0 +1,45 @@
+@model _CurriculumManagerSystem.Models.Tailieu
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Tailieu</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tacgia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tacgia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tentailieu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tentailieu)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.thongtinkhac)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.thongtinkhac)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.loaitl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.loaitl)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="matl" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

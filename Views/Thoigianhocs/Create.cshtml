@@ -1,0 +1,45 @@
+@model _CurriculumManagerSystem.Models.Thoigianhoc
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Thoigianhoc</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="yeucauhocphan" class="control-label"></label>
+                <input asp-for="yeucauhocphan" class="form-control" />
+                <span asp-validation-for="yeucauhocphan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mahp" class="control-label"></label>
+                <input asp-for="mahp" class="form-control" />
+                <span asp-validation-for="mahp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="makh" class="control-label"></label>
+                <input asp-for="makh" class="form-control" />
+                <span asp-validation-for="makh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mahk" class="control-label"></label>
+                <input asp-for="mahk" class="form-control" />
+                <span asp-validation-for="mahk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

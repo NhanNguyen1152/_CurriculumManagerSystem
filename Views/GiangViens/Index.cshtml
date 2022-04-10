@@ -1,0 +1,59 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.GiangVien>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.hoten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.chucdanh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hocham)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hocvi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.diachilienhe)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.hoten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.chucdanh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hocham)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hocvi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.diachilienhe)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.magv">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.magv">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.magv">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

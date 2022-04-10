@@ -1,0 +1,42 @@
+@model _CurriculumManagerSystem.Models.Tailieu
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Tailieu</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tacgia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tacgia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tentailieu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tentailieu)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.thongtinkhac)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.thongtinkhac)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.loaitl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.loaitl)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.matl">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

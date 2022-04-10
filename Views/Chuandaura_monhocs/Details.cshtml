@@ -1,0 +1,42 @@
+@model _CurriculumManagerSystem.Models.Chuandaura_monhoc
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Chuandaura_monhoc</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.chisocio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.chisocio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.noidung)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.noidung)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.loai)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.loai)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.mahp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.mahp)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.macdmon">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

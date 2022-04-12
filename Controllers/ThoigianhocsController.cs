@@ -45,6 +45,9 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Thoigianhocs/Create
         public IActionResult Create()
         {
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp");
+            ViewData["makh"] = new SelectList(_context.Khoahocs, "makh", "makh");
+            ViewData["mahk"] = new SelectList(_context.Hockys, "mahk", "mahk");
             return View();
         }
 

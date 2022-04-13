@@ -38,16 +38,18 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
+            ViewData["makh"] = new SelectList(_context.Khoahocs, "makh", "tenkh");
+            ViewData["mahk"] = new SelectList(_context.Hockys, "mahk", "tenhk");
             return View(thoigianhoc);
         }
 
         // GET: Thoigianhocs/Create
         public IActionResult Create()
         {
-            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp");
-            ViewData["makh"] = new SelectList(_context.Khoahocs, "makh", "makh");
-            ViewData["mahk"] = new SelectList(_context.Hockys, "mahk", "mahk");
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
+            ViewData["makh"] = new SelectList(_context.Khoahocs, "makh", "tenkh");
+            ViewData["mahk"] = new SelectList(_context.Hockys, "mahk", "tenhk");
             return View();
         }
 
@@ -80,9 +82,9 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp", thoigianhoc.mahp.ToString());
-            ViewData["makh"] = new SelectList(_context.Khoahocs, "makh", "makh", thoigianhoc.makh.ToString());
-            ViewData["mahk"] = new SelectList(_context.Hockys, "mahk", "mahk", thoigianhoc.mahk.ToString());
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet", thoigianhoc.mahp.ToString());
+            ViewData["makh"] = new SelectList(_context.Khoahocs, "makh", "tenkh", thoigianhoc.makh.ToString());
+            ViewData["mahk"] = new SelectList(_context.Hockys, "mahk", "tenhk", thoigianhoc.mahk.ToString());
             return View(thoigianhoc);
         }
 
@@ -135,7 +137,9 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet", thoigianhoc.mahp.ToString());
+            ViewData["makh"] = new SelectList(_context.Khoahocs, "makh", "tenkh", thoigianhoc.makh.ToString());
+            ViewData["mahk"] = new SelectList(_context.Hockys, "mahk", "tenhk", thoigianhoc.mahk.ToString());
             return View(thoigianhoc);
         }
 

@@ -24,24 +24,27 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">@Html.DisplayNameFor(model => model.mahp)</label>
                         <div class="col-sm-9">
-                            <input type="text" readonly="readonly" class="form-control-plaintext"
-                                value="@Html.DisplayFor(model => model.mahp)">
+                            <select readonly="readonly" class="form-control-plaintext" asp-items="ViewBag.mahp" disabled="true"></select>
+                            @* <input type="text" readonly="readonly" class="form-control-plaintext"
+                                value="@Html.DisplayFor(model => model.mahp)"> *@
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">@Html.DisplayNameFor(model => model.makh)</label>
                         <div class="col-sm-9">
-                            <input type="text" readonly="readonly" class="form-control-plaintext"
-                                value="@Html.DisplayFor(model => model.makh)">
-                        </div>
+                            <select readonly="readonly" class="form-control-plaintext" asp-items="ViewBag.makh" disabled="true"></select>
+                            @* <input type="text" readonly="readonly" class="form-control-plaintext"
+                                value="@Html.DisplayFor(model => model.makh)">*@
+                        </div> 
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">@Html.DisplayNameFor(model => model.mahk)</label>
                         <div class="col-sm-9">
-                            <input type="text" readonly="readonly" class="form-control-plaintext"
-                                value="@Html.DisplayFor(model => model.mahk)">
+                            <select readonly="readonly" class="form-control-plaintext" asp-items="ViewBag.mahk" disabled="true"></select>
+                            @* <input type="text" readonly="readonly" class="form-control-plaintext"
+                                value="@Html.DisplayFor(model => model.mahk)"> *@
                         </div>
                     </div>
                 </form>

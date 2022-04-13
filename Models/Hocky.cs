@@ -11,9 +11,9 @@ namespace _CurriculumManagerSystem.Models
     {
         [Key]
         [Required]
-        [DisplayName("Mã học kì")]
+        [DisplayName("Mã học kỳ")]
         public int mahk { get; set; }
-        [DisplayName("Tên học kì")]
+        [DisplayName("Tên học kỳ")]
         [StringLength(50)]
         public string tenhk { get; set; }     
         

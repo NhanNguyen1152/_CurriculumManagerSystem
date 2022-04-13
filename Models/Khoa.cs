@@ -19,6 +19,7 @@ namespace _CurriculumManagerSystem.Models
 
         [ForeignKey("mabm")]
         public int mabm { get; set; }
-        public Bomon Bomon { get; set; }
+        [ForeignKey("mabm")]
+        public virtual Bomon Bomon { get; set; }
     }
 }

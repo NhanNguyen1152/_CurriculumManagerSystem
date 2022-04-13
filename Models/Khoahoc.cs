@@ -20,6 +20,6 @@ namespace _CurriculumManagerSystem.Models
        [StringLength(10)]
        public string nienkhoa { get; set;} 
        
-       public ICollection<Thoigianhoc> Thoigianhocs { get; set; }
+       public virtual ICollection<Thoigianhoc> Thoigianhocs { get; set; }
     }
 }

@@ -17,6 +17,6 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Tên quy định")]
         public string tenqd { get; set; }
 
-        public IList<DeCuongQuyDinh> DeCuongQuyDinhs { get; set; }
+        public virtual IList<DeCuongQuyDinh> DeCuongQuyDinhs { get; set; }
     }
 }

@@ -21,7 +21,8 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Thoigianhocs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Thoigianhocs.ToListAsync());
+            var appDbContext = _context.Thoigianhocs.Include(t => t.DeCuongchiTiet).Include(t => t.Khoahocs).Include(t => t.Hockys);
+            return View(await appDbContext.ToListAsync());
         }
 
         // GET: Thoigianhocs/Details/5

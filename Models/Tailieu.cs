@@ -26,6 +26,6 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Loại tài liệu")]
         public string loaitl { get; set; }
 
-        public IList<DecuongTailieu> DecuongTailieus { get; set; }
+        public virtual IList<DecuongTailieu> DecuongTailieus { get; set; }
     }
 }

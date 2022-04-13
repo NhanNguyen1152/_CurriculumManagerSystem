@@ -25,6 +25,7 @@ namespace _CurriculumManagerSystem.Models
 
         [ForeignKey("mact")]
         public int mact { get; set; }
-        public Chitietmonhoc Chitietmonhoc { get; set; }
+        [ForeignKey("mact")]
+        public virtual Chitietmonhoc Chitietmonhoc { get; set; }
     }
 }

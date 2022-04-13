@@ -17,6 +17,6 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Nội dung")]
         public string noidung { get; set; }
 
-        public IList<DeCuongNhiemvu> DeCuongNhiemvus { get; set; } 
+        public virtual IList<DeCuongNhiemvu> DeCuongNhiemvus { get; set; } 
     }
 }

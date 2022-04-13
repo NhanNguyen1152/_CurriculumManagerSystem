@@ -29,8 +29,11 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Mã học kỳ")]
         public int mahk { get; set; }
         
-        public DeCuongchiTiet DeCuongchiTiet { get; set; }  
-        public Khoahoc Khoahocs { get; set; }
-        public Hocky Hockys { get; set; }
+        [ForeignKey("mahp")]
+        public virtual DeCuongchiTiet DeCuongchiTiet { get; set; }  
+        [ForeignKey("makh")]
+        public virtual Khoahoc Khoahocs { get; set; }
+        [ForeignKey("mahk")]
+        public virtual Hocky Hockys { get; set; }
     }
 }

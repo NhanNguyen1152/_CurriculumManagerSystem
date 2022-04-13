@@ -17,6 +17,6 @@ namespace _CurriculumManagerSystem.Models
         [StringLength(50)]
         public string tenhk { get; set; }     
         
-        public ICollection<Thoigianhoc> Thoigianhocs { get; set; }
+        public virtual ICollection<Thoigianhoc> Thoigianhocs { get; set; }
     }
 }

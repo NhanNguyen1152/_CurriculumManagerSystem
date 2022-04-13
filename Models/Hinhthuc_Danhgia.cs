@@ -22,6 +22,6 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Trọng số")]
         public int trongso { get; set; }
         
-        public IList<DeCuongHinhthuc> DeCuongHinhthucs { get; set; } 
+        public virtual IList<DeCuongHinhthuc> DeCuongHinhthucs { get; set; } 
     }
 }

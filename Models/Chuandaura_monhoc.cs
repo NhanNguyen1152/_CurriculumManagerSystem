@@ -25,11 +25,11 @@ namespace _CurriculumManagerSystem.Models
 
         [ForeignKey("mahp")]
         public int mahp { get; set;}
-        
-        public DeCuongchiTiet DeCuongchiTiet { get; set; }
-        public IList<CLPO> CPLOs { get; set; }
-        public IList<CLOPhuongphapday> CLOPhuongphapdays { get; set; }
-        public IList<CLOPhuongphaphoc> CLOPhuongphaphocs { get; set; }
+        [ForeignKey("mahp")]
+        public virtual DeCuongchiTiet DeCuongchiTiet { get; set; }
+        public virtual IList<CLPO> CPLOs { get; set; }
+        public virtual IList<CLOPhuongphapday> CLOPhuongphapdays { get; set; }
+        public virtual IList<CLOPhuongphaphoc> CLOPhuongphaphocs { get; set; }
         
     }
 }

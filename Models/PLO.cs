@@ -20,6 +20,6 @@ namespace _CurriculumManagerSystem.Models
         [StringLength(100)]
         public string noidung { get; set; }
 
-        public IList<CLPO> CLPOs { get; set; }
+        public virtual IList<CLPO> CLPOs { get; set; }
     }
 }

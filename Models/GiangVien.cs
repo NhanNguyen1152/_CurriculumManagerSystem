@@ -28,7 +28,7 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Địa chỉ liên hệ")]
         public string diachilienhe { get; set; }
 
-        public ICollection<Bomon> Bomons { get; set; }
-        public IList<Phutrach> Phutraches { get; set; }
+        public virtual ICollection<Bomon> Bomons { get; set; }
+        public virtual IList<Phutrach> Phutraches { get; set; }
     }
 }

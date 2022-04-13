@@ -25,7 +25,8 @@ namespace _CurriculumManagerSystem.Models
 
         [ForeignKey("mahp")]
         public int mahp { get; set; }
-        public DeCuongchiTiet DeCuongchiTiet { get; set; }
-        public ICollection<Chitiet_Chuong> Chitiet_Chuongs { get; set; }
+        [ForeignKey("mahp")]
+        public virtual DeCuongchiTiet DeCuongchiTiet { get; set; }
+        public virtual ICollection<Chitiet_Chuong> Chitiet_Chuongs { get; set; }
     }
 }

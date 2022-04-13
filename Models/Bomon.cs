@@ -18,7 +18,8 @@ namespace _CurriculumManagerSystem.Models
 
         [ForeignKey("magv")]
         public int magv { get; set; }
-        public GiangVien GiangVien { get; set; }
-        public ICollection<Khoa> Khoas { get; set; }
+        [ForeignKey("magv")]
+        public virtual GiangVien GiangVien { get; set; }
+        public virtual ICollection<Khoa> Khoas { get; set; }
     }
 }

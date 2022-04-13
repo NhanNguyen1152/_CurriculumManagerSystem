@@ -17,6 +17,6 @@ namespace _CurriculumManagerSystem.Models
         [StringLength(50)]
         public string tenpp { get; set; }
         
-        public IList<CLOPhuongphapday> CLOPhuongphapdays { get; set; }
+        public virtual IList<CLOPhuongphapday> CLOPhuongphapdays { get; set; }
     }
 }

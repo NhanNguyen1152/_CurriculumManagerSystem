@@ -80,6 +80,9 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp", thoigianhoc.mahp.ToString());
+            ViewData["makh"] = new SelectList(_context.Khoahocs, "makh", "makh", thoigianhoc.makh.ToString());
+            ViewData["mahk"] = new SelectList(_context.Hockys, "mahk", "mahk", thoigianhoc.mahk.ToString());
             return View(thoigianhoc);
         }
 

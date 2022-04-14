@@ -590,8 +590,6 @@ C:\Users\F570Z-PC\OneDrive\Tài liệu\GitHub\_CurriculumManagerSystem\obj\Deb
 C:\Users\F570Z-PC\OneDrive\Tài liệu\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\ref\_CurriculumManagerSystem.dll
 C:\Users\F570Z-PC\OneDrive\Tài liệu\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\_CurriculumManagerSystem.pdb
 C:\Users\F570Z-PC\OneDrive\Tài liệu\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\_CurriculumManagerSystem.genruntimeconfig.cache
-C:\Users\F570Z-PC\OneDrive\Tài liệu\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\_Layout copy.cshtml.g.cs
-C:\Users\F570Z-PC\OneDrive\Tài liệu\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Thoigianhocs\buton.cshtml.g.cs
 =======
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Thoigianhocs\Create.cshtml.g.cs
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Thoigianhocs\Delete.cshtml.g.cs
@@ -601,3 +599,4 @@ C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5
 >>>>>>> e70e3e7254da4bb02b469aeff436c60019551202
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\_Layout copy.cshtml.g.cs
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Thoigianhocs\buton.cshtml.g.cs
+C:\Users\F570Z-PC\OneDrive\Tài liệu\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\_Layout copy 2.cshtml.g.cs

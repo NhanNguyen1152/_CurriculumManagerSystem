@@ -4,95 +4,176 @@
     ViewData["Title"] = "Edit";
 }
 
-<div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Sửa thời gian học</h3>
-                    <hr />
-                    <div class="form-validation">
-                        <form asp-action="Edit" class="form-valide">
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <input type="hidden" asp-for="matg" />
-                            <div class="form-group row">
-                                <label asp-for="yeucauhocphan" class="col-lg-4 col-form-label" for="val-suggestions">Yêu cầu học phần<span class="text-danger">*</span>
-                                </label>
-                                <div class="col-lg-6">
-                                    <textarea  asp-for="yeucauhocphan" class="form-control" placeholder="Yêu cầu học phần"></textarea>
-                                </div>
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    Sửa thời gian học
+                </h2>
+            </div>
+            <div class="body">
+                <form class="form-horizontal" asp-action="Edit">
+                    <input type="hidden" asp-for="matg" />
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="yeucauhocphan">Yêu cầu học phần <span class="text-danger">*</span></label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <textarea asp-for="yeucauhocphan" class="form-control"
+                                    placeholder="Yêu cầu học phần"></textarea>
+                                @* <div class="form-line">
+                                    <input type="text" asp-for="yeucauhocphan" class="form-control"
+                                    placeholder="Yêu cầu học phần">
+                                    </div> *@
                             </div>
-                            <div class="form-group row">
-                                <label asp-for="mahp" class="col-lg-4 col-form-label" for="val-skill">Mã đề cương chi tiết<span class="text-danger">*</span>
-                                </label>
-                                <div class="col-lg-6">
-                                    <select asp-for="mahp" class="form-control" asp-items="ViewBag.mahp"></select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label asp-for="makh" class="col-lg-4 col-form-label" for="val-skill">Mã khóa học<span class="text-danger">*</span>
-                                </label>
-                                <div class="col-lg-6">
-                                    <select asp-for="makh" class="form-control" asp-items="ViewBag.makh"></select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label asp-for="mahk" class="col-lg-4 col-form-label" for="val-skill">Mã học kỳ<span class="text-danger">*</span>
-                                </label>
-                                <div class="col-lg-6">
-                                    <select asp-for="mahk" class="form-control" asp-items="ViewBag.mahk"></select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-8 ml-auto">
-                                    <a asp-action="Index" lass="btn btn-primary">Trở lại</a> |
-                                    <input type="submit" class="btn btn-primary" value="Sửa"></input>
-                                </div>
-                            </div>
-                        </form>
+                        </div>
                     </div>
-                </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="mahp">Mã đề cương chi tiết <span class="text-danger">*</span></label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+
+                                <select class="form-control show-tick" asp-for="mahp" asp-items="ViewBag.mahp">
+                                    @* <option>Vui lòng chọn một</option> *@
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="makh">Mã khóa học <span class="text-danger">*</span></label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+
+                                <select class="form-control show-tick" asp-for="makh" asp-items="ViewBag.makh">
+                                    @* <option>Vui lòng chọn một</option> *@
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="makh">Mã học kì <span class="text-danger">*</span></label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+
+                                <select class="form-control show-tick" asp-for="mahk" asp-items="ViewBag.mahk">
+                                    @* <option>Vui lòng chọn một</option> *@
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                            <a asp-action="Index" class="btn btn-default waves-effect">Trở lại</a> |
+                            <input type="submit" class="btn btn-primary waves-effect" value="Sửa"></input>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
+@* <div class="container-fluid">
+    <div class="row justify-content-center">
+    <div class="col-lg-12">
+    <div class="card">
+    <div class="card-body">
+    <h3 class="card-title">Sửa thời gian học</h3>
+    <hr />
+    <div class="form-validation">
+    <form asp-action="Edit" class="form-valide">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="matg" />
+    <div class="form-group row">
+    <label asp-for="yeucauhocphan" class="col-lg-4 col-form-label" for="val-suggestions">Yêu cầu học phần<span
+    class="text-danger">*</span>
+    </label>
+    <div class="col-lg-6">
+    <textarea asp-for="yeucauhocphan" class="form-control" placeholder="Yêu cầu học phần"></textarea>
+    </div>
+    </div>
+    <div class="form-group row">
+    <label asp-for="mahp" class="col-lg-4 col-form-label" for="val-skill">Mã đề cương chi tiết<span
+    class="text-danger">*</span>
+    </label>
+    <div class="col-lg-6">
+    <select asp-for="mahp" class="form-control" asp-items="ViewBag.mahp"></select>
+    </div>
+    </div>
+    <div class="form-group row">
+    <label asp-for="makh" class="col-lg-4 col-form-label" for="val-skill">Mã khóa học<span class="text-danger">*</span>
+    </label>
+    <div class="col-lg-6">
+    <select asp-for="makh" class="form-control" asp-items="ViewBag.makh"></select>
+    </div>
+    </div>
+    <div class="form-group row">
+    <label asp-for="mahk" class="col-lg-4 col-form-label" for="val-skill">Mã học kỳ<span class="text-danger">*</span>
+    </label>
+    <div class="col-lg-6">
+    <select asp-for="mahk" class="form-control" asp-items="ViewBag.mahk"></select>
+    </div>
+    </div>
+    <div class="form-group row">
+    <div class="col-lg-8 ml-auto">
+    <a asp-action="Index" lass="btn btn-primary">Trở lại</a> |
+    <input type="submit" class="btn btn-primary" value="Sửa"></input>
+    </div>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div> *@
 
 @* <h1>Edit</h1>
 
-<h4>Thoigianhoc</h4>
-<hr />
-<div class="row">
+    <h4>Thoigianhoc</h4>
+    <hr />
+    <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="matg" />
-            <div class="form-group">
-                <label asp-for="yeucauhocphan" class="control-label"></label>
-                <input asp-for="yeucauhocphan" class="form-control" />
-                <span asp-validation-for="yeucauhocphan" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="mahp" class="control-label"></label>
-                <input asp-for="mahp" class="form-control" />
-                <span asp-validation-for="mahp" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="makh" class="control-label"></label>
-                <input asp-for="makh" class="form-control" />
-                <span asp-validation-for="makh" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="mahk" class="control-label"></label>
-                <input asp-for="mahk" class="form-control" />
-                <span asp-validation-for="mahk" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    <form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="matg" />
+    <div class="form-group">
+    <label asp-for="yeucauhocphan" class="control-label"></label>
+    <input asp-for="yeucauhocphan" class="form-control" />
+    <span asp-validation-for="yeucauhocphan" class="text-danger"></span>
     </div>
-</div>
+    <div class="form-group">
+    <label asp-for="mahp" class="control-label"></label>
+    <input asp-for="mahp" class="form-control" />
+    <span asp-validation-for="mahp" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <label asp-for="makh" class="control-label"></label>
+    <input asp-for="makh" class="form-control" />
+    <span asp-validation-for="makh" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <label asp-for="mahk" class="control-label"></label>
+    <input asp-for="mahk" class="form-control" />
+    <span asp-validation-for="mahk" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+    </form>
+    </div>
+    </div>
 
-<div>
+    <div>
     <a asp-action="Index">Back to List</a>
-</div> *@
+    </div> *@

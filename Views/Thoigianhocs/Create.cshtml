@@ -15,59 +15,57 @@
                 <form class="form-horizontal" asp-action="Create">
                     <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="yeucauhocphan">Yêu cầu học phần</label>
+                            <label asp-for="yeucauhocphan">Yêu cầu học phần <span class="text-danger">*</span></label>
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="text" asp-for="yeucauhocphan" class="form-control"
-                                        placeholder="Yêu cầu học phần">
+                                    <textarea asp-for="yeucauhocphan" class="form-control" placeholder="Yêu cầu học phần"></textarea>
+                                    @* <input type="text" asp-for="yeucauhocphan" class="form-control"
+                                        placeholder="Yêu cầu học phần"> *@
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="mahp">Mã đề cương chi tiết</label>
+                            <label asp-for="mahp">Mã đề cương chi tiết <span class="text-danger">*</span></label>
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
-                                <div class="form-line">
-                                        <select class="form-control show-tick" asp-for="mahp"
-                                            asp-items="ViewBag.mahp">
-                                            <option>Vui lòng chọn một</option>
-                                        </select>
-                                </div>
+
+                                <select class="form-control show-tick" asp-for="mahp" asp-items="ViewBag.mahp">
+                                    <option>Vui lòng chọn một </option>
+                                </select>
+
                             </div>
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="makh">Mã khóa học</label>
+                            <label asp-for="makh">Mã khóa học <span class="text-danger">*</span></label>
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
-                                <div class="form-line">
-                                        <select class="form-control show-tick" asp-for="makh"
-                                            asp-items="ViewBag.makh">
-                                            <option>Vui lòng chọn một</option>
-                                        </select>
-                                </div>
+
+                                <select class="form-control show-tick" asp-for="makh" asp-items="ViewBag.makh">
+                                    <option>Vui lòng chọn một</option>
+                                </select>
+
                             </div>
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="makh">Mã học kì</label>
+                            <label asp-for="makh">Mã học kì <span class="text-danger">*</span></label>
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
-                                <div class="form-line">
-                                        <select class="form-control show-tick" asp-for="mahk"
-                                            asp-items="ViewBag.mahk">
-                                            <option>Vui lòng chọn một</option>
-                                        </select>
-                                </div>
+
+                                <select class="form-control show-tick" asp-for="mahk" asp-items="ViewBag.mahk">
+                                    <option>Vui lòng chọn một</option>
+                                </select>
+
                             </div>
                         </div>
                     </div>
@@ -75,7 +73,7 @@
                         <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
                             <button type="button" class="btn btn-default waves-effect">
                                 <a asp-action="Index">Trở lại</a>
-                            </button>
+                            </button> |
                             <button type="submit" class="btn btn-primary waves-effect">Tạo mới</button>
                         </div>
                     </div>

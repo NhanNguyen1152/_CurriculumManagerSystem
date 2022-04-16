@@ -45,6 +45,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Hockys/Create
         public IActionResult Create()
         {
+            
             return View();
         }
 
@@ -77,6 +78,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
+            ViewData["mahk"] = new SelectList(_context.Hockys, "mahk", "tenhk");
             return View(hocky);
         }
 
@@ -129,7 +131,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["mahk"] = new SelectList(_context.Hockys, "mahk", "tenhk");
             return View(hocky);
         }
 

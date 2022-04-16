@@ -13,6 +13,8 @@ namespace _CurriculumManagerSystem.Models
         [Required]
         [DisplayName("Mã học kỳ")]
         public int mahk { get; set; }
+
+        [RegularExpression(@"^[A-Za-z0-9 ]+$"), Required ]
         [DisplayName("Tên học kỳ")]
         [StringLength(50)]
         public string tenhk { get; set; }     

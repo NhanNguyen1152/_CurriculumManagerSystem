@@ -24,6 +24,7 @@ namespace _CurriculumManagerSystem.Models
         public int tietth { get; set; }
 
         [ForeignKey("mahp")]
+        [DisplayName("Đề cương chi tiết")]
         public int mahp { get; set; }
         [ForeignKey("mahp")]
         public virtual DeCuongchiTiet DeCuongchiTiet { get; set; }

@@ -19,14 +19,14 @@ namespace _CurriculumManagerSystem.Models
         public string yeucauhocphan { get; set; }
         
         [ForeignKey("mahp")]
-        [DisplayName("Mã đề cương chi tiết")]
+        [DisplayName("Đề cương chi tiết")]
         public int mahp { get; set; }
 
         [ForeignKey("makh")]
-        [DisplayName("Mã khóa học")]
+        [DisplayName("Khóa học")]
         public int makh { get; set; }
         [ForeignKey("mahk")]
-        [DisplayName("Mã học kỳ")]
+        [DisplayName("Học kỳ")]
         public int mahk { get; set; }
         
         [ForeignKey("mahp")]

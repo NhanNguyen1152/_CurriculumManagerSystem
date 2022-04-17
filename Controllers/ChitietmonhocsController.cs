@@ -21,7 +21,8 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Chitietmonhocs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Chitietmonhocs.ToListAsync());
+            var appDbContext = _context.Chitietmonhocs.Include(c => c.DeCuongchiTiet);
+            return View(await appDbContext.ToListAsync());
         }
 
         // GET: Chitietmonhocs/Details/5
@@ -45,6 +46,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Chitietmonhocs/Create
         public IActionResult Create()
         {
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
             return View();
         }
 
@@ -77,6 +79,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet", chitietmonhoc.mahp.ToString());
             return View(chitietmonhoc);
         }
 
@@ -129,7 +132,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet", chitietmonhoc.mahp.ToString());
             return View(chitietmonhoc);
         }
 

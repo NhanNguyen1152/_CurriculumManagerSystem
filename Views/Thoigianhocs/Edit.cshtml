@@ -9,12 +9,12 @@
         <div class="card">
             <div class="header">
                 <h3 class="titile-table">
-                    Sửa thời gian học
+                    SỬA THỜI GIAN HỌC
                 </h3>
             </div>
             <div class="body">
                 <form class="form-horizontal" asp-action="Edit">
-                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <input type="hidden" asp-for="matg" />
                     <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
@@ -37,11 +37,9 @@
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
-
                                 <select required class="form-control show-tick" asp-for="mahp" asp-items="ViewBag.mahp">
                                     @* <option>Vui lòng chọn một</option> *@
                                 </select>
-
                             </div>
                         </div>
                     </div>
@@ -51,11 +49,9 @@
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
-
                                 <select required class="form-control show-tick" asp-for="makh" asp-items="ViewBag.makh">
                                     @* <option>Vui lòng chọn một</option> *@
                                 </select>
-
                             </div>
                         </div>
                     </div>
@@ -65,11 +61,9 @@
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
-
                                 <select required class="form-control show-tick" asp-for="mahk" asp-items="ViewBag.mahk">
                                     @* <option>Vui lòng chọn một</option> *@
                                 </select>
-
                             </div>
                         </div>
                     </div>

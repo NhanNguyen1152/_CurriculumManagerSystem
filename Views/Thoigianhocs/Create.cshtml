@@ -9,12 +9,12 @@
         <div class="card">
             <div class="header">
                 <h3 class="titile-table">
-                    Tạo mới thời gian học
+                    TẠO MỚI THỜI GIAN HỌC <input type="submit" class="btn btn-primary waves-effect" value="Sửa"></input>
                 </h3>
             </div>
             <div class="body">
                 <form class="form-horizontal" asp-action="Create">
-                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                             <label asp-for="yeucauhocphan">Yêu cầu học phần <span class="text-danger">*</span></label>
@@ -22,7 +22,8 @@
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
                                 <div class="form-line">
-                                    @* <textarea required asp-for="yeucauhocphan" class="form-control" placeholder="Yêu cầu học phần"></textarea> *@
+                                    @* <textarea required asp-for="yeucauhocphan" class="form-control" placeholder="Yêu
+                                        cầu học phần"></textarea> *@
                                     <input required type="text" asp-for="yeucauhocphan" class="form-control"
                                         placeholder="Yêu cầu học phần">
                                 </div>
@@ -74,7 +75,7 @@
                     <div class="row clearfix">
                         <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
                             <a asp-action="Index" class="btn btn-default waves-effect">Trở lại</a> |
-                            <button type="submit" class="btn btn-primary waves-effect">Tạo mới</button>
+                             <input type="submit" class="btn btn-primary waves-effect" value="Tạo mới"></input>
                         </div>
                     </div>
                 </form>

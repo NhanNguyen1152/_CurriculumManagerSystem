@@ -18,9 +18,9 @@ namespace _CurriculumManagerSystem.Models
         [StringLength(150)]
         [DisplayName("Tên chương")]
         public string tenchuong { get; set; }
-        [DisplayName("Tiết lý thuyết")]
+        [DisplayName("Số tiết lý thuyết")]
         public int tietlt { get; set; }
-        [DisplayName("Tiết thực hành")]
+        [DisplayName("Số tiết thực hành")]
         public int tietth { get; set; }
 
         [ForeignKey("mahp")]

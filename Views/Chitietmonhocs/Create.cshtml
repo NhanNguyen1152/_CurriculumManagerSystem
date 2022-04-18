@@ -29,19 +29,6 @@
                     </div>
                     <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="chiso">Chỉ số <span class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <input required asp-for="chiso" class="form-control" placeholder="Chỉ số"></input>
-                                    <span asp-validation-for="chiso" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                      <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                             <label asp-for="tenchuong">Tên chương <span class="text-danger">*</span></label>
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
@@ -53,14 +40,27 @@
                             </div>
                         </div>
                     </div>
-                      <div class="row clearfix">
+                    <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="tietlt">Tiết lý thuyết <span class="text-danger">*</span></label>
+                            <label asp-for="chiso">Chỉ số <span class="text-danger">*</span></label>
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input required asp-for="tietlt" class="form-control" placeholder="Tiết lý thuyết"></input>
+                                    <input required min="1" max="10" asp-for="chiso" class="form-control" placeholder="Chỉ số"></input>
+                                    <span asp-validation-for="chiso" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="tietlt">Số tiết lý thuyết <span class="text-danger">*</span></label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input required min="10" max="30" asp-for="tietlt" class="form-control" placeholder="Tiết lý thuyết"></input>
                                     <span asp-validation-for="tietlt" class="text-danger"></span>
                                 </div>
                             </div>
@@ -68,12 +68,12 @@
                     </div>
                       <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="tietth">Tiết thực hành <span class="text-danger">*</span></label>
+                            <label asp-for="tietth">Số tiết thực hành <span class="text-danger">*</span></label>
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input required asp-for="tietth" class="form-control" placeholder="Tiết thực hành"></input>
+                                    <input required min="10" max="30" asp-for="tietth" class="form-control" placeholder="Tiết thực hành"></input>
                                     <span asp-validation-for="tietth" class="text-danger"></span>
                                 </div>
                             </div>

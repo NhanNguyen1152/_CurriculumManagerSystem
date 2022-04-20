@@ -13,5 +13,16 @@ namespace _CurriculumManagerSystem.Models
         [Required]
         [DisplayName("Mã đề cương quy định")]
         public int dcqd_id { get; set; }
+
+        [ForeignKey("mahp")]
+        [DisplayName("Đề cương chi tiết")]
+        public int mahp { get; set;}
+        [ForeignKey("maqd")]
+        [DisplayName("Tên quyết định và kiểm tra")]
+        public int maqd { get; set;}
+        [ForeignKey("mahp")]
+        public virtual DeCuongchiTiet DeCuongchiTiet { get; set;}
+        [ForeignKey("maqd")]
+        public virtual Quydinh_Kiemtra Quydinh_Kiemtra { get; set;}
     }
 }

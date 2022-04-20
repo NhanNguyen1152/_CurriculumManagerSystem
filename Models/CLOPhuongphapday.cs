@@ -15,6 +15,17 @@ namespace _CurriculumManagerSystem.Models
         public int maloppday { get; set; }
         [DisplayName("Mức độ")]
         [StringLength(10)]
-        public string mucdo { get; set; }        
+        public string mucdo { get; set; }       
+
+        [ForeignKey("mappday")]
+        [DisplayName("Tên phương pháp")]
+        public int mappday { get; set;}
+        [ForeignKey("macdmon")]
+        [DisplayName("Chỉ số CLO")]
+        public int macdmon { get; set;}
+        [ForeignKey("mappday")]
+        public virtual Phuongphap_Giangday Phuongphap_Giangday { get; set;}
+        [ForeignKey("macdmon")]
+        public virtual Chuandaura_monhoc Chuandaura_monhoc { get; set;} 
     }
 }

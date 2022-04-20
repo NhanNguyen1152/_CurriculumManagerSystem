@@ -21,7 +21,8 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Muctieus
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Muctieus.ToListAsync());
+            var appDbContext = _context.Muctieus.Include(m => m.DeCuongchiTiet);
+            return View(await appDbContext.ToListAsync());
         }
 
         // GET: Muctieus/Details/5
@@ -38,13 +39,14 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-
+            
             return View(muctieu);
         }
 
         // GET: Muctieus/Create
         public IActionResult Create()
         {
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
             return View();
         }
 
@@ -77,6 +79,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
             return View(muctieu);
         }
 
@@ -129,7 +132,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
             return View(muctieu);
         }
 

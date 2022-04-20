@@ -13,7 +13,7 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Mã giảng viên")]
         public int magv { get; set; }
         [StringLength(50)]
-        [DisplayName("Họ tên")]
+        [DisplayName("Họ và tên")]
         public string hoten { get; set; }
         [StringLength(50)]
         [DisplayName("Chức danh")]

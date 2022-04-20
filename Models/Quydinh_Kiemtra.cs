@@ -14,7 +14,7 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Mã quy định")]
         public int maqd { get; set; }
         [StringLength(80)]
-        [DisplayName("Tên quy định")]
+        [DisplayName("Tên quy định và kiểm tra")]
         public string tenqd { get; set; }
 
         public virtual IList<DeCuongQuyDinh> DeCuongQuyDinhs { get; set; }

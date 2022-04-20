@@ -18,6 +18,7 @@ namespace _CurriculumManagerSystem.Models
         public string tenkh { get; set; }
 
         [ForeignKey("mabm")]
+        [DisplayName("Tên bộ môn")]
         public int mabm { get; set; }
         [ForeignKey("mabm")]
         public virtual Bomon Bomon { get; set; }

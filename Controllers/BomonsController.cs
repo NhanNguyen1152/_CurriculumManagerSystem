@@ -21,7 +21,8 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Bomons
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Bomons.ToListAsync());
+            var appDbContext = _context.Bomons.Include(g => g.GiangVien);
+            return View(await appDbContext.ToListAsync());
         }
 
         // GET: Bomons/Details/5
@@ -45,6 +46,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Bomons/Create
         public IActionResult Create()
         {
+            ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "hoten");
             return View();
         }
 
@@ -77,6 +79,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
+            ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "hoten");
             return View(bomon);
         }
 
@@ -129,7 +132,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "hoten");
             return View(bomon);
         }
 

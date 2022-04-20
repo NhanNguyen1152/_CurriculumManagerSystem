@@ -13,5 +13,16 @@ namespace _CurriculumManagerSystem.Models
         [Required]
         [DisplayName("Mã đề cương hình thức")]
         public int dcht_id { get; set; }
+
+        [ForeignKey("mahp")]
+        [DisplayName("Đề cương chi tiết")]
+        public int mahp { get; set;}
+        [ForeignKey("mahtdg")]
+        [DisplayName("Hình thức")]
+        public int mahtdg { get; set;}
+        [ForeignKey("mahp")]
+        public virtual DeCuongchiTiet DeCuongchiTiet { get; set;}
+        [ForeignKey("mahtdg")]
+        public virtual Hinhthuc_Danhgia Hinhthuc_Danhgia { get; set;}
     }
 }

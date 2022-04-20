@@ -15,5 +15,16 @@ namespace _CurriculumManagerSystem.Models
         public int maclpo { get; set; }
         [DisplayName("Ngày update")]
         public DateTime ngayupdate { get; set; }
+
+        [ForeignKey("macdmon")]
+        [DisplayName("Chỉ số CLO")]
+        public int macdmon { get; set;}
+        [ForeignKey("maplo")]
+        [DisplayName("Chỉ số PLO")]
+        public int maplo { get; set;}
+        [ForeignKey("macdmon")]
+        public virtual Chuandaura_monhoc Chuandaura_monhoc { get; set;}
+        [ForeignKey("maplo")]
+        public virtual PLO PLO { get; set;}
     }
 }

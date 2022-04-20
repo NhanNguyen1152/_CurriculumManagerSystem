@@ -21,7 +21,8 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Khoas
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Khoas.ToListAsync());
+            var appDbContext = _context.Khoas.Include(b => b.Bomon);
+            return View(await appDbContext.ToListAsync());
         }
 
         // GET: Khoas/Details/5
@@ -45,6 +46,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Khoas/Create
         public IActionResult Create()
         {
+            ViewData["mabm"] = new SelectList(_context.Bomons, "mabm", "tenbm");
             return View();
         }
 
@@ -77,6 +79,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
+            ViewData["mabm"] = new SelectList(_context.Bomons, "mabm", "tenbm");
             return View(khoa);
         }
 
@@ -129,7 +132,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["mabm"] = new SelectList(_context.Bomons, "mabm", "tenbm");
             return View(khoa);
         }
 

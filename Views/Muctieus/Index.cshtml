@@ -4,50 +4,60 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.noidung)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.mtchinh)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.mtphu)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.mahp)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.noidung)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.mtchinh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.mtphu)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.mahp)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.mamt">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.mamt">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.mamt">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h3 class="titile-table">MỤC TIÊU | <a class="near-titile-table" asp-action="create">Thêm</a>
+                </h3>
+            </div>
+            <div class="body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                        <thead>
+                            <tr>                                
+                                <th>
+                                    @Html.DisplayNameFor(model => model.mahp)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.noidung)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.mtchinh)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.mtphu)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>                                    
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DeCuongchiTiet.tenhp_tviet)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.noidung)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.mtchinh)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.mtphu)
+                                    </td>
+                                    <td>
+                                        <a class="material-icons" asp-action="Edit" asp-route-id="@item.mamt">mode_edit</a>
+                                        <a class="material-icons" asp-action="Delete"
+                                        asp-route-id="@item.mamt">delete_forever</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

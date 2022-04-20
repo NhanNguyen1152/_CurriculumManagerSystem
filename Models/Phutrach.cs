@@ -16,5 +16,16 @@ namespace _CurriculumManagerSystem.Models
         [StringLength(50)]
         [DisplayName("Vai trò")]
         public string vaitro { get; set; }
+
+        [ForeignKey("mahp")]
+        [DisplayName("Đề cương chi tiết")]
+        public int mahp { get; set;}
+        [ForeignKey("magv")]
+        [DisplayName("Tên giảng viên")]
+        public int magv { get; set;}
+        [ForeignKey("mahp")]
+        public virtual DeCuongchiTiet DeCuongchiTiet { get; set; }
+        [ForeignKey("magv")]
+        public virtual GiangVien GiangVien { get; set; }
     }
 }

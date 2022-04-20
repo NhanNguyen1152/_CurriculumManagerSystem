@@ -24,6 +24,7 @@ namespace _CurriculumManagerSystem.Models
         public double thoiluonghoc { get; set; }
 
         [ForeignKey("mact")]
+        [DisplayName("Chi tiết môn học")]
         public int mact { get; set; }
         [ForeignKey("mact")]
         public virtual Chitietmonhoc Chitietmonhoc { get; set; }

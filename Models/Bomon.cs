@@ -17,6 +17,7 @@ namespace _CurriculumManagerSystem.Models
         public string tenbm { get; set; }
 
         [ForeignKey("magv")]
+        [DisplayName("Tên giảng viên")]
         public int magv { get; set; }
         [ForeignKey("magv")]
         public virtual GiangVien GiangVien { get; set; }

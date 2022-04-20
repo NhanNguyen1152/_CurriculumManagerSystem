@@ -21,7 +21,8 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Chitiet_Chuongs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Chitiet_Chuongs.ToListAsync());
+            var appDbContext = _context.Chitiet_Chuongs.Include(c => c.Chitietmonhoc);
+            return View(await appDbContext.ToListAsync());
         }
 
         // GET: Chitiet_Chuongs/Details/5
@@ -45,6 +46,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Chitiet_Chuongs/Create
         public IActionResult Create()
         {
+            ViewData["mact"] = new SelectList(_context.Chitietmonhocs, "mact", "tenchuong");
             return View();
         }
 
@@ -77,6 +79,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
+            ViewData["mact"] = new SelectList(_context.Chitietmonhocs, "mact", "tenchuong");
             return View(chitiet_Chuong);
         }
 
@@ -129,7 +132,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["mact"] = new SelectList(_context.Chitietmonhocs, "mact", "tenchuong");
             return View(chitiet_Chuong);
         }
 

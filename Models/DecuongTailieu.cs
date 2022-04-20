@@ -13,5 +13,16 @@ namespace _CurriculumManagerSystem.Models
         [Required]
         [DisplayName("Mã đề cương tài liệu")]
         public int dctl_id { get; set;}
+        [ForeignKey("mahp")]
+        [DisplayName("Đề cương chi tiết")]
+        public int mahp { get; set;}
+        [ForeignKey("matl")]
+        [DisplayName("Tên tài liệu")]
+        public int matl { get; set;}
+        [ForeignKey("mahp")]
+        public virtual DeCuongchiTiet DeCuongchiTiet { get; set;}
+        [ForeignKey("matl")]
+        public virtual Tailieu Tailieu { get; set;}
+
     }
 }

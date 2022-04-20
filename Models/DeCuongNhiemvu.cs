@@ -13,5 +13,16 @@ namespace _CurriculumManagerSystem.Models
         [Required]
         [DisplayName("Mã đề cương nhiệm vụ")]
         public int dcnv_id { get; set; }
+
+        [ForeignKey("mahp")]
+        [DisplayName("Đề cương chi tiết")]
+        public int mahp { get; set;}
+        [ForeignKey("manv")]
+        [DisplayName("Nội dung")]
+        public int manv { get; set;}
+        [ForeignKey("mahp")]
+        public virtual DeCuongchiTiet DeCuongchiTiet { get; set;}
+        [ForeignKey("manv")]
+        public virtual NhiemvuSV NhiemvuSV { get; set;}
     }
 }

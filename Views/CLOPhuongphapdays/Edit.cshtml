@@ -4,7 +4,69 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h3 class="titile-table">
+                    CLO PHƯƠNG PHÁP DẠY
+                </h3>
+            </div>
+            <div class="body">
+                <form class="form-horizontal" asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="maloppday" />
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="mucdo"></label> <span class="text-danger">*</span>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input required asp-for="mucdo" class="form-control" placeholder="Mức độ"></input>
+                                    <span asp-validation-for="mucdo" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="mappday"></label> <span class="text-danger">*</span>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <select required class="form-control show-tick" asp-for="mappday"
+                                    asp-items="ViewBag.mappday">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="macdmon"></label> <span class="text-danger">*</span>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <select required class="form-control show-tick" asp-for="macdmon"
+                                    asp-items="ViewBag.macdmon">
+                                 
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                            <a asp-action="Index" class="btn btn-default waves-effect">Trở lại</a> |
+                            <input type="submit" class="btn btn-primary waves-effect" value="Sửa"></input>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@* <h1>Edit</h1>
 
 <h4>CLOPhuongphapday</h4>
 <hr />
@@ -38,4 +100,4 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
+ *@

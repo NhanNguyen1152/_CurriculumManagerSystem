@@ -13,9 +13,12 @@ namespace _CurriculumManagerSystem.Models
        [Required]
        [DisplayName("Mã khóa học")]
        public int makh { get; set; }
+
+
        [DisplayName("Tên khóa học")]
        [StringLength(50)]
        public string tenkh {get; set;}
+       
        [DisplayName("Niên khóa")]
        [StringLength(10)]
        public string nienkhoa { get; set;} 

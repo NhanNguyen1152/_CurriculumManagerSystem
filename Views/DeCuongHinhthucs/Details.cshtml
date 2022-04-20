@@ -1,0 +1,30 @@
+@model _CurriculumManagerSystem.Models.DeCuongHinhthuc
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>DeCuongHinhthuc</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DeCuongchiTiet)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DeCuongchiTiet.mahp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Hinhthuc_Danhgia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Hinhthuc_Danhgia.mahtdg)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.dcht_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,36 @@
+@model _CurriculumManagerSystem.Models.CLOPhuongphapday
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>CLOPhuongphapday</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.mucdo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.mucdo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Phuongphap_Giangday)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phuongphap_Giangday.mappday)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Chuandaura_monhoc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Chuandaura_monhoc.macdmon)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.maloppday">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

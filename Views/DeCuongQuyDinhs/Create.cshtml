@@ -1,0 +1,33 @@
+@model _CurriculumManagerSystem.Models.DeCuongQuyDinh
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>DeCuongQuyDinh</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="mahp" class="control-label"></label>
+                <select asp-for="mahp" class ="form-control" asp-items="ViewBag.mahp"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="maqd" class="control-label"></label>
+                <select asp-for="maqd" class ="form-control" asp-items="ViewBag.maqd"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -48,8 +48,8 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: DeCuongHinhthucs/Create
         public IActionResult Create()
         {
-            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp");
-            ViewData["mahtdg"] = new SelectList(_context.Hinhthuc_Danhgias, "mahtdg", "mahtdg");
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
+            ViewData["mahtdg"] = new SelectList(_context.Hinhthuc_Danhgias, "mahtdg", "hinhthuc");
             return View();
         }
 
@@ -84,8 +84,8 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp", deCuongHinhthuc.mahp);
-            ViewData["mahtdg"] = new SelectList(_context.Hinhthuc_Danhgias, "mahtdg", "mahtdg", deCuongHinhthuc.mahtdg);
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet", deCuongHinhthuc.mahp);
+            ViewData["mahtdg"] = new SelectList(_context.Hinhthuc_Danhgias, "mahtdg", "hinhthuc", deCuongHinhthuc.mahtdg);
             return View(deCuongHinhthuc);
         }
 
@@ -142,7 +142,8 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet", deCuongHinhthuc.mahp);
+            ViewData["mahtdg"] = new SelectList(_context.Hinhthuc_Danhgias, "mahtdg", "hinhthuc", deCuongHinhthuc.mahtdg);
             return View(deCuongHinhthuc);
         }
 

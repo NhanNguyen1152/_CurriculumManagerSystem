@@ -142,7 +142,8 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
+            ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "hoten");
             return View(phutrach);
         }
 

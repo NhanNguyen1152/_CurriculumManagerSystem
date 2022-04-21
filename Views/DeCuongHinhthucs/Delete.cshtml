@@ -16,11 +16,27 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="DeCuongchiTiet">@Html.DisplayNameFor(model => model.DeCuongchiTiet)</label>
+                            <label asp-for="mahp">@Html.DisplayNameFor(model => model.mahp)</label>
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
-                                <input disabled="true" type="text" asp-for="DeCuongchiTiet" class="form-control">
+                                <select disabled="true" class="form-control show-tick" asp-for="mahp"
+                                    asp-items="ViewBag.mahp">
+                                    @* <option>Vui lòng chọn một</option> *@
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="mahtdg">@Html.DisplayNameFor(model => model.mahtdg)</label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <select disabled="true" class="form-control show-tick" asp-for="mahtdg"
+                                    asp-items="ViewBag.mahtdg">
+                                    @* <option>Vui lòng chọn một</option> *@
+                                </select>
                             </div>
                         </div>
                     </div>

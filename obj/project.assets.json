@@ -7502,24 +7502,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\duyws\\.nuget\\packages\\": {}
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\duyws\\Documents\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj",
+      "projectUniqueName": "C:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj",
       "projectName": "_CurriculumManagerSystem",
-      "projectPath": "C:\\Users\\duyws\\Documents\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj",
-      "packagesPath": "C:\\Users\\duyws\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\duyws\\Documents\\GitHub\\_CurriculumManagerSystem\\obj\\",
+      "projectPath": "C:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\duyws\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -7585,7 +7587,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
       }
     }
   }

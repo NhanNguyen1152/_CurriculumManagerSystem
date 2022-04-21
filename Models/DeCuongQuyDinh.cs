@@ -21,8 +21,10 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Tên quyết định và kiểm tra")]
         public int maqd { get; set;}
         [ForeignKey("mahp")]
+        [DisplayName("Đề cương chi tiết")]
         public virtual DeCuongchiTiet DeCuongchiTiet { get; set;}
         [ForeignKey("maqd")]
+        [DisplayName("Tên quyết định và kiểm tra")]
         public virtual Quydinh_Kiemtra Quydinh_Kiemtra { get; set;}
     }
 }

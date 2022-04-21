@@ -21,8 +21,10 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Hình thức")]
         public int mahtdg { get; set;}
         [ForeignKey("mahp")]
+        [DisplayName("Đề cương chi tiết")]
         public virtual DeCuongchiTiet DeCuongchiTiet { get; set;}
         [ForeignKey("mahtdg")]
+        [DisplayName("Hình thức")]
         public virtual Hinhthuc_Danhgia Hinhthuc_Danhgia { get; set;}
     }
 }

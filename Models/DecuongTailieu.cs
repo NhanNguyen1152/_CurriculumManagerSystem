@@ -20,8 +20,10 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Tên tài liệu")]
         public int matl { get; set;}
         [ForeignKey("mahp")]
+        [DisplayName("Đề cương chi tiết")]
         public virtual DeCuongchiTiet DeCuongchiTiet { get; set;}
         [ForeignKey("matl")]
+        [DisplayName("Tên tài liệu")]
         public virtual Tailieu Tailieu { get; set;}
 
     }

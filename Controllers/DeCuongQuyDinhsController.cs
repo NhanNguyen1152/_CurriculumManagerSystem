@@ -48,8 +48,8 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: DeCuongQuyDinhs/Create
         public IActionResult Create()
         {
-            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp");
-            ViewData["maqd"] = new SelectList(_context.Quydinh_Kiemtras, "maqd", "maqd");
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
+            ViewData["maqd"] = new SelectList(_context.Quydinh_Kiemtras, "maqd", "tenqd");
             return View();
         }
 
@@ -84,8 +84,8 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp", deCuongQuyDinh.mahp);
-            ViewData["maqd"] = new SelectList(_context.Quydinh_Kiemtras, "maqd", "maqd", deCuongQuyDinh.maqd);
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet", deCuongQuyDinh.mahp);
+            ViewData["maqd"] = new SelectList(_context.Quydinh_Kiemtras, "maqd", "tenqd", deCuongQuyDinh.maqd);
             return View(deCuongQuyDinh);
         }
 
@@ -142,7 +142,8 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet", deCuongQuyDinh.mahp);
+            ViewData["maqd"] = new SelectList(_context.Quydinh_Kiemtras, "maqd", "tenqd", deCuongQuyDinh.maqd);
             return View(deCuongQuyDinh);
         }
 

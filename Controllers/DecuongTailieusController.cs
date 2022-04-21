@@ -48,8 +48,8 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: DecuongTailieus/Create
         public IActionResult Create()
         {
-            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp");
-            ViewData["matl"] = new SelectList(_context.Tailieus, "matl", "matl");
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
+            ViewData["matl"] = new SelectList(_context.Tailieus, "matl", "tentailieu");
             return View();
         }
 
@@ -84,8 +84,8 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp", decuongTailieu.mahp);
-            ViewData["matl"] = new SelectList(_context.Tailieus, "matl", "matl", decuongTailieu.matl);
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet", decuongTailieu.mahp);
+            ViewData["matl"] = new SelectList(_context.Tailieus, "matl", "tentailieu", decuongTailieu.matl);
             return View(decuongTailieu);
         }
 
@@ -142,7 +142,8 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet", decuongTailieu.mahp);
+            ViewData["matl"] = new SelectList(_context.Tailieus, "matl", "tentailieu", decuongTailieu.matl);
             return View(decuongTailieu);
         }
 

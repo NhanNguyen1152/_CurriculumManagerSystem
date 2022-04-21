@@ -18,27 +18,25 @@
                     <input type="hidden" asp-for="dcnv_id" />
                     <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="mahp"></label> <span class="text-danger">*</span>
+                            <label asp-for="mahp"> </label><span class="text-danger">*</span>
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
-                                <div class="form-line">
-                                    <input required asp-for="mahp" class="form-control" placeholder="Mã học phần"></input>
-                                    <span asp-validation-for="mahp" class="text-danger"></span>
-                                </div>
+                                <select required class="form-control show-tick" asp-for="mahp" asp-items="ViewBag.mahp">
+                                    @* <option>Vui lòng chọn một </option> *@
+                                </select>
                             </div>
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="manv"></label> <span class="text-danger">*</span>
+                            <label asp-for="manv"> </label><span class="text-danger">*</span>
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
-                                <div class="form-line">
-                                    <input required asp-for="manv" class="form-control" placeholder="Mã nhiệm vụ"></input>
-                                    <span asp-validation-for="manv" class="text-danger"></span>
-                                </div>
+                                <select required class="form-control show-tick" asp-for="manv" asp-items="ViewBag.manv">
+                                    @* <option>Vui lòng chọn một </option> *@
+                                </select>
                             </div>
                         </div>
                     </div>

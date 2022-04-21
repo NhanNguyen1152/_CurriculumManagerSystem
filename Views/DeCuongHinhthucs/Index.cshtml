@@ -17,11 +17,11 @@
                         <thead>
                             <tr>
                                 <th>
-                @Html.DisplayNameFor(model => model.DeCuongchiTiet)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hinhthuc_Danhgia)
-            </th>
+                                    @Html.DisplayNameFor(model => model.DeCuongchiTiet)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Hinhthuc_Danhgia)
+                                </th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -30,11 +30,11 @@
                             {
                                 <tr>
                                     <td>
-                @Html.DisplayFor(modelItem => item.DeCuongchiTiet.mahp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hinhthuc_Danhgia.mahtdg)
-            </td>
+                                        @Html.DisplayFor(modelItem => item.DeCuongchiTiet.mahp)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Hinhthuc_Danhgia.mahtdg)
+                                    </td>
                                     <td>
                                         <a class="material-icons" asp-action="Edit"
                                         asp-route-id="@item.dcht_id">mode_edit</a>
@@ -50,39 +50,39 @@
         </div>
     </div>
 </div>
-@* 
-<h1>Index</h1>
+@*
+    <h1>Index</h1>
 
-<p>
+    <p>
     <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+    </p>
+    <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.DeCuongchiTiet)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hinhthuc_Danhgia)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+    <th>
+    @Html.DisplayNameFor(model => model.DeCuongchiTiet)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.Hinhthuc_Danhgia)
+    </th>
+    <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DeCuongchiTiet.mahp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hinhthuc_Danhgia.mahtdg)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.dcht_id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.dcht_id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.dcht_id">Delete</a>
-            </td>
-        </tr>
-}
+    @foreach (var item in Model) {
+    <tr>
+    <td>
+    @Html.DisplayFor(modelItem => item.DeCuongchiTiet.mahp)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.Hinhthuc_Danhgia.mahtdg)
+    </td>
+    <td>
+    <a asp-action="Edit" asp-route-id="@item.dcht_id">Edit</a> |
+    <a asp-action="Details" asp-route-id="@item.dcht_id">Details</a> |
+    <a asp-action="Delete" asp-route-id="@item.dcht_id">Delete</a>
+    </td>
+    </tr>
+    }
     </tbody>
-</table> *@
+    </table> *@

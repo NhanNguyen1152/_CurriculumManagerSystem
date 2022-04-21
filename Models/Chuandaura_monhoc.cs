@@ -23,6 +23,7 @@ namespace _CurriculumManagerSystem.Models
         [StringLength(10)]
         public string loai { get; set; }
 
+        [DisplayName("Mã học phần")]
         [ForeignKey("mahp")]
         public int mahp { get; set;}
         [ForeignKey("mahp")]

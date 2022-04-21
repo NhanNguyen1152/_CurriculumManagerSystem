@@ -25,6 +25,7 @@ namespace _CurriculumManagerSystem.Models
         public int magv { get; set;}
         [ForeignKey("mahp")]
         public virtual DeCuongchiTiet DeCuongchiTiet { get; set; }
+        [DisplayName("Giảng Viên")]
         [ForeignKey("magv")]
         public virtual GiangVien GiangVien { get; set; }
     }

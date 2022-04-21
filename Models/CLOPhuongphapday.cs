@@ -24,7 +24,11 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Chỉ số CLO")]
         public int macdmon { get; set;}
         [ForeignKey("mappday")]
+
+        [DisplayName("Phương pháp giảng dạy")]
         public virtual Phuongphap_Giangday Phuongphap_Giangday { get; set;}
+
+        [DisplayName("Chuẩn đầu ra môn học")]
         [ForeignKey("macdmon")]
         public virtual Chuandaura_monhoc Chuandaura_monhoc { get; set;} 
     }

@@ -13,7 +13,7 @@ namespace _CurriculumManagerSystem.Models
         [Required]
         [DisplayName("Mã CLPO")]
         public int maclpo { get; set; }
-        [DisplayName("Ngày update")]
+        [DisplayName("Ngày cập nhật")]
         public DateTime ngayupdate { get; set; }
 
         [ForeignKey("macdmon")]
@@ -23,6 +23,7 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Chỉ số PLO")]
         public int maplo { get; set;}
         [ForeignKey("macdmon")]
+        [DisplayName("Chuẩn đầu ra môn học")]
         public virtual Chuandaura_monhoc Chuandaura_monhoc { get; set;}
         [ForeignKey("maplo")]
         public virtual PLO PLO { get; set;}

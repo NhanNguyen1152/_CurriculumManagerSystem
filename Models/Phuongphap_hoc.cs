@@ -13,6 +13,7 @@ namespace _CurriculumManagerSystem.Models
         [Required]
         [DisplayName("Mã phương pháp học")]
         public int mapphoc { get; set; }
+        
         [DisplayName("Tên phương pháp học")]
         [StringLength(50)]
         public string tenpp { get; set; }

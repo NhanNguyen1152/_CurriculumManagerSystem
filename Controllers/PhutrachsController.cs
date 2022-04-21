@@ -48,8 +48,8 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Phutrachs/Create
         public IActionResult Create()
         {
-            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp");
-            ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "magv");
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
+            ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "hoten");
             return View();
         }
 
@@ -66,8 +66,8 @@ namespace _CurriculumManagerSystem.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp", phutrach.mahp);
-            ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "magv", phutrach.magv);
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
+            ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "hoten");
             return View(phutrach);
         }
 
@@ -84,8 +84,8 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp", phutrach.mahp);
-            ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "magv", phutrach.magv);
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
+            ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "hoten");
             return View(phutrach);
         }
 
@@ -121,8 +121,8 @@ namespace _CurriculumManagerSystem.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp", phutrach.mahp);
-            ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "magv", phutrach.magv);
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
+            ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "hoten");
             return View(phutrach);
         }
 

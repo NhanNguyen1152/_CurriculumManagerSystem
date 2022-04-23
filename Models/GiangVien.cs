@@ -12,19 +12,14 @@ namespace _CurriculumManagerSystem.Models
         [Required]
         [DisplayName("Mã giảng viên")]
         public int magv { get; set; }
-        [StringLength(50)]
         [DisplayName("Họ và tên")]
         public string hoten { get; set; }
-        [StringLength(50)]
         [DisplayName("Chức danh")]
         public string chucdanh { get; set; }
-        [StringLength(50)]
         [DisplayName("Học hàm")]
         public string hocham { get; set; }
-        [StringLength(50)]
         [DisplayName("Học vị")]
         public string hocvi { get; set; }
-        [StringLength(100)]
         [DisplayName("Địa chỉ liên hệ")]
         public string diachilienhe { get; set; }
 

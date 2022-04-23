@@ -13,23 +13,24 @@ namespace _CurriculumManagerSystem.Models
         [Required]
         [DisplayName("Mã học phần")]
         public int mahp { get; set; }
-        [StringLength(100)]
         [DisplayName("Tên học phần tiếng việt")]
         public string tenhp_tviet { get; set; }
-        [StringLength(150)]
         [DisplayName("Tên học phần tiếng anh")]
         public string tenhp_tanh { get; set; }
         [DisplayName("Số tính chỉ lý thuyết")]
         public int sotc_lt { get; set; }
         [DisplayName("Số tính chỉ thực hành")]
         public int sotc_th { get; set; }
-        [StringLength(150)]
         [DisplayName("Yêu cầu khác với học phần")]
         public string yeucaukhacvoi_hocphan { get; set; }
-        [StringLength(500)]
         [DisplayName("Tóm tắt nội dung học phần")]
         public string tomtat_noidunghocphan { get; set; }
 
+        [ForeignKey("makkt")]
+        [DisplayName("Mã khối kiến thức")]
+        public int makkt { get; set; }
+        [ForeignKey("makkt")]
+        public virtual Khoikienthuc Khoikienthuc { get; set; }
         public ICollection<Chitietmonhoc> Chitietmonhocs { get; set;}
         public ICollection<Muctieu> Muctieus { get; set; }
         public IList<DecuongTailieu> DecuongTailieus { get; set; }

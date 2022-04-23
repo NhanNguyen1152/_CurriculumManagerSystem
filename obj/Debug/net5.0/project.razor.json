@@ -15969,6 +15969,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoikienthucs\\Delete.cshtml",
+      "TargetPath": "Views\\Khoikienthucs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\Edit.cshtml",
       "TargetPath": "Views\\DeCuongchiTiets\\Edit.cshtml",
       "FileKind": "mvc"
@@ -16039,8 +16044,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoikienthucs\\Details.cshtml",
+      "TargetPath": "Views\\Khoikienthucs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Bomons\\Details.cshtml",
       "TargetPath": "Views\\Bomons\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoikienthucs\\Create.cshtml",
+      "TargetPath": "Views\\Khoikienthucs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoikienthucs\\Index.cshtml",
+      "TargetPath": "Views\\Khoikienthucs\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16206,6 +16226,11 @@
     {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongHinhthucs\\Index.cshtml",
       "TargetPath": "Views\\DeCuongHinhthucs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoikienthucs\\Edit.cshtml",
+      "TargetPath": "Views\\Khoikienthucs\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {

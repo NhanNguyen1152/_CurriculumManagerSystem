@@ -14,7 +14,6 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Mã phương pháp giảng dạy")]
         public int mappday { get; set; }
         [DisplayName("Tên phương pháp giảng dạy")]
-        [StringLength(50)]
         public string tenpp { get; set; }
         
         public virtual IList<CLOPhuongphapday> CLOPhuongphapdays { get; set; }

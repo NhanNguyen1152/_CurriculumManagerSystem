@@ -14,10 +14,8 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Mã PLO")]
         public int maplo { get; set; }
         [DisplayName("Chỉ số PLO")]
-        [StringLength(10)]
         public string chisoplo { get; set; }
         [DisplayName("Nội dung")]
-        [StringLength(100)]
         public string noidung { get; set; }
 
         public virtual IList<CLPO> CLPOs { get; set; }

@@ -15,9 +15,7 @@ namespace _CurriculumManagerSystem.Models
         public int mapphoc { get; set; }
         
         [DisplayName("Tên phương pháp học")]
-        [StringLength(50)]
         public string tenpp { get; set; }
-
         public virtual IList<CLOPhuongphaphoc> CLOPhuongphaphocs { get; set; }
     }
 }

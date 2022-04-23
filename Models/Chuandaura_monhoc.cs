@@ -14,13 +14,10 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Mã chuẩn đầu ra môn học")]
         public int macdmon { get; set; }
         [DisplayName("Chỉ số cio")]
-        [StringLength(10)]
         public int chisocio { get; set; }
         [DisplayName("Nội dung")]
-        [StringLength(100)]
         public string noidung { get; set; }
         [DisplayName("Loại")]
-        [StringLength(10)]
         public string loai { get; set; }
 
         [DisplayName("Mã học phần")]

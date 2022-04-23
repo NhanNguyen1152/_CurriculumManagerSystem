@@ -13,7 +13,6 @@ namespace _CurriculumManagerSystem.Models
         [Required]
         [DisplayName("Mã phụ trách")]
         public int mapt { get; set; }
-        [StringLength(50)]
         [DisplayName("Vai trò")]
         public string vaitro { get; set; }
 

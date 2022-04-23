@@ -16,11 +16,9 @@ namespace _CurriculumManagerSystem.Models
 
 
        [DisplayName("Tên khóa học")]
-       [StringLength(50)]
        public string tenkh {get; set;}
        
        [DisplayName("Niên khóa")]
-       [StringLength(10)]
        public string nienkhoa { get; set;} 
        
        public virtual ICollection<Thoigianhoc> Thoigianhocs { get; set; }

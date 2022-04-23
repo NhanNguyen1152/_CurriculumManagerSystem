@@ -13,7 +13,6 @@ namespace _CurriculumManagerSystem.Models
         [Required]
         [DisplayName("Mã khoa")]
         public int makh { get; set; }
-        [StringLength(50)]
         [DisplayName("Tên khoa")]
         public string tenkh { get; set; }
 

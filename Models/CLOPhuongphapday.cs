@@ -14,7 +14,6 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Mã CLO phương pháp dạy")]
         public int maloppday { get; set; }
         [DisplayName("Mức độ")]
-        [StringLength(10)]
         public string mucdo { get; set; }       
 
         [ForeignKey("mappday")]

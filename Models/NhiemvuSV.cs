@@ -13,7 +13,6 @@ namespace _CurriculumManagerSystem.Models
         [Required]
         [DisplayName("Mã nhiệm vụ")]
         public int manv { get; set; }
-        [StringLength(500)]
         [DisplayName("Nội dung")]
         public string noidung { get; set; }
 

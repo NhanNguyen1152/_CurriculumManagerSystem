@@ -10,10 +10,9 @@ namespace _CurriculumManagerSystem.Models
     public class Muctieu
     {
         [Key]
-        [Required]
+        [Required]  
         [DisplayName("Mã mục tiêu")]
         public int mamt { get; set; }
-        [StringLength(200)]
         [DisplayName("Nội dung")]
         public string noidung { get; set; }
         [DisplayName("Mục tiêu chính")]

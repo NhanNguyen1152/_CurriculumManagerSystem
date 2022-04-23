@@ -41,5 +41,6 @@ namespace _CurriculumManagerSystem.Models
         public DbSet<Quydinh_Kiemtra> Quydinh_Kiemtras { get; set;}
         public DbSet<Tailieu> Tailieus { get; set;}
         public DbSet<Thoigianhoc> Thoigianhocs { get; set;}
+        public DbSet<_CurriculumManagerSystem.Models.Khoikienthuc> Khoikienthuc { get; set; }
     }
 }

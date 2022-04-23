@@ -13,7 +13,6 @@ namespace _CurriculumManagerSystem.Models
         [Required]
         [DisplayName("Mã quy định")]
         public int maqd { get; set; }
-        [StringLength(80)]
         [DisplayName("Tên quy định và kiểm tra")]
         public string tenqd { get; set; }
 

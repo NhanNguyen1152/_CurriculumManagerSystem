@@ -15,7 +15,6 @@ namespace _CurriculumManagerSystem.Models
         public int matg { get; set; }
 
         [DisplayName("Yêu cầu học phần")]
-        [StringLength(50)]
         public string yeucauhocphan { get; set; }
         
         [ForeignKey("mahp")]

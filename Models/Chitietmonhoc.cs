@@ -15,7 +15,6 @@ namespace _CurriculumManagerSystem.Models
         public int mact { get; set; }
         [DisplayName("Chỉ số")]
         public int chiso { get; set; }
-        [StringLength(150)]
         [DisplayName("Tên chương")]
         public string tenchuong { get; set; }
         [DisplayName("Số tiết lý thuyết")]

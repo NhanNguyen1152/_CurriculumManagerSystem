@@ -13,11 +13,9 @@ namespace _CurriculumManagerSystem.Models
         [Required]
         [DisplayName("Mã CLO lớp học")]
         public int maclopphoc { get; set; }
-       
         [DisplayName("Mức độ")]
-        [StringLength(10)]
         public string mucdo { get; set; }
-
+        
         [ForeignKey("mapphoc")]
         [DisplayName("Tên phương pháp")]
         public int mapphoc { get; set;}
@@ -25,7 +23,6 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Chỉ số CLO")]
         public int macdmon { get; set;}
         [ForeignKey("mapphoc")]
-
         [DisplayName("Phương pháp học")]
         public virtual Phuongphap_hoc Phuongphap_hoc { get; set;}
 

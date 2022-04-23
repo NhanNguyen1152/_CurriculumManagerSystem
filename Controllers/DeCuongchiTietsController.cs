@@ -21,7 +21,8 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: DeCuongchiTiets
         public async Task<IActionResult> Index()
         {
-            return View(await _context.DeCuongchiTiets.ToListAsync());
+            var appDbContext = _context.DeCuongchiTiets.Include(d => d.Khoikienthuc);
+            return View(await appDbContext.ToListAsync());
         }
 
         // GET: DeCuongchiTiets/Details/5
@@ -45,6 +46,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: DeCuongchiTiets/Create
         public IActionResult Create()
         {
+            ViewData["makkt"] = new SelectList(_context.Khoikienthucs, "makkt", "kkt_ten");
             return View();
         }
 
@@ -53,7 +55,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("mahp,tenhp_tviet,tenhp_tanh,sotc_lt,sotc_th,yeucaukhacvoi_hocphan,tomtat_noidunghocphan")] DeCuongchiTiet deCuongchiTiet)
+        public async Task<IActionResult> Create([Bind("mahp,tenhp_tviet,tenhp_tanh,sotc_lt,sotc_th,yeucaukhacvoi_hocphan,tomtat_noidunghocphan,makkt")] DeCuongchiTiet deCuongchiTiet)
         {
             if (ModelState.IsValid)
             {
@@ -77,6 +79,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
+            ViewData["makkt"] = new SelectList(_context.Khoikienthucs, "makkt", "kkt_ten");
             return View(deCuongchiTiet);
         }
 
@@ -85,7 +88,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("mahp,tenhp_tviet,tenhp_tanh,sotc_lt,sotc_th,yeucaukhacvoi_hocphan,tomtat_noidunghocphan")] DeCuongchiTiet deCuongchiTiet)
+        public async Task<IActionResult> Edit(int id, [Bind("mahp,tenhp_tviet,tenhp_tanh,sotc_lt,sotc_th,yeucaukhacvoi_hocphan,tomtat_noidunghocphan,makkt")] DeCuongchiTiet deCuongchiTiet)
         {
             if (id != deCuongchiTiet.mahp)
             {
@@ -129,7 +132,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["makkt"] = new SelectList(_context.Khoikienthucs, "makkt", "kkt_ten");
             return View(deCuongchiTiet);
         }
 

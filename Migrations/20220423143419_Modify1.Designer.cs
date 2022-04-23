@@ -10,8 +10,8 @@ using _CurriculumManagerSystem.Models;
 namespace _CurriculumManagerSystem.Migrations
 {
     [DbContext(typeof(acomptec_lvthainhanContext))]
-    [Migration("20220423093304_Modify2")]
-    partial class Modify2
+    [Migration("20220423143419_Modify1")]
+    partial class Modify1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

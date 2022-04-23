@@ -17,6 +17,6 @@ namespace _CurriculumManagerSystem.Models
         public string kkt_ten { get; set; }
         [DisplayName("Mô tả")]
         public string kkt_mota { get; set; }
-        public ICollection<DeCuongchiTiet> DeCuongchiTiets { get; set;}
+        public virtual ICollection<DeCuongchiTiet> DeCuongchiTiets { get; set;}
     }
 }

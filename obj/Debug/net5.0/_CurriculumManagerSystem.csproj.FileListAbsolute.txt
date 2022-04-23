@@ -898,3 +898,8 @@ C:\Users\duyws\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\_Curri
 C:\Users\duyws\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\ref\_CurriculumManagerSystem.dll
 C:\Users\duyws\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\_CurriculumManagerSystem.pdb
 C:\Users\duyws\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\_CurriculumManagerSystem.genruntimeconfig.cache
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Khoikienthucs\Create.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Khoikienthucs\Delete.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Khoikienthucs\Details.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Khoikienthucs\Edit.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Khoikienthucs\Index.cshtml.g.cs

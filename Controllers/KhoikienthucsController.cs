@@ -21,7 +21,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Khoikienthucs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Khoikienthuc.ToListAsync());
+            return View(await _context.Khoikienthucs.ToListAsync());
         }
 
         // GET: Khoikienthucs/Details/5
@@ -32,7 +32,7 @@ namespace _CurriculumManagerSystem.Controllers
                 return NotFound();
             }
 
-            var khoikienthuc = await _context.Khoikienthuc
+            var khoikienthuc = await _context.Khoikienthucs
                 .FirstOrDefaultAsync(m => m.makkt == id);
             if (khoikienthuc == null)
             {
@@ -72,7 +72,7 @@ namespace _CurriculumManagerSystem.Controllers
                 return NotFound();
             }
 
-            var khoikienthuc = await _context.Khoikienthuc.FindAsync(id);
+            var khoikienthuc = await _context.Khoikienthucs.FindAsync(id);
             if (khoikienthuc == null)
             {
                 return NotFound();
@@ -123,7 +123,7 @@ namespace _CurriculumManagerSystem.Controllers
                 return NotFound();
             }
 
-            var khoikienthuc = await _context.Khoikienthuc
+            var khoikienthuc = await _context.Khoikienthucs
                 .FirstOrDefaultAsync(m => m.makkt == id);
             if (khoikienthuc == null)
             {
@@ -138,15 +138,15 @@ namespace _CurriculumManagerSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var khoikienthuc = await _context.Khoikienthuc.FindAsync(id);
-            _context.Khoikienthuc.Remove(khoikienthuc);
+            var khoikienthuc = await _context.Khoikienthucs.FindAsync(id);
+            _context.Khoikienthucs.Remove(khoikienthuc);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool KhoikienthucExists(int id)
         {
-            return _context.Khoikienthuc.Any(e => e.makkt == id);
+            return _context.Khoikienthucs.Any(e => e.makkt == id);
         }
     }
 }

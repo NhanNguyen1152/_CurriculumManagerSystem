@@ -19,8 +19,9 @@ namespace _CurriculumManagerSystem.Controllers
         }
 
         // GET: Muctieus
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int id)
         {
+            ViewBag.param = id;
             var appDbContext = _context.Muctieus.Include(m => m.DeCuongchiTiet);
             return View(await appDbContext.ToListAsync());
         }

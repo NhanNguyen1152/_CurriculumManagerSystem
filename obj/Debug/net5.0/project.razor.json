@@ -15699,6 +15699,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_muctieu.cshtml",
+      "TargetPath": "Views\\Shared\\_Partial_muctieu.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\Details.cshtml",
       "TargetPath": "Views\\DeCuongchiTiets\\Details.cshtml",
       "FileKind": "mvc"
@@ -16044,6 +16049,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_decuongchitiet.cshtml",
+      "TargetPath": "Views\\Shared\\_Partial_decuongchitiet.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoikienthucs\\Details.cshtml",
       "TargetPath": "Views\\Khoikienthucs\\Details.cshtml",
       "FileKind": "mvc"
@@ -16231,6 +16241,11 @@
     {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoikienthucs\\Edit.cshtml",
       "TargetPath": "Views\\Khoikienthucs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\ActionPartials\\Index.cshtml",
+      "TargetPath": "Views\\ActionPartials\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

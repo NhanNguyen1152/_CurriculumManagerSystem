@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using _CurriculumManagerSystem.Models;
+using Microsoft.AspNetCore.Routing;
 
 namespace _CurriculumManagerSystem.Controllers
 {
@@ -61,7 +62,9 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 _context.Add(deCuongchiTiet);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                // return RedirectToAction(nameof(Index));
+                //return RedirectToAction("Index", new { id = deCuongchiTiet.mahp });
+                return RedirectToAction("Index", new RouteValueDictionary( new { Controller = "Muctieus", Action = "Create", id = deCuongchiTiet.mahp }));
             }
             return View(deCuongchiTiet);
         }

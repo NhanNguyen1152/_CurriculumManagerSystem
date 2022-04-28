@@ -48,6 +48,7 @@ namespace _CurriculumManagerSystem.Controllers
         public IActionResult Create()
         {
             ViewData["makkt"] = new SelectList(_context.Khoikienthucs, "makkt", "kkt_ten");
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
             return View();
         }
 
@@ -63,8 +64,8 @@ namespace _CurriculumManagerSystem.Controllers
                 _context.Add(deCuongchiTiet);
                 await _context.SaveChangesAsync();
                 // return RedirectToAction(nameof(Index));
-                //return RedirectToAction("Index", new { id = deCuongchiTiet.mahp });
-                return RedirectToAction("Index", new RouteValueDictionary( new { Controller = "Muctieus", Action = "Create", id = deCuongchiTiet.mahp }));
+                return RedirectToAction("Create", new { id = deCuongchiTiet.mahp });
+                //return RedirectToAction("Index", new RouteValueDictionary( new { Controller = "Decuongchitiets", Action = "Create", id = deCuongchiTiet.mahp }));
             }
             return View(deCuongchiTiet);
         }
@@ -153,6 +154,32 @@ namespace _CurriculumManagerSystem.Controllers
         private bool DeCuongchiTietExists(int id)
         {
             return _context.DeCuongchiTiets.Any(e => e.mahp == id);
+        }
+
+        public async Task<IActionResult> getMucTieu() 
+        {
+            var appDbContext = _context.DeCuongchiTiets.Include(d => d.Khoikienthuc).Include(d => d.Muctieus).Include(d => d.Phutraches);
+            return View(await appDbContext.ToListAsync());
+        }
+
+        public IActionResult _Partial_muctieu()
+        {
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
+            return PartialView("_Partial_muctieu");
+            // return PartialView(GetMuctieus());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> createMuctieu([Bind("mamt,noidung,mtchinh,mtphu,mahp")] Muctieu muctieu)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(muctieu);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(muctieu);
         }
     }
 }

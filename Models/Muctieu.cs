@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace _CurriculumManagerSystem.Models
 {
     [Table("Muctieu")]
-    public class Muctieu
+    public partial class Muctieu
     {
         [Key]
         [Required]  

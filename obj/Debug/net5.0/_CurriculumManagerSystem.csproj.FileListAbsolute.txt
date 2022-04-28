@@ -903,6 +903,4 @@ C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Khoikienthucs\Details.cshtml.g.cs
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Khoikienthucs\Edit.cshtml.g.cs
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Khoikienthucs\Index.cshtml.g.cs
-C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\ActionPartials\Index.cshtml.g.cs
-C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\_Partial_decuongchitiet.cshtml.g.cs
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\_Partial_muctieu.cshtml.g.cs

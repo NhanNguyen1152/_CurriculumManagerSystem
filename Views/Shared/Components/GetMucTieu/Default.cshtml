@@ -1,0 +1,59 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.Muctieu>
+
+<div class="body"> 
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+            <thead>
+                <tr>
+                    <th>
+                        @* @Html.DisplayNameFor(model => model.mahp) *@
+                        Đề cương chi tiết
+                    </th>
+                    <th>
+                        @* @Html.DisplayNameFor(model => model.noidung) *@
+                        Nội dung
+                    </th>
+                    <th>
+                        @* @Html.DisplayNameFor(model => model.mtchinh) *@
+                        Mục tiêu chính
+                    </th>
+                    <th>
+                        @* @Html.DisplayNameFor(model => model.mtphu) *@
+                        Mục tiêu phụ
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.mahp
+                            @* @Html.DisplayFor(modelItem => item.DeCuongchiTiet.tenhp_tviet) *@
+                        </td>
+                        <td>
+                            @item.noidung
+                            @* @Html.DisplayFor(modelItem => item.noidung) *@
+                        </td>
+                        <td>
+                            @item.mtchinh
+                            @* @Html.DisplayFor(modelItem => item.mtchinh) *@
+                        </td>
+                        <td>
+                            @item.mtphu
+                            @* @Html.DisplayFor(modelItem => item.mtphu) *@
+                        </td>
+                        <td>
+                            <td>
+                                        <a class="material-icons" asp-action="Edit" asp-route-id="@item.mamt">mode_edit</a>
+                                        <a class="material-icons" asp-action="Delete"
+                                        asp-route-id="@item.mamt">delete_forever</a>
+                                    </td>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

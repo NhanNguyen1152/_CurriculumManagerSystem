@@ -1,168 +1,52 @@
 @model _CurriculumManagerSystem.Models.DeCuongchiTiet
-
+@using Microsoft.AspNetCore.Http;
+@using System.Data;
 @{
     ViewData["Title"] = "Create";
+    @* var returnParam = ViewData["ReturnUrl"] as string; *@
 }
-
-@* <div class="row clearfix">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="card">
-            <div class="header">
-                <h3 class="titile-table">
-                    TẠO MỚI ĐỀ CƯƠNG CHI TIẾT
-                </h3>
-            </div>
-            <div class="body">
-                <form class="form-horizontal" asp-action="Create">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="tenhp_tviet">Tên học phần tiếng việt <span
-                                    class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <input required type="text" asp-for="tenhp_tviet" class="form-control"
-                                        placeholder="Tên học phần tiếng việt">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="tenhp_tanh">Tên học phần tiếng anh <span class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-
-                                <div class="form-line">
-                                    <input required type="text" asp-for="tenhp_tanh" class="form-control"
-                                        placeholder="Tên học phần tiếng anh">
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="sotc_lt">Số tín chỉ lý thuyết <span class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-
-                                <div class="form-line">
-                                    <input required min="1" max="5" type="number" asp-for="sotc_lt" class="form-control"
-                                        placeholder="Số tín chỉ lý thuyết">
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="sotc_th">Số tín chỉ thực hành <span class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-
-                                <div class="form-line">
-                                    <input required min="1" max="5" type="number" asp-for="sotc_th" class="form-control"
-                                        placeholder="Số tín chỉ thực hành">
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="yeucaukhacvoi_hocphan">Yêu cầu khác với học phần <span
-                                    class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-
-                                <div class="form-line">
-                                    <input required type="text" asp-for="yeucaukhacvoi_hocphan" class="form-control"
-                                        placeholder="Yêu cầu khác với học phần">
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="tomtat_noidunghocphan">Tóm tắt nội dung học phần <span
-                                    class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-
-                                <div class="form-line">
-                                    <textarea required asp-for="tomtat_noidunghocphan" class="form-control"
-                                        placeholder="Tóm tắt nội dung học phần"></textarea>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="makkt">Khối kiến thức <span class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-
-                                <select required class="form-control show-tick" asp-for="makkt"
-                                    asp-items="ViewBag.makkt">
-                                    <option>Vui lòng chọn một </option>
-                                </select>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
-                            <a asp-action="Index" class="btn btn-default waves-effect">Trở lại</a> |
-                            <input type="submit" class="btn btn-primary waves-effect" value="Tạo mới"></input>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div> *@
-
 
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
             <div class="header">
-                <h2>
-                    EXAMPLE TAB
-                    <small>Add quick, dynamic tab functionality to transition through panes of local content</small>
-                </h2>
+                @if (@Context.Session.GetString("nameDecuong") == null)
+                        {
+                           <h2 class="titile-table">TẠO MỚI ĐỀ CƯƠNG CHI TIẾT</h2>
+                        }
+                else
+                        {
+                            <h2 class="titile-table">TẠO MỚI ĐỀ CƯƠNG CHI TIẾT - <b>@Context.Session.GetString("nameDecuong")</b></h2>
+                        }
+                
                 @* <ul class="header-dropdown m-r--5">
                     <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                            aria-haspopup="true" aria-expanded="false">
-                            <i class="material-icons">more_vert</i>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);">Action</a></li>
-                            <li><a href="javascript:void(0);">Another action</a></li>
-                            <li><a href="javascript:void(0);">Something else here</a></li>
-                        </ul>
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">more_vert</i>
+                    </a>
+                    <ul class="dropdown-menu pull-right">
+                    <li><a href="javascript:void(0);">Action</a></li>
+                    <li><a href="javascript:void(0);">Another action</a></li>
+                    <li><a href="javascript:void(0);">Something else here</a></li>
+                    </ul>
                     </li>
-                </ul> *@
+                    </ul> *@
             </div>
             <div class="body">
                 <!-- Nav tabs -->
-                <ul class="nav nav-tabs tab-nav-right" role="tablist">
-                    <li role="presentation" class="active"><a href="#home" data-toggle="tab">HOME</a></li>
-                    <li role="presentation"><a href="#profile" data-toggle="tab">PROFILE</a></li>
-                    <li role="presentation"><a href="#messages" data-toggle="tab">MESSAGES</a></li>
-                    <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
+                <ul id="myTab" class="nav nav-tabs tab-nav-right" role="tablist">
+                    <li role="presentation" class="active"><a role="tab" href="#home" data-toggle="tab">ĐỀ CƯƠNG CHI TIẾT</a></li>
+                    <li role="presentation"><a role="tab" href="#profile" data-toggle="tab">MỤC TIÊU</a></li>
+                    <li role="presentation"><a role="tab" href="#messages" data-toggle="tab">ĐỀ CƯƠNG NHIỆM VỤ</a></li>
+                    <li role="presentation"><a role="tab" href="#settings" data-toggle="tab">ĐỀ CƯƠNG QUY ĐỊNH</a></li>
+                    <li role="presentation"><a role="tab" href="#decuonghinhthuc" data-toggle="tab">ĐỀ CƯƠNG HÌNH THỨC</a></li>
+                    <li role="presentation"><a role="tab" href="#settings" data-toggle="tab">ĐỀ CƯƠNG TÀI LIỆU</a></li>
+                    <li role="presentation"><a role="tab" href="#settings" data-toggle="tab">CHI TIẾT MÔN HỌC</a></li>
+                    <li role="presentation"><a role="tab" href="#settings" data-toggle="tab">PHỤ TRÁCH</a></li>
+                    <li role="presentation"><a role="tab" href="#settings" data-toggle="tab">THỜI GIAN HỌC</a></li>
+                    <li role="presentation"><a role="tab" href="#settings" data-toggle="tab">CHUẨN ĐẦU RA MÔN HỌC</a></li>
+
                 </ul>
 
                 <!-- Tab panes -->
@@ -179,7 +63,8 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                @* <textarea required asp-for="tenhp_tviet" class="form-control" placeholder="Tên
+                                                @* <textarea required asp-for="tenhp_tviet" class="form-control"
+                                                    placeholder="Tên
                                                     học phần tiếng việt"></textarea> *@
                                                 <input required type="text" asp-for="tenhp_tviet" class="form-control"
                                                     placeholder="Tên học phần tiếng việt">
@@ -189,13 +74,15 @@
                                 </div>
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label asp-for="tenhp_tanh">Tên học phần tiếng anh <span class="text-danger">*</span></label>
+                                        <label asp-for="tenhp_tanh">Tên học phần tiếng anh <span
+                                                class="text-danger">*</span></label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
 
                                             <div class="form-line">
-                                                @* <textarea required asp-for="tenhp_tanh" class="form-control" placeholder="Tên học
+                                                @* <textarea required asp-for="tenhp_tanh" class="form-control"
+                                                    placeholder="Tên học
                                                     phần tiếng anh"></textarea> *@
                                                 <input required type="text" asp-for="tenhp_tanh" class="form-control"
                                                     placeholder="Tên học phần tiếng anh">
@@ -206,16 +93,18 @@
                                 </div>
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label asp-for="sotc_lt">Số tín chỉ lý thuyết <span class="text-danger">*</span></label>
+                                        <label asp-for="sotc_lt">Số tín chỉ lý thuyết <span
+                                                class="text-danger">*</span></label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
 
                                             <div class="form-line">
-                                                @* <textarea required asp-for="sotc_lt" class="form-control" placeholder="Số tín chỉ
+                                                @* <textarea required asp-for="sotc_lt" class="form-control"
+                                                    placeholder="Số tín chỉ
                                                     lý thuyết"></textarea> *@
-                                                <input required min="1" max="5" type="number" asp-for="sotc_lt" class="form-control"
-                                                    placeholder="Số tín chỉ lý thuyết">
+                                                <input required min="1" max="5" type="number" asp-for="sotc_lt"
+                                                    class="form-control" placeholder="Số tín chỉ lý thuyết">
                                             </div>
 
                                         </div>
@@ -223,16 +112,18 @@
                                 </div>
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label asp-for="sotc_th">Số tín chỉ thực hành <span class="text-danger">*</span></label>
+                                        <label asp-for="sotc_th">Số tín chỉ thực hành <span
+                                                class="text-danger">*</span></label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
 
                                             <div class="form-line">
-                                                @* <textarea required asp-for="sotc_th" class="form-control" placeholder="Số tín chỉ
+                                                @* <textarea required asp-for="sotc_th" class="form-control"
+                                                    placeholder="Số tín chỉ
                                                     thực hành"></textarea> *@
-                                                <input required min="1" max="5" type="number" asp-for="sotc_th" class="form-control"
-                                                    placeholder="Số tín chỉ thực hành">
+                                                <input required min="1" max="5" type="number" asp-for="sotc_th"
+                                                    class="form-control" placeholder="Số tín chỉ thực hành">
                                             </div>
 
                                         </div>
@@ -247,10 +138,11 @@
                                         <div class="form-group">
 
                                             <div class="form-line">
-                                                @* <textarea required asp-for="yeucaukhacvoi_hocphan" class="form-control"
+                                                @* <textarea required asp-for="yeucaukhacvoi_hocphan"
+                                                    class="form-control"
                                                     placeholder="Yêu cầu khác với học phần"></textarea> *@
-                                                <input required type="text" asp-for="yeucaukhacvoi_hocphan" class="form-control"
-                                                    placeholder="Yêu cầu khác với học phần">
+                                                <input required type="text" asp-for="yeucaukhacvoi_hocphan"
+                                                    class="form-control" placeholder="Yêu cầu khác với học phần">
                                             </div>
 
                                         </div>
@@ -267,7 +159,8 @@
                                             <div class="form-line">
                                                 <textarea required asp-for="tomtat_noidunghocphan" class="form-control"
                                                     placeholder="Tóm tắt nội dung học phần"></textarea>
-                                                @* <input type="text" asp-for="tomtat_noidunghocphan" class="form-control"
+                                                @* <input type="text" asp-for="tomtat_noidunghocphan"
+                                                    class="form-control"
                                                     placeholder="Tóm tắt nội dung học phần"> *@
                                             </div>
 
@@ -292,34 +185,33 @@
                                 <div class="row clearfix">
                                     <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
                                         <a asp-action="Index" class="btn btn-default waves-effect">Trở lại</a> |
-                                        <input type="submit" class="btn btn-primary waves-effect" value="Tạo mới"></input>
+                                        <input type="submit" class="btn btn-primary waves-effect"
+                                            value="Tạo mới" onclick="tenham()"></input>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="profile">
-                        @await Html.PartialAsync("_Partial_muctieu");
+                        @await Html.PartialAsync("_Partial_muctieu")
+                       @if (@Context.Session.GetInt32("idDecuong") == null)
+                        {
+                            @await Component.InvokeAsync("GetMucTieu")
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("GetMucTieu", new {id = @Context.Session.GetInt32("idDecuong")})
+                        }
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="messages">
-                        <b>Message Content</b>
-                        <p>
-                            Lorem ipsum dolor sit amet, ut duo atqui exerci dicunt, ius impedit mediocritatem an. Pri ut
-                            tation electram moderatius.
-                            Per te suavitate democritum. Duis nemore probatus ne quo, ad liber essent aliquid
-                            pro. Et eos nusquam accumsan, vide mentitum fabellas ne est, eu munere gubergren
-                            sadipscing mel.
-                        </p>
+                        @await Html.PartialAsync("_Partial_decuongnhiemvu")
+                       
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="settings">
-                        <b>Settings Content</b>
-                        <p>
-                            Lorem ipsum dolor sit amet, ut duo atqui exerci dicunt, ius impedit mediocritatem an. Pri ut
-                            tation electram moderatius.
-                            Per te suavitate democritum. Duis nemore probatus ne quo, ad liber essent aliquid
-                            pro. Et eos nusquam accumsan, vide mentitum fabellas ne est, eu munere gubergren
-                            sadipscing mel.
-                        </p>
+                        
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="decuonghinhthuc">
+                        
                     </div>
                 </div>
             </div>
@@ -327,7 +219,140 @@
     </div>
 </div>
 
+<script>
+    $(function () {
+        $('#myTab li:nth-child(@ViewBag.param) a').tab('show')
+    })
+</script>
 
+@* <div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+    <div class="header">
+    <h3 class="titile-table">
+    TẠO MỚI ĐỀ CƯƠNG CHI TIẾT
+    </h3>
+    </div>
+    <div class="body">
+    <form class="form-horizontal" asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row clearfix">
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+    <label asp-for="tenhp_tviet">Tên học phần tiếng việt <span
+    class="text-danger">*</span></label>
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+    <div class="form-group">
+    <div class="form-line">
+    <input required type="text" asp-for="tenhp_tviet" class="form-control"
+    placeholder="Tên học phần tiếng việt">
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="row clearfix">
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+    <label asp-for="tenhp_tanh">Tên học phần tiếng anh <span class="text-danger">*</span></label>
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+    <div class="form-group">
+
+    <div class="form-line">
+    <input required type="text" asp-for="tenhp_tanh" class="form-control"
+    placeholder="Tên học phần tiếng anh">
+    </div>
+
+    </div>
+    </div>
+    </div>
+    <div class="row clearfix">
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+    <label asp-for="sotc_lt">Số tín chỉ lý thuyết <span class="text-danger">*</span></label>
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+    <div class="form-group">
+
+    <div class="form-line">
+    <input required min="1" max="5" type="number" asp-for="sotc_lt" class="form-control"
+    placeholder="Số tín chỉ lý thuyết">
+    </div>
+
+    </div>
+    </div>
+    </div>
+    <div class="row clearfix">
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+    <label asp-for="sotc_th">Số tín chỉ thực hành <span class="text-danger">*</span></label>
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+    <div class="form-group">
+
+    <div class="form-line">
+    <input required min="1" max="5" type="number" asp-for="sotc_th" class="form-control"
+    placeholder="Số tín chỉ thực hành">
+    </div>
+
+    </div>
+    </div>
+    </div>
+    <div class="row clearfix">
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+    <label asp-for="yeucaukhacvoi_hocphan">Yêu cầu khác với học phần <span
+    class="text-danger">*</span></label>
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+    <div class="form-group">
+
+    <div class="form-line">
+    <input required type="text" asp-for="yeucaukhacvoi_hocphan" class="form-control"
+    placeholder="Yêu cầu khác với học phần">
+    </div>
+
+    </div>
+    </div>
+    </div>
+    <div class="row clearfix">
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+    <label asp-for="tomtat_noidunghocphan">Tóm tắt nội dung học phần <span
+    class="text-danger">*</span></label>
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+    <div class="form-group">
+
+    <div class="form-line">
+    <textarea required asp-for="tomtat_noidunghocphan" class="form-control"
+    placeholder="Tóm tắt nội dung học phần"></textarea>
+    </div>
+
+    </div>
+    </div>
+    </div>
+    <div class="row clearfix">
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+    <label asp-for="makkt">Khối kiến thức <span class="text-danger">*</span></label>
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+    <div class="form-group">
+
+    <select required class="form-control show-tick" asp-for="makkt"
+    asp-items="ViewBag.makkt">
+    <option>Vui lòng chọn một </option>
+    </select>
+
+    </div>
+    </div>
+    </div>
+    <div class="row clearfix">
+    <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+    <a asp-action="Index" class="btn btn-default waves-effect">Trở lại</a> |
+    <input type="submit" class="btn btn-primary waves-effect" value="Tạo mới"></input>
+    </div>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div> *@
 
 
 @* <h1>Create</h1>

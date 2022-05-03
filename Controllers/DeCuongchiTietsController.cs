@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using _CurriculumManagerSystem.Models;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.AspNetCore.Http;
 
 namespace _CurriculumManagerSystem.Controllers
 {
     public class DeCuongchiTietsController : Controller
     {
+        
         private readonly acomptec_lvthainhanContext _context;
 
         public DeCuongchiTietsController(acomptec_lvthainhanContext context)
@@ -22,7 +24,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: DeCuongchiTiets
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.DeCuongchiTiets.Include(d => d.Khoikienthuc);
+            var appDbContext = _context.DeCuongchiTiets.Include(d => d.Khoikienthuc).Include(d => d.DeCuongNhiemvus);
             return View(await appDbContext.ToListAsync());
         }
 
@@ -43,12 +45,18 @@ namespace _CurriculumManagerSystem.Controllers
 
             return View(deCuongchiTiet);
         }
+        
+        int currentTab = 1;
 
         // GET: DeCuongchiTiets/Create
         public IActionResult Create()
         {
+            ViewBag.param = currentTab;
             ViewData["makkt"] = new SelectList(_context.Khoikienthucs, "makkt", "kkt_ten");
             ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
+            ViewData["manv"] = new SelectList(_context.NhiemvuSVs, "manv", "noidung");
+            
+
             return View();
         }
 
@@ -57,13 +65,18 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("mahp,tenhp_tviet,tenhp_tanh,sotc_lt,sotc_th,yeucaukhacvoi_hocphan,tomtat_noidunghocphan,makkt")] DeCuongchiTiet deCuongchiTiet)
+        public async Task<IActionResult> Create([Bind("mahp,tenhp_tviet,tenhp_tanh,sotc_lt,sotc_th,yeucaukhacvoi_hocphan,tomtat_noidunghocphan,makkt")] DeCuongchiTiet deCuongchiTiet, int current = 1)
         {
             if (ModelState.IsValid)
             {
+                HttpContext.Session.Remove("idDecuong");
+                HttpContext.Session.Remove("nameDecuong");
                 _context.Add(deCuongchiTiet);
                 await _context.SaveChangesAsync();
-                // return RedirectToAction(nameof(Index));
+                current++;
+                currentTab = current;
+                HttpContext.Session.SetInt32("idDecuong", deCuongchiTiet.mahp);
+                HttpContext.Session.SetString("nameDecuong", deCuongchiTiet.tenhp_tviet);
                 return RedirectToAction("Create", new { id = deCuongchiTiet.mahp });
                 //return RedirectToAction("Index", new RouteValueDictionary( new { Controller = "Decuongchitiets", Action = "Create", id = deCuongchiTiet.mahp }));
             }
@@ -155,7 +168,7 @@ namespace _CurriculumManagerSystem.Controllers
         {
             return _context.DeCuongchiTiets.Any(e => e.mahp == id);
         }
-
+         //Create partial_muctieu
         public async Task<IActionResult> getMucTieu() 
         {
             var appDbContext = _context.DeCuongchiTiets.Include(d => d.Khoikienthuc).Include(d => d.Muctieus).Include(d => d.Phutraches);
@@ -164,11 +177,10 @@ namespace _CurriculumManagerSystem.Controllers
 
         public IActionResult _Partial_muctieu()
         {
-            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
+           
             return PartialView("_Partial_muctieu");
-            // return PartialView(GetMuctieus());
         }
-
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> createMuctieu([Bind("mamt,noidung,mtchinh,mtphu,mahp")] Muctieu muctieu)
@@ -177,9 +189,30 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 _context.Add(muctieu);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Create", new { id = muctieu.mahp });
             }
             return View(muctieu);
+        }  
+
+        //Decuongnhiemvu-create
+         public IActionResult _Partial_decuongnhiemvu()
+        {
+            
+            return PartialView("_Partial_decuongnhiemvu");
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateDecuongnhiemvu([Bind("dcnv_id,mahp,manv")] DeCuongNhiemvu deCuongNhiemvu)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(deCuongNhiemvu);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Create", new { id = deCuongNhiemvu.mahp });
+            }
+            
+            return View(deCuongNhiemvu);
+        }
+        
     }
 }

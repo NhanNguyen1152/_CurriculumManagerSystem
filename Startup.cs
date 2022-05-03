@@ -27,6 +27,8 @@ namespace _CurriculumManagerSystem
         {
             services.AddControllersWithViews();
             services.AddDbContext<acomptec_lvthainhanContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddSession( options => options.IdleTimeout = TimeSpan.FromMinutes(20));
+            services.AddHttpContextAccessor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,7 +46,7 @@ namespace _CurriculumManagerSystem
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();

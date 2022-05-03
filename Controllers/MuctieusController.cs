@@ -19,12 +19,23 @@ namespace _CurriculumManagerSystem.Controllers
         }
 
         // GET: Muctieus
-        public async Task<IActionResult> Index(int id)
+        public async Task<IActionResult> Index()
         {
-            ViewBag.param = id;
             var appDbContext = _context.Muctieus.Include(m => m.DeCuongchiTiet);
             return View(await appDbContext.ToListAsync());
+            // id = 113;
+            // var appDbContext = await _context.Muctieus.Include(m => m.DeCuongchiTiet).Where(m => m.mahp == id).ToListAsync();
+            // return View(appDbContext);
         }
+
+        // public async Task<IActionResult> IndexDemo(int id)
+        // {
+        //     // var appDbContext = _context.Muctieus.Include(m => m.DeCuongchiTiet);
+        //     // return View(await appDbContext.ToListAsync());
+        //     id = 113;
+        //     var appDbContext = await _context.Muctieus.Include(m => m.DeCuongchiTiet).Where(m => m.mahp == id).ToListAsync();
+        //     return PartialView("_PartialIndexMuctieu", appDbContext);
+        // }
 
         // GET: Muctieus/Details/5
         public async Task<IActionResult> Details(int? id)

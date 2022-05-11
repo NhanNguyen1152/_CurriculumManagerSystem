@@ -36,22 +36,22 @@
             <div class="body">
                 <!-- Nav tabs -->
                 <ul id="myTab" class="nav nav-tabs tab-nav-right" role="tablist">
-                    <li role="presentation" class="active"><a role="tab" href="#home" data-toggle="tab">ĐỀ CƯƠNG CHI TIẾT</a></li>
-                    <li role="presentation"><a role="tab" href="#profile" data-toggle="tab">MỤC TIÊU</a></li>
-                    <li role="presentation"><a role="tab" href="#messages" data-toggle="tab">ĐỀ CƯƠNG NHIỆM VỤ</a></li>
-                    <li role="presentation"><a role="tab" href="#settings" data-toggle="tab">ĐỀ CƯƠNG QUY ĐỊNH</a></li>
+                    <li role="presentation" class="active"><a role="tab" href="#decuongchitiet" data-toggle="tab">ĐỀ CƯƠNG CHI TIẾT</a></li>
+                    <li role="presentation"><a role="tab" href="#muctieu" data-toggle="tab">MỤC TIÊU</a></li>
+                    <li role="presentation"><a role="tab" href="#decuongnhiemvu" data-toggle="tab">ĐỀ CƯƠNG NHIỆM VỤ</a></li>
+                    <li role="presentation"><a role="tab" href="#decuongquydinh" data-toggle="tab">ĐỀ CƯƠNG QUY ĐỊNH</a></li>
                     <li role="presentation"><a role="tab" href="#decuonghinhthuc" data-toggle="tab">ĐỀ CƯƠNG HÌNH THỨC</a></li>
-                    <li role="presentation"><a role="tab" href="#settings" data-toggle="tab">ĐỀ CƯƠNG TÀI LIỆU</a></li>
-                    <li role="presentation"><a role="tab" href="#settings" data-toggle="tab">CHI TIẾT MÔN HỌC</a></li>
-                    <li role="presentation"><a role="tab" href="#settings" data-toggle="tab">PHỤ TRÁCH</a></li>
-                    <li role="presentation"><a role="tab" href="#settings" data-toggle="tab">THỜI GIAN HỌC</a></li>
-                    <li role="presentation"><a role="tab" href="#settings" data-toggle="tab">CHUẨN ĐẦU RA MÔN HỌC</a></li>
+                    <li role="presentation"><a role="tab" href="#decuongtailieu" data-toggle="tab">ĐỀ CƯƠNG TÀI LIỆU</a></li>
+                    <li role="presentation"><a role="tab" href="#chitietmonhoc" data-toggle="tab">CHI TIẾT MÔN HỌC</a></li>
+                    <li role="presentation"><a role="tab" href="#phutrach" data-toggle="tab">PHỤ TRÁCH</a></li>
+                    <li role="presentation"><a role="tab" href="#thoigianhoc" data-toggle="tab">THỜI GIAN HỌC</a></li>
+                    <li role="presentation"><a role="tab" href="#chuandauramonhoc" data-toggle="tab">CHUẨN ĐẦU RA MÔN HỌC</a></li>
 
                 </ul>
 
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade in active" id="home">
+                    <div role="tabpanel" class="tab-pane fade in active" id="decuongchitiet">
                         <div class="body">
                             <form class="form-horizontal" asp-action="Create">
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -186,15 +186,23 @@
                                     <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
                                         <a asp-action="Index" class="btn btn-default waves-effect">Trở lại</a> |
                                         <input type="submit" class="btn btn-primary waves-effect"
-                                            value="Tạo mới" onclick="tenham()"></input>
+                                            value="Tạo mới"></input>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="profile">
-                        @await Html.PartialAsync("_Partial_muctieu")
-                       @if (@Context.Session.GetInt32("idDecuong") == null)
+                    <div role="tabpanel" class="tab-pane fade" id="muctieu">
+                        @* @await Html.PartialAsync("_Partial_muctieu") *@
+                         @if(@Context.Session.GetInt32("idMuctieu") == null)
+                        {
+                            @await Component.InvokeAsync("EditMucTieu")
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("EditMucTieu", new {id = @Context.Session.GetInt32("idMuctieu")})
+                        }
+                        @if (@Context.Session.GetInt32("idDecuong") == null)
                         {
                             @await Component.InvokeAsync("GetMucTieu")
                         }
@@ -203,15 +211,29 @@
                             @await Component.InvokeAsync("GetMucTieu", new {id = @Context.Session.GetInt32("idDecuong")})
                         }
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="messages">
+                    <div role="tabpanel" class="tab-pane fade" id="decuongnhiemvu">
                         @await Html.PartialAsync("_Partial_decuongnhiemvu")
-                       
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="settings">
-                        
+                    <div role="tabpanel" class="tab-pane fade" id="decuongquydinh">
+                        @await Html.PartialAsync("_Partial_decuongquydinh")
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuonghinhthuc">
-                        
+                        @await Html.PartialAsync("_Partial_decuonghinhthuc")
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="decuongtailieu">
+                        @await Html.PartialAsync("_Partial_decuongtailieu")
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="chitietmonhoc">
+                        @await Html.PartialAsync("_Partial_chitietmonhoc")
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="phutrach">
+                        @await Html.PartialAsync("_Partial_phutrach")
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="thoigianhoc">
+                        @await Html.PartialAsync("_Partial_thoigianhoc")
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="chuandauramonhoc">
+                        @await Html.PartialAsync("_Partial_chuandauramonhoc")
                     </div>
                 </div>
             </div>

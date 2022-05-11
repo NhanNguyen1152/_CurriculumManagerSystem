@@ -49,14 +49,21 @@ namespace _CurriculumManagerSystem.Controllers
         int currentTab = 1;
 
         // GET: DeCuongchiTiets/Create
-        public IActionResult Create()
+        public IActionResult Create(int id)
         {
             ViewBag.param = currentTab;
             ViewData["makkt"] = new SelectList(_context.Khoikienthucs, "makkt", "kkt_ten");
             ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
             ViewData["manv"] = new SelectList(_context.NhiemvuSVs, "manv", "noidung");
-            
-
+            ViewData["maqd"] = new SelectList(_context.Quydinh_Kiemtras, "maqd", "tenqd");
+            ViewData["mahtdg"] = new SelectList(_context.Hinhthuc_Danhgias, "mahtdg", "hinhthuc");
+            ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "hoten");
+            ViewData["makh"] = new SelectList(_context.Khoahocs, "makh", "tenkh");
+            ViewData["mahk"] = new SelectList(_context.Hockys, "mahk", "tenhk");
+            if(id > 0)
+            {
+                HttpContext.Session.SetInt32("idMuctieu",id);
+            }
             return View();
         }
 
@@ -77,7 +84,7 @@ namespace _CurriculumManagerSystem.Controllers
                 currentTab = current;
                 HttpContext.Session.SetInt32("idDecuong", deCuongchiTiet.mahp);
                 HttpContext.Session.SetString("nameDecuong", deCuongchiTiet.tenhp_tviet);
-                return RedirectToAction("Create", new { id = deCuongchiTiet.mahp });
+                return RedirectToAction("Create");
                 //return RedirectToAction("Index", new RouteValueDictionary( new { Controller = "Decuongchitiets", Action = "Create", id = deCuongchiTiet.mahp }));
             }
             return View(deCuongchiTiet);
@@ -168,31 +175,46 @@ namespace _CurriculumManagerSystem.Controllers
         {
             return _context.DeCuongchiTiets.Any(e => e.mahp == id);
         }
-         //Create partial_muctieu
-        public async Task<IActionResult> getMucTieu() 
-        {
-            var appDbContext = _context.DeCuongchiTiets.Include(d => d.Khoikienthuc).Include(d => d.Muctieus).Include(d => d.Phutraches);
-            return View(await appDbContext.ToListAsync());
-        }
+         //Create Edit muctieu
 
-        public IActionResult _Partial_muctieu()
-        {
+        // public async Task<IActionResult> getMucTieu() 
+        // {
+        //     var appDbContext = _context.DeCuongchiTiets.Include(d => d.Khoikienthuc).Include(d => d.Muctieus).Include(d => d.Phutraches);
+        //     return View(await appDbContext.ToListAsync());
+        // }
+
+        // public IActionResult _Partial_muctieu()
+        // { 
            
-            return PartialView("_Partial_muctieu");
+        //     return PartialView("_Partial_muctieu");
+        // }                             
+       public async Task<IActionResult> DeleteMucTieu(int id)
+        {
+            var muctieu = await _context.Muctieus.FindAsync(id);
+            _context.Muctieus.Remove(muctieu);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Create");
         }
-       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> createMuctieu([Bind("mamt,noidung,mtchinh,mtphu,mahp")] Muctieu muctieu)
+        public async Task<IActionResult> MultiAction([Bind("mamt,noidung,mtchinh,mtphu,mahp")] Muctieu muctieu)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(muctieu);
+                if(muctieu.mamt <= 0)
+                {
+                    _context.Add(muctieu);
+                }
+                else
+                {
+                    _context.Update(muctieu);
+                }
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Create", new { id = muctieu.mahp });
+                HttpContext.Session.Remove("idMuctieu");                                                                            
+                return RedirectToAction("Create");
             }
             return View(muctieu);
-        }  
+        }   
 
         //Decuongnhiemvu-create
          public IActionResult _Partial_decuongnhiemvu()
@@ -208,11 +230,132 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 _context.Add(deCuongNhiemvu);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Create", new { id = deCuongNhiemvu.mahp });
+                return RedirectToAction("Create");
             }
             
             return View(deCuongNhiemvu);
         }
-        
+        //Decuongquydinh-create
+         public IActionResult _Partial_decuongquydinh()
+        {
+            
+            return PartialView("_Partial_decuongquydinh");
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateDecuongquydinh([Bind("dcqd_id,mahp,maqd")] DeCuongQuyDinh deCuongQuyDinh)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(deCuongQuyDinh);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Create");
+            }
+            
+            return View(deCuongQuyDinh);
+        }
+        //CreateDecuonghinhthuc
+         public IActionResult _Partial_decuonghinhthuc()
+        {
+            
+            return PartialView("_Partial_decuonghinhthuc");
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateDecuonghinhthuc([Bind("dcht_id,mahp,mahtdg")] DeCuongHinhthuc deCuongHinhthuc)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(deCuongHinhthuc);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Create");
+            }
+            
+            return View(deCuongHinhthuc);
+        }
+        //CreateDecuongtailieu
+         public IActionResult _Partial_decuongtailieu()
+        {
+            
+            return PartialView("_Partial_decuongtailieu");
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateDecuongtailieu([Bind("matl,tacgia,tentailieu,thongtinkhac,loaitl")] Tailieu tailieu)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(tailieu);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Create");
+            }
+            return View(tailieu);
+        }
+        //CreateChitietmonhoc
+        public IActionResult _Partial_chitietmonhoc()
+        {
+            
+            return PartialView("_Partial_chitietmonhoc");
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateChitietmonhoc([Bind("mact,chiso,tenchuong,tietlt,tietth,mahp")] Chitietmonhoc chitietmonhoc)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(chitietmonhoc);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Create");
+            }
+            return View(chitietmonhoc);
+        }
+        //CreatePhutrach
+        public IActionResult _Partial_phutrach()
+        {
+            
+            return PartialView("_Partial_phutrach");
+        }
+        public async Task<IActionResult> CreatePhutrach([Bind("mapt,vaitro,mahp,magv")] Phutrach phutrach)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(phutrach);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Create");
+            }
+            return View(phutrach);
+        }
+        //CreateThoigianhoc
+        public IActionResult _Partial_thoigianhoc()
+        {
+            
+            return PartialView("_Partial_thoigianhoc");
+        }
+        public async Task<IActionResult> CreateThoigianhoc([Bind("matg,yeucauhocphan,mahp,makh,mahk")] Thoigianhoc thoigianhoc)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(thoigianhoc);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Create");
+            }
+            return View(thoigianhoc);
+        }
+        //CreateChuandauramonhoc
+        public IActionResult _Partial_chuandauramonhoc()
+        {
+            
+            return PartialView("_Partial_chuandauramonhoc");
+        }
+        public async Task<IActionResult> CreateChuandauramonhoc([Bind("macdmon,chisocio,noidung,loai,mahp")] Chuandaura_monhoc chuandaura_monhoc)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(chuandaura_monhoc);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Create");
+            }
+            return View(chuandaura_monhoc);
+        }
     }
 }

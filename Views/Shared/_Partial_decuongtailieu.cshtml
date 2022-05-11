@@ -1,17 +1,19 @@
-@model _CurriculumManagerSystem.Models.NhiemvuSV
+@model _CurriculumManagerSystem.Models.DecuongTailieu
+@using Microsoft.AspNetCore.Http;
+@using System.Data;
 <div class="body">
-                <form class="form-horizontal" asp-action="Create">
+                <form class="form-horizontal" asp-action="CreateDecuongtailieu">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                     <input hidden required asp-for="mahp" value=@Context.Session.GetInt32("idDecuong")>
                     <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label >Nội dung <span class="text-danger">*</span></label>
+                            <label asp-for="matl"> </label><span class="text-danger">*</span>
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
-                                <div class="form-line">
-                                    <input required min="10" max="30" asp-for="noidung" class="form-control" placeholder="Nội dung"></input>
-                                    <span class="text-danger"></span>
-                                </div>
+                                <select required class="form-control show-tick" asp-for="matl" asp-items="ViewBag.matl">
+                                    <option>Vui lòng chọn một </option>
+                                </select>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,158 @@
+@startuml class
+skinparam linetype ortho
+class DeCuongchiTiet{
+    + mahp: int
+    + tenhp_tviet: string
+    + tenhp_tanh: string
+    + sotc_lt: int
+    + sotc_th: int
+    + yeucaukhacvoi_voihocphan: string
+    + tomtat_noidunghocphan: string
+}
+
+class Thoigianhoc{
+    + matg: int
+    + yeucauhocphan: string
+}
+
+class Hocky{
+    + mahk: int
+    + tenhk: string
+}
+
+class Khoahoc{
+    + makh: int
+    + tenkh: string
+    + nienkhoa: string
+}
+
+class GiangVien{
+    + magv: int
+    + hoten: string
+    + chucdanh: string
+    + hocham: string
+    + hocvi: string
+    + diachilienhe: string
+}
+class Phutrach{
+    + mapt: int
+    + vaitro: string
+}
+
+class Bomon{
+    + mabm: int
+    + tenbm: string
+}
+
+class Khoa{
+    + makh: int
+    + tenkh: string
+}
+
+class Muctieu{
+    + mamt: int
+    + noidung: string
+    + mtchinh: string
+    + mtphu: string
+}
+
+class Chuandaura_monhoc{
+    + macdrmon: int
+    + chisoclo: int
+    + noidung: string
+    + loai: string
+}
+
+class PLO{
+    + maplo: int
+    + chisoplo: string
+    + noidung: string
+}
+
+class CLPO{
+    + maclpo: int
+    + ngayupdate: datetime
+}
+
+class Chitietmonhoc{
+    + mact: int
+    + chiso: int
+    + tenchuong: string
+    + tietlt: int
+    + tietth: int
+}
+
+class Chitiet_Chuong{
+    + mactchuong: int
+    + chiso: int
+    + tentieumuc: string
+    + tuanhoc: int
+    + thoiluonghoc:double
+}
+
+class Phuongphap_Giangday{
+    + mappday: int
+    + tenpp: string
+}
+
+class CLOPhuongphapday{
+    + macloppday: int
+    + mucdo: string
+}
+
+class Phuongphap_hoc{
+    + mapphoc: int
+    + tenpp: string
+}
+
+class CLOPhuongphaphoc{
+    + maclopphoc: int
+    + mucdo:  string
+}
+
+class Quydinh_Kiemtra{
+    + maqd: int
+    + tenqd: string
+}
+
+class Hinhthuc_Danhgia{
+    + mahtdg: int
+    + thanhphan_danhgia: string
+    + hinhthuc: string
+    + trongso: int
+}
+
+class NhiemvuSV{
+    + manv: int
+    + noidung: string
+}
+
+class Tailieu{
+    + matl: int
+    + taccgia: string
+    + tentailieu: string
+    + thongtinkhac: string
+    + loaitl: string
+}
+
+class 
+
+(DeCuongchiTiet, Tailieu) .. DecuongTailieu
+(DeCuongchiTiet, NhiemvuSV) .. DeCuongNhiemvu
+(DeCuongchiTiet, Quydinh_Kiemtra) .. DeCuongQuyDinh
+(DeCuongchiTiet, Hinhthuc_Danhgia) .. DeCuongHinhthuc
+DeCuongchiTiet "1" -- "*" Thoigianhoc
+Hocky "1" -- "*" Thoigianhoc
+Khoahoc "1" -- "*" Thoigianhoc
+(DeCuongchiTiet, GiangVien) .. Phutrach
+GiangVien "1" -- "*" Bomon
+Bomon "1" -- "*" Khoa
+DeCuongchiTiet "1" -- "*" Muctieu
+DeCuongchiTiet "1" -- "*" Chuandaura_monhoc
+(Chuandaura_monhoc,PLO) .. CLPO
+DeCuongchiTiet "1" -- "*" Chitietmonhoc
+Chitietmonhoc "1" -- "*" Chitiet_Chuong
+(Phuongphap_Giangday,Chuandaura_monhoc) .. CLOPhuongphapday
+(Phuongphap_hoc, Chuandaura_monhoc) .. CLOPhuongphaphoc
+
+@enduml

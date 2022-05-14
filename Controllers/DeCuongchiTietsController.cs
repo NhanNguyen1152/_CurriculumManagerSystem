@@ -60,6 +60,7 @@ namespace _CurriculumManagerSystem.Controllers
             ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "hoten");
             ViewData["makh"] = new SelectList(_context.Khoahocs, "makh", "tenkh");
             ViewData["mahk"] = new SelectList(_context.Hockys, "mahk", "tenhk");
+            ViewData["matl"] = new SelectList(_context.Tailieus, "matl", "tentailieu");
             if(id > 0)
             {
                 HttpContext.Session.SetInt32("idMuctieu",id);
@@ -215,7 +216,6 @@ namespace _CurriculumManagerSystem.Controllers
             }
             return View(muctieu);
         }   
-
         //Decuongnhiemvu-create
          public IActionResult _Partial_decuongnhiemvu()
         {

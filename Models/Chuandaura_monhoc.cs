@@ -13,7 +13,7 @@ namespace _CurriculumManagerSystem.Models
         [Required]
         [DisplayName("Mã chuẩn đầu ra môn học")]
         public int macdmon { get; set; }
-        [DisplayName("Chỉ số cio")]
+        [DisplayName("Chỉ số CLO")]
         public int chisocio { get; set; }
         [DisplayName("Nội dung")]
         public string noidung { get; set; }

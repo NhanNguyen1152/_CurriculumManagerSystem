@@ -45,6 +45,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Chuandaura_monhocs/Create
         public IActionResult Create()
         {
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
             return View();
         }
 

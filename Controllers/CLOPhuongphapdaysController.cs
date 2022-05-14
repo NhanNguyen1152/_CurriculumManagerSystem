@@ -49,7 +49,7 @@ namespace _CurriculumManagerSystem.Controllers
         public IActionResult Create()
         {
             ViewData["macdmon"] = new SelectList(_context.Chuandaura_Monhocs, "macdmon", "macdmon");
-            ViewData["mappday"] = new SelectList(_context.Phuongphap_Giangdays, "mappday", "mappday");
+            ViewData["mappday"] = new SelectList(_context.Phuongphap_Giangdays, "mappday", "tenpp");
             return View();
         }
 

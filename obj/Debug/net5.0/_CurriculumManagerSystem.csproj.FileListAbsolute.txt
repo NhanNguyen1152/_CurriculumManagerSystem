@@ -557,7 +557,6 @@ C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Thoigianhocs\Edit.cshtml.g.cs
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Thoigianhocs\Index.cshtml.g.cs
 >>>>>>> e70e3e7254da4bb02b469aeff436c60019551202
-C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\_Layout copy 2.cshtml.g.cs
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\DecuongTailieus\Create.cshtml.g.cs
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\DecuongTailieus\Delete.cshtml.g.cs
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\DecuongTailieus\Details.cshtml.g.cs
@@ -1227,3 +1226,14 @@ C:\Users\F570Z-PC\OneDrive\Tài liệu\GitHub\_CurriculumManagerSystem\obj\Deb
 C:\Users\F570Z-PC\OneDrive\Tài liệu\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\_Partial_phutrach.cshtml.g.cs
 C:\Users\F570Z-PC\OneDrive\Tài liệu\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\_Partial_thoigianhoc.cshtml.g.cs
 C:\Users\F570Z-PC\OneDrive\Tài liệu\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\EditMucTieu\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\EditMucTieu\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\_Partial_chitietmonhoc.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\_Partial_chuandauramonhoc.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\_Partial_decuonghinhthuc.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\_Partial_decuongnhiemvu.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\_Partial_decuongquydinh.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\_Partial_decuongtailieu.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\_Partial_phutrach.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\_Partial_thoigianhoc.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\ExtractPDFs\Extract.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\FilterHockys\Index.cshtml.g.cs

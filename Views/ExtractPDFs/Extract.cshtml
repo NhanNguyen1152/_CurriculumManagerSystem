@@ -1,0 +1,60 @@
+@model _CurriculumManagerSystem.Models.DeCuongchiTiet
+
+@{
+    ViewData["Title"] = "Print";
+    Layout = null;
+}
+
+<html>
+    <head>
+        <link href="~/StylePrint.css" rel="stylesheet" />
+            <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+            </style>
+    </head>
+
+    <body onload="window.print()">
+        <div class="book">
+            <div class="page">
+                <div class="subpage">
+                    <h1 style="text-align: left;">Hóa Đơn Mua Hàng</h1>
+                    <p style="text-align: right; "><i>Cửa Hàng Shop Hoa Tươi</i><p>
+                    <p>Mã hóa đơn: @Model.tenhp_tviet </p>
+                    <p>Ngày đặt: @Model.tenhp_tanh </p>
+                    <p>Ngày giao: @Model.sotc_lt </p>
+                    <p>Tên người nhận: @Model.sotc_th </p>
+                    <p>SĐT người nhận: @Model.yeucaukhacvoi_hocphan </p>
+                    <p>Địa chỉ người nhận: @Model.tomtat_noidunghocphan</p>
+                    <p>Danh sách sản phẩm: </p>
+                    @* <table style="width: 100%; text-align: center;">
+                        <th>Mặt Hàng</th>
+                        <th>Số Lượng</th>
+                        <th>Chi Phí Giao Hàng</th>
+                        <th>Tạm Tính</th>
+                        @foreach (var item in Model.Muctieus)
+                        {
+                            <tr>  
+                                <td>
+                                    @item.mahp
+                                </td>
+                                <td>   
+                                    @item.mamt
+                                </td>
+                                <td>   
+                                    @item.noidung
+                                </td>
+                                <td>   
+                                    @item.mtchinh
+                                </td>
+                            </tr>
+                            
+                        } 
+                    </table> *@
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

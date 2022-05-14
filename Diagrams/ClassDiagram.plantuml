@@ -135,8 +135,6 @@ class Tailieu{
     + loaitl: string
 }
 
-class 
-
 (DeCuongchiTiet, Tailieu) .. DecuongTailieu
 (DeCuongchiTiet, NhiemvuSV) .. DeCuongNhiemvu
 (DeCuongchiTiet, Quydinh_Kiemtra) .. DeCuongQuyDinh

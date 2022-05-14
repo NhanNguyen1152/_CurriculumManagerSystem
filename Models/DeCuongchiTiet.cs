@@ -11,8 +11,11 @@ namespace _CurriculumManagerSystem.Models
     {
         [Key]
         [Required]
-        [DisplayName("Mã học phần")]
+        // [DisplayName("Mã học phần")]
         public int mahp { get; set; }
+        [Required]
+        [DisplayName("Mã học phần")]
+        public string mahp_decuong { get; set; }
         [DisplayName("Tên học phần tiếng việt")]
         public string tenhp_tviet { get; set; }
         [DisplayName("Tên học phần tiếng anh")]

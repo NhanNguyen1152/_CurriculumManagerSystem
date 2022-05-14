@@ -16,7 +16,20 @@
                 <form class="form-horizontal" asp-action="Edit">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <input type="hidden" asp-for="mahp"/>
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="mahp_decuong">Mã học phần <span
+                                    class="text-danger">*</span></label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                @* <textarea required asp-for="mahp_decuong" class="form-control" placeholder="Tên
+                                    học phần tiếng việt"></textarea> *@
+                                <input required type="text" asp-for="mahp_decuong" class="form-control"
+                                    placeholder="Mã học phần">
+                            </div>
+                        </div>
+                    </div>
                     <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                             <label asp-for="tenhp_tviet">Tên học phần tiếng việt <span

@@ -21,7 +21,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Khoas
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.Khoas.Include(b => b.Bomon);
+            var appDbContext = _context.Khoas.Include(b => b.Bomon).ThenInclude(b => b.GiangVien);
             return View(await appDbContext.ToListAsync());
         }
 

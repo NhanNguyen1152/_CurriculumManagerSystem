@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Data.SqlClient;
 using _CurriculumManagerSystem.Models;
 
 namespace _CurriculumManagerSystem.Controllers
@@ -49,7 +50,15 @@ namespace _CurriculumManagerSystem.Controllers
         public IActionResult Create()
         {
             ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
-            ViewData["maqd"] = new SelectList(_context.Quydinh_Kiemtras, "maqd", "tenqd");
+            //ViewBag.listQD = new SelectList(_context.Quydinh_Kiemtras, "maqd", "tenqd");
+            var listQuyDinh = (from b in _context.Quydinh_Kiemtras
+                          select new Quydinh_Kiemtra
+                          {
+                              maqd = b.maqd,
+                              tenqd = b.tenqd
+                          }).ToList();
+            ViewData.Model = listQuyDinh;
+            // ViewBag.listQD = _context.Quydinh_Kiemtras.SelectMany(q => q.tenqd).ToListAsync();
             return View();
         }
 
@@ -69,6 +78,25 @@ namespace _CurriculumManagerSystem.Controllers
             ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp", deCuongQuyDinh.mahp);
             ViewData["maqd"] = new SelectList(_context.Quydinh_Kiemtras, "maqd", "maqd", deCuongQuyDinh.maqd);
             return View(deCuongQuyDinh);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> createListQD(int[] arrayDCQD, DeCuongQuyDinh deCuongQuyDinh)
+        {
+            
+            if (ModelState.IsValid)
+            {
+                foreach(var item in arrayDCQD)
+                {
+                    deCuongQuyDinh.mahp = 223;
+                    deCuongQuyDinh.maqd = item; 
+                    _context.Add(deCuongQuyDinh); 
+                } 
+                await _context.SaveChangesAsync();
+                
+                return RedirectToAction(nameof(Index));
+            }
+            return View();
         }
 
         // GET: DeCuongQuyDinhs/Edit/5

@@ -357,5 +357,22 @@ namespace _CurriculumManagerSystem.Controllers
             }
             return View(chuandaura_monhoc);
         }
+
+
+        //Getdecuongchitiet
+        public IActionResult getDecuongchitiet()
+        {
+            var appDbContext = _context.DeCuongchiTiets.Include(d => d.Khoikienthuc);
+            TempData["listData"] = appDbContext.ToList();
+            return View();
+        }
+
+        //Get huong dan de cuong chi tiet
+        public IActionResult getHuongdandecuong()
+        {
+            var appDbContext = _context.DeCuongchiTiets.Include(d => d.Khoikienthuc);
+            TempData["listData"] = appDbContext.ToList();
+            return View();
+        }
     }
 }

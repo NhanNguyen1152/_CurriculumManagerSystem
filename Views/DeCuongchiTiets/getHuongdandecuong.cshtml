@@ -1,0 +1,102 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.DeCuongchiTiet>
+
+@{
+    ViewData["Title"] = "Hướng dẫn thực hiện chương trình";
+}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h3 class="titile-table">BẢNG HƯỚNG DẪN THỰC HIỆN CHƯƠNG TRÌNH
+                </h3>
+            </div>
+            <div class="body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.mahp_decuong)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.tenhp_tviet)
+                                </th>
+                                <th>
+                                    Số tín chỉ
+                                </th>
+                                <th>
+                                    Bắt buộc
+                                </th>
+                                <th>
+                                    Tự chọn
+                                </th>
+                                <th>
+                                    Số tiết LT
+                                </th>
+                                <th>
+                                    Số tiết TH
+                                </th>
+                                <th>
+                                    Môn học tiên quyết / học trước
+                                </th>
+                            </tr>
+                        </thead>
+                        @{
+                            int stt = 0;
+                            int tong_tc = 0;
+                            int tong_sotiet_lt = 0;
+                            int tong_sotiet_th = 0;
+                        }
+                        @foreach (var dulieu_kkt in ((List<DeCuongchiTiet>)TempData["listData"]).GroupBy(x =>
+                        x.Khoikienthuc.kkt_ten))
+                        {
+                            <th colspan="9" style="background-color: #84c7c1; color: black;"><b>@dulieu_kkt.Key</b></th>
+
+                            <tbody>
+                                @foreach (var dulieu_decuong in ((List<DeCuongchiTiet>)TempData["listData"]).Where(x =>
+                               x.Khoikienthuc.kkt_ten == dulieu_kkt.Key))
+                                {
+                                    stt = stt + 1;
+                                    tong_tc = dulieu_decuong.sotc_lt + dulieu_decuong.sotc_th;
+                                    tong_sotiet_lt = dulieu_decuong.sotc_lt * 15;
+                                    tong_sotiet_th = dulieu_decuong.sotc_th * 30;
+                                    <tr>
+                                        <td>
+                                            @stt
+                                        </td>
+                                        <td>
+                                            @dulieu_decuong.mahp_decuong
+                                        </td>
+                                        <td>
+                                            @dulieu_decuong.tenhp_tviet
+                                        </td>
+                                        <td>
+                                            @tong_tc
+                                        </td>
+                                        <td>
+                                            @tong_tc
+                                        </td>
+                                        <td>
+                                            @dulieu_decuong.Khoikienthuc.kkt_mota
+                                        </td>
+                                        <td>
+                                            @tong_sotiet_lt
+                                        </td>
+                                        <td>
+                                            @tong_sotiet_th
+                                        </td>
+                                        <td>
+                                            @dulieu_decuong.yeucaukhacvoi_hocphan
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

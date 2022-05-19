@@ -13,7 +13,7 @@
             </div>
             <div class="body">
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable"> 
                         <thead>
                             <tr>
                                 <th>
@@ -34,9 +34,9 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.yeucaukhacvoi_hocphan)
                                 </th>
-                                <th>
+                                @* <th>
                                     @Html.DisplayNameFor(model => model.tomtat_noidunghocphan)
-                                </th>
+                                </th> *@
                                 <th>
                                     @Html.DisplayNameFor(model => model.Khoikienthuc.kkt_ten)
                                 </th>
@@ -50,7 +50,6 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.mahp_decuong)
                                     </td>
-                                    <td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.tenhp_tviet)
                                     </td>
@@ -66,9 +65,9 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.yeucaukhacvoi_hocphan)
                                     </td>
-                                    <td>
+                                    @* <td>
                                         @Html.DisplayFor(modelItem => item.tomtat_noidunghocphan)
-                                    </td>
+                                    </td> *@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Khoikienthuc.kkt_ten)
                                     </td>

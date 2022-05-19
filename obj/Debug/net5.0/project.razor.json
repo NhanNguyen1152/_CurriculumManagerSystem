@@ -15808,6 +15808,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\getHuongdandecuong.cshtml",
+      "TargetPath": "Views\\DeCuongchiTiets\\getHuongdandecuong.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Hinhthuc_Danhgias\\Create.cshtml",
       "TargetPath": "Views\\Hinhthuc_Danhgias\\Create.cshtml",
       "FileKind": "mvc"
@@ -15970,6 +15975,11 @@
     {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Hinhthuc_Danhgias\\Details.cshtml",
       "TargetPath": "Views\\Hinhthuc_Danhgias\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\getDecuongchitiet.cshtml",
+      "TargetPath": "Views\\DeCuongchiTiets\\getDecuongchitiet.cshtml",
       "FileKind": "mvc"
     },
     {

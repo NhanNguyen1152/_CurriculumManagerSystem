@@ -159,5 +159,7 @@ namespace _CurriculumManagerSystem.Controllers
         {
             return _context.Thoigianhocs.Any(e => e.matg == id);
         }
+
+        
     }
 }

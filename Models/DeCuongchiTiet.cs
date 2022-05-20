@@ -24,6 +24,8 @@ namespace _CurriculumManagerSystem.Models
         public int sotc_lt { get; set; }
         [DisplayName("Số tính chỉ thực hành")]
         public int sotc_th { get; set; }
+        [DisplayName("Học phần học trước")]
+        public string hp_tienquyet { get; set; }
         [DisplayName("Yêu cầu khác với học phần")]
         public string yeucaukhacvoi_hocphan { get; set; }
         [DisplayName("Tóm tắt nội dung học phần")]

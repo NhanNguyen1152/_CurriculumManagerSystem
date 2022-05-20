@@ -74,7 +74,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("mahp,mahp_decuong,tenhp_tviet,tenhp_tanh,sotc_lt,sotc_th,yeucaukhacvoi_hocphan,tomtat_noidunghocphan,makkt")] DeCuongchiTiet deCuongchiTiet, int current = 1)
+        public async Task<IActionResult> Create([Bind("mahp,mahp_decuong,tenhp_tviet,tenhp_tanh,sotc_lt,sotc_th,yeucaukhacvoi_hocphan,tomtat_noidunghocphan,makkt,hp_tienquyet")] DeCuongchiTiet deCuongchiTiet, int current = 1)
         {
             if (ModelState.IsValid)
             {
@@ -114,7 +114,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("mahp,mahp_decuong,tenhp_tviet,tenhp_tanh,sotc_lt,sotc_th,yeucaukhacvoi_hocphan,tomtat_noidunghocphan,makkt")] DeCuongchiTiet deCuongchiTiet)
+        public async Task<IActionResult> Edit(int id, [Bind("mahp,mahp_decuong,tenhp_tviet,tenhp_tanh,sotc_lt,sotc_th,yeucaukhacvoi_hocphan,tomtat_noidunghocphan,makkt,hp_tienquyet")] DeCuongchiTiet deCuongchiTiet)
         {
             if (id != deCuongchiTiet.mahp)
             {

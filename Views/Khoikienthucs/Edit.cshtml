@@ -4,33 +4,98 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+@* <h1>Edit</h1>
 
-<h4>Khoikienthuc</h4>
-<hr />
-<div class="row">
+    <h4>Khoikienthuc</h4>
+    <hr />
+    <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="makkt" />
-            <div class="form-group">
-                <label asp-for="kkt_ten" class="control-label"></label>
-                <input asp-for="kkt_ten" class="form-control" />
-                <span asp-validation-for="kkt_ten" class="text-danger"></span>
+    <form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="makkt" />
+    <div class="form-group">
+    <label asp-for="kkt_ten" class="control-label"></label>
+    <input asp-for="kkt_ten" class="form-control" />
+    <span asp-validation-for="kkt_ten" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <label asp-for="kkt_mota" class="control-label"></label>
+    <input type="number" asp-for="kkt_mota" class="form-control" />
+    <span asp-validation-for="kkt_mota" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+    </form>
+    </div>
+    </div>
+
+    <div>
+    <a asp-action="Index">Back to List</a>
+    </div> *@
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h3 class="titile-table">
+                    CẬP NHẬT KHỐI KIẾN THỨC
+                </h3>
             </div>
-            <div class="form-group">
-                <label asp-for="kkt_mota" class="control-label"></label>
-                <input type="number" asp-for="kkt_mota" class="form-control" />
-                <span asp-validation-for="kkt_mota" class="text-danger"></span>
+            <div class="body">
+                <form class="form-horizontal" asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="makkt" />
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="kkt_ten"></label> <span class="text-danger">*</span>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+
+                                <input required asp-for="kkt_ten" class="form-control"
+                                    placeholder="Tên khối kiến thức"></input>
+                                <span asp-validation-for="kkt_ten" class="text-danger"></span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="kkt_tuchon"></label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+
+                                <input required asp-for="kkt_tuchon" class="form-control"
+                                    placeholder="Khối kiến thức tự chọn"></input>
+                                <span asp-validation-for="kkt_tuchon" class="text-danger"></span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="kkt_mota"></label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+
+                                <input required asp-for="kkt_mota" class="form-control"
+                                    placeholder="Số tín chỉ khối kiến thức tự chọn"></input>
+                                <span asp-validation-for="kkt_mota" class="text-danger"></span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                            <a asp-action="Index" class="btn btn-default waves-effect">Trở lại</a> |
+                            <input type="submit" class="btn btn-primary waves-effect" value="Sửa"></input>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-

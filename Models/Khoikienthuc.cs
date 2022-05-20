@@ -16,6 +16,8 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Tên khối kiến thức")]
         public string kkt_ten { get; set; }
         [DisplayName("Khối kiến thức tự chọn")]
+        public string kkt_tuchon { get; set; }
+        [DisplayName("Số tín chỉ học phần tự chọn")]
         public string kkt_mota { get; set; }
         public virtual ICollection<DeCuongchiTiet> DeCuongchiTiets { get; set;}
     }   

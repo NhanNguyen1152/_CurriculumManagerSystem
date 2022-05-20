@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _CurriculumManagerSystem.Models;
 
 namespace _CurriculumManagerSystem.Migrations
 {
     [DbContext(typeof(acomptec_lvthainhanContext))]
-    partial class acomptec_lvthainhanContextModelSnapshot : ModelSnapshot
+    [Migration("20220520091438_Modify4")]
+    partial class Modify4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

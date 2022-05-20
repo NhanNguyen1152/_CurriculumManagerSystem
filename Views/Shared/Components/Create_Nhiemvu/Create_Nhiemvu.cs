@@ -22,7 +22,22 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Create_Nhiemvu
         }
 
         // [Route("DeCuongchiTiets/Create/{id:int}")]
-        public async Task<IViewComponentResult> InvokeAsync(int? id)
+        // public async Task<IViewComponentResult> InvokeAsync(int? id)
+        // { 
+        //     // if (id == null)
+        //     // {                     
+        //     //     return View();
+        //     // }
+
+        //     // var muctieu = await _context.Muctieus.FindAsync(id);
+        //     // if (muctieu == null)
+        //     // {
+        //     //     return View();
+        //     // }
+        //     return View();
+        // }
+
+        public IViewComponentResult Invoke(int? id)
         { 
             // if (id == null)
             // {                     

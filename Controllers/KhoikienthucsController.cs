@@ -53,7 +53,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("makkt,kkt_ten,kkt_mota")] Khoikienthuc khoikienthuc)
+        public async Task<IActionResult> Create([Bind("makkt,kkt_ten,kkt_mota,kkt_tuchon")] Khoikienthuc khoikienthuc)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("makkt,kkt_ten,kkt_mota")] Khoikienthuc khoikienthuc)
+        public async Task<IActionResult> Edit(int id, [Bind("makkt,kkt_ten,kkt_mota,kkt_tuchon")] Khoikienthuc khoikienthuc)
         {
             if (id != khoikienthuc.makkt)
             {

@@ -81,19 +81,18 @@ namespace _CurriculumManagerSystem.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> createListQD(int[] arrayDCQD, DeCuongQuyDinh deCuongQuyDinh)
+        public IActionResult createListQD(int[] arrayDCQD)
         {
-            
             if (ModelState.IsValid)
             {
                 foreach(var item in arrayDCQD)
                 {
-                    deCuongQuyDinh.mahp = 223;
-                    deCuongQuyDinh.maqd = item; 
-                    _context.Add(deCuongQuyDinh); 
+                    var DCQD = new DeCuongQuyDinh();
+                    DCQD.mahp = 223;
+                    DCQD.maqd = item; 
+                    _context.Add(DCQD); 
+                    _context.SaveChangesAsync();
                 } 
-                await _context.SaveChangesAsync();
-                
                 return RedirectToAction(nameof(Index));
             }
             return View();

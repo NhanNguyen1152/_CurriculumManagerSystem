@@ -2,7 +2,7 @@
 @using Microsoft.AspNetCore.Http;
 @using System.Data;
 <div class="body">
-    <form class="form-horizontal" asp-action="CreateDecuonghinhthuc">
+    <form class="form-horizontal" asp-action="CreateDecuonghinhthuc"><b>@ViewBag.ud</b>
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <input hidden required asp-for="mahp" value=@Context.Session.GetInt32("idDecuong")>
         <div class="row clearfix">

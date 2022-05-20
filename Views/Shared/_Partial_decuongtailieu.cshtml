@@ -11,9 +11,10 @@
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
-                                <select required class="form-control show-tick" asp-for="matl" asp-items="ViewBag.matl">
+                                <input asp-for="matl" value=@TempData["id_tl"]>
+                                @* <select required class="form-control show-tick" asp-for="matl" asp-items="ViewBag.matl">
                                     <option>Vui lòng chọn một </option>
-                                </select>
+                                </select> *@
                             </div>
                         </div>
                     </div>

@@ -38,14 +38,17 @@
                 <ul id="myTab" class="nav nav-tabs tab-nav-right" role="tablist">
                     <li role="presentation" class="active"><a role="tab" href="#decuongchitiet" data-toggle="tab">ĐỀ CƯƠNG CHI TIẾT</a></li>
                     <li role="presentation"><a role="tab" href="#muctieu" data-toggle="tab">MỤC TIÊU</a></li>
-                    <li role="presentation"><a role="tab" href="#decuongnhiemvu" data-toggle="tab">ĐỀ CƯƠNG NHIỆM VỤ</a></li>
-                    <li role="presentation"><a role="tab" href="#decuongquydinh" data-toggle="tab">ĐỀ CƯƠNG QUY ĐỊNH</a></li>
-                    <li role="presentation"><a role="tab" href="#decuonghinhthuc" data-toggle="tab">ĐỀ CƯƠNG HÌNH THỨC</a></li>
-                    <li role="presentation"><a role="tab" href="#decuongtailieu" data-toggle="tab">ĐỀ CƯƠNG TÀI LIỆU</a></li>
+                    <li role="presentation"><a role="tab" href="#decuongnhiemvu" data-toggle="tab">NHIỆM VỤ</a></li>
+                    <li role="presentation"><a role="tab" href="#decuongquydinh" data-toggle="tab">QUY ĐỊNH</a></li>
+                    <li role="presentation"><a role="tab" href="#decuonghinhthuc" data-toggle="tab">HÌNH THỨC</a></li>
                     <li role="presentation"><a role="tab" href="#chitietmonhoc" data-toggle="tab">CHI TIẾT MÔN HỌC</a></li>
+                    <li role="presentation"><a role="tab" href="#chitietchuong" data-toggle="tab">CHi TIẾT CHƯƠNG</a></li>
                     <li role="presentation"><a role="tab" href="#phutrach" data-toggle="tab">PHỤ TRÁCH</a></li>
                     <li role="presentation"><a role="tab" href="#thoigianhoc" data-toggle="tab">THỜI GIAN HỌC</a></li>
                     <li role="presentation"><a role="tab" href="#chuandauramonhoc" data-toggle="tab">CHUẨN ĐẦU RA MÔN HỌC</a></li>
+                    @* <li role="presentation"><a role="tab" href="#tailieu" data-toggle="tab">TÀI LIỆU</a></li> *@
+                    <li role="presentation"><a role="tab" href="#decuongtailieu" data-toggle="tab">TÀI LIỆU</a></li>
+                    
 
                 </ul>
 
@@ -228,17 +231,19 @@
                         }
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuongnhiemvu">
-                        @await Html.PartialAsync("_Partial_decuongnhiemvu")
+                       @await Component.InvokeAsync("Create_Nhiemvu")
+                       @await Component.InvokeAsync("Get_Nhiemvu")
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuongquydinh">
-                        @await Html.PartialAsync("_Partial_decuongquydinh")
+                        @await Component.InvokeAsync("Create_Quydinh")
+                        @await Component.InvokeAsync("Get_Quydinh")
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuonghinhthuc">
                         @await Html.PartialAsync("_Partial_decuonghinhthuc")
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="decuongtailieu">
+                    @* <div role="tabpanel" class="tab-pane fade" id="decuongtailieu">
                         @await Html.PartialAsync("_Partial_decuongtailieu")
-                    </div>
+                    </div> *@
                     <div role="tabpanel" class="tab-pane fade" id="chitietmonhoc">
                         @await Html.PartialAsync("_Partial_chitietmonhoc")
                     </div>
@@ -250,6 +255,18 @@
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="chuandauramonhoc">
                         @await Html.PartialAsync("_Partial_chuandauramonhoc")
+                    </div>
+                     <div role="tabpanel" class="tab-pane fade" id="tailieu">
+                        @await Html.PartialAsync("_Partial_tailieu")
+                    </div>
+                     <div role="tabpanel" class="tab-pane fade" id="chitietchuong">
+                        @await Html.PartialAsync("_Partial_chitietchuong")
+                    </div>
+                    
+                    <div role="tabpanel" class="tab-pane fade" id="decuongtailieu">
+                        @await Component.InvokeAsync("Create_Tailieu")
+                        @await Component.InvokeAsync("Create_DcTailieu")
+                        @await Component.InvokeAsync("Get_Tailieu")
                     </div>
                 </div>
             </div>

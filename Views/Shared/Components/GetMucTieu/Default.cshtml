@@ -1,17 +1,17 @@
 @model IEnumerable<_CurriculumManagerSystem.Models.Muctieu>
-
-<div class="body"> 
-    <div class="table-responsive">
-        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+@{
+    var i = 0 ;
+}
+    <div class="body table-responsive">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>
-                        @* @Html.DisplayNameFor(model => model.mahp) *@
-                        Đề cương chi tiết
+                        STT
                     </th>
                     <th>
                         @* @Html.DisplayNameFor(model => model.noidung) *@
-                        Nội dung
+                        Nội dung mục tiêu
                     </th>
                     <th>
                         @* @Html.DisplayNameFor(model => model.mtchinh) *@
@@ -27,10 +27,10 @@
             <tbody>
                 @foreach (var item in Model)
                 {
+                     i++;
                     <tr>
                         <td>
-                            @item.mahp
-                            @* @Html.DisplayFor(modelItem => item.DeCuongchiTiet.tenhp_tviet) *@
+                            @i
                         </td>
                         <td>
                             @item.noidung
@@ -79,4 +79,3 @@
             </tbody>
         </table>
     </div>
-</div>

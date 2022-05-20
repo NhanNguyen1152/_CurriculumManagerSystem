@@ -1,0 +1,67 @@
+@model _CurriculumManagerSystem.Models.Tailieu
+@using Microsoft.AspNetCore.Http;
+@using System.Data;
+<div class="body">
+    <form class="form-horizontal" asp-action="CreateTailieu">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                <label asp-for="tentailieu">Tên tài liệu <span class="text-danger">*</span></label>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                <div class="form-group">
+                    <div class="form-line">
+                        <input required asp-for="tentailieu" class="form-control" placeholder="Tên tài liệu"></input>
+                        <span asp-validation-for="tentailieu" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                <label asp-for="loaitl">Loại tài liệu <span class="text-danger">*</span></label>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                <div class="form-group">
+                    <div class="form-line">
+                        <input required asp-for="loaitl" class="form-control" placeholder="Loại tài liệu"></input>
+                        <span asp-validation-for="loaitl" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                <label asp-for="tacgia">Tác giả <span class="text-danger">*</span></label>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                <div class="form-group">
+                    <div class="form-line">
+                        <input required asp-for="tacgia" class="form-control" placeholder="Tác giả"></input>
+                        <span asp-validation-for="tacgia" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                <label asp-for="thongtinkhac">Thông tin khác <span class="text-danger">*</span></label>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                <div class="form-group">
+                    <div class="form-line">
+                        <input required asp-for="thongtinkhac" class="form-control"
+                            placeholder="Thông tin khác"></input>
+                        <span asp-validation-for="thongtinkhac" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                <a asp-action="Index" class="btn btn-default waves-effect">Trở lại</a> |
+                <button type="submit" class="btn btn-primary waves-effect">Tạo mới</button>
+            </div>
+        </div>
+    </form>
+</div>

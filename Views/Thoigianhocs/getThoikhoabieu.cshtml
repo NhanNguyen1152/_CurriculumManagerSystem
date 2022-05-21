@@ -1,0 +1,80 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.Thoigianhoc>
+
+@{
+    ViewData["Title"] = "Thời gian học";
+}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h3 class="titile-table">THỜI KHÓA NIỂU CỦA @if (ViewBag.kk != null)
+                    {
+                        <b>
+                            <h4>- @ViewBag.kk</h4>
+                        </b>
+                    }
+                </h3>
+            </div>
+            <div class="body">
+                @{
+                    int tongtc = 0;
+                    int tongcong = 0;
+                    @* int tong_tc = 0;
+                        int tong_sotiet_lt = 0;
+                        int tong_sotiet_th = 0; *@
+                }
+                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                    <thead>
+                        @foreach (var dulieu_hocky in ((List<Thoigianhoc>)TempData["listData"]).GroupBy(x => x.Hockys.tenhk))
+                        {
+                            tongcong = 0;
+                            <tr>
+                                <th style="background-color: #84c7c1; color: black;"><b>@dulieu_hocky.Key</b></th>
+                                <th style="background-color: #84c7c1; color: black;">TC</th>
+                                <th>Khoi kien thuc</th>
+                            </tr>
+                            <tbody>
+                                    @foreach (var dulieu_decuong in ((List<Thoigianhoc>)TempData["listData"]).Where(x => x.Hockys.tenhk == dulieu_hocky.Key))
+                                    {
+                                        tongtc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
+                                        tongcong = tongcong + tongtc;
+                                        <tr>
+                                            @if(@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon == null)
+                                            {
+                                                <td>
+                                                    @dulieu_decuong.DeCuongchiTiet.tenhp_tviet
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    @dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon
+                                                </td>
+                                                @* var dulieu_tgh = ((List<Thoigianhoc>)TempData["listData"]).Where(x => x.Hockys.tenhk == dulieu_hocky.Key).GroupBy(x => x.DeCuongchiTiet.Khoikienthuc.kkt_tuchon);
+                                                {
+                                                    <td>
+                                                        @dulieu_tgh.
+                                                    </td>
+                                                } *@
+                                            }
+                                            <td>
+                                                @tongtc
+                                            </td>
+                                            <td>
+                                                @dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon
+                                            </td>
+                                        </tr>
+                                    }
+                            </tbody>
+                            <tr>           
+                                <td style="background-color: #c63939; color: white;"><b>Tổng cộng</b></td>          
+                                <td style="background-color: #c63939; color: white;">@tongcong</td>
+                            </tr> 
+                        }
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -27,7 +27,7 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Get_Quydinh
        
         public async Task<IViewComponentResult> InvokeAsync(int? id)
         {   
-            var result = await _context.DeCuongQuyDinhs.Include(m => m.DeCuongchiTiet).Include(m=> m.Quydinh_Kiemtra).Where(m => m.DeCuongchiTiet.mahp == m.mahp).ToListAsync();
+            var result = await _context.DeCuongQuyDinhs.Include(m => m.DeCuongchiTiet).Include(m=> m.Quydinh_Kiemtra).Where(m => m.DeCuongchiTiet.mahp == id).ToListAsync();
             return View<List<DeCuongQuyDinh>>(result);
         }
     }

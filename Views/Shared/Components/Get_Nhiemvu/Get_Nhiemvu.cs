@@ -27,7 +27,7 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Get_Nhiemvu
        
         public async Task<IViewComponentResult> InvokeAsync(int? id)
         {   
-            var result = await _context.DeCuongNhiemvus.Include(m => m.DeCuongchiTiet).Include(m=> m.NhiemvuSV).Where(m => m.DeCuongchiTiet.mahp == m.mahp).ToListAsync();
+            var result = await _context.DeCuongNhiemvus.Include(m => m.DeCuongchiTiet).Include(m=> m.NhiemvuSV).Where(m => m.DeCuongchiTiet.mahp == id).ToListAsync();
             return View<List<DeCuongNhiemvu>>(result);
         }
     }

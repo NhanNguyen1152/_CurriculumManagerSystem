@@ -24,8 +24,7 @@
                 }
                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                     <thead>
-                        @foreach (var dulieu_hocky in ((List<Thoigianhoc>)TempData["listData"]).GroupBy(x =>
-                        x.Hockys.tenhk))
+                        @foreach (var dulieu_hocky in ((List<Thoigianhoc>)TempData["listData"]).GroupBy(x =>x.Hockys.tenhk))
                         {
                                 tongcong = 0;
                                 <tr>

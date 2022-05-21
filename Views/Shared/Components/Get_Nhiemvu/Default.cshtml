@@ -27,14 +27,11 @@
                         </td>
                         <td>
                             @item.NhiemvuSV.noidung
-                            @* @Html.DisplayFor(modelItem => item.DeCuongchiTiet.tenhp_tviet) *@
                         </td>
-                        
-                     
                             <td>
-                            <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Create" asp-route-id="@item.manv">mode_edit</a>
-                            <a class="material-icons" style="cursor: pointed;" data-toggle="modal"
-                            data-target="#exampleModalCenter">delete_forever</a>
+                            @* <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Create" asp-route-id="@item.manv">mode_edit</a> *@
+                            @* <button type="button" class="material-icons" data-toggle="modal" data-target="#exampleModalCenter">delete_forever</button> *@
+                            <a class="material-icons" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModalCenter">delete_forever</a>
                             <form>
                                 <div class="modal fade" id="exampleModalCenter">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -52,7 +49,7 @@
                                                 <button type="submit" class="btn btn-secondary"
                                                     data-dismiss="modal">Đóng</button>
                                                 @* <input type="submit" value="Xóa" class="btn btn-primary" /> *@
-                                                <button type="submit" class="btn btn-primary waves-effect" asp-controller="DeCuongchiTiets" asp-action="DeleteMucTieu" asp-route-id="@item.manv">Xóa</button>
+                                                <a type="submit" class="btn btn-primary waves-effect" asp-controller="DeCuongchiTiets" asp-action="DeleteNhiemvu" asp-route-id="@item.dcnv_id">Xóa</a>
                                             </div>
                                         </div>
                                     </div>

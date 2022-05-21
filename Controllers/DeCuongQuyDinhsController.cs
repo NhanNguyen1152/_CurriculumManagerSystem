@@ -81,22 +81,22 @@ namespace _CurriculumManagerSystem.Controllers
         }
 
         [HttpPost]
-        public IActionResult createListQD(int[] arrayDCQD)
-        {
-            if (ModelState.IsValid)
-            {
-                foreach(var item in arrayDCQD)
-                {
-                    var DCQD = new DeCuongQuyDinh();
-                    DCQD.mahp = 223;
-                    DCQD.maqd = item; 
-                    _context.Add(DCQD); 
-                    _context.SaveChangesAsync();
-                } 
-                return RedirectToAction(nameof(Index));
-            }
-            return View();
-        }
+        // public IActionResult createListQD(int[] arrayDCQD  )
+        // {
+        //     if (ModelState.IsValid)
+        //     {
+        //         foreach(var item in arrayDCQD)
+        //         {
+        //             var DCQD = new DeCuongQuyDinh();
+        //             DCQD.mahp = 223;
+        //             DCQD.maqd = item; 
+        //             _context.Add(DCQD); 
+        //             _context.SaveChangesAsync();
+        //         } 
+        //         return RedirectToAction(nameof(Index));
+        //     }
+        //     return View();
+        // }
 
         // GET: DeCuongQuyDinhs/Edit/5
         public async Task<IActionResult> Edit(int? id)

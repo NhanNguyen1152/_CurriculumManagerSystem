@@ -24,6 +24,8 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: DeCuongchiTiets
         public async Task<IActionResult> Index()
         {
+            HttpContext.Session.Remove("idDecuong");
+            HttpContext.Session.Remove("nameDecuong");
             var appDbContext = _context.DeCuongchiTiets.Include(d => d.Khoikienthuc).Include(d => d.DeCuongNhiemvus);
             return View(await appDbContext.ToListAsync());
         }
@@ -62,6 +64,7 @@ namespace _CurriculumManagerSystem.Controllers
             ViewData["mahk"] = new SelectList(_context.Hockys, "mahk", "tenhk");
             ViewData["matl"] = new SelectList(_context.Tailieus, "matl", "tentailieu");
              ViewData["mact"] = new SelectList(_context.Chitietmonhocs, "mact", "tenchuong");
+
             if(id > 0)
             {
                 HttpContext.Session.SetInt32("idMuctieu",id);
@@ -86,6 +89,7 @@ namespace _CurriculumManagerSystem.Controllers
                 currentTab = current;
                 HttpContext.Session.SetInt32("idDecuong", deCuongchiTiet.mahp);
                 HttpContext.Session.SetString("nameDecuong", deCuongchiTiet.tenhp_tviet);
+                TempData["id_dc"] = deCuongchiTiet.mahp;
                 return RedirectToAction("Create");
                 //return RedirectToAction("Index", new RouteValueDictionary( new { Controller = "Decuongchitiets", Action = "Create", id = deCuongchiTiet.mahp }));
             }
@@ -158,7 +162,6 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-            ViewData["makkt"] = new SelectList(_context.Khoikienthucs, "makkt", "kkt_ten");
             return View(deCuongchiTiet);
         }
 
@@ -176,20 +179,7 @@ namespace _CurriculumManagerSystem.Controllers
         private bool DeCuongchiTietExists(int id)
         {
             return _context.DeCuongchiTiets.Any(e => e.mahp == id);
-        }
-         //Create Edit muctieu
-
-        // public async Task<IActionResult> getMucTieu() 
-        // {
-        //     var appDbContext = _context.DeCuongchiTiets.Include(d => d.Khoikienthuc).Include(d => d.Muctieus).Include(d => d.Phutraches);
-        //     return View(await appDbContext.ToListAsync());
-        // }
-
-        // public IActionResult _Partial_muctieu()
-        // { 
-           
-        //     return PartialView("_Partial_muctieu");
-        // }                             
+        }                      
        public async Task<IActionResult> DeleteMucTieu(int id)
         {
             var muctieu = await _context.Muctieus.FindAsync(id);
@@ -218,24 +208,43 @@ namespace _CurriculumManagerSystem.Controllers
             return View(muctieu);
         }   
         //Decuongnhiemvu-create
-         public IActionResult _Partial_decuongnhiemvu()
-        {
-            
-            return PartialView("_Partial_decuongnhiemvu");
-        }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateDecuongnhiemvu([Bind("dcnv_id,mahp,manv")] DeCuongNhiemvu deCuongNhiemvu)
+        public async Task<IActionResult> createListNV(int[] arrayDCNV)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(deCuongNhiemvu);
-                await _context.SaveChangesAsync();
+                foreach(var item in arrayDCNV)
+                {
+                    
+                    var DCNV = new DeCuongNhiemvu();
+                    DCNV.mahp = (int)TempData["id_dc"];
+                    DCNV.manv = item; 
+                    _context.Add(DCNV); 
+                    await _context.SaveChangesAsync();
+                }
                 return RedirectToAction("Create");
             }
-            
-            return View(deCuongNhiemvu);
+            return View();
         }
+        public async Task<IActionResult> DeleteNhiemvu(int? id)
+        {
+             var deCuongNhiemvu = await _context.DeCuongNhiemvus.FindAsync(id);
+            _context.DeCuongNhiemvus.Remove(deCuongNhiemvu);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Create");
+        }
+        // public async Task<IActionResult> CreateDecuongnhiemvu([Bind("dcnv_id,mahp,manv")] DeCuongNhiemvu deCuongNhiemvu)
+        // {
+        //     if (ModelState.IsValid)
+        //     {
+        //         _context.Add(deCuongNhiemvu);
+        //         await _context.SaveChangesAsync();
+        //         return RedirectToAction("Create");
+        //     }
+            
+        //     return View(deCuongNhiemvu);
+        // }
         //Decuongquydinh-create
          public IActionResult _Partial_decuongquydinh()
         {
@@ -244,16 +253,33 @@ namespace _CurriculumManagerSystem.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateDecuongquydinh([Bind("dcqd_id,mahp,maqd")] DeCuongQuyDinh deCuongQuyDinh)
+        // public async Task<IActionResult> CreateDecuongquydinh([Bind("dcqd_id,mahp,maqd")] DeCuongQuyDinh deCuongQuyDinh)
+        // {
+        //     if (ModelState.IsValid)
+        //     {
+        //         _context.Add(deCuongQuyDinh);
+        //         await _context.SaveChangesAsync();
+        //         return RedirectToAction("Create");
+        //     }
+            
+        //     return View(deCuongQuyDinh);
+        // }
+        public async Task<IActionResult> createListQD(int[] arrayDCQD )
         {
             if (ModelState.IsValid)
             {
-                _context.Add(deCuongQuyDinh);
-                await _context.SaveChangesAsync();
+                foreach(var item in arrayDCQD)
+                {
+                    
+                    var DCQD = new DeCuongQuyDinh();
+                    DCQD.mahp = (int)TempData["id_dc"];
+                    DCQD.maqd = item; 
+                    _context.Add(DCQD); 
+                    await _context.SaveChangesAsync();
+                }
                 return RedirectToAction("Create");
             }
-            
-            return View(deCuongQuyDinh);
+            return View();
         }
         //CreateDecuonghinhthuc
          public IActionResult _Partial_decuonghinhthuc()

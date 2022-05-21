@@ -20,35 +20,15 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Create_Nhiemvu
         {
             _context = context;
         }
-
-        // [Route("DeCuongchiTiets/Create/{id:int}")]
-        // public async Task<IViewComponentResult> InvokeAsync(int? id)
-        // { 
-        //     // if (id == null)
-        //     // {                     
-        //     //     return View();
-        //     // }
-
-        //     // var muctieu = await _context.Muctieus.FindAsync(id);
-        //     // if (muctieu == null)
-        //     // {
-        //     //     return View();
-        //     // }
-        //     return View();
-        // }
-
         public IViewComponentResult Invoke(int? id)
         { 
-            // if (id == null)
-            // {                     
-            //     return View();
-            // }
-
-            // var muctieu = await _context.Muctieus.FindAsync(id);
-            // if (muctieu == null)
-            // {
-            //     return View();
-            // }
+             var listNhiemvu = (from b in _context.NhiemvuSVs
+                          select new NhiemvuSV
+                          {
+                              manv = b.manv,
+                              noidung = b.noidung
+                          }).ToList();
+            ViewData.Model = listNhiemvu;
             return View();
         }
     }

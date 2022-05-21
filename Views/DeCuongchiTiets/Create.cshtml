@@ -250,11 +250,27 @@
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuongnhiemvu">
                        @await Component.InvokeAsync("Create_Nhiemvu")
-                       @await Component.InvokeAsync("Get_Nhiemvu")
+                       @if (@Context.Session.GetInt32("idDecuong") == null)
+                        {
+                            @await Component.InvokeAsync("Get_Nhiemvu")
+                        }
+                        else
+                        {
+                           @await Component.InvokeAsync("Get_Nhiemvu", new {id = @Context.Session.GetInt32("idDecuong")})
+                        }
+                       
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuongquydinh">
-                        @await Component.InvokeAsync("Create_Quydinh")
-                        @await Component.InvokeAsync("Get_Quydinh")
+                        @await Component.InvokeAsync("Create_Quydinh_checkbox")
+                       
+                        @if (@Context.Session.GetInt32("idDecuong") == null)
+                        {
+                             @await Component.InvokeAsync("Get_Quydinh")
+                        }
+                        else
+                        {
+                             @await Component.InvokeAsync("Get_Quydinh", new {id = @Context.Session.GetInt32("idDecuong")})
+                        }
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuonghinhthuc">
                         @await Html.PartialAsync("_Partial_decuonghinhthuc")
@@ -284,7 +300,14 @@
                     <div role="tabpanel" class="tab-pane fade" id="decuongtailieu">
                         @await Component.InvokeAsync("Create_Tailieu")
                         @await Component.InvokeAsync("Create_DcTailieu")
-                        @await Component.InvokeAsync("Get_Tailieu")
+                        @if (@Context.Session.GetInt32("idDecuong") == null)
+                        {
+                            @await Component.InvokeAsync("Get_Tailieu")
+                        }
+                        else
+                        {
+                           @await Component.InvokeAsync("Get_Tailieu", new {id = @Context.Session.GetInt32("idDecuong")})
+                        }
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj",
+  "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -13694,6 +13694,38 @@
         }
       },
       {
+        "HashCode": 2060503262,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__Create_Quydinh_checkboxViewComponentTagHelper",
+        "AssemblyName": "_CurriculumManagerSystem",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:create_quydinh_checkbox",
+            "Attributes": [
+              {
+                "Name": "id"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "id",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "id"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__Create_Quydinh_checkboxViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "Create_Quydinh_checkbox"
+        }
+      },
+      {
         "HashCode": 1018011734,
         "Kind": "MVC.ViewComponent",
         "Name": "__Generated__EditMucTieuViewComponentTagHelper",
@@ -15907,838 +15939,848 @@
   "RootNamespace": "_CurriculumManagerSystem",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\Index.cshtml",
-      "TargetPath": "Views\\DeCuongchiTiets\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Tailieus\\Details.cshtml",
-      "TargetPath": "Views\\Tailieus\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Chitietmonhocs\\Index.cshtml",
-      "TargetPath": "Views\\Chitietmonhocs\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoas\\Create.cshtml",
-      "TargetPath": "Views\\Khoas\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_Giangdays\\Create.cshtml",
-      "TargetPath": "Views\\Phuongphap_Giangdays\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_decuongtailieu.cshtml",
-      "TargetPath": "Views\\Shared\\_Partial_decuongtailieu.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Tailieus\\Create.cshtml",
-      "TargetPath": "Views\\Tailieus\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Muctieus\\Details.cshtml",
-      "TargetPath": "Views\\Muctieus\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Quydinh_Kiemtras\\Delete.cshtml",
-      "TargetPath": "Views\\Quydinh_Kiemtras\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphaphocs\\Delete.cshtml",
-      "TargetPath": "Views\\CLOPhuongphaphocs\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\Create.cshtml",
-      "TargetPath": "Views\\DeCuongchiTiets\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Chuandaura_monhocs\\Edit.cshtml",
-      "TargetPath": "Views\\Chuandaura_monhocs\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Phutrachs\\Details.cshtml",
-      "TargetPath": "Views\\Phutrachs\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Bomons\\Edit.cshtml",
-      "TargetPath": "Views\\Bomons\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Tailieus\\Delete.cshtml",
-      "TargetPath": "Views\\Tailieus\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Chitiet_Chuongs\\Index.cshtml",
-      "TargetPath": "Views\\Chitiet_Chuongs\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_muctieu.cshtml",
-      "TargetPath": "Views\\Shared\\_Partial_muctieu.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_chuandauramonhoc.cshtml",
-      "TargetPath": "Views\\Shared\\_Partial_chuandauramonhoc.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\Details.cshtml",
-      "TargetPath": "Views\\DeCuongchiTiets\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Thoigianhocs\\Create.cshtml",
-      "TargetPath": "Views\\Thoigianhocs\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_chitietchuong.cshtml",
-      "TargetPath": "Views\\Shared\\_Partial_chitietchuong.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoahocs\\Create.cshtml",
-      "TargetPath": "Views\\Khoahocs\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_hocs\\Create.cshtml",
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_hocs\\Create.cshtml",
       "TargetPath": "Views\\Phuongphap_hocs\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLPOs\\Index.cshtml",
-      "TargetPath": "Views\\CLPOs\\Index.cshtml",
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_muctieu.cshtml",
+      "TargetPath": "Views\\Shared\\_Partial_muctieu.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Create_DcTailieu\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\Create_DcTailieu\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Bomons\\Delete.cshtml",
-      "TargetPath": "Views\\Bomons\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\getHuongdandecuong.cshtml",
-      "TargetPath": "Views\\DeCuongchiTiets\\getHuongdandecuong.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Hinhthuc_Danhgias\\Create.cshtml",
-      "TargetPath": "Views\\Hinhthuc_Danhgias\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_decuongquydinh.cshtml",
-      "TargetPath": "Views\\Shared\\_Partial_decuongquydinh.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoahocs\\Delete.cshtml",
-      "TargetPath": "Views\\Khoahocs\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DecuongTailieus\\Delete.cshtml",
-      "TargetPath": "Views\\DecuongTailieus\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLPOs\\Delete.cshtml",
-      "TargetPath": "Views\\CLPOs\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Thoigianhocs\\Index.cshtml",
-      "TargetPath": "Views\\Thoigianhocs\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoas\\Delete.cshtml",
-      "TargetPath": "Views\\Khoas\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphapdays\\Create.cshtml",
-      "TargetPath": "Views\\CLOPhuongphapdays\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphapdays\\Index.cshtml",
-      "TargetPath": "Views\\CLOPhuongphapdays\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Create_Quydinh\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\Create_Quydinh\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongHinhthucs\\Delete.cshtml",
-      "TargetPath": "Views\\DeCuongHinhthucs\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Chitietmonhocs\\Edit.cshtml",
-      "TargetPath": "Views\\Chitietmonhocs\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Chitietmonhocs\\Delete.cshtml",
-      "TargetPath": "Views\\Chitietmonhocs\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Get_Quydinh\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\Get_Quydinh\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongQuyDinhs\\Index.cshtml",
-      "TargetPath": "Views\\DeCuongQuyDinhs\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Thoigianhocs\\Delete.cshtml",
-      "TargetPath": "Views\\Thoigianhocs\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_Giangdays\\Delete.cshtml",
-      "TargetPath": "Views\\Phuongphap_Giangdays\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Create_Tailieu\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\Create_Tailieu\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Chitiet_Chuongs\\Edit.cshtml",
-      "TargetPath": "Views\\Chitiet_Chuongs\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\NhiemvuSVs\\Index.cshtml",
-      "TargetPath": "Views\\NhiemvuSVs\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_hocs\\Index.cshtml",
-      "TargetPath": "Views\\Phuongphap_hocs\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Quydinh_Kiemtras\\Edit.cshtml",
-      "TargetPath": "Views\\Quydinh_Kiemtras\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Chitiet_Chuongs\\Details.cshtml",
-      "TargetPath": "Views\\Chitiet_Chuongs\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongNhiemvus\\Details.cshtml",
-      "TargetPath": "Views\\DeCuongNhiemvus\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\FilterHockys\\Index.cshtml",
-      "TargetPath": "Views\\FilterHockys\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Chitiet_Chuongs\\Delete.cshtml",
-      "TargetPath": "Views\\Chitiet_Chuongs\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Get_Nhiemvu\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\Get_Nhiemvu\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_phutrach.cshtml",
-      "TargetPath": "Views\\Shared\\_Partial_phutrach.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongNhiemvus\\Edit.cshtml",
-      "TargetPath": "Views\\DeCuongNhiemvus\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Chuandaura_monhocs\\Delete.cshtml",
-      "TargetPath": "Views\\Chuandaura_monhocs\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DecuongTailieus\\Index.cshtml",
-      "TargetPath": "Views\\DecuongTailieus\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Bomons\\Create.cshtml",
-      "TargetPath": "Views\\Bomons\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Muctieus\\Index.cshtml",
-      "TargetPath": "Views\\Muctieus\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Hinhthuc_Danhgias\\Details.cshtml",
-      "TargetPath": "Views\\Hinhthuc_Danhgias\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\getDecuongchitiet.cshtml",
-      "TargetPath": "Views\\DeCuongchiTiets\\getDecuongchitiet.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DecuongTailieus\\Details.cshtml",
-      "TargetPath": "Views\\DecuongTailieus\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphapdays\\Delete.cshtml",
-      "TargetPath": "Views\\CLOPhuongphapdays\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\NhiemvuSVs\\Details.cshtml",
-      "TargetPath": "Views\\NhiemvuSVs\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Phutrachs\\Edit.cshtml",
-      "TargetPath": "Views\\Phutrachs\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_hocs\\Edit.cshtml",
-      "TargetPath": "Views\\Phuongphap_hocs\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_decuonghinhthuc.cshtml",
-      "TargetPath": "Views\\Shared\\_Partial_decuonghinhthuc.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLPOs\\Details.cshtml",
-      "TargetPath": "Views\\CLPOs\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Hinhthuc_Danhgias\\Edit.cshtml",
-      "TargetPath": "Views\\Hinhthuc_Danhgias\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_thoigianhoc.cshtml",
-      "TargetPath": "Views\\Shared\\_Partial_thoigianhoc.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Bomons\\Index.cshtml",
-      "TargetPath": "Views\\Bomons\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoas\\Details.cshtml",
-      "TargetPath": "Views\\Khoas\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Chitietmonhocs\\Details.cshtml",
-      "TargetPath": "Views\\Chitietmonhocs\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Hockys\\Delete.cshtml",
-      "TargetPath": "Views\\Hockys\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongNhiemvus\\Delete.cshtml",
-      "TargetPath": "Views\\DeCuongNhiemvus\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Thoigianhocs\\getThoikhoabieu.cshtml",
-      "TargetPath": "Views\\Thoigianhocs\\getThoikhoabieu.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongNhiemvus\\Index.cshtml",
-      "TargetPath": "Views\\DeCuongNhiemvus\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphaphocs\\Create.cshtml",
-      "TargetPath": "Views\\CLOPhuongphaphocs\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoas\\Index.cshtml",
-      "TargetPath": "Views\\Khoas\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\GiangViens\\Edit.cshtml",
-      "TargetPath": "Views\\GiangViens\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_Giangdays\\Index.cshtml",
-      "TargetPath": "Views\\Phuongphap_Giangdays\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphaphocs\\Details.cshtml",
-      "TargetPath": "Views\\CLOPhuongphaphocs\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoikienthucs\\Delete.cshtml",
-      "TargetPath": "Views\\Khoikienthucs\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\Edit.cshtml",
-      "TargetPath": "Views\\DeCuongchiTiets\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongHinhthucs\\Create.cshtml",
-      "TargetPath": "Views\\DeCuongHinhthucs\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DecuongTailieus\\Edit.cshtml",
-      "TargetPath": "Views\\DecuongTailieus\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Chuandaura_monhocs\\Index.cshtml",
-      "TargetPath": "Views\\Chuandaura_monhocs\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongNhiemvus\\Create.cshtml",
-      "TargetPath": "Views\\DeCuongNhiemvus\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Quydinh_Kiemtras\\Create.cshtml",
-      "TargetPath": "Views\\Quydinh_Kiemtras\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Phutrachs\\Create.cshtml",
-      "TargetPath": "Views\\Phutrachs\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_decuongnhiemvu.cshtml",
-      "TargetPath": "Views\\Shared\\_Partial_decuongnhiemvu.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoahocs\\Edit.cshtml",
-      "TargetPath": "Views\\Khoahocs\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\EditMucTieu\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\EditMucTieu\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\GiangViens\\Details.cshtml",
-      "TargetPath": "Views\\GiangViens\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DecuongTailieus\\Create.cshtml",
-      "TargetPath": "Views\\DecuongTailieus\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\PLOs\\Edit.cshtml",
-      "TargetPath": "Views\\PLOs\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_hocs\\Details.cshtml",
-      "TargetPath": "Views\\Phuongphap_hocs\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Create_Nhiemvu\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\Create_Nhiemvu\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Phutrachs\\Index.cshtml",
-      "TargetPath": "Views\\Phutrachs\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongQuyDinhs\\Delete.cshtml",
-      "TargetPath": "Views\\DeCuongQuyDinhs\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_tailieu.cshtml",
-      "TargetPath": "Views\\Shared\\_Partial_tailieu.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoikienthucs\\Details.cshtml",
-      "TargetPath": "Views\\Khoikienthucs\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Get_Tailieu\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\Get_Tailieu\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Bomons\\Details.cshtml",
-      "TargetPath": "Views\\Bomons\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoikienthucs\\Create.cshtml",
-      "TargetPath": "Views\\Khoikienthucs\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoikienthucs\\Index.cshtml",
-      "TargetPath": "Views\\Khoikienthucs\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\Delete.cshtml",
-      "TargetPath": "Views\\DeCuongchiTiets\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_hocs\\Delete.cshtml",
-      "TargetPath": "Views\\Phuongphap_hocs\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Thoigianhocs\\Edit.cshtml",
-      "TargetPath": "Views\\Thoigianhocs\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongQuyDinhs\\Details.cshtml",
-      "TargetPath": "Views\\DeCuongQuyDinhs\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongQuyDinhs\\Create.cshtml",
-      "TargetPath": "Views\\DeCuongQuyDinhs\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Quydinh_Kiemtras\\Index.cshtml",
-      "TargetPath": "Views\\Quydinh_Kiemtras\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoahocs\\Details.cshtml",
-      "TargetPath": "Views\\Khoahocs\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\GiangViens\\Index.cshtml",
-      "TargetPath": "Views\\GiangViens\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\PLOs\\Create.cshtml",
-      "TargetPath": "Views\\PLOs\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_Giangdays\\Edit.cshtml",
-      "TargetPath": "Views\\Phuongphap_Giangdays\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Chuandaura_monhocs\\Details.cshtml",
-      "TargetPath": "Views\\Chuandaura_monhocs\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\PLOs\\Details.cshtml",
-      "TargetPath": "Views\\PLOs\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Muctieus\\Edit.cshtml",
-      "TargetPath": "Views\\Muctieus\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Thoigianhocs\\Details.cshtml",
-      "TargetPath": "Views\\Thoigianhocs\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Chitiet_Chuongs\\Create.cshtml",
-      "TargetPath": "Views\\Chitiet_Chuongs\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\GiangViens\\Delete.cshtml",
-      "TargetPath": "Views\\GiangViens\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLPOs\\Edit.cshtml",
-      "TargetPath": "Views\\CLPOs\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Chitietmonhocs\\Create.cshtml",
-      "TargetPath": "Views\\Chitietmonhocs\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphapdays\\Edit.cshtml",
-      "TargetPath": "Views\\CLOPhuongphapdays\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\NhiemvuSVs\\Create.cshtml",
-      "TargetPath": "Views\\NhiemvuSVs\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongHinhthucs\\Details.cshtml",
-      "TargetPath": "Views\\DeCuongHinhthucs\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\PLOs\\Index.cshtml",
-      "TargetPath": "Views\\PLOs\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Hockys\\Index.cshtml",
-      "TargetPath": "Views\\Hockys\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Muctieus\\Delete.cshtml",
-      "TargetPath": "Views\\Muctieus\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Quydinh_Kiemtras\\Details.cshtml",
-      "TargetPath": "Views\\Quydinh_Kiemtras\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Phutrachs\\Delete.cshtml",
-      "TargetPath": "Views\\Phutrachs\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphaphocs\\Edit.cshtml",
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphaphocs\\Edit.cshtml",
       "TargetPath": "Views\\CLOPhuongphaphocs\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\GetMucTieu\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\GetMucTieu\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_Giangdays\\Details.cshtml",
-      "TargetPath": "Views\\Phuongphap_Giangdays\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongHinhthucs\\Edit.cshtml",
-      "TargetPath": "Views\\DeCuongHinhthucs\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongHinhthucs\\Index.cshtml",
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongHinhthucs\\Index.cshtml",
       "TargetPath": "Views\\DeCuongHinhthucs\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoikienthucs\\Edit.cshtml",
-      "TargetPath": "Views\\Khoikienthucs\\Edit.cshtml",
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Tailieus\\Index.cshtml",
-      "TargetPath": "Views\\Tailieus\\Index.cshtml",
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongNhiemvus\\Details.cshtml",
+      "TargetPath": "Views\\DeCuongNhiemvus\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Muctieus\\Create.cshtml",
-      "TargetPath": "Views\\Muctieus\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphapdays\\Details.cshtml",
-      "TargetPath": "Views\\CLOPhuongphapdays\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\PLOs\\Delete.cshtml",
-      "TargetPath": "Views\\PLOs\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Hockys\\Edit.cshtml",
-      "TargetPath": "Views\\Hockys\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoas\\Edit.cshtml",
-      "TargetPath": "Views\\Khoas\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLPOs\\Create.cshtml",
-      "TargetPath": "Views\\CLPOs\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Chuandaura_monhocs\\Create.cshtml",
-      "TargetPath": "Views\\Chuandaura_monhocs\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Khoahocs\\Index.cshtml",
-      "TargetPath": "Views\\Khoahocs\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Hinhthuc_Danhgias\\Index.cshtml",
-      "TargetPath": "Views\\Hinhthuc_Danhgias\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_chitietmonhoc.cshtml",
-      "TargetPath": "Views\\Shared\\_Partial_chitietmonhoc.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphaphocs\\Index.cshtml",
-      "TargetPath": "Views\\CLOPhuongphaphocs\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\NhiemvuSVs\\Edit.cshtml",
-      "TargetPath": "Views\\NhiemvuSVs\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Tailieus\\Edit.cshtml",
-      "TargetPath": "Views\\Tailieus\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Hockys\\Details.cshtml",
-      "TargetPath": "Views\\Hockys\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Hockys\\Create.cshtml",
-      "TargetPath": "Views\\Hockys\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Hinhthuc_Danhgias\\Delete.cshtml",
-      "TargetPath": "Views\\Hinhthuc_Danhgias\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\ExtractPDFs\\Extract.cshtml",
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\ExtractPDFs\\Extract.cshtml",
       "TargetPath": "Views\\ExtractPDFs\\Extract.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\GiangViens\\Create.cshtml",
-      "TargetPath": "Views\\GiangViens\\Create.cshtml",
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Muctieus\\Index.cshtml",
+      "TargetPath": "Views\\Muctieus\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongQuyDinhs\\Edit.cshtml",
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Hinhthuc_Danhgias\\Create.cshtml",
+      "TargetPath": "Views\\Hinhthuc_Danhgias\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\GiangViens\\Edit.cshtml",
+      "TargetPath": "Views\\GiangViens\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\Details.cshtml",
+      "TargetPath": "Views\\DeCuongchiTiets\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Chitiet_Chuongs\\Delete.cshtml",
+      "TargetPath": "Views\\Chitiet_Chuongs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Phutrachs\\Index.cshtml",
+      "TargetPath": "Views\\Phutrachs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_tailieu.cshtml",
+      "TargetPath": "Views\\Shared\\_Partial_tailieu.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Bomons\\Create.cshtml",
+      "TargetPath": "Views\\Bomons\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Tailieus\\Index.cshtml",
+      "TargetPath": "Views\\Tailieus\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongQuyDinhs\\Index.cshtml",
+      "TargetPath": "Views\\DeCuongQuyDinhs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Quydinh_Kiemtras\\Delete.cshtml",
+      "TargetPath": "Views\\Quydinh_Kiemtras\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Quydinh_Kiemtras\\Details.cshtml",
+      "TargetPath": "Views\\Quydinh_Kiemtras\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphaphocs\\Delete.cshtml",
+      "TargetPath": "Views\\CLOPhuongphaphocs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Khoikienthucs\\Index.cshtml",
+      "TargetPath": "Views\\Khoikienthucs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Tailieus\\Create.cshtml",
+      "TargetPath": "Views\\Tailieus\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\NhiemvuSVs\\Edit.cshtml",
+      "TargetPath": "Views\\NhiemvuSVs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Khoas\\Details.cshtml",
+      "TargetPath": "Views\\Khoas\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Hockys\\Edit.cshtml",
+      "TargetPath": "Views\\Hockys\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongNhiemvus\\Create.cshtml",
+      "TargetPath": "Views\\DeCuongNhiemvus\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\Index.cshtml",
+      "TargetPath": "Views\\DeCuongchiTiets\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Chuandaura_monhocs\\Index.cshtml",
+      "TargetPath": "Views\\Chuandaura_monhocs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Chitietmonhocs\\Delete.cshtml",
+      "TargetPath": "Views\\Chitietmonhocs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Quydinh_Kiemtras\\Index.cshtml",
+      "TargetPath": "Views\\Quydinh_Kiemtras\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Chuandaura_monhocs\\Delete.cshtml",
+      "TargetPath": "Views\\Chuandaura_monhocs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Create_Quydinh_checkbox\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Create_Quydinh_checkbox\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphapdays\\Details.cshtml",
+      "TargetPath": "Views\\CLOPhuongphapdays\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\GetMucTieu\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\GetMucTieu\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_chuandauramonhoc.cshtml",
+      "TargetPath": "Views\\Shared\\_Partial_chuandauramonhoc.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\CLPOs\\Index.cshtml",
+      "TargetPath": "Views\\CLPOs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Create_DcTailieu\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Create_DcTailieu\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_decuongnhiemvu.cshtml",
+      "TargetPath": "Views\\Shared\\_Partial_decuongnhiemvu.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Chitietmonhocs\\Edit.cshtml",
+      "TargetPath": "Views\\Chitietmonhocs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\Create.cshtml",
+      "TargetPath": "Views\\DeCuongchiTiets\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Chitietmonhocs\\Create.cshtml",
+      "TargetPath": "Views\\Chitietmonhocs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\getDecuongchitiet.cshtml",
+      "TargetPath": "Views\\DeCuongchiTiets\\getDecuongchitiet.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\PLOs\\Edit.cshtml",
+      "TargetPath": "Views\\PLOs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Muctieus\\Create.cshtml",
+      "TargetPath": "Views\\Muctieus\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Khoahocs\\Create.cshtml",
+      "TargetPath": "Views\\Khoahocs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Bomons\\Details.cshtml",
+      "TargetPath": "Views\\Bomons\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphapdays\\Index.cshtml",
+      "TargetPath": "Views\\CLOPhuongphapdays\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongNhiemvus\\Index.cshtml",
+      "TargetPath": "Views\\DeCuongNhiemvus\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\GiangViens\\Delete.cshtml",
+      "TargetPath": "Views\\GiangViens\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Quydinh_Kiemtras\\Create.cshtml",
+      "TargetPath": "Views\\Quydinh_Kiemtras\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\CLPOs\\Delete.cshtml",
+      "TargetPath": "Views\\CLPOs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Thoigianhocs\\Index.cshtml",
+      "TargetPath": "Views\\Thoigianhocs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Bomons\\Delete.cshtml",
+      "TargetPath": "Views\\Bomons\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\CLPOs\\Edit.cshtml",
+      "TargetPath": "Views\\CLPOs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Thoigianhocs\\Create.cshtml",
+      "TargetPath": "Views\\Thoigianhocs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Quydinh_Kiemtras\\Edit.cshtml",
+      "TargetPath": "Views\\Quydinh_Kiemtras\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Phutrachs\\Edit.cshtml",
+      "TargetPath": "Views\\Phutrachs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Tailieus\\Edit.cshtml",
+      "TargetPath": "Views\\Tailieus\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DecuongTailieus\\Delete.cshtml",
+      "TargetPath": "Views\\DecuongTailieus\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\PLOs\\Delete.cshtml",
+      "TargetPath": "Views\\PLOs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Chuandaura_monhocs\\Create.cshtml",
+      "TargetPath": "Views\\Chuandaura_monhocs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Hinhthuc_Danhgias\\Index.cshtml",
+      "TargetPath": "Views\\Hinhthuc_Danhgias\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_decuongtailieu.cshtml",
+      "TargetPath": "Views\\Shared\\_Partial_decuongtailieu.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\getHuongdandecuong.cshtml",
+      "TargetPath": "Views\\DeCuongchiTiets\\getHuongdandecuong.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Hockys\\Index.cshtml",
+      "TargetPath": "Views\\Hockys\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_phutrach.cshtml",
+      "TargetPath": "Views\\Shared\\_Partial_phutrach.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Khoas\\Edit.cshtml",
+      "TargetPath": "Views\\Khoas\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Hinhthuc_Danhgias\\Edit.cshtml",
+      "TargetPath": "Views\\Hinhthuc_Danhgias\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Chitiet_Chuongs\\Create.cshtml",
+      "TargetPath": "Views\\Chitiet_Chuongs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongQuyDinhs\\Delete.cshtml",
+      "TargetPath": "Views\\DeCuongQuyDinhs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Khoikienthucs\\Edit.cshtml",
+      "TargetPath": "Views\\Khoikienthucs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Create_Quydinh\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Create_Quydinh\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongHinhthucs\\Details.cshtml",
+      "TargetPath": "Views\\DeCuongHinhthucs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DecuongTailieus\\Index.cshtml",
+      "TargetPath": "Views\\DecuongTailieus\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\PLOs\\Create.cshtml",
+      "TargetPath": "Views\\PLOs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Khoikienthucs\\Details.cshtml",
+      "TargetPath": "Views\\Khoikienthucs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongQuyDinhs\\Create copy.cshtml",
+      "TargetPath": "Views\\DeCuongQuyDinhs\\Create copy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Khoahocs\\Details.cshtml",
+      "TargetPath": "Views\\Khoahocs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\NhiemvuSVs\\Delete.cshtml",
+      "TargetPath": "Views\\NhiemvuSVs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongNhiemvus\\Edit.cshtml",
+      "TargetPath": "Views\\DeCuongNhiemvus\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\EditMucTieu\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\EditMucTieu\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DecuongTailieus\\Edit.cshtml",
+      "TargetPath": "Views\\DecuongTailieus\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_hocs\\Edit.cshtml",
+      "TargetPath": "Views\\Phuongphap_hocs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Hockys\\Delete.cshtml",
+      "TargetPath": "Views\\Hockys\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\GiangViens\\Index.cshtml",
+      "TargetPath": "Views\\GiangViens\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DecuongTailieus\\Create.cshtml",
+      "TargetPath": "Views\\DecuongTailieus\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Khoas\\Index.cshtml",
+      "TargetPath": "Views\\Khoas\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\NhiemvuSVs\\Create.cshtml",
+      "TargetPath": "Views\\NhiemvuSVs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\GiangViens\\Details.cshtml",
+      "TargetPath": "Views\\GiangViens\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_hocs\\Delete.cshtml",
+      "TargetPath": "Views\\Phuongphap_hocs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\NhiemvuSVs\\Details.cshtml",
+      "TargetPath": "Views\\NhiemvuSVs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongHinhthucs\\Create.cshtml",
+      "TargetPath": "Views\\DeCuongHinhthucs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Muctieus\\Delete.cshtml",
+      "TargetPath": "Views\\Muctieus\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphapdays\\Create.cshtml",
+      "TargetPath": "Views\\CLOPhuongphapdays\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Bomons\\Index.cshtml",
+      "TargetPath": "Views\\Bomons\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Khoahocs\\Edit.cshtml",
+      "TargetPath": "Views\\Khoahocs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\FilterHockys\\Index.cshtml",
+      "TargetPath": "Views\\FilterHockys\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Phutrachs\\Details.cshtml",
+      "TargetPath": "Views\\Phutrachs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_decuongquydinh.cshtml",
+      "TargetPath": "Views\\Shared\\_Partial_decuongquydinh.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphaphocs\\Index.cshtml",
+      "TargetPath": "Views\\CLOPhuongphaphocs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongHinhthucs\\Delete.cshtml",
+      "TargetPath": "Views\\DeCuongHinhthucs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Hinhthuc_Danhgias\\Delete.cshtml",
+      "TargetPath": "Views\\Hinhthuc_Danhgias\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Phutrachs\\Create.cshtml",
+      "TargetPath": "Views\\Phutrachs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_Giangdays\\Details.cshtml",
+      "TargetPath": "Views\\Phuongphap_Giangdays\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Khoahocs\\Index.cshtml",
+      "TargetPath": "Views\\Khoahocs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Chuandaura_monhocs\\Edit.cshtml",
+      "TargetPath": "Views\\Chuandaura_monhocs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_Giangdays\\Delete.cshtml",
+      "TargetPath": "Views\\Phuongphap_Giangdays\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Thoigianhocs\\Edit.cshtml",
+      "TargetPath": "Views\\Thoigianhocs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongQuyDinhs\\Edit.cshtml",
       "TargetPath": "Views\\DeCuongQuyDinhs\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\NhiemvuSVs\\Delete.cshtml",
-      "TargetPath": "Views\\NhiemvuSVs\\Delete.cshtml",
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Get_Quydinh\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Get_Quydinh\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Thoigianhocs\\getThoikhoabieu.cshtml",
+      "TargetPath": "Views\\Thoigianhocs\\getThoikhoabieu.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Hockys\\Create.cshtml",
+      "TargetPath": "Views\\Hockys\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Khoikienthucs\\Delete.cshtml",
+      "TargetPath": "Views\\Khoikienthucs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Chuandaura_monhocs\\Details.cshtml",
+      "TargetPath": "Views\\Chuandaura_monhocs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Create_Nhiemvu\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Create_Nhiemvu\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\PLOs\\Details.cshtml",
+      "TargetPath": "Views\\PLOs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Tailieus\\Delete.cshtml",
+      "TargetPath": "Views\\Tailieus\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_decuonghinhthuc.cshtml",
+      "TargetPath": "Views\\Shared\\_Partial_decuonghinhthuc.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongQuyDinhs\\Create.cshtml",
+      "TargetPath": "Views\\DeCuongQuyDinhs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Create_Tailieu\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Create_Tailieu\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_chitietmonhoc.cshtml",
+      "TargetPath": "Views\\Shared\\_Partial_chitietmonhoc.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Get_Nhiemvu\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Get_Nhiemvu\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Hockys\\Details.cshtml",
+      "TargetPath": "Views\\Hockys\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphapdays\\Edit.cshtml",
+      "TargetPath": "Views\\CLOPhuongphapdays\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Muctieus\\Edit.cshtml",
+      "TargetPath": "Views\\Muctieus\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\Delete.cshtml",
+      "TargetPath": "Views\\DeCuongchiTiets\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\NhiemvuSVs\\Index.cshtml",
+      "TargetPath": "Views\\NhiemvuSVs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Tailieus\\Details.cshtml",
+      "TargetPath": "Views\\Tailieus\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Khoikienthucs\\Create.cshtml",
+      "TargetPath": "Views\\Khoikienthucs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Khoas\\Create.cshtml",
+      "TargetPath": "Views\\Khoas\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Chitiet_Chuongs\\Edit.cshtml",
+      "TargetPath": "Views\\Chitiet_Chuongs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_hocs\\Index.cshtml",
+      "TargetPath": "Views\\Phuongphap_hocs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Get_Tailieu\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Get_Tailieu\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongQuyDinhs\\Details.cshtml",
+      "TargetPath": "Views\\DeCuongQuyDinhs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Chitiet_Chuongs\\Index.cshtml",
+      "TargetPath": "Views\\Chitiet_Chuongs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\CLPOs\\Create.cshtml",
+      "TargetPath": "Views\\CLPOs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphapdays\\Delete.cshtml",
+      "TargetPath": "Views\\CLOPhuongphapdays\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphaphocs\\Create.cshtml",
+      "TargetPath": "Views\\CLOPhuongphaphocs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\Edit.cshtml",
+      "TargetPath": "Views\\DeCuongchiTiets\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\GiangViens\\Create.cshtml",
+      "TargetPath": "Views\\GiangViens\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Khoas\\Delete.cshtml",
+      "TargetPath": "Views\\Khoas\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphaphocs\\Details.cshtml",
+      "TargetPath": "Views\\CLOPhuongphaphocs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongHinhthucs\\Edit.cshtml",
+      "TargetPath": "Views\\DeCuongHinhthucs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Khoahocs\\Delete.cshtml",
+      "TargetPath": "Views\\Khoahocs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DecuongTailieus\\Details.cshtml",
+      "TargetPath": "Views\\DecuongTailieus\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_Giangdays\\Index.cshtml",
+      "TargetPath": "Views\\Phuongphap_Giangdays\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Chitiet_Chuongs\\Details.cshtml",
+      "TargetPath": "Views\\Chitiet_Chuongs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_chitietchuong.cshtml",
+      "TargetPath": "Views\\Shared\\_Partial_chitietchuong.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_Giangdays\\Create.cshtml",
+      "TargetPath": "Views\\Phuongphap_Giangdays\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_hocs\\Details.cshtml",
+      "TargetPath": "Views\\Phuongphap_hocs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Chitietmonhocs\\Index.cshtml",
+      "TargetPath": "Views\\Chitietmonhocs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Hinhthuc_Danhgias\\Details.cshtml",
+      "TargetPath": "Views\\Hinhthuc_Danhgias\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Thoigianhocs\\Details.cshtml",
+      "TargetPath": "Views\\Thoigianhocs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Chitietmonhocs\\Details.cshtml",
+      "TargetPath": "Views\\Chitietmonhocs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Muctieus\\Details.cshtml",
+      "TargetPath": "Views\\Muctieus\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongNhiemvus\\Delete.cshtml",
+      "TargetPath": "Views\\DeCuongNhiemvus\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Phutrachs\\Delete.cshtml",
+      "TargetPath": "Views\\Phutrachs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\PLOs\\Index.cshtml",
+      "TargetPath": "Views\\PLOs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\CLPOs\\Details.cshtml",
+      "TargetPath": "Views\\CLPOs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Bomons\\Edit.cshtml",
+      "TargetPath": "Views\\Bomons\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Phuongphap_Giangdays\\Edit.cshtml",
+      "TargetPath": "Views\\Phuongphap_Giangdays\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Thoigianhocs\\Delete.cshtml",
+      "TargetPath": "Views\\Thoigianhocs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\_Partial_thoigianhoc.cshtml",
+      "TargetPath": "Views\\Shared\\_Partial_thoigianhoc.cshtml",
       "FileKind": "mvc"
     }
   ],

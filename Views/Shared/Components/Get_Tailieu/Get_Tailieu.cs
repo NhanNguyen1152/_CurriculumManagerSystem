@@ -27,7 +27,7 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Get_Tailieu
        
         public async Task<IViewComponentResult> InvokeAsync(int? id)
         {   
-            var result = await _context.DecuongTailieus.Include(m => m.DeCuongchiTiet).Include(m=> m.Tailieu).Where(m => m.DeCuongchiTiet.mahp == m.mahp).ToListAsync();
+            var result = await _context.DecuongTailieus.Include(m => m.DeCuongchiTiet).Include(m=> m.Tailieu).Where(m => m.DeCuongchiTiet.mahp == id).ToListAsync();
             return View<List<DecuongTailieu>>(result);
         }
     }

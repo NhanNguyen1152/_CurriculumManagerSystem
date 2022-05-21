@@ -27,13 +27,11 @@
                         </td>
                         <td>
                             @item.Quydinh_Kiemtra.tenqd
-                            @* @Html.DisplayFor(modelItem => item.DeCuongchiTiet.tenhp_tviet) *@
                         </td>
                         
                      
                             <td>
-                            <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Create" asp-route-id="@item.maqd">mode_edit</a>
-                            <a class="material-icons" style="cursor: pointed;" data-toggle="modal"
+                            <a class="material-icons" style="cursor: pointer;" data-toggle="modal"
                             data-target="#exampleModalCenter">delete_forever</a>
                             <form>
                                 <div class="modal fade" id="exampleModalCenter">

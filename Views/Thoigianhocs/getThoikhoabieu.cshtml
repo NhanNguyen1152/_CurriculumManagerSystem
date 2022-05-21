@@ -20,57 +20,70 @@
                 @{
                     int tongtc = 0;
                     int tongcong = 0;
-                    @* int tong_tc = 0;
-                        int tong_sotiet_lt = 0;
-                        int tong_sotiet_th = 0; *@
+                    string tuchon = "";
                 }
                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                     <thead>
-                        @foreach (var dulieu_hocky in ((List<Thoigianhoc>)TempData["listData"]).GroupBy(x => x.Hockys.tenhk))
+                        @foreach (var dulieu_hocky in ((List<Thoigianhoc>)TempData["listData"]).GroupBy(x =>
+                        x.Hockys.tenhk))
                         {
-                            tongcong = 0;
-                            <tr>
-                                <th style="background-color: #84c7c1; color: black;"><b>@dulieu_hocky.Key</b></th>
-                                <th style="background-color: #84c7c1; color: black;">TC</th>
-                                <th>Khoi kien thuc</th>
-                            </tr>
+                                tongcong = 0;
+                                <tr>
+                                    <th style="background-color: #84c7c1; color: black;"><b>@dulieu_hocky.Key</b></th>
+                                    <th style="background-color: #84c7c1; color: black;">TC</th>
+                                    @* <th>Khoi kien thuc</th> *@
+                                </tr>
                             <tbody>
-                                    @foreach (var dulieu_decuong in ((List<Thoigianhoc>)TempData["listData"]).Where(x => x.Hockys.tenhk == dulieu_hocky.Key))
+                                    @foreach (var dulieu_decuong in ((List<Thoigianhoc>)TempData["listData"]).Where(x =>
+                                x.Hockys.tenhk == dulieu_hocky.Key))
                                     {
                                         tongtc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
-                                        tongcong = tongcong + tongtc;
+                                        @if (@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != null &&
+                                    @dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != tuchon)
+                                        {
                                         <tr>
-                                            @if(@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon == null)
+                                            <td>@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon</td>
+                                            <td>@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota</td>
+                                        </tr>
+                                        }
+
+                                    <tr>
+                                            @if (@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon == null)
                                             {
-                                                <td>
+                                                tongcong = tongcong + tongtc;
+                                            <td>
                                                     @dulieu_decuong.DeCuongchiTiet.tenhp_tviet
-                                                </td>
+                                            </td>
+                                            <td>
+                                                    @tongtc
+                                            </td>
                                             }
                                             else
                                             {
-                                                <td>
-                                                    @dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon
-                                                </td>
-                                                @* var dulieu_tgh = ((List<Thoigianhoc>)TempData["listData"]).Where(x => x.Hockys.tenhk == dulieu_hocky.Key).GroupBy(x => x.DeCuongchiTiet.Khoikienthuc.kkt_tuchon);
+
+                                                @if (tuchon != dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon)
                                                 {
-                                                    <td>
-                                                        @dulieu_tgh.
-                                                    </td>
-                                                } *@
+                                                    tuchon = dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon;
+                                                    tongcong = tongcong + int.Parse(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota);
+                                                }
+                                            <td style="font-style: italic; padding-left: 30px;">
+                                                <a asp-action="edit" asp-controller="DecuongchiTiet"
+                                        asp-route-id="@dulieu_decuong.DeCuongchiTiet.mahp">
+                                                        @dulieu_decuong.DeCuongchiTiet.tenhp_tviet </a>
+                                            </td>
+                                            <td style="font-style: italic;">
+                                                    @tongtc
+                                            </td>
+
                                             }
-                                            <td>
-                                                @tongtc
-                                            </td>
-                                            <td>
-                                                @dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon
-                                            </td>
-                                        </tr>
+
+                                    </tr>
                                     }
                             </tbody>
-                            <tr>           
-                                <td style="background-color: #c63939; color: white;"><b>Tổng cộng</b></td>          
+                            <tr>
+                                <td style="background-color: #c63939; color: white;"><b>Tổng cộng</b></td>
                                 <td style="background-color: #c63939; color: white;">@tongcong</td>
-                            </tr> 
+                            </tr>
                         }
                     </thead>
                 </table>

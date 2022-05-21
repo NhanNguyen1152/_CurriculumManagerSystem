@@ -213,7 +213,7 @@
 
                                             <select required class="form-control show-tick" asp-for="makkt"
                                                 asp-items="ViewBag.makkt">
-                                                <option>Vui lòng chọn một </option>
+                                                <option selected="selected" value="" disabled>Vui lòng chọn một </option>
                                             </select>
 
                                         </div>
@@ -273,19 +273,98 @@
                         }
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuonghinhthuc">
-                        @await Html.PartialAsync("_Partial_decuonghinhthuc")
+                        @* @await Html.PartialAsync("_Partial_decuonghinhthuc") *@
+                        @await Component.InvokeAsync("Create_Hinhthuc")
+                       
+                        @if (@Context.Session.GetInt32("idDecuong") == null)
+                        {
+                             @await Component.InvokeAsync("Get_Hinhthuc")
+                        }
+                        else
+                        {
+                             @await Component.InvokeAsync("Get_Hinhthuc", new {id = @Context.Session.GetInt32("idDecuong")})
+                        }
                     </div>
                     @* <div role="tabpanel" class="tab-pane fade" id="decuongtailieu">
                         @await Html.PartialAsync("_Partial_decuongtailieu")
                     </div> *@
                     <div role="tabpanel" class="tab-pane fade" id="chitietmonhoc">
-                        @await Html.PartialAsync("_Partial_chitietmonhoc")
+                        @* @await Html.PartialAsync("_Partial_chitietmonhoc") *@
+                        @if(@Context.Session.GetInt32("idChitietmonhoc") == null)
+                        {
+                            @await Component.InvokeAsync("Create_Chitietmonhoc")
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Create_Chitietmonhoc", new {id = @Context.Session.GetInt32("idChitietmonhoc")})
+                        }
+                       
+                        @if (@Context.Session.GetInt32("idDecuong") == null)
+                        {
+                             @await Component.InvokeAsync("Get_Chitietmonhoc")
+                        }
+                        else
+                        {
+                             @await Component.InvokeAsync("Get_Chitietmonhoc", new {id = @Context.Session.GetInt32("idDecuong")})
+                        }
                     </div>
+                    <div role="tabpanel" class="tab-pane fade" id="chitietchuong">
+                        @if(@Context.Session.GetInt32("idChitietmonhoc") == null)
+                        {
+                            @await Component.InvokeAsync("Create_Chitietchuong")
+                        }
+                        else
+                        {
+                             @await Component.InvokeAsync("Create_Chitietchuong", new {id = @Context.Session.GetInt32("idChitietmonhoc")})
+                        }
+                       
+                        @if (@Context.Session.GetInt32("idChitietmonhoc") == null)
+                        {
+                             @await Component.InvokeAsync("Get_Chitietchuong")
+                        }
+                        else
+                        {
+                             @await Component.InvokeAsync("Get_Chitietchuong", new {id = @Context.Session.GetInt32("idChitietmonhoc")})
+                        }
+                            
+
+                    </div>
+                    
                     <div role="tabpanel" class="tab-pane fade" id="phutrach">
-                        @await Html.PartialAsync("_Partial_phutrach")
+                        @if(@Context.Session.GetInt32("idPhutrach") == null)
+                        {
+                            @await Component.InvokeAsync("Create_Phutrach")
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Create_Phutrach", new {id = @Context.Session.GetInt32("idPhutrach")})
+                        }
+                        @if (@Context.Session.GetInt32("idDecuong") == null)
+                        {
+                            @await Component.InvokeAsync("Get_Phutrach")
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Get_Phutrach", new {id = @Context.Session.GetInt32("idDecuong")})
+                        }
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="thoigianhoc">
-                        @await Html.PartialAsync("_Partial_thoigianhoc")
+                        @if(@Context.Session.GetInt32("idThoigianhoc") == null)
+                        {
+                            @await Component.InvokeAsync("Create_Thoigianhoc")
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Create_Thoigianhoc", new {id = @Context.Session.GetInt32("idThoigianhoc")})
+                        }
+                        @if (@Context.Session.GetInt32("idDecuong") == null)
+                        {
+                            @await Component.InvokeAsync("Get_Thoigianhoc")
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Get_Thoigianhoc", new {id = @Context.Session.GetInt32("idDecuong")})
+                        }
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="chuandauramonhoc">
                         @await Html.PartialAsync("_Partial_chuandauramonhoc")
@@ -293,10 +372,7 @@
                      <div role="tabpanel" class="tab-pane fade" id="tailieu">
                         @await Html.PartialAsync("_Partial_tailieu")
                     </div>
-                     <div role="tabpanel" class="tab-pane fade" id="chitietchuong">
-                        @await Html.PartialAsync("_Partial_chitietchuong")
-                    </div>
-                    
+                     
                     <div role="tabpanel" class="tab-pane fade" id="decuongtailieu">
                         @await Component.InvokeAsync("Create_Tailieu")
                         @await Component.InvokeAsync("Create_DcTailieu")

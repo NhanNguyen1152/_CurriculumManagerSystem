@@ -1,0 +1,69 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.DeCuongHinhthuc>
+@{
+    var i = 0;
+}
+<div class="body"> 
+    <div class="body table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        STT
+                    </th>
+                    <th>
+                        Thành phần đánh giá
+                    </th>
+                    <th>
+                        Hình thức
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                @foreach (var item in Model)
+                {
+                    i++;
+                    <tr>
+                        <td>
+                            @i
+                        </td>
+                        <td>
+                            @item.Hinhthuc_Danhgia.thanhphan_danhgia
+                        </td>
+                        <td>@item.Hinhthuc_Danhgia.hinhthuc</td>
+                            <td>
+                            @* <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Create" asp-route-id="@item.manv">mode_edit</a> *@
+                            @* <button type="button" class="material-icons" data-toggle="modal" data-target="#exampleModalCenter">delete_forever</button> *@
+                            <a class="material-icons" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModalCenter">delete_forever</a>
+                            <form>
+                                <div class="modal fade" id="exampleModalCenter">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Xác nhận xóa</h5>
+                                                <button type="button" class="close"
+                                                    data-dismiss="modal"><span>&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Bạn có chắc muốn xóa không ?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-secondary"
+                                                    data-dismiss="modal">Đóng</button>
+                                                @* <input type="submit" value="Xóa" class="btn btn-primary" /> *@
+                                                <a type="submit" class="btn btn-primary waves-effect" asp-controller="DeCuongchiTiets" asp-action="DeleteHinhthuc" asp-route-id="@item.dcht_id">Xóa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </td>
+       
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -48,62 +48,168 @@
                             int tong_tc = 0;
                             int tong_sotiet_lt = 0;
                             int tong_sotiet_th = 0;
+                            int tongcong_tc = 0;
+                            int tongcong_bb = 0;
+                            int tongcong_tuchon = 0;
+                            string tuchon = "";
+                            string luanvan = "Luận văn tốt nghiệp";
                         }
-                        @foreach (var dulieu_kkt in ((List<DeCuongchiTiet>)TempData["listData"]).GroupBy(x => x.Khoikienthuc.kkt_ten))
+                        @foreach (var dulieu_kkt in ((List<DeCuongchiTiet>)TempData["listData"]).GroupBy(x =>
+                        x.Khoikienthuc.kkt_ten))
                         {
                             <th colspan="9" style="background-color: #84c7c1; color: black;"><b>@dulieu_kkt.Key</b></th>
 
                             <tbody>
-                                @foreach (var dulieu_decuong in ((List<DeCuongchiTiet>)TempData["listData"]).Where(x => x.Khoikienthuc.kkt_ten == dulieu_kkt.Key))
+                                @foreach (var dulieu_decuong in ((List<DeCuongchiTiet>)TempData["listData"]).Where(x =>
+                               x.Khoikienthuc.kkt_ten == dulieu_kkt.Key))
                                 {
                                     stt = stt + 1;
-                                    tong_tc = dulieu_decuong.sotc_lt + dulieu_decuong.sotc_th;
                                     tong_sotiet_lt = dulieu_decuong.sotc_lt * 15;
                                     tong_sotiet_th = dulieu_decuong.sotc_th * 30;
-                                    <tr>
-                                        <td>
-                                            @stt
-                                        </td>
-                                        <td>
-                                            @dulieu_decuong.mahp_decuong
-                                        </td>
-                                        <td>
-                                            @dulieu_decuong.tenhp_tviet
-                                        </td>
-                                        <td>
-                                            @tong_tc
-                                        </td>
-                                        <td>
-                                            @tong_tc
-                                        </td>
-                                        <td>
-                                            @dulieu_decuong.Khoikienthuc.kkt_mota
-                                        </td>
-                                        <td>
-                                            @tong_sotiet_lt
-                                        </td>
-                                        <td>
-                                            @tong_sotiet_th
-                                        </td>
-                                        <td>
-                                            @dulieu_decuong.hp_tienquyet
-                                        </td>
-                                    </tr>
+                 
+                                    @if(dulieu_decuong.tenhp_tviet.Contains(luanvan))
+                                            {
+                                                
+												<tr> 
+													<td>
+														@stt
+													</td>
+													<td>
+														@dulieu_decuong.mahp_decuong
+													</td>
+													<td>
+														@dulieu_decuong.tenhp_tviet
+													</td>
+													<td>
+														
+													</td>
+													<td>
+														
+													</td>
+													<td>
+														@dulieu_decuong.Khoikienthuc.kkt_mota
+													</td>
+													<td>
+														@tong_sotiet_lt
+													</td>
+													<td>
+														@tong_sotiet_th
+													</td>
+													@if(@dulieu_decuong.hp_tienquyet == "Không")
+														{
+															<td>
+															
+															</td>
+														}
+														else
+														{
+															<td>
+																@dulieu_decuong.hp_tienquyet
+															</td>
+														}
+													
+												</tr>
+                                            }
+                                        else
+                                            { 
+                                               @if(dulieu_decuong.Khoikienthuc.kkt_tuchon != null && dulieu_decuong.Khoikienthuc.kkt_tuchon != tuchon)
+													{ 
+														tongcong_tuchon += int.Parse(dulieu_decuong.Khoikienthuc.kkt_mota);
+														tuchon = dulieu_decuong.Khoikienthuc.kkt_tuchon;
+														<tr>
+															<th rowspan="1"></th>
+															<th colspan="4" ><b>@tuchon</b></th>
+															<th><b>@dulieu_decuong.Khoikienthuc.kkt_mota</b></th>
+														</tr>
+													}
+												<tr> 
+													<td>
+														@stt
+													</td>
+													<td>
+														@dulieu_decuong.mahp_decuong
+													</td>
+													<td>
+														@dulieu_decuong.tenhp_tviet
+													</td>
+
+
+													@* bat dau  *@
+													
+															
+															@{
+																tong_tc = dulieu_decuong.sotc_lt + dulieu_decuong.sotc_th;
+															}
+															@if(dulieu_decuong.Khoikienthuc.kkt_tuchon != null && dulieu_decuong.Khoikienthuc.kkt_mota != null)
+																{  
+																	@* tuchon = dulieu_decuong.Khoikienthuc.kkt_tuchon; *@
+																	
+																	tongcong_tc += tong_tc;
+																	<td>
+																		@tong_tc
+																	</td>
+																	<td>
+																		
+																	</td>
+																	<td>
+																		@* @dulieu_decuong.Khoikienthuc.kkt_mota *@
+																	</td>
+																}
+															else
+																{
+																	tongcong_bb += tong_tc;
+																	tongcong_tc += tong_tc;
+																	<td>
+																		@tong_tc
+																	</td>
+																	<td>
+																		@tong_tc
+																	</td>
+																	<td>
+																		
+																	</td>
+																}
+														
+													
+													
+													@* ket thuc *@
+					
+													<td>
+														@tong_sotiet_lt
+													</td>
+													<td>
+														@tong_sotiet_th
+													</td>
+													@if(@dulieu_decuong.hp_tienquyet == "Không")
+													{
+														<td>
+														
+														</td>
+													}
+													else
+													{
+														<td>
+															@dulieu_decuong.hp_tienquyet
+														</td>
+													}
+													
+												</tr>
+                                            }
                                 }
-                                
+
                             </tbody>
                         }
                         <tr>
                             <td></td>
-                            <td></td>            
-                            <td><b>Tổng cộng</b></td>          
+                            <td></td>
+                            <td><b>Tổng cộng</b></td>
+                            <td><b>@tongcong_tc</b></td>
+                            <td><b>@tongcong_bb</b></td>
+                            <td><b>@tongcong_tuchon</b></td>
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>    
-                        </tr>            
+                        </tr>
                     </table>
                 </div>
             </div>

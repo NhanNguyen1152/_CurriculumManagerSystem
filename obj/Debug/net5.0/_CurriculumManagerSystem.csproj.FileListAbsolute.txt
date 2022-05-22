@@ -1267,3 +1267,13 @@ C:\Users\F570Z-PC\OneDrive\Tài liệu\GitHub\_CurriculumManagerSystem\obj\Deb
 C:\Users\F570Z-PC\OneDrive\Tài liệu\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Create_Quydinh_checkbox\Default.cshtml.g.cs
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\DeCuongQuyDinhs\Create copy.cshtml.g.cs
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Create_Quydinh_checkbox\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Create_Chitietchuong\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Create_Chitietmonhoc\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Create_Hinhthuc\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Create_Phutrach\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Create_Thoigianhoc\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Get_Chitietchuong\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Get_Chitietmonhoc\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Get_Hinhthuc\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Get_Phutrach\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Get_Thoigianhoc\Default.cshtml.g.cs

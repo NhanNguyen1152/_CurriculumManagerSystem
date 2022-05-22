@@ -38,6 +38,8 @@
                                         <a class="material-icons" asp-action="Edit" asp-route-id="@item.makh">mode_edit</a>
                                         <a class="material-icons" asp-action="Delete"
                                         asp-route-id="@item.makh">delete_forever</a>
+                                        <a type="button" class="btn btn-primary waves-effect" asp-controller="Thoigianhocs" asp-action="getThoikhoabieu"
+                                        asp-route-khoahoc="@item.tenkh">Xem thời khóa biểu</a>
                                     </td>
                                 </tr>
                             }

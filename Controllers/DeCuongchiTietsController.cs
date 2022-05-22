@@ -72,8 +72,6 @@ namespace _CurriculumManagerSystem.Controllers
                 HttpContext.Session.SetInt32("idChitietchuong", id);
                 HttpContext.Session.SetInt32("idPhutrach", id);
                 HttpContext.Session.SetInt32("idThoigianhoc", id);
-                
-                
             }
             return View();
         }
@@ -168,6 +166,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
+            ViewData["makkt"] = new SelectList(_context.Khoikienthucs, "makkt", "kkt_ten");
             return View(deCuongchiTiet);
         }
 

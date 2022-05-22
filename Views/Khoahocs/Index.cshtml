@@ -40,6 +40,17 @@
                                         asp-route-id="@item.makh">delete_forever</a>
                                         <a type="button" class="btn btn-primary waves-effect" asp-controller="Thoigianhocs" asp-action="getThoikhoabieu"
                                         asp-route-khoahoc="@item.tenkh">Xem thời khóa biểu</a>
+                                        <div class="btn-group" role="group">
+                                            <button id="btnGroupVerticalDrop1" type="button" class="btn bg-teal waves-effect dropdown-toggle" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                                Xem thêm <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
+                                                <li><a type="button" asp-controller="DeCuongchiTiets" asp-action="getBangtomtatCTDT" asp-route-khoahoc="@item.tenkh">Xem bảng tóm tắt CTĐT</a> </li>
+                                                <li><a type="button" asp-controller="DeCuongchiTiets" asp-action="getNoidungCTDT" asp-route-khoahoc="@item.tenkh">Xem bảng nội dung CTĐT</a></li>
+                                                <li><a type="button" asp-controller="DeCuongchiTiets" asp-action="getHuongdanCTDT" asp-route-khoahoc="@item.tenkh">Xem bảng hướng dẫn CTĐT</a></li>
+                                            </ul>
+                                        </div>
                                     </td>
                                 </tr>
                             }

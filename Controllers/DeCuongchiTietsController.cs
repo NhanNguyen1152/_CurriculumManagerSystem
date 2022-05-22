@@ -495,7 +495,7 @@ namespace _CurriculumManagerSystem.Controllers
         
 
         //Getdecuongchitiet
-        public IActionResult getDecuongchitiet()
+        public IActionResult getBangtomtatCTDT()
         {
             var appDbContext = _context.DeCuongchiTiets.Include(d => d.Khoikienthuc);
             TempData["listData"] = appDbContext.ToList();
@@ -503,7 +503,14 @@ namespace _CurriculumManagerSystem.Controllers
         }
 
         //Get huong dan de cuong chi tiet
-        public IActionResult getHuongdandecuong()
+        public IActionResult getHuongdanCTDT()
+        {
+            var appDbContext = _context.DeCuongchiTiets.Include(d => d.Khoikienthuc);
+            TempData["listData"] = appDbContext.ToList();
+            return View();
+        }
+        //Get Noi dung chuong trinh dao tao
+        public IActionResult getNoidungCTDT()
         {
             var appDbContext = _context.DeCuongchiTiets.Include(d => d.Khoikienthuc);
             TempData["listData"] = appDbContext.ToList();

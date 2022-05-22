@@ -1,14 +1,14 @@
 @model IEnumerable<_CurriculumManagerSystem.Models.DeCuongchiTiet>
 
 @{
-    ViewData["Title"] = "Hướng dẫn thực hiện chương trình";
+    ViewData["Title"] = "Nội dung chương trình đào tạo";
 }
 
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
             <div class="header">
-                <h3 class="titile-table">10. Hướng dẫn thực hiện chương trình
+                <h3 class="titile-table">Bảng 4. Nội dung chương trình đào tạo
                 </h3>
             </div>
             <div class="body">
@@ -21,7 +21,7 @@
                                     @Html.DisplayNameFor(model => model.mahp_decuong)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.tenhp_tviet)
+                                    Tên môn học
                                 </th>
                                 <th>
                                     Số tín chỉ
@@ -32,7 +32,7 @@
                                 <th>
                                     Tự chọn
                                 </th>
-                                <th>
+                                @* <th>
                                     Số tiết LT
                                 </th>
                                 <th>
@@ -40,7 +40,7 @@
                                 </th>
                                 <th>
                                     Môn học tiên quyết / học trước
-                                </th>
+                                </th> *@
                             </tr>
                         </thead>
                         @{
@@ -89,7 +89,7 @@
 													<td>
 														@dulieu_decuong.Khoikienthuc.kkt_mota
 													</td>
-													<td>
+													@* <td>
 														@tong_sotiet_lt
 													</td>
 													<td>
@@ -106,7 +106,7 @@
 															<td>
 																@dulieu_decuong.hp_tienquyet
 															</td>
-														}
+														} *@
 													
 												</tr>
                                             }
@@ -174,7 +174,7 @@
 													
 													@* ket thuc *@
 					
-													<td>
+													@* <td>
 														@tong_sotiet_lt
 													</td>
 													<td>
@@ -191,7 +191,7 @@
 														<td>
 															@dulieu_decuong.hp_tienquyet
 														</td>
-													}
+													} *@
 													
 												</tr>
                                             }

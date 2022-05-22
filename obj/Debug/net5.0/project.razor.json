@@ -16404,11 +16404,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\getHuongdandecuong.cshtml",
-      "TargetPath": "Views\\DeCuongchiTiets\\getHuongdandecuong.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Hinhthuc_Danhgias\\Create.cshtml",
       "TargetPath": "Views\\Hinhthuc_Danhgias\\Create.cshtml",
       "FileKind": "mvc"
@@ -16544,6 +16539,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\getHuongdanCTDT.cshtml",
+      "TargetPath": "Views\\DeCuongchiTiets\\getHuongdanCTDT.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Quydinh_Kiemtras\\Edit.cshtml",
       "TargetPath": "Views\\Quydinh_Kiemtras\\Edit.cshtml",
       "FileKind": "mvc"
@@ -16611,11 +16611,6 @@
     {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Hinhthuc_Danhgias\\Details.cshtml",
       "TargetPath": "Views\\Hinhthuc_Danhgias\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\getDecuongchitiet.cshtml",
-      "TargetPath": "Views\\DeCuongchiTiets\\getDecuongchitiet.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16799,6 +16794,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\getBangtomtatCTDT.cshtml",
+      "TargetPath": "Views\\DeCuongchiTiets\\getBangtomtatCTDT.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\PLOs\\Edit.cshtml",
       "TargetPath": "Views\\PLOs\\Edit.cshtml",
       "FileKind": "mvc"
@@ -16961,6 +16961,11 @@
     {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Get_Phutrach\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\Get_Phutrach\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\DeCuongchiTiets\\getNoidungCTDT.cshtml",
+      "TargetPath": "Views\\DeCuongchiTiets\\getNoidungCTDT.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -17,7 +17,7 @@ namespace _CurriculumManagerSystem.Models
         public DateTime ngayupdate { get; set; }
 
         [ForeignKey("macdmon")]
-        [DisplayName("Chỉ số CLO")]
+        [DisplayName("Chuẩn đầu ra môn học")]
         public int macdmon { get; set;}
         [ForeignKey("maplo")]
         [DisplayName("Chỉ số PLO")]

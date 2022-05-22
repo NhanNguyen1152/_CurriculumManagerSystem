@@ -1,8 +1,7 @@
-@model IEnumerable<_CurriculumManagerSystem.Models.DeCuongQuyDinh>
+@model IEnumerable<_CurriculumManagerSystem.Models.Phutrach>
 @{
-    var i = 0;
+    var i = 0 ;
 }
-<div class="body"> 
     <div class="body table-responsive">
         <table class="table table-bordered">
             <thead>
@@ -10,27 +9,50 @@
                     <th>
                         STT
                     </th>
-                    <th>
-                        Tên quy định và kiểm tra
-                    </th>
+                   <th>
+                       Tên giảng viên
+                   </th>
+                   <th>
+                       Vai trò
+                   </th>
+                   <th>
+                       Chức danh
+                   </th>
+                   <th>
+                       Học hàm
+                   </th>
+                   <th>
+                       Học vị
+                   </th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                
                 @foreach (var item in Model)
                 {
-                    i++;
+                     i++;
                     <tr>
                         <td>
                             @i
                         </td>
                         <td>
-                            @item.Quydinh_Kiemtra.tenqd
+                            @item.GiangVien.hoten
                         </td>
-                        
+                        <td>
+                            @item.vaitro
+                        </td>
+                        <td>
+                            @item.GiangVien.chucdanh
+                        </td>
+                        <td>
+                            @item.GiangVien.hocham
+                        </td>
+                        <td>
+                            @item.GiangVien.hocvi
+                        </td>
                      
                             <td>
+                            <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Create" asp-route-id="@item.mapt">mode_edit</a>
                             <a class="material-icons" style="cursor: pointer;" data-toggle="modal"
                             data-target="#exampleModalCenter">delete_forever</a>
                             <form>
@@ -50,7 +72,7 @@
                                                 <button type="submit" class="btn btn-secondary"
                                                     data-dismiss="modal">Đóng</button>
                                                 @* <input type="submit" value="Xóa" class="btn btn-primary" /> *@
-                                                <button type="submit" class="btn btn-primary waves-effect" asp-controller="DeCuongchiTiets" asp-action="DeleteQuydinh" asp-route-id="@item.dcqd_id">Xóa</button>
+                                                <button type="submit" class="btn btn-primary waves-effect" asp-controller="DeCuongchiTiets" asp-action="DeletePhutrach" asp-route-id="@item.mapt">Xóa</button>
                                             </div>
                                         </div>
                                     </div>
@@ -63,4 +85,3 @@
             </tbody>
         </table>
     </div>
-</div>

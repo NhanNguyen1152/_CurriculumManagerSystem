@@ -13,7 +13,7 @@
                             <div class="form-group">
                                 @* <input asp-for="matl" value=@TempData["id_tl"]> *@
                                 <select required class="form-control show-tick" asp-for="matl" asp-items="ViewBag.matl">
-                                    <option>Vui lòng chọn một </option>
+                                    <option selected="selected" value="" disabled>Vui lòng chọn một </option>
                                 </select>
                             </div>
                         </div>

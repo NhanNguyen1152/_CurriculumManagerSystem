@@ -13886,6 +13886,326 @@
         }
       },
       {
+        "HashCode": -124088925,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__Create_ChitietchuongViewComponentTagHelper",
+        "AssemblyName": "_CurriculumManagerSystem",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:create_chitietchuong",
+            "Attributes": [
+              {
+                "Name": "id"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "id",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "id"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__Create_ChitietchuongViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "Create_Chitietchuong"
+        }
+      },
+      {
+        "HashCode": -689679653,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__Create_PhutrachViewComponentTagHelper",
+        "AssemblyName": "_CurriculumManagerSystem",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:create_phutrach",
+            "Attributes": [
+              {
+                "Name": "id"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "id",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "id"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__Create_PhutrachViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "Create_Phutrach"
+        }
+      },
+      {
+        "HashCode": 1884591748,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__Create_ChitietmonhocViewComponentTagHelper",
+        "AssemblyName": "_CurriculumManagerSystem",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:create_chitietmonhoc",
+            "Attributes": [
+              {
+                "Name": "id"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "id",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "id"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__Create_ChitietmonhocViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "Create_Chitietmonhoc"
+        }
+      },
+      {
+        "HashCode": 608999764,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__Create_HinhthucViewComponentTagHelper",
+        "AssemblyName": "_CurriculumManagerSystem",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:create_hinhthuc",
+            "Attributes": [
+              {
+                "Name": "id"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "id",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "id"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__Create_HinhthucViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "Create_Hinhthuc"
+        }
+      },
+      {
+        "HashCode": -1935790787,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__Create_ThoigianhocViewComponentTagHelper",
+        "AssemblyName": "_CurriculumManagerSystem",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:create_thoigianhoc",
+            "Attributes": [
+              {
+                "Name": "id"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "id",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "id"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__Create_ThoigianhocViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "Create_Thoigianhoc"
+        }
+      },
+      {
+        "HashCode": 906484101,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__Get_ChitietchuongViewComponentTagHelper",
+        "AssemblyName": "_CurriculumManagerSystem",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:get_chitietchuong",
+            "Attributes": [
+              {
+                "Name": "id"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "id",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "id"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__Get_ChitietchuongViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "Get_Chitietchuong"
+        }
+      },
+      {
+        "HashCode": 753634969,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__Get_ChitietmonhocViewComponentTagHelper",
+        "AssemblyName": "_CurriculumManagerSystem",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:get_chitietmonhoc",
+            "Attributes": [
+              {
+                "Name": "id"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "id",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "id"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__Get_ChitietmonhocViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "Get_Chitietmonhoc"
+        }
+      },
+      {
+        "HashCode": 1367435583,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__Get_HinhthucViewComponentTagHelper",
+        "AssemblyName": "_CurriculumManagerSystem",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:get_hinhthuc",
+            "Attributes": [
+              {
+                "Name": "id"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "id",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "id"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__Get_HinhthucViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "Get_Hinhthuc"
+        }
+      },
+      {
+        "HashCode": -1762947357,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__Get_PhutrachViewComponentTagHelper",
+        "AssemblyName": "_CurriculumManagerSystem",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:get_phutrach",
+            "Attributes": [
+              {
+                "Name": "id"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "id",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "id"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__Get_PhutrachViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "Get_Phutrach"
+        }
+      },
+      {
+        "HashCode": 296360229,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__Get_ThoigianhocViewComponentTagHelper",
+        "AssemblyName": "_CurriculumManagerSystem",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:get_thoigianhoc",
+            "Attributes": [
+              {
+                "Name": "id"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "id",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "id"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__Get_ThoigianhocViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "Get_Thoigianhoc"
+        }
+      },
+      {
         "HashCode": 141407075,
         "Kind": "Components.Bind",
         "Name": "Bind",
@@ -15989,6 +16309,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Create_Hinhthuc\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Create_Hinhthuc\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphaphocs\\Delete.cshtml",
       "TargetPath": "Views\\CLOPhuongphaphocs\\Delete.cshtml",
       "FileKind": "mvc"
@@ -16016,6 +16341,11 @@
     {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Tailieus\\Delete.cshtml",
       "TargetPath": "Views\\Tailieus\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Create_Phutrach\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Create_Phutrach\\Default.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16099,6 +16429,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Get_Chitietmonhoc\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Get_Chitietmonhoc\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLPOs\\Delete.cshtml",
       "TargetPath": "Views\\CLPOs\\Delete.cshtml",
       "FileKind": "mvc"
@@ -16116,6 +16451,11 @@
     {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLOPhuongphapdays\\Create.cshtml",
       "TargetPath": "Views\\CLOPhuongphapdays\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Get_Thoigianhoc\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Get_Thoigianhoc\\Default.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16161,6 +16501,11 @@
     {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Get_Quydinh\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\Get_Quydinh\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Get_Chitietchuong\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Get_Chitietchuong\\Default.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16256,6 +16601,11 @@
     {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Muctieus\\Index.cshtml",
       "TargetPath": "Views\\Muctieus\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Create_Chitietmonhoc\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Create_Chitietmonhoc\\Default.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16416,6 +16766,11 @@
     {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Create_Quydinh_checkbox\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\Create_Quydinh_checkbox\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Create_Thoigianhoc\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Create_Thoigianhoc\\Default.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16594,8 +16949,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Create_Chitietchuong\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Create_Chitietchuong\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\CLPOs\\Edit.cshtml",
       "TargetPath": "Views\\CLPOs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Get_Phutrach\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Get_Phutrach\\Default.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16751,6 +17116,11 @@
     {
       "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Hockys\\Details.cshtml",
       "TargetPath": "Views\\Hockys\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\Views\\Shared\\Components\\Get_Hinhthuc\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Get_Hinhthuc\\Default.cshtml",
       "FileKind": "mvc"
     },
     {

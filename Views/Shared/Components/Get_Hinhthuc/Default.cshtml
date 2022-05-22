@@ -1,4 +1,4 @@
-@model IEnumerable<_CurriculumManagerSystem.Models.DeCuongQuyDinh>
+@model IEnumerable<_CurriculumManagerSystem.Models.DeCuongHinhthuc>
 @{
     var i = 0;
 }
@@ -11,7 +11,10 @@
                         STT
                     </th>
                     <th>
-                        Tên quy định và kiểm tra
+                        Thành phần đánh giá
+                    </th>
+                    <th>
+                        Hình thức
                     </th>
                     <th></th>
                 </tr>
@@ -26,13 +29,13 @@
                             @i
                         </td>
                         <td>
-                            @item.Quydinh_Kiemtra.tenqd
+                            @item.Hinhthuc_Danhgia.thanhphan_danhgia
                         </td>
-                        
-                     
+                        <td>@item.Hinhthuc_Danhgia.hinhthuc</td>
                             <td>
-                            <a class="material-icons" style="cursor: pointer;" data-toggle="modal"
-                            data-target="#exampleModalCenter">delete_forever</a>
+                            @* <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Create" asp-route-id="@item.manv">mode_edit</a> *@
+                            @* <button type="button" class="material-icons" data-toggle="modal" data-target="#exampleModalCenter">delete_forever</button> *@
+                            <a class="material-icons" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModalCenter">delete_forever</a>
                             <form>
                                 <div class="modal fade" id="exampleModalCenter">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -50,7 +53,7 @@
                                                 <button type="submit" class="btn btn-secondary"
                                                     data-dismiss="modal">Đóng</button>
                                                 @* <input type="submit" value="Xóa" class="btn btn-primary" /> *@
-                                                <button type="submit" class="btn btn-primary waves-effect" asp-controller="DeCuongchiTiets" asp-action="DeleteQuydinh" asp-route-id="@item.dcqd_id">Xóa</button>
+                                                <a type="submit" class="btn btn-primary waves-effect" asp-controller="DeCuongchiTiets" asp-action="DeleteHinhthuc" asp-route-id="@item.dcht_id">Xóa</a>
                                             </div>
                                         </div>
                                     </div>

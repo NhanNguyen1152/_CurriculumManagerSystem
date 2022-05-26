@@ -1,150 +1,205 @@
 @model _CurriculumManagerSystem.Models.DeCuongchiTiet
-
+@using Microsoft.AspNetCore.Http;
+@using System.Data;
 @{
     ViewData["Title"] = "Edit";
+    @* var returnParam = ViewData["ReturnUrl"] as string; *@
 }
 
 <div class="row clearfix">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-1 2">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
             <div class="header">
-                <h3 class="titile-table">
-                    CẬP NHẬT ĐỀ CƯƠNG CHI TIẾT
-                </h3>
+                <h2 class="titile-table">CẬP NHẬT ĐỀ CƯƠNG CHI TIẾT - <b>@Context.Session.GetString("nameDecuong")</b></h2>
             </div>
             <div class="body">
-                <form class="form-horizontal" asp-action="Edit">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input type="hidden" asp-for="mahp"/>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="mahp_decuong">Mã học phần <span
-                                    class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-                                @* <textarea required asp-for="mahp_decuong" class="form-control" placeholder="Tên
-                                    học phần tiếng việt"></textarea> *@
-                                <input required type="text" asp-for="mahp_decuong" class="form-control"
-                                    placeholder="Mã học phần">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="tenhp_tviet">Tên học phần tiếng việt <span
-                                    class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-                                @* <textarea required asp-for="tenhp_tviet" class="form-control" placeholder="Tên
-                                    học phần tiếng việt"></textarea> *@
-                                <input required type="text" asp-for="tenhp_tviet" class="form-control"
-                                    placeholder="Tên học phần tiếng việt">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="tenhp_tanh">Tên học phần tiếng anh <span
-                                    class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-                                @* <textarea required asp-for="tenhp_tanh" class="form-control" placeholder="Tên học
-                                    phần tiếng anh"></textarea> *@
-                                <input required type="text" asp-for="tenhp_tanh" class="form-control"
-                                    placeholder="Tên học phần tiếng anh">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="sotc_lt">Số tín chỉ lý thuyết <span class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-                                @* <textarea required asp-for="sotc_lt" class="form-control" placeholder="Số tín chỉ
-                                    lý thuyết"></textarea> *@
-                                <input required min="0" max="5" type="number" asp-for="sotc_lt" class="form-control"
-                                    placeholder="Số tín chỉ lý thuyết">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="sotc_th">Số tín chỉ thực hành <span class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-                                @* <textarea required asp-for="sotc_th" class="form-control" placeholder="Số tín chỉ
-                                    thực hành"></textarea> *@
-                                <input required min="0" max="10" type="number" asp-for="sotc_th" class="form-control"
-                                    placeholder="Số tín chỉ thực hành">
-                            </div>
-                        </div>
-                    </div>
-                     <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="hp_tienquyet">Học phần học trước <span class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-                                @* <textarea required asp-for="hp_tienquyet" class="form-control" placeholder="Số tín chỉ
-                                    thực hành"></textarea> *@
-                                <input required type="text" asp-for="hp_tienquyet" class="form-control"
-                                    placeholder="Học phần học trước">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="yeucaukhacvoi_hocphan">Yêu cầu khác với học phần</label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-                                @* <textarea required asp-for="yeucaukhacvoi_hocphan" class="form-control"
-                                    placeholder="Yêu cầu khác với học phần"></textarea> *@
-                                <input type="text" asp-for="yeucaukhacvoi_hocphan" class="form-control"
-                                    placeholder="Yêu cầu khác với học phần">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="tomtat_noidunghocphan">Tóm tắt nội dung học phần <span
-                                    class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-                                <textarea required asp-for="tomtat_noidunghocphan" class="form-control"
-                                    placeholder="Tóm tắt nội dung học phần"></textarea>
-                                @* <input type="text" asp-for="tomtat_noidunghocphan" class="form-control"
-                                    placeholder="Tóm tắt nội dung học phần"> *@
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="makkt">Khối kiến thức <span class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
+                <!-- Nav tabs -->
+                <ul id="myTab" class="nav nav-tabs tab-nav-right" role="tablist">
+                    <li role="presentation" class="active"><a role="tab" href="#decuongchitiet" data-toggle="tab">ĐỀ CƯƠNG CHI TIẾT</a></li>
+                    <li role="presentation"><a role="tab" href="#muctieu" data-toggle="tab">MỤC TIÊU</a></li>
+                    <li role="presentation"><a role="tab" href="#decuongnhiemvu" data-toggle="tab">NHIỆM VỤ</a></li>
+                    <li role="presentation"><a role="tab" href="#decuongquydinh" data-toggle="tab">QUY ĐỊNH</a></li>
+                    <li role="presentation"><a role="tab" href="#decuonghinhthuc" data-toggle="tab">HÌNH THỨC</a></li>
+                    <li role="presentation"><a role="tab" href="#chitietmonhoc" data-toggle="tab">CHI TIẾT MÔN HỌC</a></li>
+                    <li role="presentation"><a role="tab" href="#chitietchuong" data-toggle="tab">CHi TIẾT CHƯƠNG</a></li>
+                    <li role="presentation"><a role="tab" href="#phutrach" data-toggle="tab">PHỤ TRÁCH</a></li>
+                    <li role="presentation"><a role="tab" href="#thoigianhoc" data-toggle="tab">THỜI GIAN HỌC</a></li>
+                    <li role="presentation"><a role="tab" href="#chuandauramonhoc" data-toggle="tab">CHUẨN ĐẦU RA MÔN HỌC</a></li>
+                    @* <li role="presentation"><a role="tab" href="#tailieu" data-toggle="tab">TÀI LIỆU</a></li> *@
+                    <li role="presentation"><a role="tab" href="#decuongtailieu" data-toggle="tab">TÀI LIỆU</a></li>
+                    
 
-                                <select required class="form-control show-tick" asp-for="makkt" asp-items="ViewBag.makkt">
-                                    @* <option>Vui lòng chọn một </option> *@
-                                </select>
+                </ul>
 
-                            </div>
-                        </div>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="decuongchitiet">
+                       @if(@Context.Session.GetInt32("id_edit_dccht_after") == null)
+                       {
+                             @await Component.InvokeAsync("Edit_Decuongchitiet", new {id = @Context.Session.GetInt32("id_edit_dccht")})
+                       }
+                       else
+                       {
+                             @await Component.InvokeAsync("Edit_Decuongchitiet" , new {id = @Context.Session.GetInt32("id_edit_dccht_after")});
+                       }
                     </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
-                            <a asp-action="Index" class="btn btn-default waves-effect">Trở lại</a> |
-                             <input type="submit" class="btn btn-primary waves-effect" value="Sửa"></input>
-                        </div>
+                    <div role="tabpanel" class="tab-pane fade" id="muctieu">
+                         @if(@Context.Session.GetInt32("id_edit_dccht_after") == null)
+                        {
+                            @await Component.InvokeAsync("GetMucTieu")
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("GetMucTieu", new {id = @Context.Session.GetInt32("id_edit_dccht_after")})
+                        }
+                        
+                        @if(@Context.Session.GetInt32("id_edit_mt") == null)
+                        {
+                            @await Component.InvokeAsync("Edit_MucTieu", new {id = 0});
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Edit_MucTieu", new {id = @Context.Session.GetInt32("id_edit_dccht")});
+                        }
                     </div>
-                </form>
+                    <div role="tabpanel" class="tab-pane fade" id="decuongnhiemvu">
+                       @await Component.InvokeAsync("Create_Nhiemvu")
+                       @if (@Context.Session.GetInt32("id_edit_dccht") == null)
+                        {
+                            @await Component.InvokeAsync("Get_Nhiemvu")
+                        }
+                        else
+                        {
+                           @await Component.InvokeAsync("Get_Nhiemvu", new {id = @Context.Session.GetInt32("id_edit_dccht")})
+                        }
+                       
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="decuongquydinh">
+                        @await Component.InvokeAsync("Create_Quydinh_checkbox")
+                       
+                        @if (@Context.Session.GetInt32("id_edit_dccht") == null)
+                        {
+                             @await Component.InvokeAsync("Get_Quydinh")
+                        }
+                        else
+                        {
+                             @await Component.InvokeAsync("Get_Quydinh", new {id = @Context.Session.GetInt32("id_edit_dccht")})
+                        }
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="decuonghinhthuc">
+                        @* @await Html.PartialAsync("_Partial_decuonghinhthuc") *@
+                        @await Component.InvokeAsync("Create_Hinhthuc")
+                       
+                        @if (@Context.Session.GetInt32("id_edit_dccht") == null)
+                        {
+                             @await Component.InvokeAsync("Get_Hinhthuc")
+                        }
+                        else
+                        {
+                             @await Component.InvokeAsync("Get_Hinhthuc", new {id = @Context.Session.GetInt32("id_edit_dccht")})
+                        }
+                    </div>
+                    @* <div role="tabpanel" class="tab-pane fade" id="decuongtailieu">
+                        @await Html.PartialAsync("_Partial_decuongtailieu")
+                    </div> *@
+                    <div role="tabpanel" class="tab-pane fade" id="chitietmonhoc">
+                        @* @await Html.PartialAsync("_Partial_chitietmonhoc") *@
+                        @* @if(@Context.Session.GetInt32("idChitietmonhoc") == null)
+                        {
+                            @await Component.InvokeAsync("Create_Chitietmonhoc")
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Create_Chitietmonhoc", new {id = @Context.Session.GetInt32("idChitietmonhoc")})
+                        } *@
+                       
+                        @if (@Context.Session.GetInt32("id_edit_dccht") == null)
+                        {
+                             @await Component.InvokeAsync("Get_Chitietmonhoc")
+                        }
+                        else
+                        {
+                             @await Component.InvokeAsync("Get_Chitietmonhoc", new {id = @Context.Session.GetInt32("id_edit_dccht")})
+                        }
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="chitietchuong">
+                        @* @if(@Context.Session.GetInt32("idChitietmonhoc") == null)
+                        {
+                            @await Component.InvokeAsync("Create_Chitietchuong")
+                        }
+                        else
+                        {
+                             @await Component.InvokeAsync("Create_Chitietchuong", new {id = @Context.Session.GetInt32("idChitietmonhoc")})
+                        } *@
+                       
+                        @if (@Context.Session.GetInt32("idChitietmonhoc") == null)
+                        {
+                             @await Component.InvokeAsync("Get_Chitietchuong")
+                        }
+                        else
+                        {
+                             @await Component.InvokeAsync("Get_Chitietchuong", new {id = @Context.Session.GetInt32("idChitietmonhoc")})
+                        }
+                            
+
+                    </div>
+                    
+                    <div role="tabpanel" class="tab-pane fade" id="phutrach">
+                        @* @if(@Context.Session.GetInt32("idPhutrach") == null)
+                        {
+                            @await Component.InvokeAsync("Create_Phutrach")
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Create_Phutrach", new {id = @Context.Session.GetInt32("idPhutrach")})
+                        } *@
+                        @if (@Context.Session.GetInt32("id_edit_dccht") == null)
+                        {
+                            @await Component.InvokeAsync("Get_Phutrach")
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Get_Phutrach", new {id = @Context.Session.GetInt32("id_edit_dccht")})
+                        }
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="thoigianhoc">
+                        @* @if(@Context.Session.GetInt32("idThoigianhoc") == null)
+                        {
+                            @await Component.InvokeAsync("Create_Thoigianhoc")
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Create_Thoigianhoc", new {id = @Context.Session.GetInt32("idThoigianhoc")})
+                        } *@
+                        @* @if (@Context.Session.GetInt32("id_edit_dccht") == null)
+                        {
+                            @await Component.InvokeAsync("Get_Thoigianhoc")
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Get_Thoigianhoc", new {id = @Context.Session.GetInt32("id_edit_dccht")})
+                        } *@
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="chuandauramonhoc">
+                        @* @await Html.PartialAsync("_Partial_chuandauramonhoc") *@
+                    </div>
+                     <div role="tabpanel" class="tab-pane fade" id="tailieu">
+                        @* @await Html.PartialAsync("_Partial_tailieu") *@
+                    </div>
+                     
+                    <div role="tabpanel" class="tab-pane fade" id="decuongtailieu">
+                        @* @await Component.InvokeAsync("Create_Tailieu")
+                        @await Component.InvokeAsync("Create_DcTailieu") *@
+                        @if (@Context.Session.GetInt32("id_edit_dccht") == null)
+                        {
+                            @await Component.InvokeAsync("Get_Tailieu")
+                        }
+                        else
+                        {
+                           @await Component.InvokeAsync("Get_Tailieu", new {id = @Context.Session.GetInt32("id_edit_dccht")})
+                        }
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -231,7 +231,7 @@
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="muctieu">
                         @* @await Html.PartialAsync("_Partial_muctieu") *@
-                         @if(@Context.Session.GetInt32("idMuctieu") == null)
+                        @if(@Context.Session.GetInt32("idMuctieu") == null)
                         {
                             @await Component.InvokeAsync("EditMucTieu")
                         }

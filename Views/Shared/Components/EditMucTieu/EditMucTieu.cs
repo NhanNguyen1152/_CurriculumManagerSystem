@@ -21,7 +21,7 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.EditMucTieu
             _context = context;
         }
 
-        [Route("DeCuongchiTiets/Create/{id:int}")]
+        // [Route("DeCuongchiTiets/Create/{id:int}")]
         public async Task<IViewComponentResult> InvokeAsync(int? id)
         { 
             if (id == null)

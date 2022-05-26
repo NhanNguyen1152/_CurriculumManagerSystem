@@ -1,3 +1,5 @@
+using System.Net.Http;
+using System.Net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +28,7 @@ namespace _CurriculumManagerSystem.Controllers
         {
             HttpContext.Session.Remove("idDecuong");
             HttpContext.Session.Remove("nameDecuong");
+            
             var appDbContext = _context.DeCuongchiTiets.Include(d => d.Khoikienthuc).Include(d => d.DeCuongNhiemvus);
             return View(await appDbContext.ToListAsync());
         }
@@ -101,20 +104,53 @@ namespace _CurriculumManagerSystem.Controllers
         }
 
         // GET: DeCuongchiTiets/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var deCuongchiTiet = await _context.DeCuongchiTiets.FindAsync(id);
-            if (deCuongchiTiet == null)
-            {
-                return NotFound();
-            }
+            HttpContext.Session.SetInt32("id_edit_dccht", id );
+            // if(ViewData["Title"] == "Edit_Decuongchitiet")
+            // {
+            //        HttpContext.Session.SetInt32("id_edit_dccht", id );
+            // }
+            // if(ViewData["Title"] == "Edit_Muctieu")
+            // {
+            //     HttpContext.Session.SetInt32("id_edit_dccht_mt",id);
+            // }
+            TempData["id_edit_dc"] = id ;
+         
             ViewData["makkt"] = new SelectList(_context.Khoikienthucs, "makkt", "kkt_ten");
-            return View(deCuongchiTiet);
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
+            ViewData["manv"] = new SelectList(_context.NhiemvuSVs, "manv", "noidung");
+            ViewData["maqd"] = new SelectList(_context.Quydinh_Kiemtras, "maqd", "tenqd");
+            ViewData["mahtdg"] = new SelectList(_context.Hinhthuc_Danhgias, "mahtdg", "hinhthuc");
+            ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "hoten");
+            ViewData["makh"] = new SelectList(_context.Khoahocs, "makh", "tenkh");
+            ViewData["mahk"] = new SelectList(_context.Hockys, "mahk", "tenhk");
+            ViewData["matl"] = new SelectList(_context.Tailieus, "matl", "tentailieu");
+            
+            ViewData["mact"] = new SelectList(_context.Chitietmonhocs.Where(m=> m.mahp ==  HttpContext.Session.GetInt32("id_edit_dccht")), "mact", "tenchuong");
+
+            // if(id > 0)
+            // {
+            //     HttpContext.Session.SetInt32("id_edit_dccht_mt",id);
+            //     HttpContext.Session.SetInt32("idChitietchuong", id);
+            //     HttpContext.Session.SetInt32("idPhutrach", id);
+            //     HttpContext.Session.SetInt32("idThoigianhoc", id);
+            // }
+            // HttpContext.Session.Clear();
+            
+            // var name = (from m in  _context.DeCuongchiTiets where m.mahp == id select m.tenhp_tviet ).ToList();
+            // HttpContext.Session.SetString("name_edit_dccht", name );
+            // if (id == null)
+            // {
+            //     return NotFound();
+            // }
+
+            // var deCuongchiTiet = await _context.DeCuongchiTiets.FindAsync(id);
+            // if (deCuongchiTiet == null)
+            // {
+            //     return NotFound();
+            // }
+            return View();
         }
 
         // POST: DeCuongchiTiets/Edit/5
@@ -147,7 +183,8 @@ namespace _CurriculumManagerSystem.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                HttpContext.Session.SetInt32("id_edit_dccht_after", deCuongchiTiet.mahp);
+                return RedirectToAction("Edit");
             }
             return View(deCuongchiTiet);
         }
@@ -192,6 +229,13 @@ namespace _CurriculumManagerSystem.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction("Create");
         }
+        //Get_Muctieu
+        // public async Task<IActionResult> Edit_GetMuctieu(int id)
+        // {
+        //     HttpContext.Session.SetInt32("id_edit", id);
+        //     return View();
+        // }
+        //crete_mt
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> MultiAction([Bind("mamt,noidung,mtchinh,mtphu,mahp")] Muctieu muctieu)
@@ -205,13 +249,38 @@ namespace _CurriculumManagerSystem.Controllers
                 else
                 {
                     _context.Update(muctieu);
-                }
+                }                   
                 await _context.SaveChangesAsync();
-                HttpContext.Session.Remove("idMuctieu");                                                                            
-                return RedirectToAction("Create");
+                HttpContext.Session.Remove("idMuctieu");  
+                return RedirectToAction("Create");                                                        
+                
             }
             return View(muctieu);
         }   
+        //edit-muctieu
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit_Muctieu([Bind("mamt,noidung,mtchinh,mtphu,mahp")] Muctieu muctieu)
+        {
+            if (ModelState.IsValid)
+            {       
+                if(muctieu.mamt <= 0)
+                {
+                    _context.Add(muctieu);
+                }
+                else
+                {
+                    _context.Update(muctieu);
+                }                   
+                await _context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
+                    HttpContext.Session.Remove("id_edit_mt");  
+                    return RedirectToAction("Edit");
+
+            }
+            return View(muctieu);
+        }  
+
         //Decuongnhiemvu-create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -516,5 +585,57 @@ namespace _CurriculumManagerSystem.Controllers
             TempData["listData"] = appDbContext.ToList();
             return View();
         }
+
+        //  // GET: DeCuongchiTiets/Edit/5
+        // public async Task<IActionResult> Edit(int? id)
+        // {
+        //     if (id == null)
+        //     {
+        //         return NotFound();
+        //     }
+
+        //     var deCuongchiTiet = await _context.DeCuongchiTiets.FindAsync(id);
+        //     if (deCuongchiTiet == null)
+        //     {
+        //         return NotFound();
+        //     }
+        //     ViewData["makkt"] = new SelectList(_context.Khoikienthucs, "makkt", "kkt_ten");
+        //     return View(deCuongchiTiet);
+        // }
+
+        // // POST: DeCuongchiTiets/Edit/5
+        // // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // [HttpPost]
+        // [ValidateAntiForgeryToken]
+        // public async Task<IActionResult> Edit(int id, [Bind("mahp,mahp_decuong,tenhp_tviet,tenhp_tanh,sotc_lt,sotc_th,yeucaukhacvoi_hocphan,tomtat_noidunghocphan,makkt,hp_tienquyet")] DeCuongchiTiet deCuongchiTiet)
+        // {
+        //     if (id != deCuongchiTiet.mahp)
+        //     {
+        //         return NotFound();
+        //     }
+
+        //     if (ModelState.IsValid)
+        //     {
+        //         try
+        //         {
+        //             _context.Update(deCuongchiTiet);
+        //             await _context.SaveChangesAsync();
+        //         }
+        //         catch (DbUpdateConcurrencyException)
+        //         {
+        //             if (!DeCuongchiTietExists(deCuongchiTiet.mahp))
+        //             {
+        //                 return NotFound();
+        //             }
+        //             else
+        //             {
+        //                 throw;
+        //             }
+        //         }
+        //         return RedirectToAction(nameof(Index));
+        //     }
+        //     return View(deCuongchiTiet);
+        // }
     }
 }

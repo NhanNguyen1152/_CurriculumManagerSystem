@@ -44,9 +44,15 @@
                             @item.mtphu
                             @* @Html.DisplayFor(modelItem => item.mtphu) *@
                         </td>
-                     
                             <td>
-                            <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Create" asp-route-id="@item.mamt">mode_edit</a>
+                                @if( ViewData["Title"] == "Create") {
+                                    <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Create" asp-route-id="@item.mamt">mode_edit</a>
+                                    }
+                                else
+                                {
+                                    <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Edit" asp-route-id="@item.mamt">mode_edit</a>
+                                }
+                            
                             <a class="material-icons" style="cursor: pointed;" data-toggle="modal"
                             data-target="#exampleModalCenter">delete_forever</a>
                             <form>

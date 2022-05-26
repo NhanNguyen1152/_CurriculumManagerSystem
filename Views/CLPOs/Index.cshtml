@@ -17,6 +17,9 @@
                         <thead>
                             <tr>
                                 <th>
+                                    @Html.DisplayNameFor(model => model.Chuandaura_monhoc.DeCuongchiTiet.tenhp_tviet)
+                                </th>
+                                <th>
                                     @Html.DisplayNameFor(model => model.ngayupdate)
                                 </th>
                                 <th>
@@ -32,6 +35,9 @@
                             @foreach (var item in Model)
                             {
                                 <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Chuandaura_monhoc.DeCuongchiTiet.tenhp_tviet)
+                                    </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.ngayupdate)
                                     </td>

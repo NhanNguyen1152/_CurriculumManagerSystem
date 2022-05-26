@@ -21,7 +21,8 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Chuandaura_monhocs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Chuandaura_Monhocs.ToListAsync());
+            var appDbContext = _context.Chuandaura_Monhocs.Include(c => c.DeCuongchiTiet);
+            return View(await appDbContext.ToListAsync());
         }
 
         // GET: Chuandaura_monhocs/Details/5

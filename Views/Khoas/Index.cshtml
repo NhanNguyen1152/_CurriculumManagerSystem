@@ -22,9 +22,9 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.mabm)
                                 </th>
-                                <th>
+                                @* <th>
                                     @Html.DisplayNameFor(model => model.Bomon.GiangVien.hoten)
-                                </th>
+                                </th> *@
                                 <th></th>
                             </tr>
                         </thead>
@@ -38,9 +38,9 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Bomon.tenbm)
                                     </td>
-                                    <td>
+                                    @* <td>
                                         @Html.DisplayFor(modelItem => item.Bomon.GiangVien.hoten)
-                                    </td>
+                                    </td> *@
                                     <td>
                                         <a class="material-icons" asp-action="Edit" asp-route-id="@item.makh">mode_edit</a>
                                         <a class="material-icons" asp-action="Delete"

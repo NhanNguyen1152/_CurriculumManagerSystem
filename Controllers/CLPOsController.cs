@@ -21,7 +21,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: CLPOs
         public async Task<IActionResult> Index()
         {
-            var acomptec_lvthainhanContext = _context.CLPOs.Include(c => c.Chuandaura_monhoc).Include(c => c.PLO);
+            var acomptec_lvthainhanContext = _context.CLPOs.Include(c => c.Chuandaura_monhoc).ThenInclude(c => c.DeCuongchiTiet).Include(c => c.PLO);
             return View(await acomptec_lvthainhanContext.ToListAsync());
         }
 

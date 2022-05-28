@@ -16,17 +16,23 @@
                         <thead>
                             <tr>
                                 <th>
-                @Html.DisplayNameFor(model => model.chisocio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.noidung)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.loai)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.mahp)
-            </th>
+                                    @Html.DisplayNameFor(model => model.macdmon)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DeCuongchiTiet.tenhp_tviet)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.chisocio)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.noidung)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.loai)
+                                </th>
+                                @* <th>
+                                    @Html.DisplayNameFor(model => model.mahp)
+                                </th> *@
                                 <th></th>
                             </tr>
                         </thead>
@@ -35,17 +41,23 @@
                             {
                                 <tr>
                                     <td>
-                @Html.DisplayFor(modelItem => item.chisocio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.noidung)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.loai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.mahp)
-            </td>
+                                        @Html.DisplayFor(modelItem => item.macdmon)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DeCuongchiTiet.tenhp_tviet)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.chisocio)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.noidung)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.loai)
+                                    </td>
+                                    @* <td>
+                                        @Html.DisplayFor(modelItem => item.mahp)
+                                    </td> *@
                                     <td>
                                         <a class="material-icons" asp-action="Edit" asp-route-id="@item.macdmon">mode_edit</a> 
                                         <a class="material-icons" asp-action="Delete" asp-route-id="@item.macdmon">delete_forever</a>

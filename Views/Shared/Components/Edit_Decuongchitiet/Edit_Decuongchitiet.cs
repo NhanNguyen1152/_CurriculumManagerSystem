@@ -23,7 +23,7 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Edit_Decuongchitiet
         public async Task<IViewComponentResult> InvokeAsync(int id)
         { 
             HttpContext.Session.SetInt32("id_edit_dccht_after", id );
-            
+            TempData["id_dc_after"] = id;
             
             if (id == null)
             {

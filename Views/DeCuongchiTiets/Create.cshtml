@@ -3,7 +3,7 @@
 @using System.Data;
 @{
     ViewData["Title"] = "Create";
-    @* var returnParam = ViewData["ReturnUrl"] as string; *@
+
 }
 
 <div class="row clearfix">
@@ -46,7 +46,6 @@
                     <li role="presentation"><a role="tab" href="#phutrach" data-toggle="tab">PHỤ TRÁCH</a></li>
                     <li role="presentation"><a role="tab" href="#thoigianhoc" data-toggle="tab">THỜI GIAN HỌC</a></li>
                     <li role="presentation"><a role="tab" href="#chuandauramonhoc" data-toggle="tab">CHUẨN ĐẦU RA MÔN HỌC</a></li>
-                    @* <li role="presentation"><a role="tab" href="#tailieu" data-toggle="tab">TÀI LIỆU</a></li> *@
                     <li role="presentation"><a role="tab" href="#decuongtailieu" data-toggle="tab">TÀI LIỆU</a></li>
                     
 
@@ -230,7 +229,6 @@
                         </div>
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="muctieu">
-                        @* @await Html.PartialAsync("_Partial_muctieu") *@
                         @if(@Context.Session.GetInt32("idMuctieu") == null)
                         {
                             @await Component.InvokeAsync("EditMucTieu")
@@ -249,10 +247,13 @@
                         }
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuongnhiemvu">
+                        
                        @await Component.InvokeAsync("Create_Nhiemvu")
+                       @*loaibo*@
                        @if (@Context.Session.GetInt32("idDecuong") == null)
                         {
                             @await Component.InvokeAsync("Get_Nhiemvu")
+                            
                         }
                         else
                         {
@@ -262,7 +263,7 @@
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuongquydinh">
                         @await Component.InvokeAsync("Create_Quydinh_checkbox")
-                       
+                       @*loaibo*@
                         @if (@Context.Session.GetInt32("idDecuong") == null)
                         {
                              @await Component.InvokeAsync("Get_Quydinh")
@@ -273,9 +274,9 @@
                         }
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuonghinhthuc">
-                        @* @await Html.PartialAsync("_Partial_decuonghinhthuc") *@
-                        @await Component.InvokeAsync("Create_Hinhthuc")
                        
+                        @await Component.InvokeAsync("Create_Hinhthuc")
+                       @*loaibo*@
                         @if (@Context.Session.GetInt32("idDecuong") == null)
                         {
                              @await Component.InvokeAsync("Get_Hinhthuc")
@@ -285,11 +286,7 @@
                              @await Component.InvokeAsync("Get_Hinhthuc", new {id = @Context.Session.GetInt32("idDecuong")})
                         }
                     </div>
-                    @* <div role="tabpanel" class="tab-pane fade" id="decuongtailieu">
-                        @await Html.PartialAsync("_Partial_decuongtailieu")
-                    </div> *@
                     <div role="tabpanel" class="tab-pane fade" id="chitietmonhoc">
-                        @* @await Html.PartialAsync("_Partial_chitietmonhoc") *@
                         @if(@Context.Session.GetInt32("idChitietmonhoc") == null)
                         {
                             @await Component.InvokeAsync("Create_Chitietmonhoc")
@@ -309,23 +306,25 @@
                         }
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="chitietchuong">
-                        @if(@Context.Session.GetInt32("idChitietmonhoc") == null)
+                        @* @if(@Context.Session.GetInt32("id_Chitietmonhoc") == null)
                         {
                             @await Component.InvokeAsync("Create_Chitietchuong")
                         }
                         else
                         {
-                             @await Component.InvokeAsync("Create_Chitietchuong", new {id = @Context.Session.GetInt32("idChitietmonhoc")})
-                        }
+                            @await Component.InvokeAsync("Create_Chitietchuong", new {id = @Context.Session.GetInt32("id_Chitietmonhoc")})
+                        } *@
+                        @await Component.InvokeAsync("Create_Chitietchuong")
                        
-                        @if (@Context.Session.GetInt32("idChitietmonhoc") == null)
+                        @await Component.InvokeAsync("Get_Chitietchuong")
+                        @* @if (@Context.Session.GetInt32("id_Chitietmonhoc") == null)
                         {
-                             @await Component.InvokeAsync("Get_Chitietchuong")
+                            
                         }
                         else
                         {
-                             @await Component.InvokeAsync("Get_Chitietchuong", new {id = @Context.Session.GetInt32("idChitietmonhoc")})
-                        }
+                             @await Component.InvokeAsync("Get_Chitietchuong", new {id = @Context.Session.GetInt32("id_Chitietmonhoc")})
+                        } *@
                             
 
                     </div>
@@ -375,6 +374,7 @@
                      
                     <div role="tabpanel" class="tab-pane fade" id="decuongtailieu">
                         @await Component.InvokeAsync("Create_Tailieu")
+
                         @await Component.InvokeAsync("Create_DcTailieu")
                         @if (@Context.Session.GetInt32("idDecuong") == null)
                         {
@@ -390,189 +390,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    $(function () {
-        $('#myTab li:nth-child(@ViewBag.param) a').tab('show')
-    })
-</script>
-
-@* <div class="row clearfix">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div class="card">
-    <div class="header">
-    <h3 class="titile-table">
-    TẠO MỚI ĐỀ CƯƠNG CHI TIẾT
-    </h3>
-    </div>
-    <div class="body">
-    <form class="form-horizontal" asp-action="Create">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div class="row clearfix">
-    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-    <label asp-for="tenhp_tviet">Tên học phần tiếng việt <span
-    class="text-danger">*</span></label>
-    </div>
-    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-    <div class="form-group">
-    <div class="form-line">
-    <input required type="text" asp-for="tenhp_tviet" class="form-control"
-    placeholder="Tên học phần tiếng việt">
-    </div>
-    </div>
-    </div>
-    </div>
-    <div class="row clearfix">
-    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-    <label asp-for="tenhp_tanh">Tên học phần tiếng anh <span class="text-danger">*</span></label>
-    </div>
-    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-    <div class="form-group">
-
-    <div class="form-line">
-    <input required type="text" asp-for="tenhp_tanh" class="form-control"
-    placeholder="Tên học phần tiếng anh">
-    </div>
-
-    </div>
-    </div>
-    </div>
-    <div class="row clearfix">
-    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-    <label asp-for="sotc_lt">Số tín chỉ lý thuyết <span class="text-danger">*</span></label>
-    </div>
-    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-    <div class="form-group">
-
-    <div class="form-line">
-    <input required min="1" max="5" type="number" asp-for="sotc_lt" class="form-control"
-    placeholder="Số tín chỉ lý thuyết">
-    </div>
-
-    </div>
-    </div>
-    </div>
-    <div class="row clearfix">
-    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-    <label asp-for="sotc_th">Số tín chỉ thực hành <span class="text-danger">*</span></label>
-    </div>
-    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-    <div class="form-group">
-
-    <div class="form-line">
-    <input required min="1" max="5" type="number" asp-for="sotc_th" class="form-control"
-    placeholder="Số tín chỉ thực hành">
-    </div>
-
-    </div>
-    </div>
-    </div>
-    <div class="row clearfix">
-    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-    <label asp-for="yeucaukhacvoi_hocphan">Yêu cầu khác với học phần <span
-    class="text-danger">*</span></label>
-    </div>
-    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-    <div class="form-group">
-
-    <div class="form-line">
-    <input required type="text" asp-for="yeucaukhacvoi_hocphan" class="form-control"
-    placeholder="Yêu cầu khác với học phần">
-    </div>
-
-    </div>
-    </div>
-    </div>
-    <div class="row clearfix">
-    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-    <label asp-for="tomtat_noidunghocphan">Tóm tắt nội dung học phần <span
-    class="text-danger">*</span></label>
-    </div>
-    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-    <div class="form-group">
-
-    <div class="form-line">
-    <textarea required asp-for="tomtat_noidunghocphan" class="form-control"
-    placeholder="Tóm tắt nội dung học phần"></textarea>
-    </div>
-
-    </div>
-    </div>
-    </div>
-    <div class="row clearfix">
-    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-    <label asp-for="makkt">Khối kiến thức <span class="text-danger">*</span></label>
-    </div>
-    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-    <div class="form-group">
-
-    <select required class="form-control show-tick" asp-for="makkt"
-    asp-items="ViewBag.makkt">
-    <option>Vui lòng chọn một </option>
-    </select>
-
-    </div>
-    </div>
-    </div>
-    <div class="row clearfix">
-    <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
-    <a asp-action="Index" class="btn btn-default waves-effect">Trở lại</a> |
-    <input type="submit" class="btn btn-primary waves-effect" value="Tạo mới"></input>
-    </div>
-    </div>
-    </form>
-    </div>
-    </div>
-    </div>
-    </div> *@
-
-
-@* <h1>Create</h1>
-
-    <h4>DeCuongchiTiet</h4>
-    <hr />
-    <div class="row">
-    <div class="col-md-4">
-    <form asp-action="Create">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div class="form-group">
-    <label asp-for="tenhp_tviet" class="control-label"></label>
-    <input asp-for="tenhp_tviet" class="form-control" />
-    <span asp-validation-for="tenhp_tviet" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-    <label asp-for="tenhp_tanh" class="control-label"></label>
-    <input asp-for="tenhp_tanh" class="form-control" />
-    <span asp-validation-for="tenhp_tanh" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-    <label asp-for="sotc_lt" class="control-label"></label>
-    <input asp-for="sotc_lt" class="form-control" />
-    <span asp-validation-for="sotc_lt" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-    <label asp-for="sotc_th" class="control-label"></label>
-    <input asp-for="sotc_th" class="form-control" />
-    <span asp-validation-for="sotc_th" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-    <label asp-for="yeucaukhacvoi_hocphan" class="control-label"></label>
-    <input asp-for="yeucaukhacvoi_hocphan" class="form-control" />
-    <span asp-validation-for="yeucaukhacvoi_hocphan" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-    <label asp-for="tomtat_noidunghocphan" class="control-label"></label>
-    <input asp-for="tomtat_noidunghocphan" class="form-control" />
-    <span asp-validation-for="tomtat_noidunghocphan" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-    <input type="submit" value="Create" class="btn btn-primary" />
-    </div>
-    </form>
-    </div>
-    </div>
-
-    <div>
-    <a asp-action="Index">Back to List</a>
-    </div>
-*@

@@ -21,11 +21,8 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Get_Phutrach
         {
             _context = context;
         }
-
-        
-        // [HttpGet, ActionName("getmt"), Route("DeCuongchiTiets/Create/{id:int}")]
-       
-        public async Task<IViewComponentResult> InvokeAsync(int? id)
+ 
+        public async Task<IViewComponentResult> InvokeAsync(int id)
         {   
             var result = await _context.Phutrachs.Include(m => m.DeCuongchiTiet).Where(m => m.DeCuongchiTiet.mahp == id).ToListAsync();
             return View<List<Phutrach>>(result);

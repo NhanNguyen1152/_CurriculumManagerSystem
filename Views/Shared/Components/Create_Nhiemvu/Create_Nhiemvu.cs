@@ -29,6 +29,8 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Create_Nhiemvu
                               noidung = b.noidung
                           }).ToList();
             ViewData.Model = listNhiemvu;
+
+            
             return View();
         }
     }

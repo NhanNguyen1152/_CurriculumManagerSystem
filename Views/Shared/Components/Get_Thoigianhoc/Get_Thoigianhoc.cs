@@ -25,9 +25,9 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Get_Thoigianhoc
         
         // [HttpGet, ActionName("getmt"), Route("DeCuongchiTiets/Create/{id:int}")]
        
-        public async Task<IViewComponentResult> InvokeAsync(int? id)
+        public async Task<IViewComponentResult> InvokeAsync(int id)
         {   
-            var result = await _context.Thoigianhocs.Include(m => m.DeCuongchiTiet).Where(m => m.DeCuongchiTiet.mahp == id).ToListAsync();
+            var result = await _context.Thoigianhocs.Include(m => m.DeCuongchiTiet).Include(m => m.Hockys).Include(m => m.Khoahocs).Where(m => m.DeCuongchiTiet.mahp == id).ToListAsync();
             return View<List<Thoigianhoc>>(result);
         }
     }

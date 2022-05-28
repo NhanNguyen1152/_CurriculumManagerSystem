@@ -25,10 +25,19 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Get_Chitietchuong
         
         // [HttpGet, ActionName("getmt"), Route("DeCuongchiTiets/Create/{id:int}")]
        
-        public async Task<IViewComponentResult> InvokeAsync(int? id)
+        public async Task<IViewComponentResult> InvokeAsync()
         {   
-            var result = await _context.Chitiet_Chuongs.Include(m => m.Chitietmonhoc).Where(m => m.Chitietmonhoc.mact == m.mactchuong).ToListAsync();
-            return View<List<Chitiet_Chuong>>(result);
+            if(ViewData["Title"] == "Create")
+            {
+                var result = await _context.Chitiet_Chuongs.Include(m => m.Chitietmonhoc).ThenInclude(z => z.DeCuongchiTiet).Where(m => m.Chitietmonhoc.mahp == HttpContext.Session.GetInt32("idDecuong")).ToListAsync();
+                    return View<List<Chitiet_Chuong>>(result);
+            }
+            else
+            {
+                var result = await _context.Chitiet_Chuongs.Include(m => m.Chitietmonhoc).ThenInclude(z => z.DeCuongchiTiet).Where(m => m.Chitietmonhoc.mahp == HttpContext.Session.GetInt32("id_edit_dccht_after")).ToListAsync();
+                    return View<List<Chitiet_Chuong>>(result);
+            }
+            
         }
     }
 

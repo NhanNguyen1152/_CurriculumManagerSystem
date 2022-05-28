@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bekby09RmcJeJGE9VqwJonPsy5L5aHWwQmFoLnl10kL/NagH9Y5AOH07q6/Q02AuMuB1ANz9YfQAS1UY2R9GYQ==",
+  "dgSpecHash": "Xuii5GRQW5nMqk9BGvQgB3ineDFz5gcTLVbhyb6ULLBiokXANx4eQmbr6l9smFq2JMKyg0i3atqVvAtRToHbOg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj",
+  "projectFilePath": "C:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\F570Z-PC\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\F570Z-PC\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\5.0.14\\microsoft.aspnetcore.diagnostics.entityframeworkcore.5.0.14.nupkg.sha512",

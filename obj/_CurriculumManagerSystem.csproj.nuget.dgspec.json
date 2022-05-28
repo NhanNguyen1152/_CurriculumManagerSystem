@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj": {}
+    "C:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj": {}
   },
   "projects": {
-    "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj": {
+    "C:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj",
+        "projectUniqueName": "C:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj",
         "projectName": "_CurriculumManagerSystem",
-        "projectPath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj",
+        "projectPath": "C:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj",
         "packagesPath": "C:\\Users\\F570Z-PC\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\obj\\",
+        "outputPath": "C:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\F570Z-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -14,7 +14,6 @@ namespace _CurriculumManagerSystem.Models
             
         }
         
-        
         public DbSet<Bomon> Bomons { get; set;}
         public DbSet<Chitiet_Chuong> Chitiet_Chuongs { get; set;}
         public DbSet<Chitietmonhoc> Chitietmonhocs { get; set;}

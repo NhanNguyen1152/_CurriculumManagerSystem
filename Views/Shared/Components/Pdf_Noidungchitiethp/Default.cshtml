@@ -1,0 +1,39 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.Chitiet_Chuong>
+<h2>4. 6. Nội dung chi tiết học phần</h2>
+        <table cellspacing="0" cellpadding="5"
+            style="text-align:center;border-style: solid;">
+            <thead style="text-align:center;">
+                <tr>
+                    <th rowspan="2" style="text-align:center;">
+                        Nội dung
+                    </th>
+                    <th colspan="2" style="text-align:center;">
+                        Số Tiết
+                    </th>
+                </tr>
+
+            </thead>
+            <tbody>
+                @* Plos hang o tren *@
+                <tr>
+                    <td>
+                        <td>
+                        Lý thuyết
+                        </td>
+                        <td>
+                        Thực Hành
+                        </td>
+                    </td>
+                </tr>
+                @*hangbentrai*@
+                //
+                @foreach (var item in Model)
+                {
+                    <tr style="text-align: left ;">
+                        <td>Chương @item.Chitietmonhoc.chiso . @item.Chitietmonhoc.tenchuong</td>
+                        <td>@item.Chitietmonhoc.tietlt</td>
+                        <td>@item.Chitietmonhoc.tietth</td>
+                    </tr>
+                }
+            </tbody>
+        </table>

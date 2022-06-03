@@ -27,7 +27,7 @@ namespace _CurriculumManagerSystem
         {
             services.AddControllersWithViews();
             services.AddDbContext<acomptec_lvthainhanContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddSession( options => options.IdleTimeout = TimeSpan.FromMinutes(20));
+            services.AddSession( options => options.IdleTimeout = TimeSpan.FromMinutes(30));
             services.AddHttpContextAccessor();
         }
 

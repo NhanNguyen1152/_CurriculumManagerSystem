@@ -1,0 +1,59 @@
+@model _CurriculumManagerSystem.Models.CLPO
+@using Microsoft.AspNetCore.Http;
+@using System.Data;
+<div class="body">
+    <form class="form-horizontal" asp-action="CreateCLPO">
+        @if (@Context.Session.GetInt32("idClpo") != null)
+        {
+            <input type="hidden" value=@Context.Session.GetInt32("idClpo") asp-for="maclpo" />
+        }
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                <label asp-for="ngayupdate"></label> <span class="text-danger">*</span>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                <div class="form-group">
+                    <div class="form-line">
+                        <input type="date" required asp-for="ngayupdate" class="form-control"
+                            placeholder="Ngày update"></input>
+                        <span asp-validation-for="ngayupdate" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                <label asp-for="macdmon"></label> <span class="text-danger">*</span>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                <div class="form-group">
+
+                    <select required class="form-control show-tick" asp-for="macdmon" asp-items="ViewBag.macdmon">
+                        <option>Vui lòng chọn một </option>
+                    </select>
+
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                <label asp-for="maplo"></label> <span class="text-danger">*</span>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                <div class="form-group">
+
+                    <select required class="form-control show-tick" asp-for="maplo" asp-items="ViewBag.maplo">
+                        <option>Vui lòng chọn một </option>
+                    </select>
+
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                <button type="submit" class="btn btn-primary waves-effect">Tạo mới</button>
+            </div>
+        </div>
+    </form>
+</div>

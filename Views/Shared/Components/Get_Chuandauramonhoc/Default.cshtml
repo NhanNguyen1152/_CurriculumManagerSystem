@@ -1,0 +1,57 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.Chuandaura_monhoc>
+@{
+    var i = 0;
+}
+<div class="body">
+    <div class="body table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        STT
+                    </th>
+                    <th>
+                        Loại
+                    </th>
+                    <th>Chỉ số CLO</th>
+                    <th>Nội dung</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    i++;
+                    <tr>
+                        <td>
+                            @i
+                        </td>
+                        <td>
+                            @item.loai
+                        </td>
+                        <td>
+                            @item.chisocio
+                        </td>
+                        <td>@item.noidung</td>
+                        <td>
+                         @if (ViewData["Title"] == "Create")
+                        {
+                            <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Create"
+                        asp-route-id="@item.macdmon">mode_edit</a>
+                        }
+                        else
+                        {
+                            <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Edit"
+                        asp-route-id="@item.macdmon">mode_edit</a>
+                        }
+                        <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
+                        asp-action="DeleteChuandauramonhoc" asp-route-id="@item.macdmon" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                    </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

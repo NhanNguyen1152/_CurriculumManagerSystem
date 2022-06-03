@@ -37,19 +37,18 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Create_Tailieu
         //     return View();
         // }
 
-
-        public IViewComponentResult Invoke(int? id)
+         public async Task<IViewComponentResult> InvokeAsync(int? id)
         { 
-            // if (id == null)
-            // {                     
-            //     return View();
-            // }
+             if (id == null)
+            {                     
+                return View();
+            }
 
-            // var muctieu = await _context.Muctieus.FindAsync(id);
-            // if (muctieu == null)
-            // {
-            //     return View();
-            // }
+            var muctieu = await _context.Muctieus.FindAsync(id);
+            if (muctieu == null)
+            {
+                return View();
+            }
             return View();
         }
     }

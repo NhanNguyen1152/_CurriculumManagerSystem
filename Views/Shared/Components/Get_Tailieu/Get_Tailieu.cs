@@ -27,8 +27,20 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Get_Tailieu
        
         public async Task<IViewComponentResult> InvokeAsync(int? id)
         {   
-            var result = await _context.DecuongTailieus.Include(m => m.DeCuongchiTiet).Include(m=> m.Tailieu).Where(m => m.DeCuongchiTiet.mahp == id).ToListAsync();
-            return View<List<DecuongTailieu>>(result);
+           
+            if(ViewData["Title"] == "Create")
+            {
+                 var result = await _context.DecuongTailieus.Include(m => m.DeCuongchiTiet).Include(m=> m.Tailieu).Where(m => m.DeCuongchiTiet.mahp == HttpContext.Session.GetInt32("idDecuong")).ToListAsync();
+                    return View<List<DecuongTailieu>>(result);
+               
+            }
+            else
+            {
+                  var result = await _context.DecuongTailieus.Include(m => m.DeCuongchiTiet).Include(m=> m.Tailieu).Where(m => m.DeCuongchiTiet.mahp == HttpContext.Session.GetInt32("id_edit_dccht_after")).ToListAsync();
+                    return View<List<DecuongTailieu>>(result);
+            }
+            
+            return View();
         }
     }
 

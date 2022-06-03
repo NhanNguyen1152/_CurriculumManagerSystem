@@ -1,0 +1,48 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.CLPO>
+<h2>4. Ma trận liên kết giữa nội dung CĐR học phần với CĐR CTĐT</h2>
+        <table cellspacing="0" cellpadding="5"
+            style="text-align:center;border-style: solid;">
+            <thead style="text-align:center;">
+                <tr>
+                    <th rowspan="2" style="text-align:center;">
+                        CLOs
+                    </th>
+                    <th colspan="14" style="text-align:center;">
+                        PLOs
+                    </th>
+                </tr>
+
+            </thead>
+            <tbody>
+                @* Plos hang o tren *@
+                <tr>
+                    <td>
+                        @foreach (var item in Model)
+                        {
+                        <td>@Html.DisplayFor(modelItem => item.Chuandaura_monhoc.chisocio)</td>
+                        }
+                    </td>
+                </tr>
+                @*hangbentrai*@
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>@Html.DisplayFor(modelItem => item.PLO.chisoplo)</td>
+                        @foreach (var items in Model)
+                        {
+                            @if (@items.macdmon == @item.Chuandaura_monhoc.macdmon && @items.maplo == @item.PLO.maplo)
+                            {
+                                <td>
+                                    X
+                                </td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>

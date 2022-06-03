@@ -1,0 +1,12 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.Muctieu>
+
+<h2>2. Mục tiêu của học phần</h2>
+<p>
+    @foreach (var item in Model)
+            {
+                @item.noidung<br>
+                @item.mtchinh<br>
+                @item.mtphu<br>
+            }
+</p>
+

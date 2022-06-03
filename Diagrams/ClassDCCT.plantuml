@@ -1,0 +1,19 @@
+@startuml class
+skinparam linetype ortho
+class Quytrinhdaotao_Dieukientotnghiep{
+    + ma_qt_dktn: int
+    + noi_dung: string
+}
+class Muctieu_Daotao{
+    + ma_mtdt: int
+    + noi_dung: string
+}
+class MoiquanhePLO_Muctieudaotao{
+    + ma_plo_mtdt: int
+    + ngay_update : date
+}
+class Doituong_Tuyensinh{
+    +  ma_dtts : int
+    + noi_dung : string
+}
+@enduml

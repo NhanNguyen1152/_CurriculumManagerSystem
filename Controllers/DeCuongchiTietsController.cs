@@ -1,3 +1,6 @@
+using System.Runtime.Intrinsics.X86;
+using System.Net.Cache;
+using System.Net.Mail;
 using System.Reflection.PortableExecutable;
 using System.Net.Http;
 using System.Net;
@@ -27,10 +30,12 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: DeCuongchiTiets
         public async Task<IActionResult> Index()
         {
-            HttpContext.Session.Remove("idDecuong");
-            HttpContext.Session.Remove("nameDecuong");
-            HttpContext.Session.Clear();
-            var appDbContext = _context.DeCuongchiTiets.Include(d => d.Khoikienthuc).Include(d => d.DeCuongNhiemvus);
+            // HttpContext.Session.Remove("idDecuong");
+            // HttpContext.Session.Remove("nameDecuong");
+             HttpContext.Session.Clear();
+            var appDbContext = _context.DeCuongchiTiets
+            .Include(d => d.Khoikienthuc)
+            .Include(d => d.DeCuongNhiemvus);
             return View(await appDbContext.ToListAsync());
         }
 
@@ -57,7 +62,8 @@ namespace _CurriculumManagerSystem.Controllers
 
         // GET: DeCuongchiTiets/Create
         public IActionResult Create(int id)
-        {
+        {   
+            HttpContext.Session.SetInt32("id_edit_componet", id);
             ViewBag.param = currentTab;
             ViewData["makkt"] = new SelectList(_context.Khoikienthucs, "makkt", "kkt_ten");
             ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
@@ -70,14 +76,20 @@ namespace _CurriculumManagerSystem.Controllers
             ViewData["matl"] = new SelectList(_context.Tailieus, "matl", "tentailieu");
             // ViewData["mact"] = new SelectList(_context.Chitietmonhocs, "mact", "tenchuong");
             ViewData["mact"] = new SelectList(_context.Chitietmonhocs.Where(m=> m.mahp ==  HttpContext.Session.GetInt32("idDecuong")), "mact", "tenchuong");
+            ViewData["macdmon"] = new SelectList(_context.Chuandaura_Monhocs.Where(m=> m.mahp ==  HttpContext.Session.GetInt32("idDecuong")), "macdmon", "noidung");
+            ViewData["maplo"] = new SelectList(_context.PLOs, "maplo", "noidung");
 
             if(id > 0)
             {   
                 HttpContext.Session.SetInt32("idMuctieu",id);
                 
+                 HttpContext.Session.SetInt32("idChitietmonhoc", id);
                 HttpContext.Session.SetInt32("idChitietchuong", id);
                 HttpContext.Session.SetInt32("idPhutrach", id);
                 HttpContext.Session.SetInt32("idThoigianhoc", id);
+                HttpContext.Session.SetInt32("idchuandauramonhoc", id);
+               HttpContext.Session.SetInt32("idClpo", id);
+                
             }
             return View();
         }
@@ -91,8 +103,8 @@ namespace _CurriculumManagerSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                HttpContext.Session.Remove("idDecuong");
-                HttpContext.Session.Remove("nameDecuong");
+                // HttpContext.Session.Remove("idDecuong");
+                // HttpContext.Session.Remove("nameDecuong");
                 _context.Add(deCuongchiTiet);
                 await _context.SaveChangesAsync();
                 current++;
@@ -110,8 +122,7 @@ namespace _CurriculumManagerSystem.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             HttpContext.Session.SetInt32("id_edit_dccht", id );
-            var deCuongchiTiet = await _context.DeCuongchiTiets.FindAsync((int)TempData["id_dc_after"]);
-            TempData["name_dccht"] = deCuongchiTiet.tenhp_tviet;
+            ViewData["name_dccht"] =  _context.DeCuongchiTiets.Where(m=> m.mahp == id).Select(z => z.tenhp_tviet);
             TempData["id_edit_dc"] = id ;
             ViewData["makkt"] = new SelectList(_context.Khoikienthucs, "makkt", "kkt_ten");
             ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
@@ -275,6 +286,7 @@ namespace _CurriculumManagerSystem.Controllers
                     _context.Add(DCNV); 
                     await _context.SaveChangesAsync();
                 }
+                
                     return RedirectToAction("Create");  
             }
             return View();
@@ -403,7 +415,7 @@ namespace _CurriculumManagerSystem.Controllers
                     await _context.SaveChangesAsync();
                 }
 
-                    return RedirectToAction("Create");
+                    return RedirectToAction("Edit");
             }
             return View();
         }
@@ -458,7 +470,7 @@ namespace _CurriculumManagerSystem.Controllers
                 }
                 await _context.SaveChangesAsync();
                 HttpContext.Session.SetInt32("id_Chitietmonhoc", chitietmonhoc.mact);   
-                                                                                   
+                HttpContext.Session.Remove("idChitietmonhoc");                                                                       
                 return RedirectToAction("Create");
           
             }
@@ -479,7 +491,8 @@ namespace _CurriculumManagerSystem.Controllers
                     _context.Update(chitietmonhoc);
                 }
                 await _context.SaveChangesAsync();
-                // HttpContext.Session.SetInt32("idChitietmonhoc", chitietmonhoc.mact);                                                                    
+                // HttpContext.Session.SetInt32("idChitietmonhoc", chitietmonhoc.mact);     
+                HttpContext.Session.Remove("idChitietmonhoc");                                                               
                 return RedirectToAction("Edit");
           
             }
@@ -508,7 +521,7 @@ namespace _CurriculumManagerSystem.Controllers
                     _context.Update(chitiet_Chuong);
                 }
                 await _context.SaveChangesAsync();
-
+                HttpContext.Session.Remove("idChitietchuong");
                     return RedirectToAction("Create");
             }
             return View(chitiet_Chuong);
@@ -527,7 +540,7 @@ namespace _CurriculumManagerSystem.Controllers
                     _context.Update(chitiet_Chuong);
                 }
                 await _context.SaveChangesAsync();
-
+                HttpContext.Session.Remove("idChitietchuong");
                     return RedirectToAction("Edit");
             }
             return View(chitiet_Chuong);
@@ -542,10 +555,10 @@ namespace _CurriculumManagerSystem.Controllers
                 {
                     return RedirectToAction("Create");
                 }
-            else
-            {
-                return RedirectToAction("Edit");
-            }
+                else
+                {
+                    return RedirectToAction("Edit");
+                }
         }
         //CreatePhutrach
         public async Task<IActionResult> CreatePhutrach([Bind("mapt,vaitro,mahp,magv")] Phutrach phutrach)
@@ -561,17 +574,44 @@ namespace _CurriculumManagerSystem.Controllers
                     _context.Update(phutrach);
                 }
                 await _context.SaveChangesAsync();
-                HttpContext.Session.Remove("idPhutrach");                                                                            
-                if(ViewData["Title"] == "Create")
+                HttpContext.Session.Remove("idPhutrach");
+                return RedirectToAction("Create");                                                                            
+            }
+            return View(phutrach);
+        }
+        //edit_phutrach
+        public async Task<IActionResult> EditPhutrach([Bind("mapt,vaitro,mahp,magv")] Phutrach phutrach)
+        {
+            if (ModelState.IsValid)
+            {
+                if(phutrach.mapt <= 0)
                 {
-                    return RedirectToAction("Create");
+                    _context.Add(phutrach);
                 }
                 else
                 {
-                     return RedirectToAction("Edit");
+                    _context.Update(phutrach);
                 }
+                await _context.SaveChangesAsync();
+                //HttpContext.Session.Remove("idPhutrach");
+                return RedirectToAction("Edit");                                                                            
             }
             return View(phutrach);
+        }
+        //delete-phutrach
+         public async Task<IActionResult> DeletePhutrach(int id)
+        {
+            var phutrach = await _context.Phutrachs.FindAsync(id);
+            _context.Phutrachs.Remove(phutrach);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Create));
+        }
+        public async Task<IActionResult> DeletePhutrach_Edit(int id)
+        {
+            var phutrach = await _context.Phutrachs.FindAsync(id);
+            _context.Phutrachs.Remove(phutrach);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Edit));
         }
         //CreateThoigianhoc
         public async Task<IActionResult> CreateThoigianhoc([Bind("matg,yeucauhocphan,mahp,makh,mahk")] Thoigianhoc thoigianhoc)
@@ -587,15 +627,27 @@ namespace _CurriculumManagerSystem.Controllers
                     _context.Update(thoigianhoc);
                 }
                 await _context.SaveChangesAsync();
-                HttpContext.Session.Remove("idThoigianhoc");                                                                            
-                if(ViewData["Title"] == "Create")
+                HttpContext.Session.Remove("idThoigianhoc");   
+                 return RedirectToAction("Create");                                                                         
+            }
+            return View(thoigianhoc);
+        }
+        //editThoigianhoc
+        public async Task<IActionResult> EditThoigianhoc([Bind("matg,yeucauhocphan,mahp,makh,mahk")] Thoigianhoc thoigianhoc)
+        {
+             if (ModelState.IsValid)
+            {
+                if(thoigianhoc.matg <= 0)
                 {
-                    return RedirectToAction("Create");
+                    _context.Add(thoigianhoc);
                 }
                 else
                 {
-                     return RedirectToAction("Edit");
+                    _context.Update(thoigianhoc);
                 }
+                await _context.SaveChangesAsync();
+                HttpContext.Session.Remove("id_edit_Thoigianhoc");   
+                 return RedirectToAction("Edit");                                                                         
             }
             return View(thoigianhoc);
         }
@@ -612,49 +664,151 @@ namespace _CurriculumManagerSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(chuandaura_monhoc);
-                await _context.SaveChangesAsync();
-                if(ViewData["Title"] == "Create")
+                
+                if(chuandaura_monhoc.macdmon <= 0)
                 {
-                    return RedirectToAction("Create");
+                    _context.Add(chuandaura_monhoc);
                 }
                 else
                 {
-                     return RedirectToAction("Edit");
+                    _context.Update(chuandaura_monhoc);
                 }
+                await _context.SaveChangesAsync();
+                HttpContext.Session.Remove("idChuandauramonhoc");   
+                return RedirectToAction("Create");   
             }
             return View(chuandaura_monhoc);
         }
+        //CreateChuandauramonhoc
+        public async Task<IActionResult> EditChuandauramonhoc([Bind("macdmon,chisocio,noidung,loai,mahp")] Chuandaura_monhoc chuandaura_monhoc)
+        {
+            if (ModelState.IsValid)
+            {
+                
+                if(chuandaura_monhoc.macdmon <= 0)
+                {
+                    _context.Add(chuandaura_monhoc);
+                }
+                else
+                {
+                    _context.Update(chuandaura_monhoc);
+                }
+                await _context.SaveChangesAsync();
+                HttpContext.Session.Remove("id_edit_cdrmh");   
+                return RedirectToAction("Create");   
+            }
+            return View(chuandaura_monhoc);
+        }
+
         public async Task<IActionResult> DeleteChuandauramonhoc(int? id)
         {
              var chuandaura_monhoc = await _context.Chuandaura_Monhocs.FindAsync(id);
             _context.Chuandaura_Monhocs.Remove(chuandaura_monhoc);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Create");
-        }
-        //CreateTailieu
-        public IActionResult _Partial_tailieu()
-        {
-            
-            return PartialView("_Partial_tailieu");
-        }
-        public async Task<IActionResult> CreateTailieu([Bind("matl,tacgia,tentailieu,thongtinkhac,loaitl")] Tailieu tailieu)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(tailieu);
-                await _context.SaveChangesAsync();
-                TempData["id_tl"] = tailieu.matl;
-                if(ViewData["Title"] == "Create")
+            if(ViewData["Title"] == "Create")
                 {
                     return RedirectToAction("Create");
                 }
-                else
+            if(ViewData["Title"] == "Edit")
                 {
                      return RedirectToAction("Edit");
                 }
+                return View();
+        }
+        //Create_ClPO
+        public async Task<IActionResult> CreateCLPO([Bind("maclpo,ngayupdate,macdmon,maplo")] CLPO cLPO)
+        {
+            if (ModelState.IsValid)
+            {
+                if(cLPO.maclpo <= 0)
+                {
+                    _context.Add(cLPO);
+                }
+                else
+                {
+                    _context.Update(cLPO);
+                }
+                _context.Add(cLPO);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Create");
+            }
+            return View();
+        }
+        //edit
+        public async Task<IActionResult> EditCLPO([Bind("maclpo,ngayupdate,macdmon,maplo")] CLPO cLPO)
+        {
+            if (ModelState.IsValid)
+            {
+                if(cLPO.maclpo <= 0)
+                {
+                    _context.Add(cLPO);
+                }
+                else
+                {
+                    _context.Update(cLPO);
+                }
+                _context.Add(cLPO);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Edit");
+            }
+            return View();
+        }
+
+        //CreateTailieu
+        public async Task<IActionResult> CreateTailieu([Bind("matl,tacgia,tentailieu,thongtinkhac,loaitl")] Tailieu tailieu)
+        {
+             if (ModelState.IsValid)
+            {
+                
+                if(tailieu.matl <= 0)
+                {
+                    _context.Add(tailieu);
+                }
+                else
+                {
+                    _context.Update(tailieu);
+                }
+                await _context.SaveChangesAsync();
+               TempData["id_tl"] = tailieu.matl;
+                return RedirectToAction("Create");   
             }
             return View(tailieu);
+        }
+        //EditDecuongtailieu
+         public async Task<IActionResult> EditDecuongtailieu([Bind("matl,tacgia,tentailieu,thongtinkhac,loaitl")] Tailieu tailieu)
+        {
+             if (ModelState.IsValid)
+            {
+                
+                if(tailieu.matl <= 0)
+                {
+                    _context.Add(tailieu);
+                }
+                else
+                {
+                    _context.Update(tailieu);
+                }
+                await _context.SaveChangesAsync();
+               TempData["id_tl"] = tailieu.matl;
+                return RedirectToAction("Edit");   
+            }
+            return View(tailieu);
+        }
+        //detele_tailieu
+        public async Task<IActionResult> DeleteTailieu(int id)
+        {
+             var tailieu = await _context.Tailieus.FindAsync(id);
+            _context.Tailieus.Remove(tailieu);
+            await _context.SaveChangesAsync();
+            if(ViewData["Title"] == "Create")
+                {
+                    return RedirectToAction("Create");
+                }
+            if(ViewData["Title"] == "Edit")
+                {
+                     return RedirectToAction("Edit");
+                }
+                return View();
         }
         
 
@@ -679,6 +833,12 @@ namespace _CurriculumManagerSystem.Controllers
             var appDbContext = _context.DeCuongchiTiets.Include(d => d.Khoikienthuc);
             TempData["listData"] = appDbContext.ToList();
             return View();
+        }
+          public async Task<IActionResult> CLO_PLO(int id)
+        {   
+            var acomptec_lvthainhanContext = _context.CLPOs.Include(c => c.Chuandaura_monhoc).ThenInclude(c => c.DeCuongchiTiet).Include(c => c.PLO).Where(c=> c.Chuandaura_monhoc.mahp == id).OrderBy(c=> c.Chuandaura_monhoc.chisocio).OrderBy(c=> c.PLO.chisoplo);
+            // HttpContext.Session.SetString("clpo_name", acomptec_lvthainhanContext.DeCuongchiTiet.tenhp_tviet);
+             return View(await acomptec_lvthainhanContext.ToListAsync());
         }
     }
 }

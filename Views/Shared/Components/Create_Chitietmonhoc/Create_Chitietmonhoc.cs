@@ -22,7 +22,7 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Create_Chitietmonhoc
         }
         public async Task<IViewComponentResult> InvokeAsync(int id)
         { 
-            HttpContext.Session.SetInt32("idChitietmonhoc",id);
+            // HttpContext.Session.SetInt32("idChitietmonhoc", id);
             if (id == null)
             {                     
                 return View();

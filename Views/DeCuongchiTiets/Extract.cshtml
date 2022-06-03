@@ -1,0 +1,31 @@
+@model _CurriculumManagerSystem.Models.DeCuongchiTiet
+@{
+  ViewData["Title"] = "Print";
+  Layout = "";
+}
+
+<html>
+
+<head>
+  <link href="~/StylePrint.css" rel="stylesheet" />
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+
+<body onload="window.print()">
+  <div class="book">
+    <div class="page">
+      <div class="subpage">
+        
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

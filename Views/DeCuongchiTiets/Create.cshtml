@@ -46,6 +46,7 @@
                     <li role="presentation"><a role="tab" href="#phutrach" data-toggle="tab">PHỤ TRÁCH</a></li>
                     <li role="presentation"><a role="tab" href="#thoigianhoc" data-toggle="tab">THỜI GIAN HỌC</a></li>
                     <li role="presentation"><a role="tab" href="#chuandauramonhoc" data-toggle="tab">CHUẨN ĐẦU RA MÔN HỌC</a></li>
+                    <li role="presentation"><a role="tab" href="#CLPO" data-toggle="tab">CLPO</a></li>
                     <li role="presentation"><a role="tab" href="#decuongtailieu" data-toggle="tab">TÀI LIỆU</a></li>
                     
 
@@ -239,7 +240,7 @@
                         }
                         @if (@Context.Session.GetInt32("idDecuong") == null)
                         {
-                            @await Component.InvokeAsync("GetMucTieu")
+                            @await Component.InvokeAsync("GetMucTieu", new { id = 0})
                         }
                         else
                         {
@@ -287,9 +288,10 @@
                         }
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="chitietmonhoc">
+                       
                         @if(@Context.Session.GetInt32("idChitietmonhoc") == null)
                         {
-                            @await Component.InvokeAsync("Create_Chitietmonhoc")
+                            @await Component.InvokeAsync("Create_Chitietmonhoc", new { id = 0})
                         }
                         else
                         {
@@ -298,56 +300,58 @@
                        
                         @if (@Context.Session.GetInt32("idDecuong") == null)
                         {
-                             @await Component.InvokeAsync("Get_Chitietmonhoc")
+                            @await Component.InvokeAsync("Get_Chitietmonhoc")
                         }
                         else
                         {
-                             @await Component.InvokeAsync("Get_Chitietmonhoc", new {id = @Context.Session.GetInt32("idDecuong")})
+                            @await Component.InvokeAsync("Get_Chitietmonhoc", new {id = @Context.Session.GetInt32("idDecuong")})
                         }
+                        
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="chitietchuong">
-                        @* @if(@Context.Session.GetInt32("id_Chitietmonhoc") == null)
+                         
+                        @if(@Context.Session.GetInt32("idChitietchuong") == null)
                         {
-                            @await Component.InvokeAsync("Create_Chitietchuong")
+                            @await Component.InvokeAsync("Create_Chitietchuong", new {id =0})
                         }
                         else
                         {
-                            @await Component.InvokeAsync("Create_Chitietchuong", new {id = @Context.Session.GetInt32("id_Chitietmonhoc")})
-                        } *@
-                        @await Component.InvokeAsync("Create_Chitietchuong")
-                       
-                        @await Component.InvokeAsync("Get_Chitietchuong")
-                        @* @if (@Context.Session.GetInt32("id_Chitietmonhoc") == null)
+                             @await Component.InvokeAsync("Create_Chitietchuong", new {id = @Context.Session.GetInt32("idChitietchuong")})
+                        }
+                            @if (@Context.Session.GetInt32("idDecuong") == null)
                         {
-                            
+                            @await Component.InvokeAsync("Get_Chitietchuong")
                         }
                         else
                         {
-                             @await Component.InvokeAsync("Get_Chitietchuong", new {id = @Context.Session.GetInt32("id_Chitietmonhoc")})
-                        } *@
-                            
+                           @await Component.InvokeAsync("Get_Chitietchuong", new {id = @Context.Session.GetInt32("idDecuong")})
+                        }
+
 
                     </div>
                     
                     <div role="tabpanel" class="tab-pane fade" id="phutrach">
+                         
                         @if(@Context.Session.GetInt32("idPhutrach") == null)
                         {
-                            @await Component.InvokeAsync("Create_Phutrach")
+                            @await Component.InvokeAsync("Create_Phutrach", new { id = 0})
                         }
                         else
                         {
                             @await Component.InvokeAsync("Create_Phutrach", new {id = @Context.Session.GetInt32("idPhutrach")})
                         }
-                        @if (@Context.Session.GetInt32("idDecuong") == null)
+                        
+                         @if (@Context.Session.GetInt32("idDecuong") == null)
                         {
                             @await Component.InvokeAsync("Get_Phutrach")
                         }
                         else
                         {
-                            @await Component.InvokeAsync("Get_Phutrach", new {id = @Context.Session.GetInt32("idDecuong")})
+                           @await Component.InvokeAsync("Get_Phutrach", new {id = @Context.Session.GetInt32("idDecuong")})
                         }
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="thoigianhoc">
+                        
                         @if(@Context.Session.GetInt32("idThoigianhoc") == null)
                         {
                             @await Component.InvokeAsync("Create_Thoigianhoc")
@@ -366,10 +370,44 @@
                         }
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="chuandauramonhoc">
-                        @await Html.PartialAsync("_Partial_chuandauramonhoc")
+                         
+                        
+                        @if(@Context.Session.GetInt32("idchuandauramonhoc") == null)
+                        {
+                            @await Component.InvokeAsync("Create_Chuandauramonhoc", new { id = 0})
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Create_Chuandauramonhoc", new {id = @Context.Session.GetInt32("idchuandauramonhoc")})
+                        }
+                         @if (@Context.Session.GetInt32("idDecuong") == null)
+                        {
+                             @await Component.InvokeAsync("Get_Chuandauramonhoc")
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Get_Chuandauramonhoc", new {id = @Context.Session.GetInt32("idDecuong")})
+                        }
+
                     </div>
-                     <div role="tabpanel" class="tab-pane fade" id="tailieu">
-                        @await Html.PartialAsync("_Partial_tailieu")
+                     <div role="tabpanel" class="tab-pane fade" id="CLPO">
+                        @if(@Context.Session.GetInt32("idClpo") == null)
+                        {
+                            @await Component.InvokeAsync("Create_CLPO", new { id = 0})
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Create_CLPO", new {id = @Context.Session.GetInt32("idClpo")})
+                        }
+                         @if (@Context.Session.GetInt32("idDecuong") == null)
+                        {
+                            @await Component.InvokeAsync("Get_CLPO")
+                        }
+                        else
+                        {
+                           @await Component.InvokeAsync("Get_CLPO", new {id = @Context.Session.GetInt32("idDecuong")})
+                        }
+                        
                     </div>
                      
                     <div role="tabpanel" class="tab-pane fade" id="decuongtailieu">

@@ -22,20 +22,29 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Edit_Nhiemvu
         }
                 public async Task<IViewComponentResult> InvokeAsync()
         { 
-            //  var listNhiemvu = (from b in _context.NhiemvuSVs
-            //               select new NhiemvuSV
-            //               {
-            //                   manv = b.manv,
-            //                   noidung = b.noidung
-            //               }).ToList();
-            // ViewData.Model = listNhiemvu;
+          
+        //    var listNhiemvu = (from b in _context.NhiemvuSVs
+        //                   select new NhiemvuSV
+        //                   {
+        //                       manv = b.manv,
+        //                       noidung = b.noidung
+        //                   });
+        //     ViewData.Model = listNhiemvu
 
-             var result = await _context.DeCuongNhiemvus.Include(m => m.DeCuongchiTiet).Include(m=> m.NhiemvuSV).Where(m => m.DeCuongchiTiet.mahp == HttpContext.Session.GetInt32("id_edit_dccht_after")).ToListAsync();
-                //  ViewData.Model = result;
-                return View<List<DeCuongNhiemvu>>(result);
-            // var result =  _context.DeCuongNhiemvus.Include(m => m.DeCuongchiTiet).Include(m=> m.NhiemvuSV).Where(m => m.DeCuongchiTiet.mahp == HttpContext.Session.GetInt32("id_edit_dccht_after")).ToListAsync();
+
+            
+                // var listNhiemvu = _context.DeCuongNhiemvus
+                // .Include(m => m.NhiemvuSV)
+                // .Include(z=> z.DeCuongchiTiet)
+                // .Select(m => new DeCuongNhiemvu { manv = m.NhiemvuSV.manv, noidung = m.NhiemvuSV.noidung })
+                // .ToList();
+                // ViewData.Model = listNhiemvu;
+               //return View();
            
-            // TempData["id_nv"] = result.mahp;
+             var result = await _context.DeCuongNhiemvus.Include(m => m.DeCuongchiTiet).Include(m=> m.NhiemvuSV).ToListAsync();
+             
+            return View<List<DeCuongNhiemvu>>(result);
+         
 
             
         }

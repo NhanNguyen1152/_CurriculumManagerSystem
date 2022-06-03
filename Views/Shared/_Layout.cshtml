@@ -351,13 +351,6 @@
                         </a>
                     </li>
                     <li>
-                        <a href="~/Muctieus/">
-                            <i class="material-icons">assignment_ind</i>
-                            <span>Mục tiêu</span>
-                        </a>
-
-                    </li>
-                    <li>
                         <a href="~/NhiemvuSVs/">
                             <i class="material-icons">assignment_ind</i>
                             <span>Nhiệm Vụ Sinh Viên</span>
@@ -383,17 +376,33 @@
                         </a>
                     </li>
                     <li>
-                        <a href="~/Chitietmonhocs/">
-                            <i class="material-icons">library_add</i>
-                            <span>Chi Tiết Môn Học</span>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">date_range</i>
+                            <span>Các bảng</span>
                         </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="~/DeCuongchiTiets/getBangtomtatCTDT">
+                                    <span>Bảng tóm tắt CTĐT</span>
+                                </a>
+                                <a href="~/DeCuongchiTiets/getHuongdanCTDT">
+                                    <span>Bảng hướng dẫn CTĐT</span>
+                                </a>
+                                <a href="~/DeCuongchiTiets/getNoidungCTDT">
+                                    <span>Nội dung CTĐT</span>
+                                </a>
+                                <a href="~/Thoigianhocs/getThoikhoabieu">
+                                    <span>Thời khóa biểu</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
+                    @* <li>
                         <a href="~/Chitiet_Chuongs/">
                             <i class="material-icons">library_add</i>
                             <span>Chi Tiết Chương</span>
                         </a>
-                    </li>
+                    </li> *@
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">date_range</i>
@@ -452,12 +461,12 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="~/Chuandaura_monhocs">
+                                @* <a href="~/Chuandaura_monhocs">
                                     <span>Chuẩn đầu ra môn học</span>
                                 </a>
                                 <a href="~/CLPOs">
                                     <span>CLPO</span>
-                                </a>
+                                </a> *@
                                 <a href="~/PLOs">
                                     <span>PLO</span>
                                 </a>

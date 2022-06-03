@@ -1,4 +1,5 @@
 @model IEnumerable<_CurriculumManagerSystem.Models.DeCuongNhiemvu>
+    
 @{
     var i = 0;
 }
@@ -14,7 +15,6 @@
                         Nội dung nhiệm vụ
                     </th>
                     <th></th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -24,40 +24,14 @@
                     i++;
                     <tr>
                         <td>
-                            @i++
+                            @i
                         </td>
                         <td>
                             @item.NhiemvuSV.noidung
                         </td>
                         <td>
-                            @item.mahp
-                        </td>
-                        <td>
-                            <a class="material-icons" style="cursor: pointed;" data-toggle="modal"
-                            data-target="#exampleModalCenter">delete_forever</a>
-                            <form>
-                                <div class="modal fade" id="exampleModalCenter">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Xác nhận xóa</h5>
-                                                <button type="button" class="close"
-                                                    data-dismiss="modal"><span>&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p>Bạn có chắc muốn xóa không ?</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="submit" class="btn btn-secondary"
-                                                    data-dismiss="modal">Đóng</button>
-                                                @* <input type="submit" value="Xóa" class="btn btn-primary" /> *@
-                                                <button type="submit" class="btn btn-primary waves-effect" asp-controller="DeCuongchiTiets" asp-action="DeleteNhiemvu" asp-route-id="@item.dcnv_id">Xóa</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+                            <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
+                        asp-action="DeleteNhiemvu" asp-route-id="@item.dcnv_id" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
                         </td>
 
                     </tr>

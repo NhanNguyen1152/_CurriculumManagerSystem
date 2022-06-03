@@ -1,5 +1,6 @@
 @model _CurriculumManagerSystem.Models.DeCuongchiTiet
-
+@using Microsoft.AspNetCore.Http;
+@using System.Data;
 @{
     ViewData["Title"] = "Print";
     Layout = null;
@@ -7,21 +8,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <style>
+    body {
+        height: 842px;
+        width: 595px;
+        /* to centre page on screen*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+    </style>
 
     <!-- Bootstrap CSS -->
-    <link
+    @* <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
-    />
+    /> *@
 
     <link rel="stylesheet" href="~/css/style.css" />
   </head>
@@ -56,281 +65,35 @@
         <div class="content_item">
           <h2>1. Thông tin chung về học phần</h2>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            <br />
-            illo est qui asperiores, dicta sunt sed at debitis voluptates rem
-            accusamus excepturi <br />
-            architecto eaque cupiditate veniam iusto quia impedit eligendi.
+            Tên học phần bằng tiếng Việt: @Model.tenhp_tviet <br>
+            Tên học phần bằng tiếng Anh: @Model.tenhp_tanh<br>
+            Mã học phần: @Model.mahp_decuong<br>
+            @* Loại học phần: @Model.Khoikienthuc.kkt_ten<br> *@
+            Số tín chỉ: 03 tín chỉ (30 tiết lý thuyết, 30 tiết thực hành)<br>
+            Số tiết học:  60 tiết<br>
+            Yêu cầu của học phần:  bắt buộc<br>
+            Học phần học trước: @Model.hp_tienquyet<br>
+            @* Thời gian học: @foreach (var item in (TempData["thoigianhoc"]))
+            {
+              @item.Thoigianhoc.Hockys.tenhk<br>
+            } *@
+            @* Các yêu cầu khác đối với học phần: @Model.yeucaukhacvoi_hocphan<br>
+            Đơn vị phụ trách: @Model.Phutrach.GiangVien.Bomon.Khoa<br>
+            Người phụ trách: @if(@Model.Phutrach.vaitro == "Người phụ trách") @Model.Phutrach.GiangVien.hoten<br>
+            Chức danh/Học hàm/Học vị: @Model.Phutrach.GiangVien.chucdanh/ @Model.Phutrach.GiangVien.hocham @Model.Phutrach.GiangVien.hocvi<br>
+            Địa chỉ liên hệ: @Model.Phutrach.GiangVien.diachilienhe<br>
+            Điện thoại:			Email: @Model.Phutrach.GiangVien.diachilienhe<br>
+            Các giảng viên tham gia giảng dạy cùng: @if(@Model.Phutrach.vaitro == "Giảng viên tham gia giảng dạy cùng")@Model.Phutrach.GiangVien.hoten<br> *@
           </p>
         </div>
         <div class="content_item">
-          <h2>2. Thông tin chung về học phần</h2>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            illo est qui asperiores, dicta sunt sed at debitis voluptates rem
-            accusamus excepturi architecto eaque cupiditate veniam iusto quia
-            impedit eligendi.
-          </p>
+          @await Component.InvokeAsync("Pdf_Getmuctieu", new { id = @Context.Session.GetInt32("id_pdf")} )
         </div>
         <div class="content_item">
-          <h2>3. Thông tin chung về học phần</h2>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            illo est qui asperiores, dicta sunt sed at debitis voluptates rem
-            accusamus excepturi architecto eaque cupiditate veniam iusto quia
-            impedit eligendi.
-          </p>
+           @await Component.InvokeAsync("Pdf_Getclpo", new { id = @Context.Session.GetInt32("id_pdf")} )
         </div>
         <div class="content_item">
-          <h2>4. Ma trận liên kết giữa nội dung CĐR học phần với CĐR CTĐT</h2>
-          <table class="table table-hover">
-            <tr>
-              <td rowspan="2"></td>
-              <td colspan="14">td02</td>
-            </tr>
-            <tr>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-            </tr>
-            <tr>
-              <td>td12</td>
-              <td>td13</td>
-              <td>td14</td>
-              <td>td15</td>
-              <td>td12</td>
-              <td>td13</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-            </tr>
-            <tr>
-              <td>td12</td>
-              <td>td13</td>
-              <td>td14</td>
-              <td>td15</td>
-              <td>td12</td>
-              <td>td13</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-            </tr>
-            <tr>
-              <td>td12</td>
-              <td>td13</td>
-              <td>td14</td>
-              <td>td15</td>
-              <td>td12</td>
-              <td>td13</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-            </tr>
-          </table>
-        </div>
-
-        <div class="content_item">
-          <h2>5 Nội dung chi tiết học phần</h2>
-          <table class="table table-hover">
-            <tr>
-              <td rowspan="2"></td>
-              <td colspan="14">td02</td>
-            </tr>
-            <tr>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-              <td>t</td>
-            </tr>
-            <tr>
-              <td>td12</td>
-              <td>td13</td>
-              <td>td14</td>
-              <td>td15</td>
-              <td>td12</td>
-              <td>td13</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-            </tr>
-            <tr>
-              <td>td12</td>
-              <td>td13</td>
-              <td>td14</td>
-              <td>td15</td>
-              <td>td12</td>
-              <td>td13</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-            </tr>
-            <tr>
-              <td>td12</td>
-              <td>td13</td>
-              <td>td14</td>
-              <td>td15</td>
-              <td>td12</td>
-              <td>td13</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-              <td>td14</td>
-            </tr>
-          </table>
-        </div>
-
-        <div class="content_item">
-          <h2>5 Nội dung chi tiết học phần</h2>
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>twitter</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="content_item">
-          <h2>5 Nội dung chi tiết học phần</h2>
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>twitter</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="content_item">
-          <h2>5 Nội dung chi tiết học phần</h2>
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>twitter</td>
-              </tr>
-            </tbody>
-          </table>
+           @await Component.InvokeAsync("Pdf_Noidungchitiethp", new { id = @Context.Session.GetInt32("id_pdf")} )
         </div>
       </div>
 

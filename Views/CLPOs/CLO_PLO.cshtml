@@ -1,0 +1,67 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.CLPO>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h3 class="titile-table">CLPO - Ten mon (Toan roi rac) | <a class="near-titile-table"
+                        asp-action="create">Thêm</a>
+                </h3>
+            </div>
+            <div class="body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">
+                                    CLOs
+                                </th>
+                                <th>
+                                    PLOs
+                                </th>
+
+                                @foreach ( var item in Model)
+                                    {
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayFor(modelItem => item.Chuandaura_monhoc.chisocio)
+                                        </th>
+                                    </tr>
+                                    }
+                                @* <th>
+                                    @Html.DisplayNameFor(model => model.Chuandaura_monhoc)
+                                    </th>
+                                    <th>
+                                    @Html.DisplayNameFor(model => model.PLO)
+                                    </th>
+                                    <th></th> *@
+                            </tr>
+                            @foreach (var item in ((List<CLPO>)TempData["listData"]))
+                            {
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.maplo)
+                                </td>
+                            }
+                        </thead>
+                        <tbody>
+                            @* @foreach (var item in Model)
+                                {
+                                <th>
+                                <td>
+                                @Html.DisplayFor(modelItem => item.PLO.chisoplo)
+                                </td>
+
+
+                                </th>
+                                } *@
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,10 +3,10 @@
 @using System.Data;
 <div class="body">
     <form class="form-horizontal" asp-action="CreateChitietchuong">
-        @* @if (@Context.Session.GetInt32("idChitietchuong") != null)
+        @if (@Context.Session.GetInt32("idChitietchuong") != null)
         {
             <input type="hidden" value=@Context.Session.GetInt32("idChitietchuong") asp-for="mactchuong" />
-        } *@
+        }
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="row clearfix">
             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">

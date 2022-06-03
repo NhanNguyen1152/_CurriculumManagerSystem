@@ -20,8 +20,9 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Create_Phutrach
         {
             _context = context;
         }
-        public async Task<IViewComponentResult> InvokeAsync(int? id)
+        public async Task<IViewComponentResult> InvokeAsync(int id)
         { 
+            HttpContext.Session.SetInt32("idPhutrach", id);
             if (id == null)
             {                     
                 return View();

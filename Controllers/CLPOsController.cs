@@ -24,6 +24,14 @@ namespace _CurriculumManagerSystem.Controllers
             var acomptec_lvthainhanContext = _context.CLPOs.Include(c => c.Chuandaura_monhoc).ThenInclude(c => c.DeCuongchiTiet).Include(c => c.PLO);
             return View(await acomptec_lvthainhanContext.ToListAsync());
         }
+        //get
+        //  public async Task<IActionResult> CLO_PLO()
+        // {
+        //     var appDbContext = await _context.CLPOs.Include(c => c.Chuandaura_monhoc).ThenInclude(c => c.DeCuongchiTiet).Include(c => c.PLO).Where(m=> m.DecuongchiTiet == id);
+        //     TempData["listData"] = appDbContext.ToList();
+            
+        //     return View();
+        // }
 
         // GET: CLPOs/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -48,8 +56,8 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: CLPOs/Create
         public IActionResult Create()
         {
-            ViewData["macdmon"] = new SelectList(_context.Chuandaura_Monhocs, "macdmon", "macdmon");
-            ViewData["maplo"] = new SelectList(_context.PLOs, "maplo", "maplo");
+            ViewData["macdmon"] = new SelectList(_context.Chuandaura_Monhocs, "macdmon", "noidung");
+            ViewData["maplo"] = new SelectList(_context.PLOs, "maplo", "noidung");
             return View();
         }
 

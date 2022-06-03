@@ -1,0 +1,49 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.Muctieu>
+@{
+    string mtchung = "Mục tiêu chung";
+    string mtcuthe = "Mục tiêu cụ thể";
+    string mtphu_kt = "Kiến thức";
+    string mtphu_kn = "Kỹ năng";
+    string mtphu_tn = "Mức tự chủ và trách nhiệm";
+}
+<h2>2. Mục tiêu của học phần</h2>
+<h2> 2.1 @mtchung</h2>
+
+<p>
+    @foreach (var item in Model)
+    {
+        @if (item.mtchinh == mtchung) @item.noidung
+    }
+    <br>
+</p>
+<h2> 2.1 @mtcuthe</h2>
+<p>
+- @mtphu_kt:<br>
+    @foreach (var item in Model)
+        {
+            @if (item.mtchinh == mtcuthe && item.mtphu == mtphu_kt)
+                { 
+                   <p>   + @item.noidung</p> 
+                }
+        }
+</p>
+<p>
+- @mtphu_kn:<br>
+    @foreach (var item in Model)
+        {
+            @if (item.mtchinh == mtcuthe && item.mtphu == mtphu_kn)
+                { 
+                  <p>   + @item.noidung</p> 
+                }
+        }
+</p>
+<p>
+- @mtphu_tn:<br>
+    @foreach (var item in Model)
+        {
+            @if (item.mtchinh == mtcuthe && item.mtphu == mtphu_tn)
+                { 
+                    <p>   + @item.noidung</p> 
+                }
+        }
+</p>

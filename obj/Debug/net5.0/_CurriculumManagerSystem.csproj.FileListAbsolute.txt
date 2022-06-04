@@ -1313,3 +1313,27 @@ C:\Users\F570Z-PC\OneDrive\Tài liệu\GitHub\_CurriculumManagerSystem\obj\Deb
 C:\Users\F570Z-PC\OneDrive\Tài liệu\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Pdf_Getmuctieu\Default.cshtml.g.cs
 C:\Users\F570Z-PC\OneDrive\Tài liệu\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Pdf_Getclpo\Default.cshtml.g.cs
 C:\Users\F570Z-PC\OneDrive\Tài liệu\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Pdf_Noidungchitiethp\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\CLPOs\CLO_PLO.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\DeCuongchiTiets\CLO_PLO.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\DeCuongchiTiets\Edit copy.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\DeCuongchiTiets\Extract.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Create_Chuandauramonhoc\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Create_CLPO\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Edit_Chitietchuong\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Edit_Chitietmonhoc\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Edit_Chuandauramonhoc\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Edit_CLPO\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Edit_DcTailieu\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Edit_Decuongchitiet\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Edit_Hinhthuc\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Edit_MucTieu\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Edit_Nhiemvu\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Edit_Phutrach\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Edit_Quydinh\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Edit_Thoigianhoc\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Get_Chuandauramonhoc\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Get_CLPO\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Pdf_Getclpo\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Pdf_Getmuctieu\Default.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Pdf_Noidungchitiethp\Default.cshtml.g.cs

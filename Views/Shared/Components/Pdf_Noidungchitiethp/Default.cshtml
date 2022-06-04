@@ -1,39 +1,51 @@
 @model IEnumerable<_CurriculumManagerSystem.Models.Chitiet_Chuong>
-<h2>4. 6. Nội dung chi tiết học phần</h2>
-        <table cellspacing="0" cellpadding="5"
-            style="text-align:center;border-style: solid;">
-            <thead style="text-align:center;">
-                <tr>
-                    <th rowspan="2" style="text-align:center;">
-                        Nội dung
-                    </th>
-                    <th colspan="2" style="text-align:center;">
-                        Số Tiết
-                    </th>
-                </tr>
 
-            </thead>
-            <tbody>
-                @* Plos hang o tren *@
+<h2>4. 6. Nội dung chi tiết học phần</h2>
+<table cellspacing="0" cellpadding="5" style="text-align:center;border-style: solid;">
+    <thead style="text-align:center;">
+        <tr>
+            <th rowspan="2" style="text-align:center;">
+                Tuần học
+            </th>
+            <th rowspan="2" style="text-align:center;">
+                Nội dung
+            </th>
+            <th colspan="2" style="text-align:center;">
+                Số Tiết
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Lý thuyết
+            </th>
+            <th>
+                Thực Hành
+            </th>
+
+        </tr>
+    </thead>
+    @{
+        int temp = 0;
+    }
+    <tbody>
+        @* Plos hang o tren *@
+        @*hangbentrai*@
+        @foreach (var item in Model.GroupBy(x => x.tuanhoc))
+        {
+            int numofitem = item.Count();
+            @foreach (var item2 in item)
+            {
                 <tr>
-                    <td>
-                        <td>
-                        Lý thuyết
-                        </td>
-                        <td>
-                        Thực Hành
-                        </td>
-                    </td>
+                    @if (item.Key != temp)
+                    {
+                        temp = item.Key;
+                        <td rowspan="@numofitem">@item.Key</td>
+                    }
+                    <td style="text-align: left;">Chương @item2.Chitietmonhoc.chiso . @item2.Chitietmonhoc.tenchuong</td>
+                    <td>@item2.Chitietmonhoc.tietlt</td>
+                    <td>@item2.Chitietmonhoc.tietth</td>
                 </tr>
-                @*hangbentrai*@
-                //
-                @foreach (var item in Model)
-                {
-                    <tr style="text-align: left ;">
-                        <td>Chương @item.Chitietmonhoc.chiso . @item.Chitietmonhoc.tenchuong</td>
-                        <td>@item.Chitietmonhoc.tietlt</td>
-                        <td>@item.Chitietmonhoc.tietth</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+            }
+        }
+    </tbody>
+</table>

@@ -28,7 +28,7 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Pdf_Noidungchitiethp
         {   
             //sualaithanhchitietchuong
             var result = _context.Chitiet_Chuongs.Include(m => m.Chitietmonhoc).ThenInclude(z => z.DeCuongchiTiet).Where(m => m.Chitietmonhoc.mahp == id);
-            return View(await result.ToListAsync());;
+            return View(await result.ToListAsync());
 
         }
     }

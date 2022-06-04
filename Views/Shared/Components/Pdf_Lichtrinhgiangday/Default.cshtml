@@ -1,9 +1,12 @@
 @model IEnumerable<_CurriculumManagerSystem.Models.Chitiet_Chuong>
 
-<h2>6. Nội dung chi tiết học phần</h2>
+<h2>10. Lịch trình giảng dạy</h2>
 <table cellspacing="0" cellpadding="5" style="text-align:center;border-style: solid;">
     <thead style="text-align:center;">
         <tr>
+            <th rowspan="2" style="text-align:center;">
+                Tuần học
+            </th>
             <th rowspan="2" style="text-align:center;">
                 Nội dung
             </th>
@@ -18,31 +21,27 @@
             <th>
                 Thực Hành
             </th>
+
         </tr>
     </thead>
     @{
-        string temp = "";
+        int temp = 0;
     }
     <tbody>
         @* Plos hang o tren *@
         @*hangbentrai*@
-        @foreach (var item in Model.GroupBy(x => x.Chitietmonhoc.tenchuong))
+        @foreach (var item in Model.GroupBy(x => x.tuanhoc))
         {
+            int numofitem = item.Count();
             @foreach (var item2 in item)
             {
-                int numofitem = item.Count();
+                <tr>
                     @if (item.Key != temp)
                     {
                         temp = item.Key;
-                        <tr>
-                            <td style="text-align: left;">Chương @item2.Chitietmonhoc.chiso. @item.Key</td>
-                            <td></td>
-                            <td></td> 
-                        </tr>
-                        
+                        <td rowspan="@numofitem">@item.Key</td>
                     }
-                <tr rowspan="@numofitem">
-                    <td style="margin-left: 10px;">@item2.Chitietmonhoc.chiso.@item2.chiso @item2.tentieumuc</td>
+                    <td style="text-align: left;">Chương @item2.Chitietmonhoc.chiso. @item2.Chitietmonhoc.tenchuong</td>
                     <td>@item2.Chitietmonhoc.tietlt</td>
                     <td>@item2.Chitietmonhoc.tietth</td>
                 </tr>

@@ -95,6 +95,9 @@
         <div class="content_item">
            @await Component.InvokeAsync("Pdf_Noidungchitiethp", new { id = @Context.Session.GetInt32("id_pdf")} )
         </div>
+        <div class="content_item">
+           @await Component.InvokeAsync("Pdf_Lichtrinhgiangday", new { id = @Context.Session.GetInt32("id_pdf")} )
+        </div>
       </div>
 
       <div class="footer">

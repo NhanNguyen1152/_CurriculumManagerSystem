@@ -22,6 +22,8 @@
     </thead>
     @{
         string temp = "";
+        int temp_stlt = 0;
+        int temp_stth = 0;
     }
     <tbody>
         @* Plos hang o tren *@
@@ -35,16 +37,28 @@
                     {
                         temp = item.Key;
                         <tr>
-                            <td style="text-align: left;">Chương @item2.Chitietmonhoc.chiso. @item.Key</td>
-                            <td></td>
-                            <td></td> 
+                            <td style="text-align: left;">Chương @item2.Chitietmonhoc.chiso. @temp</td>
+                            @if((item2.Chitietmonhoc.tietlt != temp_stlt && item2.Chitietmonhoc.tietth == temp_stth)
+                                || (item2.Chitietmonhoc.tietlt == temp_stlt && item2.Chitietmonhoc.tietth != temp_stth)
+                            )
+                            {
+                                temp_stlt = item2.Chitietmonhoc.tietlt;
+                                temp_stth = item2.Chitietmonhoc.tietth;
+                                <td>@temp_stlt</td>
+                                <td>@temp_stth</td> 
+                            }
+                            else
+                            {
+                                <td>@temp_stlt</td>
+                                <td>@temp_stth</td>
+                            }
                         </tr>
                         
                     }
                 <tr rowspan="@numofitem">
                     <td style="margin-left: 10px;">@item2.Chitietmonhoc.chiso.@item2.chiso @item2.tentieumuc</td>
-                    <td>@item2.Chitietmonhoc.tietlt</td>
-                    <td>@item2.Chitietmonhoc.tietth</td>
+                    <td></td>
+                    <td></td>
                 </tr>
             }
         }

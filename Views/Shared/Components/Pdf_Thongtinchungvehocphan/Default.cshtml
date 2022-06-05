@@ -1,0 +1,21 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.DeCuongchiTiet>  
+    @foreach (var item in Model)
+        {
+            <h2>1. Thông tin chung về học phần</h2>
+            <p>Tên học phần bằng tiếng Việt: @item.tenhp_tviet <br></p>
+            <p>Tên học phần bằng tiếng Anh: @item.tenhp_tanh<br></p>
+            <p>Mã học phần: @item.mahp_decuong<br></p>
+            <p>Loại học phần: @item.Khoikienthuc.kkt_ten<br></p>
+            <p>Số tín chỉ: 03 tín chỉ (30 tiết lý thuyết, 30 tiết thực hành)<br></p>
+            <p>Số tiết học:  60 tiết<br></p>
+            <p>Yêu cầu của học phần:  bắt buộc<br></p>
+            <p>Học phần học trước: @item.hp_tienquyet<br></p>
+            @* <p>Thời gian học: @Html.DisplayFor(modelItem => item.Thoigianhoc.Hocky.tenhk)<br></p>
+            <p>Các yêu cầu khác đối với học phần: @item.yeucaukhacvoi_hocphan<br></p>
+            <p>Đơn vị phụ trách: @item.Phutrach.GiangVien.Bomon.Khoa<br></p>
+            <p>Người phụ trách: @if(@item.Phutrach.vaitro == "Người phụ trách") @item.Phutrach.GiangVien.hoten<br></p>
+            <p>Chức danh/Học hàm/Học vị: @item.Phutrach.GiangVien.chucdanh/ @item.Phutrach.GiangVien.hocham @item.Phutrach.GiangVien.hocvi<br></p>
+            <p>Địa chỉ liên hệ: @item.Phutrach.GiangVien.diachilienhe<br></p>
+            <p>Điện thoại:			Email: @item.Phutrach.GiangVien.diachilienhe<br></p>
+            <p>Các giảng viên tham gia giảng dạy cùng: @if(@item.Phutrach.vaitro == "Giảng viên tham gia giảng dạy cùng")@Model.Phutrach.GiangVien.hoten<br></p> *@
+        }   

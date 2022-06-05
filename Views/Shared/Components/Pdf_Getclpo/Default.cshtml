@@ -7,7 +7,7 @@
                     <th rowspan="2" style="text-align:center;">
                         CLOs
                     </th>
-                    <th colspan="14" style="text-align:center;">
+                    <th colspan="10" style="text-align:center;">
                         PLOs
                     </th>
                 </tr>
@@ -17,9 +17,9 @@
                 @* Plos hang o tren *@
                 <tr>
                     <td>
-                        @foreach (var item in Model)
+                        @foreach (var item in ((List<PLO>)TempData["listData"]))
                         {
-                        <td>@Html.DisplayFor(modelItem => item.Chuandaura_monhoc.chisocio)</td>
+                            <td>@Html.DisplayFor(modelItem => item.chisoplo)</td>
                         }
                     </td>
                 </tr>
@@ -27,8 +27,7 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-
-                        <td>@Html.DisplayFor(modelItem => item.PLO.chisoplo)</td>
+                        <td>CLO @Html.DisplayFor(modelItem => item.Chuandaura_monhoc.chisocio)</td>
                         @foreach (var items in Model)
                         {
                             @if (@items.macdmon == @item.Chuandaura_monhoc.macdmon && @items.maplo == @item.PLO.maplo)

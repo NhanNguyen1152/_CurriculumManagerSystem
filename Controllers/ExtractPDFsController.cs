@@ -42,5 +42,7 @@ namespace _CurriculumManagerSystem.Controllers
 
             return View(deCuongchiTiet);
         }
+
+        
     }
 }

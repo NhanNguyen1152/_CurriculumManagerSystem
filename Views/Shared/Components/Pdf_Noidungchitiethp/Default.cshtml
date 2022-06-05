@@ -1,7 +1,7 @@
 @model IEnumerable<_CurriculumManagerSystem.Models.Chitiet_Chuong>
 
 <h2>6. Nội dung chi tiết học phần</h2>
-<table cellspacing="0" cellpadding="5" style="text-align:center;border-style: solid;">
+<table cellspacing="0" cellpadding="5">
     <thead style="text-align:center;">
         <tr>
             <th rowspan="2" style="text-align:center;">
@@ -37,26 +37,26 @@
                     {
                         temp = item.Key;
                         <tr>
-                            <td style="text-align: left;">Chương @item2.Chitietmonhoc.chiso. @temp</td>
+                            <td style="text-align: left; padding-left: 10px;">Chương @item2.Chitietmonhoc.chiso. @temp</td>
                             @if((item2.Chitietmonhoc.tietlt != temp_stlt && item2.Chitietmonhoc.tietth == temp_stth)
                                 || (item2.Chitietmonhoc.tietlt == temp_stlt && item2.Chitietmonhoc.tietth != temp_stth)
                             )
                             {
                                 temp_stlt = item2.Chitietmonhoc.tietlt;
                                 temp_stth = item2.Chitietmonhoc.tietth;
-                                <td>@temp_stlt</td>
-                                <td>@temp_stth</td> 
+                                <td style="text-align:center;">@temp_stlt</td>
+                                <td style="text-align:center;">@temp_stth</td> 
                             }
                             else
                             {
-                                <td>@temp_stlt</td>
-                                <td>@temp_stth</td>
+                                <td style="text-align:center;">@temp_stlt</td>
+                                <td style="text-align:center;">@temp_stth</td>
                             }
                         </tr>
                         
                     }
                 <tr rowspan="@numofitem">
-                    <td style="margin-left: 10px;">@item2.Chitietmonhoc.chiso.@item2.chiso @item2.tentieumuc</td>
+                    <td style="padding-left: 20px;">@item2.Chitietmonhoc.chiso.@item2.chiso @item2.tentieumuc</td>
                     <td></td>
                     <td></td>
                 </tr>

@@ -11,27 +11,24 @@ using Microsoft.EntityFrameworkCore;
 using _CurriculumManagerSystem.Models;
 using Microsoft.AspNetCore.Http;
 
-namespace _CurriculumManagerSystem.Views.Shared.Components.Pdf_Getclpo
+namespace _CurriculumManagerSystem.Views.Shared.Components.Pdf_Thongtinchungvehocphan
 {
     //[ViewComponent]
-    public class Pdf_Getclpo : ViewComponent
+    public class Pdf_Thongtinchungvehocphan : ViewComponent
     {
         private readonly acomptec_lvthainhanContext _context;
 
-        public Pdf_Getclpo(acomptec_lvthainhanContext context)
+        public Pdf_Thongtinchungvehocphan(acomptec_lvthainhanContext context)
         {
             _context = context;
         }
 
-        
         // [HttpGet, ActionName("getmt"), Route("DeCuongchiTiets/Create/{id:int}")]
        
         public async Task<IViewComponentResult> InvokeAsync(int id)
         {   
-            var acomptec_lvthainhanContext = _context.CLPOs.Include(c => c.Chuandaura_monhoc).ThenInclude(c => c.DeCuongchiTiet).Include(c => c.PLO).Where(c=> c.Chuandaura_monhoc.mahp == id).OrderBy(c=> c.Chuandaura_monhoc.chisocio).OrderBy(c=> c.PLO.chisoplo);
-            var acomptec_lvthainhanContext1 = _context.PLOs;
-            TempData["listData"] = acomptec_lvthainhanContext1.ToListAsync();
-            return View(await acomptec_lvthainhanContext.ToListAsync());
+            var result = await _context.DeCuongchiTiets.Include(m => m.Thoigianhocs).ThenInclude(m => m.Hockys).Include(m => m.Khoikienthuc).Where(m=> m.mahp == id).ToListAsync();
+            return View<List<DeCuongchiTiet>>(result);
         }
     }
 

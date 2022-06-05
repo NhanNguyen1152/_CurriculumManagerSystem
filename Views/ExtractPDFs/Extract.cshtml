@@ -1,128 +1,100 @@
-@model _CurriculumManagerSystem.Models.DeCuongchiTiet
 @using Microsoft.AspNetCore.Http;
 @using System.Data;
 @{
-    ViewData["Title"] = "Print";
-    Layout = null;
+  ViewData["Title"] = "Print";
+  Layout = null;
 }
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <style>
-    body {
-        height: 842px;
-        width: 595px;
-        /* to centre page on screen*/
-        margin-left: auto;
-        margin-right: auto;
-    }
-    </style>
 
-    <!-- Bootstrap CSS -->
-    @* <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <style>
+    body {
+      height: 842px;
+      width: 595px;
+      /* to centre page on screen*/
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+
+  <!-- Bootstrap CSS -->
+  @* <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
     /> *@
 
-    <link rel="stylesheet" href="~/css/style.css" />
-  </head>
-  <body onload="window.print()">
-    <div class="container">
-      <div class="header">
-        <div class="header_top">
-          <div class="header_left">
-            <h1>
-              TRƯỜNG ĐẠI HỌC <br />
-              KỸ THUẬT - CÔNG NGHỆ CẦN THƠ <br />
-              <span>KHOA CÔNG NGHỆ THÔNG TIN</span>
-            </h1>
-          </div>
-          <div class="header_right">
-            <h1>
-              CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM <br />
-              <span>Độc lập - Tự do - Hạnh phúc</span>
-            </h1>
-          </div>
-        </div>
-        <div class="header_bottom">
-          <h1>ĐỀ CƯƠNG CHI TIẾT HỌC PHẦN</h1>
-          <span class="title_descript">
-            (Ban hành kèm theo Quyết định số…./QĐ-ĐHKTCN ngày… tháng… năm 20….
-            <br />
-            của Hiệu trưởng Trường Đại học Kỹ thuật - Công nghệ Cần Thơ
-          </span>
-        </div>
-      </div>
-      <div class="content">
-        <div class="content_item">
-          <h2>1. Thông tin chung về học phần</h2>
-          <p>
-            Tên học phần bằng tiếng Việt: @Model.tenhp_tviet <br>
-            Tên học phần bằng tiếng Anh: @Model.tenhp_tanh<br>
-            Mã học phần: @Model.mahp_decuong<br>
-            @* Loại học phần: @Model.Khoikienthuc.kkt_ten<br> *@
-            Số tín chỉ: 03 tín chỉ (30 tiết lý thuyết, 30 tiết thực hành)<br>
-            Số tiết học:  60 tiết<br>
-            Yêu cầu của học phần:  bắt buộc<br>
-            Học phần học trước: @Model.hp_tienquyet<br>
-            @* Thời gian học: @foreach (var item in (TempData["thoigianhoc"]))
-            {
-              @item.Thoigianhoc.Hockys.tenhk<br>
-            } *@
-            @* Các yêu cầu khác đối với học phần: @Model.yeucaukhacvoi_hocphan<br>
-            Đơn vị phụ trách: @Model.Phutrach.GiangVien.Bomon.Khoa<br>
-            Người phụ trách: @if(@Model.Phutrach.vaitro == "Người phụ trách") @Model.Phutrach.GiangVien.hoten<br>
-            Chức danh/Học hàm/Học vị: @Model.Phutrach.GiangVien.chucdanh/ @Model.Phutrach.GiangVien.hocham @Model.Phutrach.GiangVien.hocvi<br>
-            Địa chỉ liên hệ: @Model.Phutrach.GiangVien.diachilienhe<br>
-            Điện thoại:			Email: @Model.Phutrach.GiangVien.diachilienhe<br>
-            Các giảng viên tham gia giảng dạy cùng: @if(@Model.Phutrach.vaitro == "Giảng viên tham gia giảng dạy cùng")@Model.Phutrach.GiangVien.hoten<br> *@
-          </p>
-        </div>
-        <div class="content_item">
-          @await Component.InvokeAsync("Pdf_Getmuctieu", new { id = @Context.Session.GetInt32("id_pdf")} )
-        </div>
-        <div class="content_item">
-           @await Component.InvokeAsync("Pdf_Getclpo", new { id = @Context.Session.GetInt32("id_pdf")} )
-        </div>
-        <div class="content_item">
-           @await Component.InvokeAsync("Pdf_Noidungchitiethp", new { id = @Context.Session.GetInt32("id_pdf")} )
-        </div>
-        <div class="content_item">
-           @await Component.InvokeAsync("Pdf_Lichtrinhgiangday", new { id = @Context.Session.GetInt32("id_pdf")} )
-        </div>
-      </div>
+  <link rel="stylesheet" href="~/css/style.css" />
+</head>
 
-      <div class="footer">
-        <div class="title_time">Cần Thơ, ngày….. tháng…… năm ……</div>
-        <div class="col_title"></div>
+<body onload="window.print()">
+  <div class="container">
+    <div class="header">
+      <div class="header_top">
+        <div class="header_left">
+          <h1>
+            TRƯỜNG ĐẠI HỌC <br />
+            KỸ THUẬT - CÔNG NGHỆ CẦN THƠ <br />
+            <span>KHOA CÔNG NGHỆ THÔNG TIN</span>
+          </h1>
+        </div>
+        <div class="header_right">
+          <h1>
+            CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM <br />
+            <span>Độc lập - Tự do - Hạnh phúc</span>
+          </h1>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <h1>ĐỀ CƯƠNG CHI TIẾT HỌC PHẦN</h1>
+        <span class="title_descript">
+          (Ban hành kèm theo Quyết định số…./QĐ-ĐHKTCN ngày… tháng… năm 20….
+          <br />
+          của Hiệu trưởng Trường Đại học Kỹ thuật - Công nghệ Cần Thơ
+        </span>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content_item">
+        @await Component.InvokeAsync("Pdf_Thongtinchungvehocphan", new { id = @Context.Session.GetInt32("id_pdf")} )
+      </div>
+      <div class="content_item">
+        @await Component.InvokeAsync("Pdf_Getmuctieu", new { id = @Context.Session.GetInt32("id_pdf")} )
+      </div>
+      <div class="content_item">
+        @await Component.InvokeAsync("Pdf_Getclpo", new { id = @Context.Session.GetInt32("id_pdf")} )
+      </div>
+      <div class="content_item">
+        @await Component.InvokeAsync("Pdf_Noidungchitiethp", new { id = @Context.Session.GetInt32("id_pdf")} )
+      </div>
+      <div class="content_item">
+        @await Component.InvokeAsync("Pdf_Lichtrinhgiangday", new { id = @Context.Session.GetInt32("id_pdf")} )
       </div>
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./main.js"></script>
-  </body>
+    <div class="footer">
+      <div class="title_time">Cần Thơ, ngày….. tháng…… năm ……</div>
+      <div class="col_title"></div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="./main.js"></script>
+</body>
+
 </html>

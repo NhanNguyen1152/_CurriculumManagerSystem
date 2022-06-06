@@ -34,6 +34,19 @@ namespace _CurriculumManagerSystem.Controllers
             var listPlo = _context.PLOs.OrderBy(m=> m.maplo).ToList();
             ViewBag.listPlo = listPlo;
 
+            var listtgh = _context.Thoigianhocs.Include(t => t.DeCuongchiTiet).Include(t => t.Khoahocs).Include(t => t.Hockys).Where(t=> t.DeCuongchiTiet.mahp == id).ToList();
+            ViewBag.listtgh = listtgh;
+
+             var listpt = _context.Phutrachs.Include(m => m.DeCuongchiTiet).Include(m=> m.GiangVien).Where(m => m.DeCuongchiTiet.mahp == id).Where(m=> m.vaitro=="Người phụ trách").ToList();
+             ViewBag.listpt = listpt;
+
+            var listptc = _context.Phutrachs.Include(m => m.DeCuongchiTiet).Include(m=> m.GiangVien).Where(m => m.DeCuongchiTiet.mahp == id).Where(m=> m.vaitro =="Giảng viên tham gia giảng dạy cùng").ToList();
+             ViewBag.listptc = listptc;
+
+            var listkh = _context.Khoas.Include(b => b.Bomon).ToList();
+            ViewBag.listbm = listkh;
+            
+
             var leftOuterJoin = from e in _context.PLOs  
             join d in _context.CLPOs on e.maplo equals d.maplo into pl  
             from plnew in pl.DefaultIfEmpty()  

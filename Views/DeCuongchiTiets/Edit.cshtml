@@ -26,6 +26,8 @@
                     <li role="presentation"><a role="tab" href="#thoigianhoc" data-toggle="tab">THỜI GIAN HỌC</a></li>
                     <li role="presentation"><a role="tab" href="#chuandauramonhoc" data-toggle="tab">CHUẨN ĐẦU RA MÔN HỌC</a></li>
                     <li role="presentation"><a role="tab" href="#clpo" data-toggle="tab">CLPO</a></li>
+                    <li role="presentation"><a role="tab" href="#clpo_pphoc" data-toggle="tab">CLO PHƯƠNG PHÁP HỌC</a></li>
+                    <li role="presentation"><a role="tab" href="#clpo_day" data-toggle="tab">CLO PHƯƠNG PHÁP DẠY</a></li>
                     <li role="presentation"><a role="tab" href="#decuongtailieu" data-toggle="tab">TÀI LIỆU</a></li>
                     
 
@@ -55,8 +57,8 @@
                         }
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuongnhiemvu">
-                       @await Component.InvokeAsync("Create_Nhiemvu")
                        @await Component.InvokeAsync("Edit_Nhiemvu")
+                       @* @await Component.InvokeAsync("Edit_Nhiemvu") *@
                        @if (@Context.Session.GetInt32("id_edit_dccht_after") == null)
                         {
                             @await Component.InvokeAsync("Get_Nhiemvu")
@@ -68,7 +70,7 @@
                        
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuongquydinh">
-                        @await Component.InvokeAsync("Create_Quydinh_checkbox")
+                        @await Component.InvokeAsync("Edit_Quydinh")
                        
                         @if (@Context.Session.GetInt32("id_edit_dccht_after") == null)
                         {
@@ -80,7 +82,7 @@
                         }
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuonghinhthuc">
-                        @await Component.InvokeAsync("Create_Hinhthuc")
+                        @await Component.InvokeAsync("Edit_Hinhthuc")
                        
                         @if (@Context.Session.GetInt32("id_edit_dccht_after") == null)
                         {
@@ -104,11 +106,11 @@
                        
                         @if(@Context.Session.GetInt32("id_edit_chtmh") == null)
                         {
-                            @await Component.InvokeAsync("Create_Chitietmonhoc")
+                            @await Component.InvokeAsync("Edit_Chitietmonhoc")
                         }
                         else
                         {
-                            @await Component.InvokeAsync("Create_Chitietmonhoc", new {id = @Context.Session.GetInt32("id_edit_dccht")})
+                            @await Component.InvokeAsync("Edit_Chitietmonhoc", new {id = @Context.Session.GetInt32("id_edit_dccht")})
                         }
                        
                     </div>
@@ -178,7 +180,32 @@
                     
                         
                     </div>
+                     <div role="tabpanel" class="tab-pane fade" id="clpo_pphoc">
+                        @if(@Context.Session.GetInt32("id_edit_Clpo_pphoc") == null)
+                        {
+                            @await Component.InvokeAsync("Edit_CLO_pphoc", new { id = 0})
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Edit_CLO_pphoc", new {id = @Context.Session.GetInt32("id_edit_dccht")})
+                        }
+                           @* @await Component.InvokeAsync("Get_CLPO", new {id = @Context.Session.GetInt32("id_edit_dccht_after")}) *@
                     
+                        
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="clpo_day">
+                        @if(@Context.Session.GetInt32("id_edit_Clpo_ppday") == null)
+                        {
+                            @await Component.InvokeAsync("Edit_CLO_ppday", new { id = 0})
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Edit_CLO_ppday", new {id = @Context.Session.GetInt32("id_edit_dccht")})
+                        }
+                           @* @await Component.InvokeAsync("Get_CLPO", new {id = @Context.Session.GetInt32("id_edit_dccht_after")}) *@
+                    
+                        
+                    </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuongtailieu">
                         @await Component.InvokeAsync("Create_Tailieu")
                         @await Component.InvokeAsync("Edit_DcTailieu")

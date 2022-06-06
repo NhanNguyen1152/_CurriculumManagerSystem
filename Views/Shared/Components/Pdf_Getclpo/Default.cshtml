@@ -1,47 +1,126 @@
 @model IEnumerable<_CurriculumManagerSystem.Models.CLPO>
+@{
+    int total = 0;
+}
 <h2>4. Ma trận liên kết giữa nội dung CĐR học phần với CĐR CTĐT</h2>
-        <table cellspacing="0" cellpadding="5"
-            style="text-align:center;border-style: solid;">
-            <thead style="text-align:center;">
-                <tr>
-                    <th rowspan="2" style="text-align:center;">
-                        CLOs
-                    </th>
-                    <th colspan="10" style="text-align:center;">
-                        PLOs
-                    </th>
-                </tr>
+<table cellspacing="0" cellpadding="5" style="text-align:center;border-style: solid;">
+    <thead style="text-align:center;">
+        <tr>
+            <th rowspan="2" style="text-align:center;">
+                CLOs
+            </th>
+            <th colspan="10" style="text-align:center;">
+                PLOs
+            </th>
+        </tr>
 
-            </thead>
-            <tbody>
-                @* Plos hang o tren *@
-                <tr>
-                    <td>
-                        @foreach (var item in ((List<PLO>)TempData["listData"]))
-                        {
-                            <td>@Html.DisplayFor(modelItem => item.chisoplo)</td>
-                        }
-                    </td>
-                </tr>
-                @*hangbentrai*@
-                @foreach (var item in Model)
+    </thead>
+    <tbody>
+        @* Plos hang o tren *@
+        <tr>
+            <td>
+                @foreach (var itemPLO in ViewBag.listPlo)
                 {
-                    <tr>
-                        <td>CLO @Html.DisplayFor(modelItem => item.Chuandaura_monhoc.chisocio)</td>
-                        @foreach (var items in Model)
-                        {
-                            @if (@items.macdmon == @item.Chuandaura_monhoc.macdmon && @items.maplo == @item.PLO.maplo)
-                            {
-                                <td>
-                                    X
-                                </td>
-                            }
-                            else
-                            {
-                                <td></td>
-                            }
-                        }
-                    </tr>
+                <td>@itemPLO.chisoplo</td>
                 }
-            </tbody>
-        </table>
+            </td>
+        </tr>
+        @*hangbentrai*@
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>CLO @Html.DisplayFor(modelItem => item.Chuandaura_monhoc.chisocio)</td>
+                @foreach (var itemPLOs in ViewBag.listPlo)
+                {
+                    @if (@item.macdmon == @item.Chuandaura_monhoc.macdmon && @item.maplo == @itemPLOs.maplo)
+                    {
+                        <td id="@itemPLOs.maplo">
+                            X
+                        </td>
+                    }
+                    else
+                    {
+                        <td> </td>
+                    }
+                }
+            </tr>
+        }
+        <tr>
+            <td>Tổng hợp học phần</td>
+            <td>Làm</td>
+            <td>Chỗ</td>
+            <td>Này</td>
+            <td>Không</td>
+            <td>Ra</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            @* @foreach (var item in ViewBag.leftouterjoin)
+                {
+                    
+                   
+                } *@
+        </tr>
+    </tbody>
+</table>
+@* <script>
+    document.getElementById("id").innerHTML = "X";
+</script> *@
+
+
+
+@*@model IEnumerable<_CurriculumManagerSystem.Models.CLPO>
+    <h2>4. Ma trận liên kết giữa nội dung CĐR học phần với CĐR CTĐT</h2>
+    <table cellspacing="0" cellpadding="5"
+    style="text-align:center;border-style: solid;">
+    <thead style="text-align:center;">
+    <tr>
+    <th rowspan="2" style="text-align:center;">
+    CLOs
+    </th>
+    <th colspan="10" style="text-align:center;">
+    PLOs
+    </th>
+    </tr>
+
+    </thead>
+    <tbody>
+    <tr>
+    <td>
+    @foreach (var itemPLO in ViewBag.listPlo)
+    {
+    <td>@itemPLO.chisoplo</td>
+    }
+    </td>
+    </tr>
+    @*hangbentrai*
+    @foreach (var item in Model)
+    {
+    <tr>
+    <td>CLO @Html.DisplayFor(modelItem => item.Chuandaura_monhoc.chisocio)</td>
+    @foreach (var items in Model)
+    {
+    @* @if (@items.macdmon == @item.Chuandaura_monhoc.macdmon && @items.maclpo == @item.maplo)
+    {
+    <td>
+    X
+    </td>
+    }
+    @if (@items.macdmon == @item.Chuandaura_monhoc.macdmon && @items.maplo == @item.PLO.maplo)
+    {
+    <td>
+    X
+    </td>
+    }
+    else
+    {
+    <td> </td>
+    }
+    }
+    </tr>
+    }
+    </tbody>
+    </table>*@

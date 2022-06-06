@@ -1,0 +1,35 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.DeCuongHinhthuc>
+
+<h2>    9.2. Quy định về hình thức thi, kiểm tra đánh giá và trọng số điểm</h2>
+<table style="text-align:center; padding: 5px">
+   <thead>
+      <tr>
+         <td>
+             @Html.DisplayNameFor(model => model.Hinhthuc_Danhgia.thanhphan_danhgia)
+         </td>
+         <td>
+             @Html.DisplayNameFor(model => model.Hinhthuc_Danhgia.hinhthuc)
+         </td>
+         <td>
+             @Html.DisplayNameFor(model => model.Hinhthuc_Danhgia.trongso)
+         </td>
+      </tr>
+      <tbody>
+         @foreach (var item in Model)
+         {
+            <tr>
+               <td>
+                  @item.Hinhthuc_Danhgia.thanhphan_danhgia
+               </td>
+               <td style="text-align:left !important; padding-left: 5px">
+                  - @item.Hinhthuc_Danhgia.hinhthuc <br>
+               </td>
+               <td>
+                  @item.Hinhthuc_Danhgia.trongso
+               </td>
+            </tr>
+         }
+      </tbody>
+   </thead>
+</table>
+    

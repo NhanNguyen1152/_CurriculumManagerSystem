@@ -1,0 +1,72 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.CLPO>
+@{
+    var i = 0;
+}
+<div class="body table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    STT
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ngayupdate)
+                </th>
+                <th>Chỉ Số Chuẩn đầu ra</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Chuandaura_monhoc)
+                </th>
+                <th>Chỉ số PLO</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLO)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                i++;
+                <tr>
+                    <td>
+                        @i
+                    </td>
+                    <td>
+                        @item.ngayupdate
+                    </td>
+                     <td>
+                        @item.Chuandaura_monhoc.chisocio
+                    </td>
+                    <td>
+                        @item.Chuandaura_monhoc.noidung
+                    </td>
+                   
+                    <td>
+                        @item.PLO.chisoplo
+                    </td>
+                    <td>
+                        @item.PLO.noidung
+                    </td>
+
+                    <td>
+                        @if (ViewData["Title"] == "Create")
+                        {
+                            <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Create"
+                        asp-route-id="@item.maclpo">mode_edit</a>
+                        }
+                        else
+                        {
+                            <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Edit"
+                        asp-route-id="@item.maclpo">mode_edit</a>
+                        }
+                        <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
+                        asp-action="DeleteCLPO" asp-route-id="@item.maclpo"
+                        onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

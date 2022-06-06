@@ -47,6 +47,7 @@
                     <li role="presentation"><a role="tab" href="#thoigianhoc" data-toggle="tab">THỜI GIAN HỌC</a></li>
                     <li role="presentation"><a role="tab" href="#chuandauramonhoc" data-toggle="tab">CHUẨN ĐẦU RA MÔN HỌC</a></li>
                     <li role="presentation"><a role="tab" href="#CLPO" data-toggle="tab">CLPO</a></li>
+                    <li role="presentation"><a role="tab" href="#CLO_PPHOC" data-toggle="tab">CLO PHƯƠNG PHÁP HỌC</a></li>
                     <li role="presentation"><a role="tab" href="#decuongtailieu" data-toggle="tab">TÀI LIỆU</a></li>
                     
 
@@ -407,6 +408,44 @@
                         {
                            @await Component.InvokeAsync("Get_CLPO", new {id = @Context.Session.GetInt32("idDecuong")})
                         }
+                        
+                    </div>
+                     <div role="tabpanel" class="tab-pane fade" id="CLO_PPHOC">
+                        @if(@Context.Session.GetInt32("idClo_pphoc") == null)
+                        {
+                            @await Component.InvokeAsync("Create_CLO_pphoc", new { id = 0})
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Create_CLO_pphoc", new {id = @Context.Session.GetInt32("idClo_pphoc")})
+                        }
+                         @* @if (@Context.Session.GetInt32("idDecuong") == null)
+                        {
+                            @await Component.InvokeAsync("Get_CLPO")
+                        }
+                        else
+                        {
+                           @await Component.InvokeAsync("Get_CLPO", new {id = @Context.Session.GetInt32("idDecuong")})
+                        } *@
+                        
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="CLO_DAY">
+                        @if(@Context.Session.GetInt32("idClo_ppday") == null)
+                        {
+                            @await Component.InvokeAsync("Create_CLO_ppday", new { id = 0})
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Create_CLO_ppday", new {id = @Context.Session.GetInt32("idClo_ppday")})
+                        }
+                         @* @if (@Context.Session.GetInt32("idDecuong") == null)
+                        {
+                            @await Component.InvokeAsync("Get_CLPO")
+                        }
+                        else
+                        {
+                           @await Component.InvokeAsync("Get_CLPO", new {id = @Context.Session.GetInt32("idDecuong")})
+                        } *@
                         
                     </div>
                      

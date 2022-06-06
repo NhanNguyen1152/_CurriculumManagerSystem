@@ -1,0 +1,7 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.DeCuongNhiemvu>
+
+<h2>11. Nhiệm vụ của sinh viên</h2>
+@foreach (var item in Model)
+    {
+      <p>- @item.NhiemvuSV.noidung</p>
+    }

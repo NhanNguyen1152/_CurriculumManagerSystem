@@ -1,0 +1,50 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.CLOPhuongphapday>
+@{
+}
+<h2>7. Phương pháp dạy</h2>
+@foreach (var item in ViewBag.listPpday)
+{
+    <p>- @item.tenpp</p>
+}
+<p>Ma trận giữa phương pháp dạy với CĐR</p>
+<table cellspacing="0" cellpadding="5" style="text-align:center;border-style: solid;">
+    <thead style="text-align:center;">
+        <tr>
+            <th rowspan="2" style="text-align:center;">
+                Phương pháp dạy
+            </th>
+            <th colspan="10" style="text-align:center;">
+                CLOs
+            </th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @* Plos hang o tren *@
+        <tr>
+            <td>
+                @foreach (var itemPLO in ViewBag.listPpday_cdr)
+                {
+                <td>@itemPLO.chisocio</td>
+                }
+            </td>
+        </tr>
+        @*hangbentrai*@
+         @foreach (var items in ViewBag.listPpday)
+        {
+            <tr>
+                <td>@items.tenpp</td>
+               @foreach (var item in Model)
+                {
+                    @if (@item.macdmon == @item.Chuandaura_monhoc.macdmon && @item.mappday == @items.mappday)
+                    {
+                        <td id="">
+                            X
+                        </td>
+                        continue;
+                    }
+                }
+            </tr>
+        }
+    </tbody>
+</table>

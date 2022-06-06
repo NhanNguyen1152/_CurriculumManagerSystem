@@ -1,0 +1,7 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.DeCuongQuyDinh>
+
+<h2>    9.1. Các quy định về kiểm tra, đánh giá</h2>
+@foreach (var item in Model)
+    {
+      <p>- @item.Quydinh_Kiemtra.tenqd</p>
+    }

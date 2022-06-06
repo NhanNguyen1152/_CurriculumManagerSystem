@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+using System.Security.Authentication;
 using System.Runtime.Intrinsics.X86;
 using System.Net.Cache;
 using System.Net.Mail;
@@ -25,24 +27,61 @@ namespace _CurriculumManagerSystem.Controllers
         {
             _context = context;
         }
+        
         public async Task<IActionResult> Extract(int id)
         {
+            
+            var listPlo = _context.PLOs.OrderBy(m=> m.maplo).ToList();
+            ViewBag.listPlo = listPlo;
+
+            var leftOuterJoin = from e in _context.PLOs  
+            join d in _context.CLPOs on e.maplo equals d.maplo into pl  
+            from plnew in pl.DefaultIfEmpty()  
+            select new PLO {maplo = e.maplo}; 
+            ViewBag.leftouterjoin = leftOuterJoin.ToList();
+            // var query =
+            // from CLPO in _context.CLPOs
+            // join PLO in _context.PLOs on PLO.maplo equals CLPO.maplo into gj
+            // from subpet in gj.DefaultIfEmpty()
+            // select new
+            // {
+            //     PLO.maplo
+                
+            // }.ToList();
+
+            // var leftouterjoin = ( from clpo in _context.CLPOs
+                
+            //     join plo in _context.PLOs on clpo.maplo equals plo.maplo into ot
+
+            //     from otnew in ot.DefaultIfEmpty()
+
+            //     select new (plo = c , c.maplo).ToList()
+            // );
+          
+
+            //  var plos = _context.CLPOs.Include(c => c.Chuandaura_monhoc).Include(c => c.PLO).Where(c=> c.Chuandaura_monhoc.mahp == id).OrderBy(c=> c.Chuandaura_monhoc.chisocio);
+            // {
+            //     foreach (var item in plos)
+            //     {
+            //         foreach (var items in listplo)
+            //         {
+            //             if(@item.macdmon == @item.Chuandaura_monhoc.macdmon && @item.maplo == @items.maplo)
+
+            //             plos.Add();
+            //         }
+            //     }
+            // }
+            // ViewBag.plos = plos;
+            //  var lPlo = _context.PLOs;
+            // TempData["lPlo"] = lPlo.ToList();
+            
+            // var listPlos = _context.CLPOs.Select(m=> m.maplo).ToList();
+            // ViewBag.listPlos = listPlos;
+
             HttpContext.Session.SetInt32("id_pdf", id);
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var deCuongchiTiet = await _context.DeCuongchiTiets
-            .FirstOrDefaultAsync(m => m.mahp == id);
-            if (deCuongchiTiet == null)
-            {
-                return NotFound();
-            }
-
-            return View(deCuongchiTiet);
+            return View();
         }
-
+       
         
     }
 }

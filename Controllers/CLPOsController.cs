@@ -56,6 +56,18 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: CLPOs/Create
         public IActionResult Create()
         {
+            // var plos = _context.PLOs.ToList();
+            // {
+            //     //lay tat ca bang PLO
+            //     foreach (PLO d in plos)
+            //     {
+            //         //lay du lieu theo PLCO co id cua PLO
+            //         foreach (CLPO c in d.PLOS)
+            //         {
+            //             PLOSList.Add();
+            //         }
+            //     }
+            // }
             ViewData["macdmon"] = new SelectList(_context.Chuandaura_Monhocs, "macdmon", "noidung");
             ViewData["maplo"] = new SelectList(_context.PLOs, "maplo", "noidung");
             return View();

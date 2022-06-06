@@ -20,18 +20,18 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Edit_Nhiemvu
         {
             _context = context;
         }
-                public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync()
         { 
-          
-        //    var listNhiemvu = (from b in _context.NhiemvuSVs
-        //                   select new NhiemvuSV
-        //                   {
-        //                       manv = b.manv,
-        //                       noidung = b.noidung
-        //                   });
-        //     ViewData.Model = listNhiemvu
+          var listNhiemvu = (from b in _context.NhiemvuSVs
+                          select new NhiemvuSV
+                          {
+                              manv = b.manv,
+                              noidung = b.noidung
+                          }).ToList();
+            ViewData.Model = listNhiemvu;
 
-
+            
+            return View();
             
                 // var listNhiemvu = _context.DeCuongNhiemvus
                 // .Include(m => m.NhiemvuSV)
@@ -39,11 +39,11 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Edit_Nhiemvu
                 // .Select(m => new DeCuongNhiemvu { manv = m.NhiemvuSV.manv, noidung = m.NhiemvuSV.noidung })
                 // .ToList();
                 // ViewData.Model = listNhiemvu;
-               //return View();
+            //    //return View();
            
-             var result = await _context.DeCuongNhiemvus.Include(m => m.DeCuongchiTiet).Include(m=> m.NhiemvuSV).ToListAsync();
+            //  var result = await _context.DeCuongNhiemvus.Include(m => m.DeCuongchiTiet).Include(m=> m.NhiemvuSV).ToListAsync();
              
-            return View<List<DeCuongNhiemvu>>(result);
+            // return View<List<DeCuongNhiemvu>>(result);
          
 
             

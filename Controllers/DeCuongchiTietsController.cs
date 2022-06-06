@@ -76,8 +76,10 @@ namespace _CurriculumManagerSystem.Controllers
             ViewData["matl"] = new SelectList(_context.Tailieus, "matl", "tentailieu");
             // ViewData["mact"] = new SelectList(_context.Chitietmonhocs, "mact", "tenchuong");
             ViewData["mact"] = new SelectList(_context.Chitietmonhocs.Where(m=> m.mahp ==  HttpContext.Session.GetInt32("idDecuong")), "mact", "tenchuong");
-            ViewData["macdmon"] = new SelectList(_context.Chuandaura_Monhocs.Where(m=> m.mahp ==  HttpContext.Session.GetInt32("idDecuong")), "macdmon", "noidung");
-            ViewData["maplo"] = new SelectList(_context.PLOs, "maplo", "noidung");
+            ViewData["macdmon"] = new SelectList(_context.Chuandaura_Monhocs.Where(m=> m.mahp ==  HttpContext.Session.GetInt32("idDecuong")), "macdmon", "chisocio");
+            ViewData["maplo"] = new SelectList(_context.PLOs, "maplo", "chisoplo");
+            ViewData["mapphoc"] = new SelectList(_context.Phuongphap_Hocs, "mapphoc", "tenpp");
+            ViewData["mappday"] = new SelectList(_context.Phuongphap_Giangdays, "mappday", "tenpp");
 
             if(id > 0)
             {   
@@ -89,6 +91,8 @@ namespace _CurriculumManagerSystem.Controllers
                 HttpContext.Session.SetInt32("idThoigianhoc", id);
                 HttpContext.Session.SetInt32("idchuandauramonhoc", id);
                HttpContext.Session.SetInt32("idClpo", id);
+               HttpContext.Session.SetInt32("idClo_pphoc", id);
+                HttpContext.Session.SetInt32("idClo_ppday", id);
                 
             }
             return View();
@@ -134,7 +138,10 @@ namespace _CurriculumManagerSystem.Controllers
             ViewData["mahk"] = new SelectList(_context.Hockys, "mahk", "tenhk");
             ViewData["matl"] = new SelectList(_context.Tailieus, "matl", "tentailieu");
             ViewData["mact"] = new SelectList(_context.Chitietmonhocs.Where(m=> m.mahp ==  HttpContext.Session.GetInt32("id_edit_dccht_after")), "mact", "tenchuong");
-
+            ViewData["macdmon"] = new SelectList(_context.Chuandaura_Monhocs.Where(m=> m.mahp ==  HttpContext.Session.GetInt32("id_edit_dccht_after")), "macdmon", "chisocio");
+            ViewData["maplo"] = new SelectList(_context.PLOs, "maplo", "chisoplo");
+             ViewData["mapphoc"] = new SelectList(_context.Phuongphap_Hocs, "mapphoc", "tenpp");
+            ViewData["mappday"] = new SelectList(_context.Phuongphap_Giangdays, "mappday", "tenpp");
             return View();
         }
 
@@ -409,7 +416,7 @@ namespace _CurriculumManagerSystem.Controllers
                 {
                     
                     var DCHT = new DeCuongHinhthuc();
-                    DCHT.mahp = (int)TempData["id_dc"];
+                    DCHT.mahp = (int)TempData["id_dc_after"];
                     DCHT.mahtdg = item; 
                     _context.Add(DCHT); 
                     await _context.SaveChangesAsync();
@@ -753,6 +760,84 @@ namespace _CurriculumManagerSystem.Controllers
             }
             return View();
         }
+        //deleteplo
+        //createpphoc
+        public async Task<IActionResult> CreatePPhoc([Bind("maclopphoc,mucdo,mapphoc,macdmon")] CLOPhuongphaphoc cLOPhuongphaphoc)
+        {
+            if (ModelState.IsValid)
+            {
+                if(cLOPhuongphaphoc.maclopphoc <= 0)
+                {
+                    _context.Add(cLOPhuongphaphoc);
+                }
+                else
+                {
+                    _context.Update(cLOPhuongphaphoc);
+                }
+                _context.Add(cLOPhuongphaphoc);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Create");
+            }
+            return View();
+        }
+        //createpphoc
+        public async Task<IActionResult> EditPPhoc([Bind("maclopphoc,mucdo,mapphoc,macdmon")] CLOPhuongphaphoc cLOPhuongphaphoc)
+        {
+            if (ModelState.IsValid)
+            {
+                if(cLOPhuongphaphoc.maclopphoc <= 0)
+                {
+                    _context.Add(cLOPhuongphaphoc);
+                }
+                else
+                {
+                    _context.Update(cLOPhuongphaphoc);
+                }
+                _context.Add(cLOPhuongphaphoc);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Edit");
+            }
+            return View();
+        }
+        //createppday
+        public async Task<IActionResult> CreatePPday([Bind("maloppday,mucdo,mappday,macdmon")] CLOPhuongphapday cLOPhuongphapday)
+        {
+            if (ModelState.IsValid)
+            {
+                if(cLOPhuongphapday.maloppday <= 0)
+                {
+                    _context.Add(cLOPhuongphapday);
+                }
+                else
+                {
+                    _context.Update(cLOPhuongphapday);
+                }
+                _context.Add(cLOPhuongphapday);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Create");
+            }
+            return View();
+        }
+        //editppday
+        public async Task<IActionResult> EditPPday([Bind("maloppday,mucdo,mappday,macdmon")] CLOPhuongphapday cLOPhuongphapday)
+        {
+            if (ModelState.IsValid)
+            {
+                if(cLOPhuongphapday.maloppday <= 0)
+                {
+                    _context.Add(cLOPhuongphapday);
+                }
+                else
+                {
+                    _context.Update(cLOPhuongphapday);
+                }
+                _context.Add(cLOPhuongphapday);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Edit");
+            }
+            return View();
+        }
+
 
         //CreateTailieu
         public async Task<IActionResult> CreateTailieu([Bind("matl,tacgia,tentailieu,thongtinkhac,loaitl")] Tailieu tailieu)

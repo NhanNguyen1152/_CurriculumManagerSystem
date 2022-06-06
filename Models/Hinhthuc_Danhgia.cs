@@ -15,7 +15,7 @@ namespace _CurriculumManagerSystem.Models
         public int mahtdg { get; set; }
         [DisplayName("Thành phần đánh giá")]
         public string thanhphan_danhgia { get; set;}
-        [DisplayName("Hình thức")]
+        [DisplayName("Hình thức đánh giá")]
         public string hinhthuc { get; set; }
         [DisplayName("Trọng số")]
         public int trongso { get; set; }

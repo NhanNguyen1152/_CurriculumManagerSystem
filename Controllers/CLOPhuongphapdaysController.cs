@@ -48,7 +48,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: CLOPhuongphapdays/Create
         public IActionResult Create()
         {
-            ViewData["macdmon"] = new SelectList(_context.Chuandaura_Monhocs, "macdmon", "macdmon");
+            ViewData["macdmon"] = new SelectList(_context.Chuandaura_Monhocs, "macdmon", "noidung");
             ViewData["mappday"] = new SelectList(_context.Phuongphap_Giangdays, "mappday", "tenpp");
             return View();
         }

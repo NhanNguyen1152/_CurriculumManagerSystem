@@ -60,41 +60,73 @@
       </div>
     </div>
     <div class="content">
-      <div class="content_item">
+      <div class="content_item" id="1">
         @await Component.InvokeAsync("Pdf_Thongtinchungvehocphan", new { id = @Context.Session.GetInt32("id_pdf")} )
       </div>
-      <div class="content_item">
+      <div class="content_item" id="2">
         @await Component.InvokeAsync("Pdf_Getmuctieu", new { id = @Context.Session.GetInt32("id_pdf")} )
       </div>
-      <div class="content_item">
+      <div class="content_item" id="3">
+        @await Component.InvokeAsync("Pdf_Getchuandaura", new { id = @Context.Session.GetInt32("id_pdf")} )
+      </div>
+      <div class="content_item" id="4">
         @await Component.InvokeAsync("Pdf_Getclpo", new { id = @Context.Session.GetInt32("id_pdf")} )
       </div>
-      <div class="content_item">
+      <div class="content_item" id="5">
+        @await Component.InvokeAsync("Pdf_Tomtatnoidunghp", new { id = @Context.Session.GetInt32("id_pdf")} )
+      </div>
+      <div class="content_item" id="6">
         @await Component.InvokeAsync("Pdf_Noidungchitiethp", new { id = @Context.Session.GetInt32("id_pdf")} )
       </div>
-      <div class="content_item">
+       <div class="content_item" id="7">
+        @await Component.InvokeAsync("Pdf_Cloppday", new { id = @Context.Session.GetInt32("id_pdf")} )
+      </div>
+      <div class="content_item" id="9">
+        <h2>9. Phương pháp kiểm tra, đánh giá</h2>
+        @await Component.InvokeAsync("Pdf_pp_ktra_dgia", new { id = @Context.Session.GetInt32("id_pdf")} )
+        @await Component.InvokeAsync("Pdf_pp_ktra_dgia_ht", new { id = @Context.Session.GetInt32("id_pdf")} )
+      </div>
+      <div class="content_item" id="10">
         @await Component.InvokeAsync("Pdf_Lichtrinhgiangday", new { id = @Context.Session.GetInt32("id_pdf")} )
+      </div>
+      <div class="content_item" id="11">
+        @await Component.InvokeAsync("Pdf_Nhiemvusv", new { id = @Context.Session.GetInt32("id_pdf")} )
+      </div>
+      @*<div class="content_item" id="1">
+        @await Component.InvokeAsync("Pdf_Tailieuthamkhao", new { id = @Context.Session.GetInt32("id_pdf")} )
+        </div> *@
+
+      <div class="footer">
+        <div class="title_time">Cần Thơ, ngày ... tháng ... năm ... </div>
+        <div class="col_title">
+          <div class="content-title">
+            <h1>Hiệu trưởng</h1>
+          </div>
+          <div class="content-title">
+            <h1>Trưởng Khoa</h1>
+          </div>
+          <div class="content-title">
+            <h1>Trưởng bộ môn</h1>
+          </div>
+          <div class="content-title">
+            <h1>Người biên soạn</h1>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="footer">
-      <div class="title_time">Cần Thơ, ngày….. tháng…… năm ……</div>
-      <div class="col_title"></div>
-    </div>
-  </div>
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script src="./main.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
 </body>
 
 </html>

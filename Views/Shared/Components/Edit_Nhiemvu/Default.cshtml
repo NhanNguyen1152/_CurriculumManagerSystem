@@ -1,14 +1,11 @@
-@model List<DeCuongNhiemvu>
-@using Microsoft.AspNetCore.Http;
-@using System.Data;
+@model List<NhiemvuSV>
 <div class="body">
-                <form class="form-horizontal" asp-action="EditListNV">
+                <form class="form-horizontal" asp-action="createListNV">
                     <table class="table  table-sm">
                         <div class="row clearfix">
                             <thead class="table-info">
                                 <tr style="background-color: #84c7c1; color: black;">
                                     <th>Lựa chọn</th>
-                                    <th> Mahp</th>
                                     <th>Nội dung nhiệm vụ</th>
                                 </tr>
                             </thead>
@@ -16,22 +13,13 @@
                                 @foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td>                                  
+                                        <td>
                                             <label class="custom-control custom-checkbox">
-                                                @if (@item.mahp == 349 )
-                                                {
-                                                    <input checked="checked" type="checkbox" class="custom-control-input" value="@item.manv" name="arrayDCNV" id="@item.manv">
-                                                }
-                                                else
-                                                {
-                                                    <input type="checkbox" class="custom-control-input" value="@item.manv" name="arrayDCNV" id="@item.manv">
-                                                }
+                                                <input type="checkbox" class="custom-control-input" value="@item.manv" name="arrayDCNV" id="@item.manv">
                                                 <span class="custom-control-indicator"></span>
                                             </label>
                                         </td>
-                                        <td>@item.mahp</td>
-                                        <td>@item.NhiemvuSV.noidung</td>
-                                        
+                                        <td>@item.noidung</td>
                                     </tr>
                                 }
                             </tbody>

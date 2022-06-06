@@ -1,0 +1,34 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.Chuandaura_monhoc>
+@{
+    string cdr_kt = "Kiến thức";
+    string cdr_kn = "Kỹ năng";
+    string cdr_tn = "Mức tự chủ và trách nhiệm";
+}
+<h2>3. Chuẩn đầu ra của học phần</h2>
+<h2> 3.1 @cdr_kt</h2>
+    @foreach (var item in Model)
+    {
+        @if (item.loai == cdr_kt)
+        {
+            <p>CLO @item.chisocio. @item.noidung</p>
+        }
+        
+    }
+<h2> 3.2 @cdr_kn</h2>
+    @foreach (var item in Model)
+        {
+            @if (item.loai == cdr_kn)
+                { 
+                   <p>CLO @item.chisocio. @item.noidung</p> 
+                }
+        }
+<h2> 3.3 @cdr_tn</h2>
+    @foreach (var item in Model)
+        {
+            @if (item.loai == cdr_tn)
+                { 
+                   <p>CLO @item.chisocio. @item.noidung</p> 
+                }
+        }
+
+

@@ -1,0 +1,60 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.CLOPhuongphaphoc>
+@{
+    var i = 0;
+}
+<div class="body table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    STT
+                </th>
+                <th>
+                    Mức độ
+                </th>
+                <th>
+                    Phương pháp học
+                </th>
+                <th>
+                    Chuẩn đầu ra môn học
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                i++;
+                <tr>
+                    <td>
+                        @i
+                    </td>
+                    <td>
+                        @item.mucdo
+                    </td>
+                    <td>
+                        @item.Phuongphap_hoc.tenpp
+                    </td>
+                    <td>
+                        @item.Chuandaura_monhoc.chisocio
+                    </td>
+                    <td>
+                        @if (ViewData["Title"] == "Create")
+                        {
+                            <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Create"
+                        asp-route-id="@item.mapphoc">mode_edit</a>
+                        }
+                        else
+                        {
+                            <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Edit"
+                        asp-route-id="@item.mapphoc">mode_edit</a>
+                        }
+                        <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
+                        asp-action="DeleteClopphoc" asp-route-id="@item.mapphoc" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

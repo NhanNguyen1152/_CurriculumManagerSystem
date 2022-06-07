@@ -30,19 +30,29 @@
             </td>
         </tr>
         @*hangbentrai*@
-         @foreach (var items in ViewBag.listPpday)
-        {
-            <tr>
-                <td>@items.tenpp</td>
-               @foreach (var item in Model)
+        @foreach (var items in ViewBag.listPpday)
+        {<tr>
+            <td>@items.tenpp</td>
+                @foreach (var itemPLO in ViewBag.listPpday_cdr)
                 {
-                    @if (@item.macdmon == @item.Chuandaura_monhoc.macdmon && @item.mappday == @items.mappday)
+                    bool flag = false;
+                     @foreach (var item in Model)
                     {
-                        <td id="">
-                            X
-                        </td>
-                        continue;
+                        @if (item.macdmon == itemPLO.macdmon && item.mappday == items.mappday)
+                        {
+                           flag = true;
+                           break;
+                        }
                     }
+                    if(flag)
+                    {
+                        <td>X</td>
+                    }
+                    else
+                    {
+                         <td></td>
+                    }
+                   
                 }
             </tr>
         }

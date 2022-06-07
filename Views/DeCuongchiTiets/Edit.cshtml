@@ -189,7 +189,7 @@
                         {
                             @await Component.InvokeAsync("Edit_CLO_pphoc", new {id = @Context.Session.GetInt32("id_edit_dccht")})
                         }
-                           @* @await Component.InvokeAsync("Get_CLPO", new {id = @Context.Session.GetInt32("id_edit_dccht_after")}) *@
+                           @await Component.InvokeAsync("GetClopphoc", new {id = @Context.Session.GetInt32("id_edit_dccht_after")})
                     
                         
                     </div>
@@ -202,7 +202,7 @@
                         {
                             @await Component.InvokeAsync("Edit_CLO_ppday", new {id = @Context.Session.GetInt32("id_edit_dccht")})
                         }
-                           @* @await Component.InvokeAsync("Get_CLPO", new {id = @Context.Session.GetInt32("id_edit_dccht_after")}) *@
+                           @await Component.InvokeAsync("GetCloppday", new {id = @Context.Session.GetInt32("id_edit_dccht_after")})
                     
                         
                     </div>

@@ -26,7 +26,10 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Pdf_Getclpo
         }
 
          public async Task<IViewComponentResult> InvokeAsync(int id)
-        {  
+        {   
+            var total_plo = _context.CLPOs.Include(c => c.Chuandaura_monhoc).ThenInclude(c => c.DeCuongchiTiet).Include(c => c.PLO).Where(c=> c.Chuandaura_monhoc.mahp == id).Where(m=> m.macdmon == m.Chuandaura_monhoc.macdmon && m.maplo == m.PLO.maplo).OrderBy(c=> c.PLO.chisoplo).ToList();
+            ViewBag.total_plo = total_plo;
+
             var acomptec_lvthainhanContext = _context.CLPOs.Include(c => c.Chuandaura_monhoc).ThenInclude(c => c.DeCuongchiTiet).Include(c => c.PLO).Where(c=> c.Chuandaura_monhoc.mahp == id).OrderBy(c=> c.Chuandaura_monhoc.chisocio);
             return View(await acomptec_lvthainhanContext.ToListAsync());
             

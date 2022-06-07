@@ -26,14 +26,27 @@
             </td>
         </tr>
         @*hangbentrai*@
+        @{
+            List<int> plolist = new List<int>();
+            foreach (var item in ViewBag.listPlo)
+            {
+                plolist.Add(0);
+            }
+
+        }
         @foreach (var item in Model)
         {
+            int i = 0;
             <tr>
                 <td>CLO @Html.DisplayFor(modelItem => item.Chuandaura_monhoc.chisocio)</td>
                 @foreach (var itemPLOs in ViewBag.listPlo)
                 {
                     @if (@item.macdmon == @item.Chuandaura_monhoc.macdmon && @item.maplo == @itemPLOs.maplo)
                     {
+                        if(plolist[i] == 0)
+                        {
+                            plolist[i] = 1 ;
+                        }
                         <td id="@itemPLOs.maplo">
                             X
                         </td>
@@ -41,28 +54,26 @@
                     else
                     {
                         <td> </td>
+               
                     }
+                i++;
                 }
             </tr>
         }
         <tr>
             <td>Tổng hợp học phần</td>
-            <td>Làm</td>
-            <td>Chỗ</td>
-            <td>Này</td>
-            <td>Không</td>
-            <td>Ra</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            @* @foreach (var item in ViewBag.leftouterjoin)
+            @foreach (var item in plolist)
+            {
+                if(item == 1)
                 {
-                    
-                   
-                } *@
+                    <td>X</td>
+                }
+                else
+                {
+                    <td></td>
+                }
+                
+            }
         </tr>
     </tbody>
 </table>

@@ -48,6 +48,8 @@
                     <li role="presentation"><a role="tab" href="#chuandauramonhoc" data-toggle="tab">CHUẨN ĐẦU RA MÔN HỌC</a></li>
                     <li role="presentation"><a role="tab" href="#CLPO" data-toggle="tab">CLPO</a></li>
                     <li role="presentation"><a role="tab" href="#CLO_PPHOC" data-toggle="tab">CLO PHƯƠNG PHÁP HỌC</a></li>
+                     <li role="presentation"><a role="tab" href="#CLO_DAY" data-toggle="tab">CLO PHƯƠNG PHÁP DẠY</a></li>
+                    
                     <li role="presentation"><a role="tab" href="#decuongtailieu" data-toggle="tab">TÀI LIỆU</a></li>
                     
 
@@ -419,14 +421,14 @@
                         {
                             @await Component.InvokeAsync("Create_CLO_pphoc", new {id = @Context.Session.GetInt32("idClo_pphoc")})
                         }
-                         @* @if (@Context.Session.GetInt32("idDecuong") == null)
+                         @if (@Context.Session.GetInt32("idDecuong") == null)
                         {
-                            @await Component.InvokeAsync("Get_CLPO")
+                            @await Component.InvokeAsync("GetClopphoc")
                         }
                         else
                         {
-                           @await Component.InvokeAsync("Get_CLPO", new {id = @Context.Session.GetInt32("idDecuong")})
-                        } *@
+                           @await Component.InvokeAsync("GetClopphoc", new {id = @Context.Session.GetInt32("idDecuong")})
+                        }
                         
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="CLO_DAY">
@@ -438,14 +440,14 @@
                         {
                             @await Component.InvokeAsync("Create_CLO_ppday", new {id = @Context.Session.GetInt32("idClo_ppday")})
                         }
-                         @* @if (@Context.Session.GetInt32("idDecuong") == null)
+                         @if (@Context.Session.GetInt32("idDecuong") == null)
                         {
-                            @await Component.InvokeAsync("Get_CLPO")
+                            @await Component.InvokeAsync("GetCloppday")
                         }
                         else
                         {
-                           @await Component.InvokeAsync("Get_CLPO", new {id = @Context.Session.GetInt32("idDecuong")})
-                        } *@
+                           @await Component.InvokeAsync("GetCloppday", new {id = @Context.Session.GetInt32("idDecuong")})
+                        }
                         
                     </div>
                      

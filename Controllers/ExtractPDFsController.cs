@@ -43,53 +43,11 @@ namespace _CurriculumManagerSystem.Controllers
             var listptc = _context.Phutrachs.Include(m => m.DeCuongchiTiet).Include(m=> m.GiangVien).Where(m => m.DeCuongchiTiet.mahp == id).Where(m=> m.vaitro =="Giảng viên tham gia giảng dạy cùng").ToList();
              ViewBag.listptc = listptc;
 
-            var listkh = _context.Khoas.Include(b => b.Bomon).ToList();
-            ViewBag.listbm = listkh;
-            
+             var listgv = _context.Phutrachs.Include(m => m.DeCuongchiTiet).Include(m=> m.GiangVien).Where(m => m.DeCuongchiTiet.mahp == id).Select(m=> m.GiangVien.magv).ToList();
+             ViewBag.listgv = listgv;
 
-            var leftOuterJoin = from e in _context.PLOs  
-            join d in _context.CLPOs on e.maplo equals d.maplo into pl  
-            from plnew in pl.DefaultIfEmpty()  
-            select new PLO {maplo = e.maplo}; 
-            ViewBag.leftouterjoin = leftOuterJoin.ToList();
-            // var query =
-            // from CLPO in _context.CLPOs
-            // join PLO in _context.PLOs on PLO.maplo equals CLPO.maplo into gj
-            // from subpet in gj.DefaultIfEmpty()
-            // select new
-            // {
-            //     PLO.maplo
-                
-            // }.ToList();
-
-            // var leftouterjoin = ( from clpo in _context.CLPOs
-                
-            //     join plo in _context.PLOs on clpo.maplo equals plo.maplo into ot
-
-            //     from otnew in ot.DefaultIfEmpty()
-
-            //     select new (plo = c , c.maplo).ToList()
-            // );
-          
-
-            //  var plos = _context.CLPOs.Include(c => c.Chuandaura_monhoc).Include(c => c.PLO).Where(c=> c.Chuandaura_monhoc.mahp == id).OrderBy(c=> c.Chuandaura_monhoc.chisocio);
-            // {
-            //     foreach (var item in plos)
-            //     {
-            //         foreach (var items in listplo)
-            //         {
-            //             if(@item.macdmon == @item.Chuandaura_monhoc.macdmon && @item.maplo == @items.maplo)
-
-            //             plos.Add();
-            //         }
-            //     }
-            // }
-            // ViewBag.plos = plos;
-            //  var lPlo = _context.PLOs;
-            // TempData["lPlo"] = lPlo.ToList();
-            
-            // var listPlos = _context.CLPOs.Select(m=> m.maplo).ToList();
-            // ViewBag.listPlos = listPlos;
+            var listkhoa = _context.Khoas.Include(b => b.Bomon).ThenInclude(m=> m.GiangVien).ToList();
+             ViewBag.listkhoa = listkhoa;
 
             HttpContext.Session.SetInt32("id_pdf", id);
             return View();

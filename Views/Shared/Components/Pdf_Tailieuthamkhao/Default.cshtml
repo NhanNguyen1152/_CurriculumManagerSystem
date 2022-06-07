@@ -1,0 +1,26 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.DecuongTailieu>
+@{
+  var loaitl1 = "Học liệu bắt buộc";
+  var loaitl2 = "Học liệu tham khảo";
+}
+<h2>12. Học liệu tham khảo</h2>
+<p><h2>  12.1 @loaitl1</h2></p>
+@foreach (var item in Model)
+    {
+      int i = 0;
+      if(item.Tailieu.loaitl == loaitl1)
+      {
+         <p>[@i++] @item.Tailieu.tacgia . @item.Tailieu.tentailieu @item.Tailieu.thongtinkhac</p>
+      }
+     
+    }
+<p><h2>  12.2 @loaitl2</h2></p>
+  @foreach (var item in Model)
+    {
+      int i = 0;
+      if(item.Tailieu.loaitl == loaitl2)
+      {
+         <p>[@i++] @item.Tailieu.tacgia . @item.Tailieu.tentailieu . @item.Tailieu.thongtinkhac</p>
+      }
+     
+    }

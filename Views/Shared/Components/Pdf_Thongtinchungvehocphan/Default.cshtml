@@ -19,15 +19,19 @@
 {
     <p>Các yêu cầu khác đối với học phần: @item.yeucaukhacvoi_hocphan<br></p>
 }
-
-@* @foreach (var item in ViewBag.listbm)
-    {
-    <p>Đơn vị phụ trách:
-    @if(@item.Bonmon.tenbm == "Hệ thống thông tin" || @item.Bonmon.tenbm == "Khoa học máy tính" )
-    {
-    @item.tenkh
-    }<br></p>
-    } *@
+<p>Đơn vị phụ trách: 
+@foreach (var items in ViewBag.listgv)
+{
+    <p>
+        @items.GiangVien.hoten
+    </p>
+    foreach(var item in ViewBag.listkhoa)
+        {
+            @item.tenkh
+            break;
+        }
+}
+</p>
 @foreach (var item in ViewBag.listpt)
 {
 

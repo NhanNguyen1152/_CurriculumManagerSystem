@@ -1,0 +1,41 @@
+@model _CurriculumManagerSystem.Models.MoiquanhePLO_Muctieudaotao
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>MoiquanhePLO_Muctieudaotao</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ma_plo_mtdt" />
+            <div class="form-group">
+                <label asp-for="ngay_update" class="control-label"></label>
+                <input asp-for="ngay_update" class="form-control" />
+                <span asp-validation-for="ngay_update" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="maplo" class="control-label"></label>
+                <select asp-for="maplo" class="form-control" asp-items="ViewBag.maplo"></select>
+                <span asp-validation-for="maplo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ma_mtdt" class="control-label"></label>
+                <select asp-for="ma_mtdt" class="form-control" asp-items="ViewBag.ma_mtdt"></select>
+                <span asp-validation-for="ma_mtdt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

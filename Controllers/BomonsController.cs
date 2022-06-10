@@ -21,8 +21,8 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Bomons
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.Bomons.Include(g => g.GiangVien);
-            return View(await appDbContext.ToListAsync());
+            var acomptec_lvthainhanContext = _context.Bomons.Include(b => b.Khoa);
+            return View(await acomptec_lvthainhanContext.ToListAsync());
         }
 
         // GET: Bomons/Details/5
@@ -34,6 +34,7 @@ namespace _CurriculumManagerSystem.Controllers
             }
 
             var bomon = await _context.Bomons
+                .Include(b => b.Khoa)
                 .FirstOrDefaultAsync(m => m.mabm == id);
             if (bomon == null)
             {
@@ -46,7 +47,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Bomons/Create
         public IActionResult Create()
         {
-            ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "hoten");
+            ViewData["makh"] = new SelectList(_context.Khoas, "makh", "makh");
             return View();
         }
 
@@ -55,7 +56,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("mabm,tenbm,magv")] Bomon bomon)
+        public async Task<IActionResult> Create([Bind("mabm,tenbm,makh")] Bomon bomon)
         {
             if (ModelState.IsValid)
             {
@@ -63,6 +64,7 @@ namespace _CurriculumManagerSystem.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["makh"] = new SelectList(_context.Khoas, "makh", "makh", bomon.makh);
             return View(bomon);
         }
 
@@ -79,7 +81,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-            ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "hoten");
+            ViewData["makh"] = new SelectList(_context.Khoas, "makh", "makh", bomon.makh);
             return View(bomon);
         }
 
@@ -88,7 +90,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("mabm,tenbm,magv")] Bomon bomon)
+        public async Task<IActionResult> Edit(int id, [Bind("mabm,tenbm,makh")] Bomon bomon)
         {
             if (id != bomon.mabm)
             {
@@ -115,6 +117,7 @@ namespace _CurriculumManagerSystem.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["makh"] = new SelectList(_context.Khoas, "makh", "makh", bomon.makh);
             return View(bomon);
         }
 
@@ -127,12 +130,13 @@ namespace _CurriculumManagerSystem.Controllers
             }
 
             var bomon = await _context.Bomons
+                .Include(b => b.Khoa)
                 .FirstOrDefaultAsync(m => m.mabm == id);
             if (bomon == null)
             {
                 return NotFound();
             }
-            ViewData["magv"] = new SelectList(_context.GiangViens, "magv", "hoten");
+
             return View(bomon);
         }
 

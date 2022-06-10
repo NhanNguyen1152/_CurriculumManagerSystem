@@ -21,8 +21,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Khoas
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.Khoas.Include(b => b.Bomon).ThenInclude(b => b.GiangVien);
-            return View(await appDbContext.ToListAsync());
+            return View(await _context.Khoas.ToListAsync());
         }
 
         // GET: Khoas/Details/5
@@ -46,7 +45,6 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Khoas/Create
         public IActionResult Create()
         {
-            ViewData["mabm"] = new SelectList(_context.Bomons, "mabm", "tenbm");
             return View();
         }
 
@@ -55,7 +53,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("makh,tenkh,mabm")] Khoa khoa)
+        public async Task<IActionResult> Create([Bind("makh,tenkh")] Khoa khoa)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +77,6 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-            ViewData["mabm"] = new SelectList(_context.Bomons, "mabm", "tenbm");
             return View(khoa);
         }
 
@@ -88,7 +85,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("makh,tenkh,mabm")] Khoa khoa)
+        public async Task<IActionResult> Edit(int id, [Bind("makh,tenkh")] Khoa khoa)
         {
             if (id != khoa.makh)
             {
@@ -132,7 +129,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
-            ViewData["mabm"] = new SelectList(_context.Bomons, "mabm", "tenbm");
+
             return View(khoa);
         }
 

@@ -23,7 +23,11 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Địa chỉ liên hệ")]
         public string diachilienhe { get; set; }
 
-        public virtual ICollection<Bomon> Bomons { get; set; }
+        [ForeignKey("mabm")]
+        [DisplayName("Mã bộ môn")]
+        public int mabm { get; set; }
+        [ForeignKey("mabm")]
+        public virtual Bomon Bomon { get; set; }
         public virtual IList<Phutrach> Phutraches { get; set; }
     }
 }

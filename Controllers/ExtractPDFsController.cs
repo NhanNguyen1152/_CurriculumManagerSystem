@@ -37,17 +37,17 @@ namespace _CurriculumManagerSystem.Controllers
             var listtgh = _context.Thoigianhocs.Include(t => t.DeCuongchiTiet).Include(t => t.Khoahocs).Include(t => t.Hockys).Where(t=> t.DeCuongchiTiet.mahp == id).ToList();
             ViewBag.listtgh = listtgh;
 
-             var listpt = _context.Phutrachs.Include(m => m.DeCuongchiTiet).Include(m=> m.GiangVien).Where(m => m.DeCuongchiTiet.mahp == id).Where(m=> m.vaitro=="Người phụ trách").ToList();
-             ViewBag.listpt = listpt;
+            //  var listpt = _context.Phutrachs.Include(m => m.DeCuongchiTiet).Include(m=> m.GiangVien).Where(m => m.DeCuongchiTiet.mahp == id).Where(m=> m.vaitro=="Người phụ trách").ToList();
+            //  ViewBag.listpt = listpt;
 
-            var listptc = _context.Phutrachs.Include(m => m.DeCuongchiTiet).Include(m=> m.GiangVien).Where(m => m.DeCuongchiTiet.mahp == id).Where(m=> m.vaitro =="Giảng viên tham gia giảng dạy cùng").ToList();
-             ViewBag.listptc = listptc;
+            // var listptc = _context.Phutrachs.Include(m => m.DeCuongchiTiet).Include(m=> m.GiangVien).Where(m => m.DeCuongchiTiet.mahp == id).Where(m=> m.vaitro =="Giảng viên tham gia giảng dạy cùng").ToList();
+            //  ViewBag.listptc = listptc;
 
-             var listgv = _context.Phutrachs.Include(m => m.DeCuongchiTiet).Include(m=> m.GiangVien).Where(m => m.DeCuongchiTiet.mahp == id).Select(m=> m.GiangVien.magv).ToList();
-             ViewBag.listgv = listgv;
+            //  var listgv = _context.Phutrachs.Include(m => m.DeCuongchiTiet).Include(m=> m.GiangVien).Where(m => m.DeCuongchiTiet.mahp == id).Select(m=> m.GiangVien.magv).ToList();
+            //  ViewBag.listgv = listgv;
 
-            var listkhoa = _context.Khoas.Include(b => b.Bomon).ThenInclude(m=> m.GiangVien).ToList();
-             ViewBag.listkhoa = listkhoa;
+            // var listkhoa = _context.Khoas.Include(b => b.Bomon).ThenInclude(m=> m.GiangVien).ToList();
+            //  ViewBag.listkhoa = listkhoa;
 
             HttpContext.Session.SetInt32("id_pdf", id);
             return View();

@@ -21,7 +21,8 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: GiangViens
         public async Task<IActionResult> Index()
         {
-            return View(await _context.GiangViens.ToListAsync());
+            var acomptec_lvthainhanContext = _context.GiangViens.Include(g => g.Bomon);
+            return View(await acomptec_lvthainhanContext.ToListAsync());
         }
 
         // GET: GiangViens/Details/5
@@ -33,6 +34,7 @@ namespace _CurriculumManagerSystem.Controllers
             }
 
             var giangVien = await _context.GiangViens
+                .Include(g => g.Bomon)
                 .FirstOrDefaultAsync(m => m.magv == id);
             if (giangVien == null)
             {
@@ -45,6 +47,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: GiangViens/Create
         public IActionResult Create()
         {
+            ViewData["mabm"] = new SelectList(_context.Bomons, "mabm", "mabm");
             return View();
         }
 
@@ -53,7 +56,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("magv,hoten,chucdanh,hocham,hocvi,diachilienhe")] GiangVien giangVien)
+        public async Task<IActionResult> Create([Bind("magv,hoten,chucdanh,hocham,hocvi,diachilienhe,mabm")] GiangVien giangVien)
         {
             if (ModelState.IsValid)
             {
@@ -61,6 +64,7 @@ namespace _CurriculumManagerSystem.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["mabm"] = new SelectList(_context.Bomons, "mabm", "mabm", giangVien.mabm);
             return View(giangVien);
         }
 
@@ -77,6 +81,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 return NotFound();
             }
+            ViewData["mabm"] = new SelectList(_context.Bomons, "mabm", "mabm", giangVien.mabm);
             return View(giangVien);
         }
 
@@ -85,7 +90,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("magv,hoten,chucdanh,hocham,hocvi,diachilienhe")] GiangVien giangVien)
+        public async Task<IActionResult> Edit(int id, [Bind("magv,hoten,chucdanh,hocham,hocvi,diachilienhe,mabm")] GiangVien giangVien)
         {
             if (id != giangVien.magv)
             {
@@ -112,6 +117,7 @@ namespace _CurriculumManagerSystem.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["mabm"] = new SelectList(_context.Bomons, "mabm", "mabm", giangVien.mabm);
             return View(giangVien);
         }
 
@@ -124,6 +130,7 @@ namespace _CurriculumManagerSystem.Controllers
             }
 
             var giangVien = await _context.GiangViens
+                .Include(g => g.Bomon)
                 .FirstOrDefaultAsync(m => m.magv == id);
             if (giangVien == null)
             {

@@ -4,95 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
-
-<div class="row clearfix">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="card">
-            <div class="header">
-                <h3 class="titile-table">
-                    TẠO MỚI GIẢNG VIÊN
-                </h3>
-            </div>
-            <div class="body">
-                <form class="form-horizontal" asp-action="Create">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="hoten">Họ và tên <span class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <input required asp-for="hoten" class="form-control" placeholder="Họ và tên"></input>
-                                    <span asp-validation-for="hoten" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="chucdanh">Chức danh <span class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <input required asp-for="chucdanh" class="form-control" placeholder="Chức danh"></input>
-                                    <span asp-validation-for="chucdanh" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="hocham">Học hàm <span class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <input required asp-for="hocham" class="form-control" placeholder="Học hàm"></input>
-                                    <span asp-validation-for="hocham" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="hocvi">Học vị <span class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <input required asp-for="hocvi" class="form-control" placeholder="Học vị"></input>
-                                    <span asp-validation-for="hocvi" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label asp-for="diachilienhe">Địa chỉ liên hệ <span class="text-danger">*</span></label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <input required asp-for="diachilienhe" class="form-control" placeholder="Địa chỉ liên hệ"></input>
-                                    <span asp-validation-for="diachilienhe" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
-                            <a asp-action="Index" class="btn btn-default waves-effect">Trở lại</a> |
-                            <button type="submit" class="btn btn-primary waves-effect">Tạo mới</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-@* <h1>Create</h1>
+<h1>Create</h1>
 
 <h4>GiangVien</h4>
 <hr />
@@ -126,6 +38,10 @@
                 <span asp-validation-for="diachilienhe" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="mabm" class="control-label"></label>
+                <select asp-for="mabm" class ="form-control" asp-items="ViewBag.mabm"></select>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -134,4 +50,5 @@
 
 <div>
     <a asp-action="Index">Back to List</a>
-</div> *@
+</div>
+

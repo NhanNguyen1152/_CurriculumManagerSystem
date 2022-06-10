@@ -16,11 +16,12 @@ namespace _CurriculumManagerSystem.Models
         [DisplayName("Tên bộ môn")]
         public string tenbm { get; set; }
 
-        [ForeignKey("magv")]
-        [DisplayName("Tên giảng viên")]
-        public int magv { get; set; }
-        [ForeignKey("magv")]
-        public virtual GiangVien GiangVien { get; set; }
-        public virtual ICollection<Khoa> Khoas { get; set; }
+        [ForeignKey("makh")]
+        [DisplayName("Mã khoa")]
+        public int makh { get; set; }
+        [ForeignKey("makh")]
+        public virtual Khoa Khoa { get; set; }
+
+        public virtual ICollection<GiangVien> Giangviens { get; set; }
     }
 }

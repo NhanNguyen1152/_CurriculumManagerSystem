@@ -41,5 +41,13 @@ namespace _CurriculumManagerSystem.Models
         public DbSet<Tailieu> Tailieus { get; set;}
         public DbSet<Thoigianhoc> Thoigianhocs { get; set;}
         public DbSet<Khoikienthuc> Khoikienthucs { get; set; }
+        public DbSet<Muctieu_Daotao> Muctieu_Daotaos { get; set; }
+        public DbSet<MoiquanhePLO_Muctieudaotao> MoiquanhePLO_Muctieudaotaos { get; set; }
+        public DbSet<Chuongtrinh_Daotao> Chuongtrinh_Daotaos { get; set;}
+        public DbSet<Decuong_Chuongtrinh> Decuong_Chuongtrinhs { get; set;}
+        public DbSet<Quytrinhdaotao_Dieukientotnghiep> Quytrinhdaotao_Dieukientotnghieps { get; set;}
+        public DbSet<Doituong_Tuyensinh> Doituong_Tuyensinhs { get; set;}
+        public DbSet<Decuong_Quytrinh> Decuong_Quytrinhs { get; set;}
+        public DbSet<Chitiet_Doituong> Chitiet_Doituongs { get; set;}
     }
 }

@@ -1,0 +1,41 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.Chitiet_Doituong>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Chuongtrinh_Daotao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doituong_Tuyensinh)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chuongtrinh_Daotao.ma_ctdt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doituong_Tuyensinh.ma_dtts)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ma_ct_dt">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ma_ct_dt">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ma_ct_dt">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

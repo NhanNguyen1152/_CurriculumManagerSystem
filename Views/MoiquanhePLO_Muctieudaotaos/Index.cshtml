@@ -1,0 +1,47 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.MoiquanhePLO_Muctieudaotao>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ngay_update)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PLO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Muctieu_Daotao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ngay_update)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PLO.maplo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Muctieu_Daotao.ma_mtdt)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ma_plo_mtdt">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ma_plo_mtdt">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ma_plo_mtdt">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

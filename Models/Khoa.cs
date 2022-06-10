@@ -15,11 +15,8 @@ namespace _CurriculumManagerSystem.Models
         public int makh { get; set; }
         [DisplayName("Tên khoa")]
         public string tenkh { get; set; }
+        public virtual ICollection<Bomon> Bomons { get; set; }
 
-        [ForeignKey("mabm")]
-        [DisplayName("Tên bộ môn")]
-        public int mabm { get; set; }
-        [ForeignKey("mabm")]
-        public virtual Bomon Bomon { get; set; }
+
     }
 }

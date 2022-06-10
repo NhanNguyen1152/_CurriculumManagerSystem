@@ -1,0 +1,54 @@
+@model _CurriculumManagerSystem.Models.Chuongtrinh_Daotao
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Chuongtrinh_Daotao</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nganh_daotao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nganh_daotao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.trinhdo_daotao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.trinhdo_daotao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.loaihinh_daotao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.loaihinh_daotao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.thoigian_daotao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.thoigian_daotao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tenvanbang)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tenvanbang)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.noidaotao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.noidaotao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ma_ctdt">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

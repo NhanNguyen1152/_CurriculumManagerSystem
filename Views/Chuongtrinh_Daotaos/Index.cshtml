@@ -1,0 +1,65 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.Chuongtrinh_Daotao>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nganh_daotao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.trinhdo_daotao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.loaihinh_daotao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.thoigian_daotao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tenvanbang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.noidaotao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nganh_daotao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.trinhdo_daotao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.loaihinh_daotao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.thoigian_daotao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tenvanbang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.noidaotao)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ma_ctdt">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ma_ctdt">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ma_ctdt">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,65 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.MoiquanhePLO_Muctieudaotao>
+@{
+    var i = 0;
+}
+<div class="body table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    STT
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ngay_update)
+                </th>
+                <th>Chỉ Số Chuẩn đầu ra</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLO.chisoplo)
+                </th>
+                <th>Chỉ số PLO</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Muctieu_Daotao.mtdt_chiso)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                i++;
+                <tr>
+                    <td>
+                        @i
+                    </td>
+                    <td>
+                        @item.ngay_update
+                    </td>
+                     <td>
+                        @item.PLO.chisoplo
+                    </td>
+                    <td>
+                        @item.Muctieu_Daotao.mtdt_chiso
+                    </td>
+
+                    <td>
+                        @if (ViewData["Title"] == "Create")
+                        {
+                            <a class="material-icons" asp-controller="Chuongtrinh_Daotaos" asp-action="Create"
+                        asp-route-id="@item.ma_plo_mtdt">mode_edit</a>
+                        }
+                        else
+                        {
+                            <a class="material-icons" asp-controller="Chuongtrinh_Daotaos" asp-action="Edit"
+                        asp-route-id="@item.ma_plo_mtdt">mode_edit</a>
+                        }
+                        <a class="material-icons" data-type="confirm" asp-controller="Chuongtrinh_Daotaos"
+                        asp-action="DeleteCLPO" asp-route-id="@item.ma_plo_mtdt"
+                        onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

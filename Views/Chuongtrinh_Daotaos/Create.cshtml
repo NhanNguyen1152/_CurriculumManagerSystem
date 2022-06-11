@@ -41,10 +41,14 @@
                          @await Component.InvokeAsync("Create_CTDT_decuongquytrinh", new { id = 0})
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="chitietdoituong">
-                          
+                        @await Component.InvokeAsync("Create_CTDT_tuyensinh", new { id = 0})
+                       
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="plo_muctieudaotao">
-                       
+                        @await Component.InvokeAsync("Create_CTDT_plo_muctieudaotao", new { id = 0})
+                        @await Component.InvokeAsync("Get_PLO_Muctieudaotao")
+                         
+                        
                     </div>
                
                    

@@ -54,6 +54,9 @@ namespace _CurriculumManagerSystem.Controllers
         public IActionResult Create()
         {
             ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
+            ViewData["ma_mtdt"] = new SelectList(_context.Muctieu_Daotaos, "ma_mtdt", "mtdt_chiso");
+            ViewData["maplo"] = new SelectList(_context.PLOs, "maplo", "chisoplo");
+            ViewData["ma_dtts"] = new SelectList(_context.Doituong_Tuyensinhs, "ma_dtts", "noi_dung_dtts");
             return View();
         }
 
@@ -211,6 +214,18 @@ namespace _CurriculumManagerSystem.Controllers
             if (ModelState.IsValid)
             {   
                 _context.Add(moiquanhePLO_Muctieudaotao);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Create");
+            }
+            return View();
+        }
+        //createdoituong
+         public async Task<IActionResult> Create_tuyensinh([Bind("ma_ct_dt,ma_ctdt,ma_dtts")] Chitiet_Doituong chitiet_Doituong)
+        {
+            if (ModelState.IsValid)
+            {
+                chitiet_Doituong.ma_ctdt = (int)TempData["id_tmp_ctdt_create"];
+                _context.Add(chitiet_Doituong);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Create");
             }

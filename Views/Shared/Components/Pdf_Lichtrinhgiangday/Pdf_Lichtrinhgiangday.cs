@@ -25,10 +25,8 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Pdf_Lichtrinhgiangday
 
         public async Task<IViewComponentResult> InvokeAsync(int id)
         {   
-            //sualaithanhchitietchuong
-            var result = _context.Chitiet_Chuongs.Include(m => m.Chitietmonhoc).ThenInclude(z => z.DeCuongchiTiet).Where(m => m.Chitietmonhoc.mahp == id);
-            return View(await result.ToListAsync());
-
+            var result = await _context.Decuong_Chuongtrinhs.Where(m=> m.ma_ctdt == id).ToListAsync();
+            return View<List<Decuong_Chuongtrinh>>(result);
         }
     }
 }

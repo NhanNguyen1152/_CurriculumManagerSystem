@@ -1,51 +1,200 @@
-@model IEnumerable<_CurriculumManagerSystem.Models.Chitiet_Chuong>
+@model IEnumerable<_CurriculumManagerSystem.Models.Decuong_Chuongtrinh>
+<h2>10. Hướng dẫn thực hiện chương trình</h2>
+<table cellspacing="0" cellpadding="5" style="text-align:left;border-style: solid;">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>
+                                   Mã học phần
+                                </th>
+                                <th>
+                                    Tên môn học
+                                </th>
+                                <th>
+                                    Số tín chỉ
+                                </th>
+                                <th>
+                                    Bắt buộc
+                                </th>
+                                <th>
+                                    Tự chọn
+                                </th>
+                                <th>
+                                    Số tiết LT
+                                </th>
+                                <th>
+                                    Số tiết TH
+                                </th>
+                                <th>
+                                    Môn học tiên quyết / học trước
+                                </th>
+                            </tr>
+                        </thead>
+                        @{
+                            int stt = 0;
+                            int tong_tc = 0;
+                            int tong_sotiet_lt = 0;
+                            int tong_sotiet_th = 0;
+                            int tongcong_tc = 0;
+                            int tongcong_bb = 0;
+                            int tongcong_tuchon = 0;
+                            string tuchon = "";
+                            string luanvan = "Luận văn tốt nghiệp";
+                        }
+                        @foreach (var dulieu_kkt in ((List<Decuong_Chuongtrinh>)TempData["listData"]).GroupBy(x =>
+                        x.DeCuongchiTiet.Khoikienthuc.kkt_ten))
+                        {
+                            <th colspan="9" style="color: black;"><b>@dulieu_kkt.Key</b></th>
 
-<h2>10. Lịch trình giảng dạy</h2>
-<table cellspacing="0" cellpadding="5" style="text-align:center;border-style: solid;">
-    <thead style="text-align:center;">
-        <tr>
-            <th rowspan="2" style="text-align:center;">
-                Tuần học
-            </th>
-            <th rowspan="2" style="text-align:center;">
-                Nội dung
-            </th>
-            <th colspan="2" style="text-align:center;">
-                Số Tiết
-            </th>
-        </tr>
-        <tr>
-            <th>
-                Lý thuyết
-            </th>
-            <th>
-                Thực Hành
-            </th>
+                            <tbody>
+                                @foreach (var dulieu_decuong in ((List<Decuong_Chuongtrinh>)TempData["listData"]).Where(x =>
+                               x.DeCuongchiTiet.Khoikienthuc.kkt_ten == dulieu_kkt.Key))
+                                {
+                                    stt = stt + 1;
+                                    tong_sotiet_lt = dulieu_decuong.DeCuongchiTiet.sotc_lt * 15;
+                                    tong_sotiet_th = dulieu_decuong.DeCuongchiTiet.sotc_th * 30;
+                 
+                                    @if(dulieu_decuong.DeCuongchiTiet.tenhp_tviet.Contains(luanvan))
+                                            {
+                                                
+												<tr> 
+													<td>
+														@stt
+													</td>
+													<td>
+														@dulieu_decuong.DeCuongchiTiet.mahp_decuong
+													</td>
+													<td>
+														@dulieu_decuong.DeCuongchiTiet.tenhp_tviet
+													</td>
+													<td>
+														
+													</td>
+													<td>
+														
+													</td>
+													<td>
+														@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota
+													</td>
+													<td>
+														@tong_sotiet_lt
+													</td>
+													<td>
+														@tong_sotiet_th
+													</td>
+													@if(@dulieu_decuong.DeCuongchiTiet.hp_tienquyet == "Không")
+														{
+															<td>
+															
+															</td>
+														}
+														else
+														{
+															<td>
+																@dulieu_decuong.DeCuongchiTiet.hp_tienquyet
+															</td>
+														}
+													
+												</tr>
+                                            }
+                                        else
+                                            { 
+                                               @if(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != null && dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != tuchon)
+													{ 
+														tongcong_tuchon += int.Parse(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota);
+														tuchon = dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon;
+														<tr>
+															<th rowspan="1"></th>
+															<th colspan="4" ><b>@tuchon</b></th>
+															<th><b>@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota</b></th>
+														</tr>
+													}
+												<tr> 
+													<td>
+														@stt
+													</td>
+													<td>
+														@dulieu_decuong.DeCuongchiTiet.mahp_decuong
+													</td>
+													<td>
+														@dulieu_decuong.DeCuongchiTiet.tenhp_tviet
+													</td>
 
-        </tr>
-    </thead>
-    @{
-        int temp = 0;
-    }
-    <tbody>
-        @* Plos hang o tren *@
-        @*hangbentrai*@
-        @foreach (var item in Model.GroupBy(x => x.tuanhoc))
-        {
-            int numofitem = item.Count();
-            @foreach (var item2 in item)
-            {
-                <tr>
-                    @if (item.Key != temp)
-                    {
-                        temp = item.Key;
-                        <td rowspan="@numofitem">@item.Key</td>
-                    }
-                    <td style="text-align: left; padding-left: 5px">Chương @item2.Chitietmonhoc.chiso. @item2.Chitietmonhoc.tenchuong</td>
-                    <td>@item2.Chitietmonhoc.tietlt</td>
-                    <td>@item2.Chitietmonhoc.tietth</td>
-                </tr>
-            }
-        }
-    </tbody>
-</table>
+
+													@* bat dau  *@
+													
+															
+															@{
+																tong_tc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
+															}
+															@if(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != null && dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota != null)
+																{  
+																	@* tuchon = dulieu_decuong.Khoikienthuc.kkt_tuchon; *@
+																	
+																	tongcong_tc += tong_tc;
+																	<td>
+																		@tong_tc
+																	</td>
+																	<td>
+																		
+																	</td>
+																	<td>
+																		@* @dulieu_decuong.Khoikienthuc.kkt_mota *@
+																	</td>
+																}
+															else
+																{
+																	tongcong_bb += tong_tc;
+																	tongcong_tc += tong_tc;
+																	<td>
+																		@tong_tc
+																	</td>
+																	<td>
+																		@tong_tc
+																	</td>
+																	<td>
+																		
+																	</td>
+																}
+														
+													
+													
+													@* ket thuc *@
+					
+													<td>
+														@tong_sotiet_lt
+													</td>
+													<td>
+														@tong_sotiet_th
+													</td>
+													@if(@dulieu_decuong.DeCuongchiTiet.hp_tienquyet == "Không")
+													{
+														<td>
+														
+														</td>
+													}
+													else
+													{
+														<td>
+															@dulieu_decuong.DeCuongchiTiet.hp_tienquyet
+														</td>
+													}
+													
+												</tr>
+                                            }
+                                }
+
+                            </tbody>
+                        }
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td><b>Tổng cộng</b></td>
+                            <td><b>@tongcong_tc</b></td>
+                            <td><b>@tongcong_bb</b></td>
+                            <td><b>@tongcong_tuchon</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>

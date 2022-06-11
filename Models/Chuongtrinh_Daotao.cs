@@ -25,5 +25,9 @@ namespace _CurriculumManagerSystem.Models
         public string tenvanbang { get; set; }
         [DisplayName("Nơi đào tạo")]
         public string noidaotao { get; set; }
+        [DisplayName("Mã số")]
+        public string maso_ctdt { get; set; }
+        [DisplayName("Nội dung chương trình đào tạo")]
+        public string noidung_ctdt { get; set; }
     }
 }

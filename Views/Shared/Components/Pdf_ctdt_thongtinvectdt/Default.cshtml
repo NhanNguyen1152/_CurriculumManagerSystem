@@ -1,0 +1,41 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.Chuongtrinh_Daotao>
+@foreach (var item in Model)
+{
+    <p>Ngành đào tạo: @item.nganh_daotao <br></p>
+    @* <p>Mã số: @item.maso_ctdt<br></p> *@
+    <p>Trình độ đào tạo: @item.trinhdo_daotao<br></p>
+    <p>Loại hình đào tạo: @item.loaihinh_daotao<br></p>
+    <p>Thời gian đào tạo: @item.thoigian_daotao<br></p>
+    <p>Tên văn bằng: @item.tenvanbang<br></p>
+    <p>Nơi đào tạo: @item.noidaotao<br></p>
+}
+@* @foreach (var items in ViewBag.listtgh)
+{
+    <p>Thời gian học: @items.Hockys.tenhk<br></p>
+}
+@foreach (var item in Model)
+{
+    <p>Các yêu cầu khác đối với học phần: @item.yeucaukhacvoi_hocphan<br></p>
+}
+<p>Đơn vị phụ trách: 
+@foreach(var item in ViewBag.listkhoa)
+        {
+            @item.Bomon.Khoa.tenkh
+            break;
+        }
+</p>
+@foreach (var item in ViewBag.listpt)
+{
+
+    <p>Người phụ trách: @item.GiangVien.hoten<br></p>
+    <p>Chức danh/Học hàm/Học vị: @item.GiangVien.chucdanh/ @item.GiangVien.hocham @item.GiangVien.hocvi<br></p>
+    <p>Địa chỉ liên hệ: @item.GiangVien.diachilienhe<br></p>
+    <p>Điện thoại: &emsp; Email: @item.GiangVien.diachilienhe<br></p>
+
+}
+
+<p>Các giảng viên tham gia giảng dạy cùng:
+    @foreach (var gvp in ViewBag.listptc)
+    {
+        @gvp.GiangVien.hoten
+    }</p> *@

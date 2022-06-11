@@ -140,7 +140,7 @@ namespace _CurriculumManagerSystem.Controllers
             ViewData["mact"] = new SelectList(_context.Chitietmonhocs.Where(m=> m.mahp ==  HttpContext.Session.GetInt32("id_edit_dccht_after")), "mact", "tenchuong");
             ViewData["macdmon"] = new SelectList(_context.Chuandaura_Monhocs.Where(m=> m.mahp ==  HttpContext.Session.GetInt32("id_edit_dccht_after")), "macdmon", "chisocio");
             ViewData["maplo"] = new SelectList(_context.PLOs, "maplo", "chisoplo");
-             ViewData["mapphoc"] = new SelectList(_context.Phuongphap_Hocs, "mapphoc", "tenpp");
+            ViewData["mapphoc"] = new SelectList(_context.Phuongphap_Hocs, "mapphoc", "tenpp");
             ViewData["mappday"] = new SelectList(_context.Phuongphap_Giangdays, "mappday", "tenpp");
             return View();
         }

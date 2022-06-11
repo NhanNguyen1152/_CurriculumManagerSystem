@@ -30,7 +30,7 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Get_CTDT_decuong_chuo
         {   
             // if(ViewData["Title"] == "Create")
             // {
-                 var result = await _context.Decuong_Chuongtrinhs.Include(m => m.DeCuongchiTiet).Include(m=> m.Chuongtrinh_Daotao).Where(m => m.Chuongtrinh_Daotao.ma_ctdt == HttpContext.Session.GetInt32("id_ctdt_tmp_create")).ToListAsync();
+                 var result = await _context.Decuong_Chuongtrinhs.Include(m => m.DeCuongchiTiet).Include(m=> m.Chuongtrinh_Daotao).Where(m => m.Chuongtrinh_Daotao.ma_ctdt == HttpContext.Session.GetInt32("id_ctdt_ss_create")).ToListAsync();
                  return View<List<Decuong_Chuongtrinh>>(result);
                
             // }

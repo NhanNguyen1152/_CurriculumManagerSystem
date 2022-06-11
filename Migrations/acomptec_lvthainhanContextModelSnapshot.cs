@@ -232,10 +232,16 @@ namespace _CurriculumManagerSystem.Migrations
                     b.Property<string>("loaihinh_daotao")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("maso_ctdt")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("nganh_daotao")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("noidaotao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("noidung_ctdt")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("tenvanbang")
@@ -624,6 +630,9 @@ namespace _CurriculumManagerSystem.Migrations
                     b.Property<string>("mtdt_chinh")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("mtdt_chiso")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("mtdt_phu")
                         .HasColumnType("nvarchar(max)");
 
@@ -660,7 +669,13 @@ namespace _CurriculumManagerSystem.Migrations
                     b.Property<string>("chisoplo")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("chitietten_plo")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("noidung")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("tenloai_plo")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("maplo");

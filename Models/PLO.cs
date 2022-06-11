@@ -17,6 +17,10 @@ namespace _CurriculumManagerSystem.Models
         public string chisoplo { get; set; }
         [DisplayName("Nội dung")]
         public string noidung { get; set; }
+        [DisplayName("Tên loại PLO")]
+        public string tenloai_plo { get; set; }
+        [DisplayName("Chi tiết tên")]
+        public string chitietten_plo { get; set; }
 
         public virtual IList<CLPO> CLPOs { get; set; }
     }

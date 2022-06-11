@@ -57,7 +57,8 @@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ma_ctdt">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.ma_ctdt">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ma_ctdt">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.ma_ctdt">Delete</a> |
+                <a class="material-icons" asp-controller="ExtractPDF_CTDT" asp-action="Extract_ctdt" asp-route-id="@item.ma_ctdt">PDF</a>
             </td>
         </tr>
 }

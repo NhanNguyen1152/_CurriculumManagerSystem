@@ -1,0 +1,48 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.MoiquanhePLO_Muctieudaotao>
+    
+@{
+    var i = 0;
+}
+<div class="body">
+    <div class="body table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        STT
+                    </th>
+                    <th>
+                        PLO
+                    </th>
+                    <th>
+                        Mục tiêu đào tạo
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    i++;
+                    <tr>
+                        <td>
+                            @i
+                        </td>
+                        <td>
+                            @item.PLO.chisoplo
+                        </td>
+                        <td>
+                            @item.Muctieu_Daotao
+                        </td>
+                        <td>
+                            <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
+                        asp-action="DeleteNhiemvu" asp-route-id="" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

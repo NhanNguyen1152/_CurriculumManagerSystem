@@ -19,5 +19,7 @@ namespace _CurriculumManagerSystem.Models
         public string mtdt_chinh { get; set; }
         [DisplayName("Mục tiêu đào tạo phụ")]
         public string mtdt_phu { get; set; }
+        [DisplayName("Chỉ số")]
+        public string mtdt_chiso { get; set; }
     }
 }

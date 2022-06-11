@@ -53,7 +53,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("maplo,chisoplo,noidung")] PLO pLO)
+        public async Task<IActionResult> Create([Bind("maplo,chisoplo,noidung,tenloai_plo,chitietten_plo")] PLO pLO)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("maplo,chisoplo,noidung")] PLO pLO)
+        public async Task<IActionResult> Edit(int id, [Bind("maplo,chisoplo,noidung,tenloai_plo,chitietten_plo")] PLO pLO)
         {
             if (id != pLO.maplo)
             {

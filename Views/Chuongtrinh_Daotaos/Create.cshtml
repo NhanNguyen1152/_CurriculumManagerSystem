@@ -28,23 +28,23 @@
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuong_chuongtrinh">
                          @await Component.InvokeAsync("Create_CTDT_decuong_chuongtrinhdaotao", new { id = 0})
-                         @if (@Context.Session.GetInt32("id_ctdt_tmp_create") == null)
+                         @if (@Context.Session.GetInt32("id_ctdt_ss_create") == null)
                         {
                             @await Component.InvokeAsync("Get_CTDT_decuong_chuongtrinh", new { id = 0})
                         }
                         else
                         {
-                            @await Component.InvokeAsync("Get_CTDT_decuong_chuongtrinh", new {id = @Context.Session.GetInt32("id_ctdt_tmp_create")})
+                            @await Component.InvokeAsync("Get_CTDT_decuong_chuongtrinh", new {id = @Context.Session.GetInt32("id_ctdt_ss_create")})
                         }
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuongquytrinh">
-                        
+                         @await Component.InvokeAsync("Create_CTDT_decuongquytrinh", new { id = 0})
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="chitietdoituong">
-                        
+                          
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="plo_muctieudaotao">
-                        
+                       
                     </div>
                
                    

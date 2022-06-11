@@ -1,0 +1,36 @@
+@model List<Quytrinhdaotao_Dieukientotnghiep>
+<div class="body">
+                <form class="form-horizontal" asp-action="createListQT">
+                    <table class="table  table-sm">
+                        <div class="row clearfix">
+                            <thead class="table-info">
+                                <tr style="background-color: #84c7c1; color: black;">
+                                    <th>Lựa chọn</th>
+                                    <th>Nội dung</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" value="@item.ma_qt_dktn" name="arrayDCQT" id="@item.ma_qt_dktn">
+                                                <span class="custom-control-indicator"></span>
+                                            </label>
+                                        </td>
+                                        <td>@item.noi_dung_quytrinhdieukien</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </div>
+
+                    </table>
+                    <div class="row clearfix">
+                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                            <a asp-action="Index" class="btn btn-default waves-effect">Trở lại</a> |
+                            <button type="submit" class="btn btn-primary waves-effect">Lưu</button>
+                        </div>
+                    </div>
+                </form>
+            </div>

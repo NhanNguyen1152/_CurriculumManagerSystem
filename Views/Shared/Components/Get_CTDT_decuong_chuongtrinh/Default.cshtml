@@ -34,17 +34,7 @@
                     </td>
                   
                     <td>
-                        @if (ViewData["Title"] == "Create")
-                        {
-                            <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Create"
-                        asp-route-id="@item.ma_dc_ct">mode_edit</a>
-                        }
-                        else
-                        {
-                            <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Edit"
-                        asp-route-id="@item.ma_dc_ct">mode_edit</a>
-                        }
-                        <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
+                        <a class="material-icons" data-type="confirm" asp-controller="Chuongtrinh_Daotaos"
                         asp-action="DeleteCTDT_decuong" asp-route-id="@item.ma_dc_ct" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
                     </td>
 

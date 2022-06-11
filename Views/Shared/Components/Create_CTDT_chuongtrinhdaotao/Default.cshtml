@@ -6,6 +6,20 @@
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="row clearfix">
             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                <label asp-for="maso_ctdt">Mã số<span class="text-danger">*</span></label>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                <div class="form-group">
+                    <div class="form-line">
+                        <input required asp-for="maso_ctdt" class="form-control"
+                            placeholder="Mã số"></input>
+                        <span asp-validation-for="maso_ctdt" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                 <label asp-for="nganh_daotao">Ngành đào tạo<span class="text-danger">*</span></label>
             </div>
             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
@@ -84,6 +98,20 @@
                         <input required asp-for="noidaotao" class="form-control"
                             placeholder="Nơi đào tạo"></input>
                         <span asp-validation-for="noidaotao" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                <label asp-for="noidung_ctdt">Nội dung đào tạo<span class="text-danger">*</span></label>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                <div class="form-group">
+                    <div class="form-line">
+                        <input required asp-for="noidung_ctdt" class="form-control"
+                            placeholder="Nội dung đào tạo"></input>
+                        <span asp-validation-for="noidung_ctdt" class="text-danger"></span>
                     </div>
                 </div>
             </div>

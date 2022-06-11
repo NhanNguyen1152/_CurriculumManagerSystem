@@ -1,0 +1,79 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.Decuong_Chuongtrinh>
+
+                        @{
+                            int stt = 0;
+                            int tong_tc = 0;
+                            int tong_sotiet_lt = 0;
+                            int tong_sotiet_th = 0;
+                            int tongcong_tc = 0;
+                            int tongcong_bb = 0;
+                            int tongcong_tuchon = 0;
+                            string tuchon = "";
+                            string luanvan = "Luận văn tốt nghiệp";
+                        }
+                        <h2>9. Kế hoạch giảng dạy</h2>
+                        @foreach (var dulieu_kkt in ((List<Decuong_Chuongtrinh>)TempData["listData"]).GroupBy(x =>
+                        x.DeCuongchiTiet.Khoikienthuc.kkt_ten))
+                        {
+                            
+
+                            <tbody>
+                                @foreach (var dulieu_decuong in ((List<Decuong_Chuongtrinh>)TempData["listData"]).Where(x =>
+                               x.DeCuongchiTiet.Khoikienthuc.kkt_ten == dulieu_kkt.Key))
+                                {
+                                    stt = stt + 1;
+                                    tong_sotiet_lt = dulieu_decuong.DeCuongchiTiet.sotc_lt * 15;
+                                    tong_sotiet_th = dulieu_decuong.DeCuongchiTiet.sotc_th * 30;
+                 
+                                    @if(dulieu_decuong.DeCuongchiTiet.tenhp_tviet.Contains(luanvan))
+                                            {
+                                            }
+                                        else
+                                            { 
+                                               @if(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != null && dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != tuchon)
+													{ 
+														tongcong_tuchon += int.Parse(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota);
+														tuchon = dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon;
+														
+													}
+												
+															
+															{
+																tong_tc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
+															}
+															@if(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != null && dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota != null)
+																{  
+																	
+																	
+																	tongcong_tc += tong_tc;
+															
+																		
+																	
+																}
+															else
+																{
+																	tongcong_bb += tong_tc;
+																	tongcong_tc += tong_tc;
+																	
+																}
+												
+                                            }
+                                }
+
+                            </tbody>
+                        }
+                        <p>Tổng số tín chỉ: @tongcong_tc tín chỉ</p>
+                        <p>
+                            - Tổng số tín chỉ bắt buộc: @tongcong_bb tín chỉ <br />
+                            - Tổng số tín chỉ tự chọn: @tongcong_tuchon tín chỉ
+                        </p>
+                        <p style="text-indent: 30px;">
+                            Tất cả các môn học được phân bố giảng dạy trong mỗi học kỳ. Sinh viên sẽ đăng 
+                            ký môn học cho riêng mình vào đầu mỗi học kỳ tùy theo kế hoạch học tập của mỗi 
+                            sinh viên. <br />
+                                Thời gian học chính thức 4 học kỳ chính và 1 học kỳ hè. Sinh viên được cấp bằng 
+                            kỹ sư khi hoàn tất chương trình học.<br />
+                            Học phí được tính theo số tín chỉ đăng ký (theo quy định hiện hành).
+                        </p>
+                       
+                   

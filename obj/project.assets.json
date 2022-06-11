@@ -7502,19 +7502,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\F570Z-PC\\.nuget\\packages\\": {}
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj",
+      "projectUniqueName": "C:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj",
       "projectName": "_CurriculumManagerSystem",
-      "projectPath": "C:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj",
-      "packagesPath": "C:\\Users\\F570Z-PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\F570Z-PC\\OneDrive\\Tài liệu\\GitHub\\_CurriculumManagerSystem\\obj\\",
+      "projectPath": "C:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\_CurriculumManagerSystem.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ADMIN\\OneDrive\\Documents\\GitHub\\_CurriculumManagerSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\F570Z-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7587,7 +7587,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }

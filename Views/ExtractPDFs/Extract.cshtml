@@ -81,6 +81,9 @@
        <div class="content_item" id="7">
         @await Component.InvokeAsync("Pdf_Cloppday", new { id = @Context.Session.GetInt32("id_pdf")} )
       </div>
+      <div class="content_item" id="8">
+        @await Component.InvokeAsync("Pdf_Clopphoc", new { id = @Context.Session.GetInt32("id_pdf")} )
+      </div>
       <div class="content_item" id="9">
         <h2>9. Phương pháp kiểm tra, đánh giá</h2>
         @await Component.InvokeAsync("Pdf_pp_ktra_dgia", new { id = @Context.Session.GetInt32("id_pdf")} )
@@ -92,7 +95,7 @@
       <div class="content_item" id="11">
         @await Component.InvokeAsync("Pdf_Nhiemvusv", new { id = @Context.Session.GetInt32("id_pdf")} )
       </div>
-      <div class="content_item" id="1">
+      <div class="content_item" id="12">
         @await Component.InvokeAsync("Pdf_Tailieuthamkhao", new { id = @Context.Session.GetInt32("id_pdf")} )
         </div>
 

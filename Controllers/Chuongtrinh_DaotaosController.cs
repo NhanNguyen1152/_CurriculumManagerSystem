@@ -1,3 +1,9 @@
+using System.Runtime.Intrinsics.X86;
+using System.Net.Cache;
+using System.Net.Mail;
+using System.Reflection.PortableExecutable;
+using System.Net.Http;
+using System.Net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +12,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using _CurriculumManagerSystem.Models;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.AspNetCore.Http;
 
 namespace _CurriculumManagerSystem.Controllers
 {
@@ -45,6 +53,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Chuongtrinh_Daotaos/Create
         public IActionResult Create()
         {
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
             return View();
         }
 
@@ -59,7 +68,9 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 _context.Add(chuongtrinh_Daotao);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                HttpContext.Session.SetInt32("id_ctdt_ss_create", chuongtrinh_Daotao.ma_ctdt);
+                TempData["id_ctdt_tmp_create"] = chuongtrinh_Daotao.ma_ctdt;
+                return RedirectToAction("Create");
             }
             return View(chuongtrinh_Daotao);
         }
@@ -147,6 +158,20 @@ namespace _CurriculumManagerSystem.Controllers
         private bool Chuongtrinh_DaotaoExists(int id)
         {
             return _context.Chuongtrinh_Daotaos.Any(e => e.ma_ctdt == id);
+        }
+        //Create-decuong-chuongtrinh
+        public async Task<IActionResult> CreateDecuongChuongtrinh([Bind("ma_dc_ct,mahp,ma_ctdt")] Decuong_Chuongtrinh decuong_Chuongtrinh)
+        {
+            if (ModelState.IsValid)
+            {
+                decuong_Chuongtrinh.ma_ctdt = (int)TempData["id_ctdt_tmp_create"];
+                _context.Add(decuong_Chuongtrinh);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Create");
+            }
+            // ViewData["ma_ctdt"] = new SelectList(_context.Chuongtrinh_Daotaos, "ma_ctdt", "ma_ctdt", decuong_Chuongtrinh.ma_ctdt);
+            // ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp_decuong", decuong_Chuongtrinh.mahp);
+            return View();
         }
     }
 }

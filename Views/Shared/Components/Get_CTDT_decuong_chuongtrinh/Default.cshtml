@@ -1,0 +1,55 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.Decuong_Chuongtrinh>
+@{
+    var i = 0;
+}
+<div class="body table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    STT
+                </th>
+                <th>
+                    Tên học phần
+                </th>
+                <th>
+                    Mã học phần
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                i++;
+                <tr>
+                    <td>
+                        @i
+                    </td>
+                    <td>
+                        @item.DeCuongchiTiet.tenhp_tviet
+                    </td>
+                    <td>
+                        @item.DeCuongchiTiet.mahp_decuong
+                    </td>
+                  
+                    <td>
+                        @if (ViewData["Title"] == "Create")
+                        {
+                            <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Create"
+                        asp-route-id="@item.ma_dc_ct">mode_edit</a>
+                        }
+                        else
+                        {
+                            <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Edit"
+                        asp-route-id="@item.ma_dc_ct">mode_edit</a>
+                        }
+                        <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
+                        asp-action="DeleteCTDT_decuong" asp-route-id="@item.ma_dc_ct" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -20,17 +20,11 @@
     <p>Các yêu cầu khác đối với học phần: @item.yeucaukhacvoi_hocphan<br></p>
 }
 <p>Đơn vị phụ trách: 
-@foreach (var items in ViewBag.listgv)
-{
-    <p>
-        @items.GiangVien.hoten
-    </p>
-    foreach(var item in ViewBag.listkhoa)
+@foreach(var item in ViewBag.listkhoa)
         {
-            @item.tenkh
+            @item.Bomon.Khoa.tenkh
             break;
         }
-}
 </p>
 @foreach (var item in ViewBag.listpt)
 {

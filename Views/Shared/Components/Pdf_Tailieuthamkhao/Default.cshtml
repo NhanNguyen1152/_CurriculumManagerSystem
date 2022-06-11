@@ -2,25 +2,30 @@
 @{
   var loaitl1 = "Học liệu bắt buộc";
   var loaitl2 = "Học liệu tham khảo";
+  int i = 0;
+  int j = 0;
 }
 <h2>12. Học liệu tham khảo</h2>
 <p><h2>  12.1 @loaitl1</h2></p>
+<p>
 @foreach (var item in Model)
     {
-      int i = 0;
+      i++;
       if(item.Tailieu.loaitl == loaitl1)
       {
-         <p>[@i++] @item.Tailieu.tacgia . @item.Tailieu.tentailieu @item.Tailieu.thongtinkhac</p>
+      <p style="justify-content: center;font-style: italic;">[@i] @item.Tailieu.tacgia @item.Tailieu.tentailieu @item.Tailieu.thongtinkhac</p>
       }
-     
     }
+</p>
 <p><h2>  12.2 @loaitl2</h2></p>
-  @foreach (var item in Model)
+<p>
+@foreach (var item in Model)
     {
-      int i = 0;
+      j++;
       if(item.Tailieu.loaitl == loaitl2)
       {
-         <p>[@i++] @item.Tailieu.tacgia . @item.Tailieu.tentailieu . @item.Tailieu.thongtinkhac</p>
+        <p style="
+  justify-content: center;font-style: italic;">[@j] @item.Tailieu.tacgia @item.Tailieu.tentailieu @item.Tailieu.thongtinkhac</p> 
       }
-     
     }
+</p>

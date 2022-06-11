@@ -22,21 +22,21 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Get_Phutrach
             _context = context;
         }
  
-        // public async Task<IViewComponentResult> InvokeAsync()
-        // {   
+        public async Task<IViewComponentResult> InvokeAsync()
+        {   
 
-        //     if(ViewData["Title"] == "Create")
-        //     {
-        //          var result = await _context.Phutrachs.Include(m => m.DeCuongchiTiet).Include(m=> m.GiangVien).Where(m => m.DeCuongchiTiet.mahp == HttpContext.Session.GetInt32("idDecuong")).ToListAsync();
-        //          return View<List<Phutrach>>(result);
+            if(ViewData["Title"] == "Create")
+            {
+                 var result = await _context.Phutrachs.Include(m => m.DeCuongchiTiet).Include(m=> m.GiangVien).Where(m => m.DeCuongchiTiet.mahp == HttpContext.Session.GetInt32("idDecuong")).ToListAsync();
+                 return View<List<Phutrach>>(result);
                
-        //     }
-        //     else
-        //     {
-        //          var result = await _context.Phutrachs.Include(m => m.DeCuongchiTiet).Include(m=> m.GiangVien).Where(m => m.DeCuongchiTiet.mahp == HttpContext.Session.GetInt32("id_edit_dccht_after")).ToListAsync();
-        //          return View<List<Phutrach>>(result);
-        //     }
-        // }
+            }
+            else
+            {
+                 var result = await _context.Phutrachs.Include(m => m.DeCuongchiTiet).Include(m=> m.GiangVien).Where(m => m.DeCuongchiTiet.mahp == HttpContext.Session.GetInt32("id_edit_dccht_after")).ToListAsync();
+                 return View<List<Phutrach>>(result);
+            }
+        }
     }
 
 }

@@ -84,14 +84,13 @@ namespace _CurriculumManagerSystem.Controllers
             if(id > 0)
             {   
                 HttpContext.Session.SetInt32("idMuctieu",id);
-                
-                 HttpContext.Session.SetInt32("idChitietmonhoc", id);
+                HttpContext.Session.SetInt32("idChitietmonhoc", id);
                 HttpContext.Session.SetInt32("idChitietchuong", id);
                 HttpContext.Session.SetInt32("idPhutrach", id);
                 HttpContext.Session.SetInt32("idThoigianhoc", id);
                 HttpContext.Session.SetInt32("idchuandauramonhoc", id);
-               HttpContext.Session.SetInt32("idClpo", id);
-               HttpContext.Session.SetInt32("idClo_pphoc", id);
+                HttpContext.Session.SetInt32("idClpo", id);
+                HttpContext.Session.SetInt32("idClo_pphoc", id);
                 HttpContext.Session.SetInt32("idClo_ppday", id);
                 
             }

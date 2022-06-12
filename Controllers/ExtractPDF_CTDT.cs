@@ -31,12 +31,12 @@ namespace _CurriculumManagerSystem.Controllers
         public async Task<IActionResult> Extract_ctdt(int id)
         {
             //Get Noi dung chuong trinh dao tao- tomtatnoidung
-            var appDbContext = _context.Decuong_Chuongtrinhs.Include(c => c.DeCuongchiTiet).ThenInclude(d => d.Khoikienthuc).Where(m=> m.ma_ctdt == id);
-            TempData["listData"] = appDbContext.ToList();
-             //thoikhoabieu
-             ViewBag.kk = khoahoc;
-            var dataTimetable = _context.Thoigianhocs.Include(t => t.DeCuongchiTiet).ThenInclude(t => t.Khoikienthuc).Include(t => t.Hockys).Include(t => t.Khoahocs).Where(t => t.Khoahocs.tenkh == khoahoc);
-            TempData["listDatas"] = dataTimetable.ToList();
+            // var appDbContext = _context.Decuong_Chuongtrinhs.Include(c => c.DeCuongchiTiet).ThenInclude(d => d.Khoikienthuc).Where(m=> m.ma_ctdt == id);
+            // TempData["listData"] = appDbContext.ToList();
+            //  //thoikhoabieu
+            //  ViewBag.kk = khoahoc;
+            // var dataTimetable = _context.Thoigianhocs.Include(t => t.DeCuongchiTiet).ThenInclude(t => t.Khoikienthuc).Include(t => t.Hockys).Include(t => t.Khoahocs).Where(t => t.Khoahocs.tenkh == khoahoc);
+            // TempData["listDatas"] = dataTimetable.ToList();
  
             // var listPlo = _context.PLOs.OrderBy(m=> m.maplo).ToList();
             // ViewBag.listPlo = listPlo;

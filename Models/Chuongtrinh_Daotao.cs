@@ -29,5 +29,7 @@ namespace _CurriculumManagerSystem.Models
         public string maso_ctdt { get; set; }
         [DisplayName("Nội dung chương trình đào tạo")]
         public string noidung_ctdt { get; set; }
+
+        public IList<Decuong_Chuongtrinh> Decuong_Chuongtrinhs { get; set; }
     }
 }

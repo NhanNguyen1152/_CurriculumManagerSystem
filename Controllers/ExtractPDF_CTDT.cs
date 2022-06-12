@@ -28,7 +28,7 @@ namespace _CurriculumManagerSystem.Controllers
             _context = context;
         }
         
-        public async Task<IActionResult> Extract_ctdt(int id)
+        public async Task<IActionResult> Extract_ctdt(int id, string ten)
         {
             //Get Noi dung chuong trinh dao tao- tomtatnoidung
             // var appDbContext = _context.Decuong_Chuongtrinhs.Include(c => c.DeCuongchiTiet).ThenInclude(d => d.Khoikienthuc).Where(m=> m.ma_ctdt == id);
@@ -62,6 +62,7 @@ namespace _CurriculumManagerSystem.Controllers
             // ViewBag.listPpday_cdr = listPpday_cdr.ToList();
 
             HttpContext.Session.SetInt32("id_pdf_ctdt", id);
+            HttpContext.Session.SetString("ten_pdf_ctdt", ten);
             return View();
         }
        

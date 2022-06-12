@@ -1,0 +1,98 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.Thoigianhoc>
+
+@{
+    ViewData["Title"] = "Thời gian học";
+}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                @* <h3 class="titile-table">THỜI KHÓA BIỂU - @if(ViewBag.kk != null){<a>@ViewBag.kk</a>}</h3> *@
+            </div>
+            <div class="body">
+                @{
+                    int tongtc = 0;
+                    int tongcong = 0;
+                    string tuchon = "";
+                    string luanvan = "Luận văn tốt nghiệp";
+                }
+                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                    <thead>
+                        @foreach (var dulieu_hocky in ((List<Thoigianhoc>)TempData["listData"]).GroupBy(x =>x.Hockys.tenhk))
+                        {
+                            tongcong = 0;
+                            <tr>
+                                <th style="background-color: #84c7c1; color: black;"><b>@dulieu_hocky.Key</b></th>
+                                <th style="background-color: #84c7c1; color: black;">Tín chỉ</th>
+                            </tr>
+                            <tbody>
+                                    @foreach (var dulieu_decuong in ((List<Thoigianhoc>)TempData["listData"]).Where(x => x.Hockys.tenhk == dulieu_hocky.Key))
+                                    {
+
+                                        tongtc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
+                                        @if (@dulieu_decuong.DeCuongchiTiet.tenhp_tviet.Contains(luanvan))
+                                        {
+                                            @* tongcong = tongcong + tongtc; *@
+                                            <tr>
+                                                <td>
+                                                    @dulieu_decuong.DeCuongchiTiet.tenhp_tviet
+                                                </td>
+                                                <td>
+                                                    @tongtc
+                                                </td>
+                                            </tr>
+                                        }
+                                        else
+                                        {
+                                            @if (@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != null &&
+                                                @dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != tuchon)
+                                            {
+                                            <tr>
+                                                <td style="background-color: #1b6ec2; color: white;">@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon</td>
+                                                <td style="background-color: #1b6ec2; color: white;">@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota</td>
+                                            </tr>
+                                            }
+
+                                            <tr>
+                                                @if (@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon == null )
+                                                {
+                                                    tongcong = tongcong + tongtc;
+                                                    <td>
+                                                            @dulieu_decuong.DeCuongchiTiet.tenhp_tviet
+                                                    </td>
+                                                    <td>
+                                                            @tongtc
+                                                    </td>
+                                                }
+                                                else
+                                                {
+
+                                                    @if (tuchon != dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon)
+                                                    {
+                                                        tuchon = dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon;
+                                                        tongcong = tongcong + int.Parse(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota);
+                                                    }
+                                                    <td style="font-style: italic; padding-left: 30px;">
+                                                        <a asp-action="Edit" asp-controller="DecuongchiTiets" asp-route-id="@dulieu_decuong.DeCuongchiTiet.mahp"> @dulieu_decuong.DeCuongchiTiet.tenhp_tviet </a>
+                                                    </td>
+                                                    <td style="font-style: italic;">
+                                                            @tongtc
+                                                    </td>
+                                                }
+                                            </tr>
+                                        }
+                                            
+                                    }
+                            </tbody>
+                            <tr>
+                                <td style="background-color: #c63939; color: white;"><b>Tổng cộng</b></td>
+                                <td style="background-color: #c63939; color: white;">@tongcong</td>
+                            </tr>
+                        }
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -45,5 +45,6 @@ namespace _CurriculumManagerSystem.Models
         public IList<DeCuongHinhthuc> DeCuongHinhthucs { get; set; }
         public ICollection<Thoigianhoc> Thoigianhocs { get; set; }
         public ICollection<Chuandaura_monhoc> Chuandaura_monhocs { get; set; }
+        public IList<Decuong_Chuongtrinh> Decuong_Chuongtrinhs { get; set; }
     }
 }

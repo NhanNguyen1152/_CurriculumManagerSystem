@@ -32,6 +32,9 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.thoiluonghoc)
                                 </th>
+                                 <th>
+                                    @Html.DisplayNameFor(model => model.thoiluonghoc_thuchanh)
+                                </th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -54,6 +57,9 @@
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.thoiluonghoc)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.thoiluonghoc_thuchanh)
                                     </td>
                                     <td>
                                         <a class="material-icons" asp-action="Edit" asp-route-id="@item.mactchuong">mode_edit</a>

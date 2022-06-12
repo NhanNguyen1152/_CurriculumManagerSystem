@@ -20,8 +20,10 @@ namespace _CurriculumManagerSystem.Models
         public string tentieumuc { get; set; }
         [DisplayName("Tuần học")]
         public int tuanhoc { get; set; }
-        [DisplayName("Thời lượng")]
+        [DisplayName("Thời lượng lý thuyết")]
         public double thoiluonghoc { get; set; }
+        [DisplayName("Thời lượng thực hành")]
+        public double thoiluonghoc_thuchanh { get; set; }
 
         [ForeignKey("mact")]
         [DisplayName("Chi tiết môn học")]

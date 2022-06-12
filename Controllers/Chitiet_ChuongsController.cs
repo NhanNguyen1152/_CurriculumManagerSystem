@@ -55,7 +55,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("mactchuong,chiso,tentieumuc,tuanhoc,thoiluonghoc,mact")] Chitiet_Chuong chitiet_Chuong)
+        public async Task<IActionResult> Create([Bind("mactchuong,chiso,tentieumuc,tuanhoc,thoiluonghoc,mact,thoiluonghoc_thuchanh")] Chitiet_Chuong chitiet_Chuong)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("mactchuong,chiso,tentieumuc,tuanhoc,thoiluonghoc,mact")] Chitiet_Chuong chitiet_Chuong)
+        public async Task<IActionResult> Edit(int id, [Bind("mactchuong,chiso,tentieumuc,tuanhoc,thoiluonghoc,mact,thoiluonghoc_thuchanh")] Chitiet_Chuong chitiet_Chuong)
         {
             if (id != chitiet_Chuong.mactchuong)
             {

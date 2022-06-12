@@ -1,16 +1,16 @@
-using System.Text.RegularExpressions;
-using System.Net.WebSockets;
-using System.Net;
-using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Net;
+using System.Net.WebSockets;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using _CurriculumManagerSystem.Models;
-using Microsoft.AspNetCore.Http;
 
 namespace _CurriculumManagerSystem.Views.Shared.Components.Pdf_Lichtrinhgiangday
 {
@@ -24,9 +24,15 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Pdf_Lichtrinhgiangday
         }
 
         public async Task<IViewComponentResult> InvokeAsync(int id)
-        {   
-            var result = await _context.Decuong_Chuongtrinhs.Where(m=> m.ma_ctdt == id).ToListAsync();
-            return View<List<Decuong_Chuongtrinh>>(result);
+        {
+            //sualaithanhchitietchuong
+            var result =
+                _context
+                    .Chitiet_Chuongs
+                    .Include(m => m.Chitietmonhoc)
+                    .ThenInclude(z => z.DeCuongchiTiet)
+                    .Where(m => m.Chitietmonhoc.mahp == id);
+            return View(await result.ToListAsync());
         }
     }
 }

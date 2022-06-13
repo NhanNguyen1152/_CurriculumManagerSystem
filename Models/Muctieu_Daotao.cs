@@ -21,5 +21,7 @@ namespace _CurriculumManagerSystem.Models
         public string mtdt_phu { get; set; }
         [DisplayName("Chỉ số")]
         public string mtdt_chiso { get; set; }
+
+        public IList<CTDT_Muctieudaotao> CTDT_Muctieudaotaos { get; set; }
     }
 }

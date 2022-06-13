@@ -1,0 +1,108 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.Decuong_Chuongtrinh>
+<h2>7. Khối lượng kiến thức toàn khóa</h2>
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <p>Tổng số tín chỉ 80 tín chỉ, trong đó phân bổ kiến thức như sau:</p>
+                <h2 class="titile-table">Bảng 3. Phân bổ khối lượng các khối kiến thức</h2>
+            </div>
+            <div class="body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">STT</th>
+                                <th rowspan="2">
+                                    Các khối kiến thức
+                                </th>
+                                <th colspan="2">
+                                    Khối lượng
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>Số tín chỉ</td>
+                                <td>Tỉ lệ %</td>
+                            </tr>
+                        </thead>
+                        @{
+                            int stt = 0;
+                            int tong_tc = 0;
+                            int tong_sotiet_lt = 0;
+                            int tong_sotiet_th = 0;
+                            int tongcong_tc = 0;
+                            int tongcong_bb = 0;
+                            int tongcong_tuchon = 0;
+                            int temp = 0;
+                            string tuchon = "";
+                            string luanvan = "Luận văn tốt nghiệp";
+                            int sophantram = 0;
+                        }
+                        <tbody>
+                        @foreach (var dulieu_kkt in ((List<Decuong_Chuongtrinh>)TempData["listData"]).GroupBy(x =>
+                        x.DeCuongchiTiet.Khoikienthuc.kkt_ten))
+                        {
+                            stt = stt + 1;
+                            temp *= 0;
+                            <tr>
+                                <td>@stt</td>
+                                <td>@dulieu_kkt.Key</td>
+                                @foreach (var dulieu_decuong in ((List<Decuong_Chuongtrinh>)TempData["listData"]).Where(x =>
+                               x.DeCuongchiTiet.Khoikienthuc.kkt_ten == dulieu_kkt.Key))
+                                {
+                                    
+                                    tong_sotiet_lt = dulieu_decuong.DeCuongchiTiet.sotc_lt * 15;
+                                    tong_sotiet_th = dulieu_decuong.DeCuongchiTiet.sotc_th * 30;
+                 
+                                    @if(dulieu_decuong.DeCuongchiTiet.tenhp_tviet.Contains(luanvan))
+                                            {
+                                                
+                                            }
+                                        else
+                                            { 
+                                               @if(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != null && dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != tuchon)
+													{ 
+														tongcong_tuchon += int.Parse(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota);
+														tuchon = dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon;
+                                                        temp += int.Parse(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota);
+													}
+                                                    tong_tc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
+                                                @if(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != null && dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota != null)
+                                                    {  
+                                                        tuchon = dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon;
+                                                        if(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != tuchon)
+                                                        {
+                                                            temp += tong_tc;
+                                                        }
+                                                    }
+                                                else
+                                                    {
+                                                        tongcong_bb += tong_tc;
+                                                        temp += tong_tc;
+                                                    }												
+                                            } 
+                                    tongcong_tc = tongcong_bb + tongcong_tuchon;
+                                    
+                                }
+                                @{
+                                    //bi dung cho nay
+                                    sophantram = (temp * 100) / tongcong_tc;
+                                }
+                                
+                                <td>@temp</td>
+                                <td>@sophantram</td>
+                            </tr>                 
+                        }
+                        </tbody>
+                        <tr>
+                            <td></td>
+                            <td><b>Tổng cộng</b></td>
+                            <td><b>@tongcong_tc</b></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

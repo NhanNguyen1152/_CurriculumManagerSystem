@@ -49,5 +49,6 @@ namespace _CurriculumManagerSystem.Models
         public DbSet<Doituong_Tuyensinh> Doituong_Tuyensinhs { get; set;}
         public DbSet<Decuong_Quytrinh> Decuong_Quytrinhs { get; set;}
         public DbSet<Chitiet_Doituong> Chitiet_Doituongs { get; set;}
+        public DbSet<CTDT_Muctieudaotao> CTDT_Muctieudaotaos { get; set;}
     }
 }

@@ -31,5 +31,6 @@ namespace _CurriculumManagerSystem.Models
         public string noidung_ctdt { get; set; }
 
         public IList<Decuong_Chuongtrinh> Decuong_Chuongtrinhs { get; set; }
+        public IList<CTDT_Muctieudaotao> CTDT_Muctieudaotaos { get; set; }
     }
 }

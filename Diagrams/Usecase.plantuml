@@ -1,0 +1,33 @@
+@startuml uc
+left to right direction
+skinparam packageStyle rectangle
+actor "Quản trị viên" as ad
+actor "Giảng viên" as urs
+rectangle "Hệ thống chương trình đào tạo và đề cương chi tiết"{
+ urs -- (Quản lý Đề cương chi tiết)
+ (Quản lý Đề cương chi tiết) <. (Xuất file PDF ĐCCTHP) : extends
+ urs -- (Quản lý Chương trình đào tạo)
+ (Quản lý Chương trình đào tạo) <. (Xuất file PDF CTDT) : extends 
+ urs -- (Quản lý Tài liệu tham khảo)
+urs -- (Quản lý Mục tiêu đề cương học phần)
+urs -- (Quản lý Hình thức đánh giá)
+urs -- (Quản lý Quy trình đào tạo và Điểu kiện tốt nghiệp)
+urs -- (Quản lý Đối tượng tuyển sinh)
+urs -- (Quản lý Nhiệm vụ sinh viên)
+urs -- (Quản lý Quy định kiểm tra)
+urs -- (Quản lý Khối kiến thức)
+urs -- (Quản lý Giảng viên)
+urs -- (Quản lý Bộ môn)
+urs -- (Quản lý Khoa)
+urs -- (Quản lý Chi tiết môn học)
+urs -- (Quản lý Chi tiết chương)
+urs -- (Quản lý Học kỳ)
+urs -- (Quản lý Thời gian học)
+urs -- (Quản lý Khóa học)
+urs -- (Quản lý Phương pháp học)
+urs -- (Quản lý Phương pháp dạy)
+urs -- (Quản lý Chuẩn đầu ra đề cương học phần)
+urs -- (Quản lý Chuẩn đầu ra chương trình đào tạo)
+urs -- (Quản lý Mục tiêu đào tạo)
+}
+@enduml

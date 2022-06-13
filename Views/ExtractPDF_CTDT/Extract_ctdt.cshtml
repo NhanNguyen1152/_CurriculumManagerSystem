@@ -63,9 +63,9 @@
       <div class="content_item" id="0">
         @await Component.InvokeAsync("Pdf_ctdt_thongtinvectdt", new { id = @Context.Session.GetInt32("id_pdf_ctdt")} )
       </div>
-      @* <div class="content_item" id="1">
-        @await Component.InvokeAsync("Pdf_ctdt_muctieudaotao", new { id = @Context.Session.GetInt32("id_pdf_ctdt")} )
-        </div>
+       <div class="content_item" id="1">
+          @await Component.InvokeAsync("Pdf_ctdt_muctieudaotao", new { id = @Context.Session.GetInt32("id_pdf_ctdt")} )
+        </div>@*
         <div class="content_item" id="2">
         @await Component.InvokeAsync("Pdf_ctdt_chuandaura", new { id = @Context.Session.GetInt32("id_pdf")} )
         @await Component.InvokeAsync("Pdf_ctdt_plo_muctieu", new { id = @Context.Session.GetInt32("id_pdf")} )
@@ -99,12 +99,12 @@
         </div>
         <div class="content_item" id="5">
         @await Component.InvokeAsync("Pdf_ctdt_qtdt_dktn", new { id = @Context.Session.GetInt32("id_pdf")} )
-        </div>
-        <div class="content_item" id="6">
-        @await Component.InvokeAsync("Pdf_ctdt_cachthucdanhgia", new { id = @Context.Session.GetInt32("id_pdf")} )
         </div>*@
+        <div class="content_item" id="6">
+        @await Component.InvokeAsync("Pdf_ctdt_cachthucdanhgia")
+        </div>
       <div class="content_item" id="7">
-        @await Component.InvokeAsync("Pdf_ctdt_kkttoankhoa", new { id = @Context.Session.GetInt32("id_pdf")} )
+        @await Component.InvokeAsync("Pdf_ctdt_kkttoankhoa", new { id = @Context.Session.GetInt32("id_pdf_ctdt")} )
       </div>
       
       <div class="content_item" id="8">

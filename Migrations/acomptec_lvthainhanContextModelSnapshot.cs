@@ -115,6 +115,28 @@ namespace _CurriculumManagerSystem.Migrations
                     b.ToTable("CLPO");
                 });
 
+            modelBuilder.Entity("_CurriculumManagerSystem.Models.CTDT_Muctieudaotao", b =>
+                {
+                    b.Property<int>("ma_ctdt_mtdt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ma_ctdt")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ma_mtdt")
+                        .HasColumnType("int");
+
+                    b.HasKey("ma_ctdt_mtdt");
+
+                    b.HasIndex("ma_ctdt");
+
+                    b.HasIndex("ma_mtdt");
+
+                    b.ToTable("CTDT_Muctieudaotao");
+                });
+
             modelBuilder.Entity("_CurriculumManagerSystem.Models.Chitiet_Chuong", b =>
                 {
                     b.Property<int>("mactchuong")
@@ -893,6 +915,25 @@ namespace _CurriculumManagerSystem.Migrations
                     b.Navigation("PLO");
                 });
 
+            modelBuilder.Entity("_CurriculumManagerSystem.Models.CTDT_Muctieudaotao", b =>
+                {
+                    b.HasOne("_CurriculumManagerSystem.Models.Chuongtrinh_Daotao", "Chuongtrinh_Daotao")
+                        .WithMany("CTDT_Muctieudaotaos")
+                        .HasForeignKey("ma_ctdt")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("_CurriculumManagerSystem.Models.Muctieu_Daotao", "Muctieu_Daotao")
+                        .WithMany("CTDT_Muctieudaotaos")
+                        .HasForeignKey("ma_mtdt")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Chuongtrinh_Daotao");
+
+                    b.Navigation("Muctieu_Daotao");
+                });
+
             modelBuilder.Entity("_CurriculumManagerSystem.Models.Chitiet_Chuong", b =>
                 {
                     b.HasOne("_CurriculumManagerSystem.Models.Chitietmonhoc", "Chitietmonhoc")
@@ -1035,13 +1076,13 @@ namespace _CurriculumManagerSystem.Migrations
             modelBuilder.Entity("_CurriculumManagerSystem.Models.Decuong_Chuongtrinh", b =>
                 {
                     b.HasOne("_CurriculumManagerSystem.Models.Chuongtrinh_Daotao", "Chuongtrinh_Daotao")
-                        .WithMany()
+                        .WithMany("Decuong_Chuongtrinhs")
                         .HasForeignKey("ma_ctdt")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("_CurriculumManagerSystem.Models.DeCuongchiTiet", "DeCuongchiTiet")
-                        .WithMany()
+                        .WithMany("Decuong_Chuongtrinhs")
                         .HasForeignKey("mahp")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1176,11 +1217,20 @@ namespace _CurriculumManagerSystem.Migrations
                     b.Navigation("CPLOs");
                 });
 
+            modelBuilder.Entity("_CurriculumManagerSystem.Models.Chuongtrinh_Daotao", b =>
+                {
+                    b.Navigation("CTDT_Muctieudaotaos");
+
+                    b.Navigation("Decuong_Chuongtrinhs");
+                });
+
             modelBuilder.Entity("_CurriculumManagerSystem.Models.DeCuongchiTiet", b =>
                 {
                     b.Navigation("Chitietmonhocs");
 
                     b.Navigation("Chuandaura_monhocs");
+
+                    b.Navigation("Decuong_Chuongtrinhs");
 
                     b.Navigation("DeCuongHinhthucs");
 
@@ -1225,6 +1275,11 @@ namespace _CurriculumManagerSystem.Migrations
             modelBuilder.Entity("_CurriculumManagerSystem.Models.Khoikienthuc", b =>
                 {
                     b.Navigation("DeCuongchiTiets");
+                });
+
+            modelBuilder.Entity("_CurriculumManagerSystem.Models.Muctieu_Daotao", b =>
+                {
+                    b.Navigation("CTDT_Muctieudaotaos");
                 });
 
             modelBuilder.Entity("_CurriculumManagerSystem.Models.NhiemvuSV", b =>

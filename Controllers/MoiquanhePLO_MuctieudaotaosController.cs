@@ -48,8 +48,8 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: MoiquanhePLO_Muctieudaotaos/Create
         public IActionResult Create()
         {
-            ViewData["ma_mtdt"] = new SelectList(_context.Muctieu_Daotaos, "ma_mtdt", "ma_mtdt");
-            ViewData["maplo"] = new SelectList(_context.PLOs, "maplo", "maplo");
+            ViewData["ma_mtdt"] = new SelectList(_context.Muctieu_Daotaos, "ma_mtdt", "mtdt_chiso");
+            ViewData["maplo"] = new SelectList(_context.PLOs, "maplo", "chisoplo");
             return View();
         }
 

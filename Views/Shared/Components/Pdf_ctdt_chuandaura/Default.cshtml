@@ -1,0 +1,39 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.MoiquanhePLO_Muctieudaotao>
+@{
+    
+    string temp_phu = "";
+    string temp_chiso = "";
+    int i = 0;
+}
+<h2>2. Chuẩn đầu ra</h2>
+<h2>2.1 Yêu cầu về kiến thức</h2>
+<h2>2.1.1 Kiến thức chuyên ngành</h2>
+<p>
+@foreach (var item in Model)
+{
+    <p>
+    @item.maplo
+    </p>
+    @* foreach (var items in Model.Where(m=> m.PLO.maplo == item.Key))
+    {
+          i++;
+            <p>Chuẩn đầu ra @i (@items.PLO.chisoplo) : @items.PLO.noidung</p>
+    } *@
+  
+}
+</p>
+@* @foreach (var item in Model)
+{
+    @foreach (var mqh in ViewBag.listMuctieudaotao)
+             
+        if(item.ma_mtdt == mqh.ma_mtdt)
+        {
+            @foreach (var plo in Model.GroupBy(p => p.maplo))
+            {
+                i++;
+                <p>@plo.Key</p>
+                 <p>Chuẩn đầu ra  (@plo.PLO.chisoplo) : @plo.PLO.noidung</p>
+            }
+            
+        }        
+} *@

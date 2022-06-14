@@ -1,25 +1,87 @@
 @model IEnumerable<_CurriculumManagerSystem.Models.MoiquanhePLO_Muctieudaotao>
 @{
-    
-    string temp_phu = "";
-    string temp_chiso = "";
+
+    string temp_tenloai_plo_kt = "Yêu cầu về kiến thức";
+    string temp_tenloai_plo_kn = "Yêu cầu về kĩ năng";
+    string temp_tenloai_plo_tn = "Yêu cầu về năng lực tự chủ và trách nhiệm";
+    string temp_chitietten_plo = "Kiến thức chuyên ngành";
     int i = 0;
+    int a = 0;
 }
 <h2>2. Chuẩn đầu ra</h2>
-<h2>2.1 Yêu cầu về kiến thức</h2>
+<h2>2.1. Yêu cầu về kiến thức</h2>
 <h2>2.1.1 Kiến thức chuyên ngành</h2>
 <p>
-@foreach (var item in Model)
+@foreach (var plo_item in ViewBag.listplo)
 {
-    <p>
-    @item.maplo
-    </p>
-    @* foreach (var items in Model.Where(m=> m.PLO.maplo == item.Key))
-    {
-          i++;
-            <p>Chuẩn đầu ra @i (@items.PLO.chisoplo) : @items.PLO.noidung</p>
-    } *@
-  
+    bool flag = false ;
+    @foreach (var item in Model)
+        {
+            @foreach (var mt in ViewBag.listMuctieu_ct)
+            {
+                @if (item.ma_mtdt == mt.ma_mtdt && plo_item.maplo == item.maplo)
+                {
+                    flag = true;
+                    break;
+                }
+            }
+        }
+    if (flag)
+        { 
+            if(plo_item.tenloai_plo == temp_tenloai_plo_kt)
+            {
+                string str1 = (plo_item.chisoplo).Substring(1);
+                <p> <b>Chuẩn đầu ra @str1 </b> (@plo_item.chisoplo) @plo_item.noidung</p>
+            }
+        }
+}
+<h2>2.2. Yêu cầu về kỹ năng</h2>
+@foreach (var plo_item in ViewBag.listplo)
+{
+    bool flag = false ;
+    @foreach (var item in Model)
+        {
+            @foreach (var mt in ViewBag.listMuctieu_ct)
+            {
+                @if (item.ma_mtdt == mt.ma_mtdt && plo_item.maplo == item.maplo)
+                {
+                    flag = true;
+                    break;
+                }
+            }
+        }
+    if (flag)
+        { 
+            if(plo_item.tenloai_plo == temp_tenloai_plo_kn)
+            {
+                 string str1 = (plo_item.chisoplo).Substring(1);
+                <p> <b>Chuẩn đầu ra @str1 </b> (@plo_item.chisoplo) @plo_item.noidung</p>
+            }
+        }
+}
+<h2>2.3. Yêu cầu về năng lực tự chủ và trách nhiệm</h2>
+@foreach (var plo_item in ViewBag.listplo)
+{
+    bool flag = false ;
+    @foreach (var item in Model)
+        {
+            @foreach (var mt in ViewBag.listMuctieu_ct)
+            {
+                @if (item.ma_mtdt == mt.ma_mtdt && plo_item.maplo == item.maplo)
+                {
+                    flag = true;
+                    break;
+                }
+            }
+        }
+    if (flag)
+        { 
+            if(plo_item.tenloai_plo == temp_tenloai_plo_tn)
+            {
+                 string str1 = (plo_item.chisoplo).Substring(1);
+                <p> <b>Chuẩn đầu ra @str1 </b> (@plo_item.chisoplo) @plo_item.noidung</p>
+            }
+        }
 }
 </p>
 <h2>Bảng 1. Mối quan hệ giữa chuẩn đầu ra và mục tiêu</h2>
@@ -30,41 +92,41 @@
             <td>Chuẩn đầu ra</td>
             @foreach (var muctieu in ViewBag.listmuctieudaotao)
             {
-                @if(muctieu.mtdt_chiso != null)
+                @if (muctieu.mtdt_chiso != null)
                 {
                     <td>@muctieu.mtdt_chiso</td>
                 }
-                
+
             }
         </tr>
     </thead>
     <tbody>
-         @foreach (var plo in ViewBag.listplo)
+        @foreach (var plo in ViewBag.listplo)
         {
-        <tr>
-            <td>@plo.chisoplo</td>
+            <tr>
+                <td>@plo.chisoplo</td>
                 @foreach (var muctieu in ViewBag.listmuctieudaotao)
                 {
-                    @if(muctieu.mtdt_chiso != null)
+                    @if (muctieu.mtdt_chiso != null)
                     {
                         bool flag = false;
-                     @foreach (var item in Model)
-                    {
-                        @if (item.maplo == plo.maplo && item.ma_mtdt == muctieu.ma_mtdt)
+                        @foreach (var item in Model)
                         {
-                           flag = true;
-                           break;
+                            @if (item.maplo == plo.maplo && item.ma_mtdt == muctieu.ma_mtdt)
+                            {
+                                flag = true;
+                                break;
+                            }
                         }
-                    }
-                    if(flag)
-                    {
-                        <td style="background-color: darkgray;">X</td>
-                    }
-                    else
-                    {
-                         <td></td>
-                    }
-                   
+                        if (flag)
+                        {
+                            <td style="background-color: darkgray;">X</td>
+                        }
+                        else
+                        {
+                            <td></td>
+                        }
+
                     }
                 }
             </tr>

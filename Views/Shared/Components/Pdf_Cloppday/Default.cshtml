@@ -20,7 +20,6 @@
 
     </thead>
     <tbody>
-        @* Plos hang o tren *@
         <tr>
             <td>
                 @foreach (var itemPLO in ViewBag.listPpday_cdr)
@@ -31,7 +30,8 @@
         </tr>
         @*hangbentrai*@
         @foreach (var items in ViewBag.listPpday)
-        {<tr>
+        {
+        <tr>
             <td>@items.tenpp</td>
                 @foreach (var itemPLO in ViewBag.listPpday_cdr)
                 {

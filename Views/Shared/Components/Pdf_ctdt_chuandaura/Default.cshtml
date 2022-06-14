@@ -22,18 +22,52 @@
   
 }
 </p>
-@* @foreach (var item in Model)
-{
-    @foreach (var mqh in ViewBag.listMuctieudaotao)
-             
-        if(item.ma_mtdt == mqh.ma_mtdt)
-        {
-            @foreach (var plo in Model.GroupBy(p => p.maplo))
+<h2>Bảng 1. Mối quan hệ giữa chuẩn đầu ra và mục tiêu</h2>
+<p>(Xem diễn giải nội dung từ MT1 đến MT7 trong phần mục tiêu đào tạo bên trên)</p>
+<table cellspacing="0" cellpadding="5" style="text-align:center;border-style: solid;">
+    <thead>
+        <tr>
+            <td>Chuẩn đầu ra</td>
+            @foreach (var muctieu in ViewBag.listmuctieudaotao)
             {
-                i++;
-                <p>@plo.Key</p>
-                 <p>Chuẩn đầu ra  (@plo.PLO.chisoplo) : @plo.PLO.noidung</p>
+                @if(muctieu.mtdt_chiso != null)
+                {
+                    <td>@muctieu.mtdt_chiso</td>
+                }
+                
             }
-            
-        }        
-} *@
+        </tr>
+    </thead>
+    <tbody>
+         @foreach (var plo in ViewBag.listplo)
+        {
+        <tr>
+            <td>@plo.chisoplo</td>
+                @foreach (var muctieu in ViewBag.listmuctieudaotao)
+                {
+                    @if(muctieu.mtdt_chiso != null)
+                    {
+                        bool flag = false;
+                     @foreach (var item in Model)
+                    {
+                        @if (item.maplo == plo.maplo && item.ma_mtdt == muctieu.ma_mtdt)
+                        {
+                           flag = true;
+                           break;
+                        }
+                    }
+                    if(flag)
+                    {
+                        <td style="background-color: darkgray;">X</td>
+                    }
+                    else
+                    {
+                         <td></td>
+                    }
+                   
+                    }
+                }
+            </tr>
+        }
+    </tbody>
+</table>

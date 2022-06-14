@@ -63,47 +63,27 @@
       <div class="content_item" id="0">
         @await Component.InvokeAsync("Pdf_ctdt_thongtinvectdt", new { id = @Context.Session.GetInt32("id_pdf_ctdt")} )
       </div>
-       <div class="content_item" id="1">
-          @await Component.InvokeAsync("Pdf_ctdt_muctieudaotao", new { id = @Context.Session.GetInt32("id_pdf_ctdt")} )
-        </div>
-        <div class="content_item" id="2">
-        @await Component.InvokeAsync("Pdf_ctdt_chuandaura", new { id = @Context.Session.GetInt32("id_pdf_ctdt")} )
-        @*
-        @await Component.InvokeAsync("Pdf_ctdt_plo_muctieu", new { id = @Context.Session.GetInt32("id_pdf")} )
-        </div> *@
+      <div class="content_item" id="1">
+        @await Component.InvokeAsync("Pdf_ctdt_muctieudaotao", new { id = @Context.Session.GetInt32("id_pdf_ctdt")} )
+      </div>
+      <div class="content_item" id="2">
+      @await Component.InvokeAsync("Pdf_ctdt_chuandaura", new { id = @Context.Session.GetInt32("id_pdf_ctdt")} )
+      </div>
+      @*
+      @await Component.InvokeAsync("Pdf_ctdt_plo_muctieu", new { id = @Context.Session.GetInt32("id_pdf")} )
+      </div> *@
       <div class="content_item" id="3">
-        @await Component.InvokeAsync("Pdf_ctdt_khoiluongkienthuc", new { id = @Context.Session.GetInt32("id_pdf_ctdt")}
-        )
+        @await Component.InvokeAsync("Pdf_ctdt_khoiluongkienthuc", new { id = @Context.Session.GetInt32("id_pdf_ctdt")})
       </div>
-      <div class="content_item">
-        <h2>4. Đối tượng tuyển sinh</h2>
-        <p>
-          - Theo quy định hiện hành của Bộ Giáo dục và Đào tạo; theo yêu cầu của trường.
-        </p>
-        <h2>5. Quy trình đào tạo, điều kiện tốt nghiệp</h2>
-        <p>
-          - Tích lũy đủ học phần và số tín chỉ quy định trong chương trình đào tạo.
-        </p>
-        <p>
-          - Điểm trung bình chung của các học phần đạt từ 2,0 trở lên.
-        </p>
-        <p>
-          - Đạt chứng chỉ ngoại ngữ theo quy định hiện hành.
-        </p>
-        <p>
-          - Không bị truy cứu trách nhiệm hình sự, không bị kỷ luật ở mức đình chỉ học tập trong năm học cuối.
-        </p>
+      <div class="content_item" id="4">
+        @await Component.InvokeAsync("Pdf_ctdt_doituongtuyensinh")
       </div>
-
-      @* <div class="content_item" id="4">
-        @await Component.InvokeAsync("Pdf_ctdt_doituongtuyensinh", new { id = @Context.Session.GetInt32("id_pdf")} )
-        </div>
-        <div class="content_item" id="5">
-        @await Component.InvokeAsync("Pdf_ctdt_qtdt_dktn", new { id = @Context.Session.GetInt32("id_pdf")} )
-        </div>*@
-        <div class="content_item" id="6">
+      <div class="content_item" id="5">
+        @await Component.InvokeAsync("Pdf_ctdt_qtdt_dktn")
+      </div>
+      <div class="content_item" id="6">
         @await Component.InvokeAsync("Pdf_ctdt_cachthucdanhgia")
-        </div>
+      </div>
       <div class="content_item" id="7">
         @await Component.InvokeAsync("Pdf_ctdt_kkttoankhoa", new { id = @Context.Session.GetInt32("id_pdf_ctdt")} )
       </div>

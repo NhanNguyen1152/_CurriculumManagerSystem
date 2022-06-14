@@ -21,8 +21,8 @@
                                 </th>
                             </tr>
                             <tr>
-                                <td>Số tín chỉ</td>
-                                <td>Tỉ lệ %</td>
+                                <td style="text-align: center;">Số tín chỉ</td>
+                                <td style="text-align: center;">Tỉ lệ %</td>
                             </tr>
                         </thead>
                         @{
@@ -38,7 +38,7 @@
                             string luanvan = "Luận văn tốt nghiệp";
                             int sophantram = 0;
                         }
-                        <tbody>
+                        <tbody style="text-align: center;">
                         @foreach (var dulieu_kkt in ((List<Decuong_Chuongtrinh>)TempData["listData"]).GroupBy(x =>
                         x.DeCuongchiTiet.Khoikienthuc.kkt_ten))
                         {
@@ -94,7 +94,7 @@
                             </tr>                 
                         }
                         </tbody>
-                        <tr>
+                        <tr style="text-align: center;">
                             <td></td>
                             <td><b>Tổng cộng</b></td>
                             <td><b>@tongcong_tc</b></td>

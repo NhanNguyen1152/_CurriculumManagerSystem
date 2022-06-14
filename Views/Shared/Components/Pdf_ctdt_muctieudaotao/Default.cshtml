@@ -1,0 +1,37 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.CTDT_Muctieudaotao>
+@{
+    int a = 1;
+    int b = 1;
+    int c = 1;
+    string temp_phu = "";
+    string temp_chiso = "";
+}
+<h2>@a. Mục tiêu đào tạo</h2>
+    @foreach (var item in Model.GroupBy(m => m.Muctieu_Daotao.mtdt_chinh))
+    {   
+        
+        <h2>@a.@b. @item.Key</h2>
+        
+        @foreach(var item2 in Model.Where(m => m.Muctieu_Daotao.mtdt_chinh == item.Key))
+        {
+            if(item2.Muctieu_Daotao.mtdt_phu != null && item2.Muctieu_Daotao.mtdt_chiso != null)
+            {
+                if(item2.Muctieu_Daotao.mtdt_phu != temp_phu)
+                {
+                    <h2>@a.@b.@c. @item2.Muctieu_Daotao.mtdt_phu</h2>
+                    temp_phu = item2.Muctieu_Daotao.mtdt_phu;
+                    <p><b>@item2.Muctieu_Daotao.mtdt_chiso</b>: @item2.Muctieu_Daotao.noi_dung</p>
+                    c++;
+                }
+                else
+                {
+                    <p><b>@item2.Muctieu_Daotao.mtdt_chiso</b>: @item2.Muctieu_Daotao.noi_dung</p>
+                }
+            }
+            else
+            {
+                <p>- @item2.Muctieu_Daotao.noi_dung</p>
+            }
+        }    
+        b++;   
+    }

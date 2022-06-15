@@ -16,9 +16,10 @@
                 <ul id="myTab" class="nav nav-tabs tab-nav-right" role="tablist">
                     <li role="presentation" class="active"><a role="tab" href="#chuongtrinhdaotao" data-toggle="tab">CHƯƠNG TRÌNH ĐÀO TẠO</a></li>
                     <li role="presentation"><a role="tab" href="#decuong_chuongtrinh" data-toggle="tab">CÁC HỌC PHẦN TRONG CHƯƠNG TRÌNH ĐÀO TẠO</a></li>
-                    <li role="presentation"><a role="tab" href="#decuongquytrinh" data-toggle="tab">QUY TRÌNH ĐÀO TẠO, ĐIỀU KIỆN TỐT NGHIỆP</a></li>
-                    <li role="presentation"><a role="tab" href="#chitietdoituong" data-toggle="tab">ĐỐI TƯỢNG TUYỂN SINH</a></li>
+                    
+                     <li role="presentation"><a role="tab" href="#muctieudaotao" data-toggle="tab">MỤC TIÊU ĐÀO TẠO</a></li>
                     <li role="presentation"><a role="tab" href="#plo_muctieudaotao" data-toggle="tab">MỐI QUAN HỆ PLO VÀ MỤC TIÊU ĐÀO TẠO</a></li>
+                    <li role="presentation"><a role="tab" href="#decuongquytrinh" data-toggle="tab">QUY TRÌNH ĐÀO TẠO, ĐIỀU KIỆN TỐT NGHIỆP</a></li>
                 </ul>
 
                 <!-- Tab panes -->
@@ -39,16 +40,30 @@
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="decuongquytrinh">
                          @await Component.InvokeAsync("Create_CTDT_decuongquytrinh", new { id = 0})
+                          @if (@Context.Session.GetInt32("id_ctdt_ss_create") == null)
+                        {
+                            @await Component.InvokeAsync("Get_CTDT_decuongquydinh", new { id = 0})
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Get_CTDT_decuongquydinh", new {id = @Context.Session.GetInt32("id_ctdt_ss_create")})
+                        }
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="chitietdoituong">
-                        @await Component.InvokeAsync("Create_CTDT_tuyensinh", new { id = 0})
-                       
+                    
+                    <div role="tabpanel" class="tab-pane fade" id="muctieudaotao">
+                         @await Component.InvokeAsync("Create_CTDT_muctieudaotao", new { id = 0})
+                          @if (@Context.Session.GetInt32("id_ctdt_ss_create") == null)
+                        {
+                            @await Component.InvokeAsync("Get_CTDT_muctieudaotao", new { id = 0})
+                        }
+                        else
+                        {
+                            @await Component.InvokeAsync("Get_CTDT_muctieudaotao", new {id = @Context.Session.GetInt32("id_ctdt_ss_create")})
+                        }
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="plo_muctieudaotao">
                         @await Component.InvokeAsync("Create_CTDT_plo_muctieudaotao", new { id = 0})
-                        @await Component.InvokeAsync("Get_PLO_Muctieudaotao")
-                         
-                        
+                        @await Component.InvokeAsync("Get_CTDT_PLO_Muctieudaotao", new {id = @Context.Session.GetInt32("id_ctdt_ss_create")})
                     </div>
                
                    

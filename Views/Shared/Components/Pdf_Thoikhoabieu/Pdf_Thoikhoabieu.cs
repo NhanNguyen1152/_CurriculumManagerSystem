@@ -25,31 +25,9 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Pdf_Thoikhoabieu
 
         public IViewComponentResult Invoke(string ten)
         {
-            var dataTimetable = _context.Thoigianhocs.Include(t => t.DeCuongchiTiet).Include(t => t.Hockys).Include(t => t.Khoahocs).Where(t => t.Khoahocs.tenkh == ten);
+            var dataTimetable = _context.Thoigianhocs.Include(t => t.DeCuongchiTiet).Include(t => t.Hockys).Include(t => t.Khoahocs).Where(t => t.Khoahocs.tenkh == ten).OrderBy(t => t.Hockys.tenhk);
             TempData["listData"] = dataTimetable.ToList();
             return View();
         }
-        
-        // public async Task<IViewComponentResult> InvokeAsync(int id)
-        // {
-        //     var viewModels = new Ctdt_pdf_thoikhoabieu();
-        //     viewModels.DeCuongchiTiets =
-        //         await _context
-        //             .DeCuongchiTiets
-        //             .Include(d => d.Decuong_Chuongtrinhs)
-        //             .Include(d => d.Thoigianhocs)
-        //                 .ThenInclude(d => d.Hockys)
-        //             //.Where(d => d.Decuong_Chuongtrinhs.ma_ctdt == id)
-        //             .ToListAsync();
-        //     return View(viewModels);
-        // }
     }
 }
-
-// public IActionResult getThoikhoabieu(string khoahoc)
-//         {
-//             ViewBag.kk = khoahoc;
-//             var dataTimetable = _context.Thoigianhocs.Include(t => t.DeCuongchiTiet).ThenInclude(t => t.Khoikienthuc).Include(t => t.Hockys).Include(t => t.Khoahocs).Where(t => t.Khoahocs.tenkh == khoahoc);
-//             TempData["listData"] = dataTimetable.ToList();
-//             return View();
-//         }

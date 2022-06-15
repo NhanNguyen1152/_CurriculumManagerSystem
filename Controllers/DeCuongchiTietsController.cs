@@ -102,7 +102,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("mahp,mahp_decuong,tenhp_tviet,tenhp_tanh,sotc_lt,sotc_th,yeucaukhacvoi_hocphan,tomtat_noidunghocphan,makkt,hp_tienquyet")] DeCuongchiTiet deCuongchiTiet, int current = 1)
+        public async Task<IActionResult> Create([Bind("mahp,mahp_decuong,tenhp_tviet,tenhp_tanh,sotc_lt,sotc_th,yeucaukhacvoi_hocphan,tomtat_noidunghocphan,makkt,hp_tienquyet,yeucau_hocphan")] DeCuongchiTiet deCuongchiTiet, int current = 1)
         {
             if (ModelState.IsValid)
             {
@@ -125,7 +125,7 @@ namespace _CurriculumManagerSystem.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             HttpContext.Session.SetInt32("id_edit_dccht", id );
-            ViewData["name_dccht"] =  _context.DeCuongchiTiets.Where(m=> m.mahp == id).Select(z => z.tenhp_tviet);
+            // ViewData["name_dccht"] =  _context.DeCuongchiTiets.Where(m=> m.mahp == id).Select(z => z.tenhp_tviet);
             TempData["id_edit_dc"] = id ;
             ViewData["makkt"] = new SelectList(_context.Khoikienthucs, "makkt", "kkt_ten");
             ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
@@ -149,7 +149,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("mahp,mahp_decuong,tenhp_tviet,tenhp_tanh,sotc_lt,sotc_th,yeucaukhacvoi_hocphan,tomtat_noidunghocphan,makkt,hp_tienquyet")] DeCuongchiTiet deCuongchiTiet)
+        public async Task<IActionResult> Edit(int id, [Bind("mahp,mahp_decuong,tenhp_tviet,tenhp_tanh,sotc_lt,sotc_th,yeucaukhacvoi_hocphan,tomtat_noidunghocphan,makkt,hp_tienquyet,makkt,yeucau_hocphan")] DeCuongchiTiet deCuongchiTiet)
         {
             if (id != deCuongchiTiet.mahp)
             {
@@ -177,7 +177,7 @@ namespace _CurriculumManagerSystem.Controllers
                 HttpContext.Session.SetInt32("id_edit_dccht_after", deCuongchiTiet.mahp);
                 return RedirectToAction("Edit");
             }
-            return View(deCuongchiTiet);
+            return View();
         }
 
         // GET: DeCuongchiTiets/Delete/5

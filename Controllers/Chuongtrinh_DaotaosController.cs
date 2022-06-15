@@ -29,6 +29,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Chuongtrinh_Daotaos
         public async Task<IActionResult> Index()
         {
+             HttpContext.Session.Clear();
             return View(await _context.Chuongtrinh_Daotaos.ToListAsync());
         }
 
@@ -53,8 +54,9 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Chuongtrinh_Daotaos/Create
         public IActionResult Create()
         {
+            
             ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
-            ViewData["ma_mtdt"] = new SelectList(_context.Muctieu_Daotaos, "ma_mtdt", "mtdt_chiso");
+            ViewData["ma_mtdt"] = new SelectList(_context.CTDT_Muctieudaotaos.Include(m=> m.Muctieu_Daotao).Where(m=> m.ma_ctdt ==  HttpContext.Session.GetInt32("id_ctdt_ss_create")), "ma_mtdt", "Muctieu_Daotao.mtdt_chiso");
             ViewData["maplo"] = new SelectList(_context.PLOs, "maplo", "chisoplo");
             ViewData["ma_dtts"] = new SelectList(_context.Doituong_Tuyensinhs, "ma_dtts", "noi_dung_dtts");
             return View();
@@ -79,19 +81,14 @@ namespace _CurriculumManagerSystem.Controllers
         }
 
         // GET: Chuongtrinh_Daotaos/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var chuongtrinh_Daotao = await _context.Chuongtrinh_Daotaos.FindAsync(id);
-            if (chuongtrinh_Daotao == null)
-            {
-                return NotFound();
-            }
-            return View(chuongtrinh_Daotao);
+            HttpContext.Session.SetInt32("id_edit_ctdt", id );
+            ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
+            ViewData["ma_mtdt"] = new SelectList(_context.CTDT_Muctieudaotaos.Include(m=> m.Muctieu_Daotao).Where(m=> m.ma_ctdt ==  HttpContext.Session.GetInt32("id_edit_ctdt_after")), "ma_mtdt", "Muctieu_Daotao.mtdt_chiso");
+            ViewData["maplo"] = new SelectList(_context.PLOs, "maplo", "chisoplo");
+            ViewData["ma_dtts"] = new SelectList(_context.Doituong_Tuyensinhs, "ma_dtts", "noi_dung_dtts");
+            return View();
         }
 
         // POST: Chuongtrinh_Daotaos/Edit/5
@@ -190,6 +187,20 @@ namespace _CurriculumManagerSystem.Controllers
             // ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp_decuong", decuong_Chuongtrinh.mahp);
             return View();
         }
+        public async Task<IActionResult> EditDecuongChuongtrinh([Bind("ma_dc_ct,mahp,ma_ctdt")] Decuong_Chuongtrinh decuong_Chuongtrinh)
+        {
+            if (ModelState.IsValid)
+            {
+                decuong_Chuongtrinh.ma_ctdt = (int)TempData["id_edit_ctdt_after"];
+                _context.Add(decuong_Chuongtrinh);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Edit");
+            }
+            // ViewData["ma_ctdt"] = new SelectList(_context.Chuongtrinh_Daotaos, "ma_ctdt", "ma_ctdt", decuong_Chuongtrinh.ma_ctdt);
+            // ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp_decuong", decuong_Chuongtrinh.mahp);
+            return View();
+        }
+        
          public async Task<IActionResult> createListQT(int[] arrayDCQT)
         {
             if (ModelState.IsValid)
@@ -208,6 +219,24 @@ namespace _CurriculumManagerSystem.Controllers
             }
             return View();
         }
+         public async Task<IActionResult> EditListQT(int[] arrayDCQT)
+        {
+            if (ModelState.IsValid)
+            {
+                foreach(var item in arrayDCQT)
+                {
+                    
+                    var DCQT = new Decuong_Quytrinh();
+                    DCQT.ma_ctdt = (int)TempData["id_edit_ctdt_after"];
+                    DCQT.ma_qt_dktn = item; 
+                    _context.Add(DCQT); 
+                    await _context.SaveChangesAsync();
+                }
+                
+                    return RedirectToAction("Edit");  
+            }
+            return View();
+        }
         //CreatePLO-Muctieudaotao
         public async Task<IActionResult> CreatePLO_Muctieudaotao([Bind("ma_plo_mtdt,ngay_update,maplo,ma_mtdt")] MoiquanhePLO_Muctieudaotao moiquanhePLO_Muctieudaotao)
         {
@@ -219,17 +248,54 @@ namespace _CurriculumManagerSystem.Controllers
             }
             return View();
         }
-        //createdoituong
-         public async Task<IActionResult> Create_tuyensinh([Bind("ma_ct_dt,ma_ctdt,ma_dtts")] Chitiet_Doituong chitiet_Doituong)
+        public async Task<IActionResult> EditPLO_Muctieudaotao([Bind("ma_plo_mtdt,ngay_update,maplo,ma_mtdt")] MoiquanhePLO_Muctieudaotao moiquanhePLO_Muctieudaotao)
         {
             if (ModelState.IsValid)
-            {
-                chitiet_Doituong.ma_ctdt = (int)TempData["id_tmp_ctdt_create"];
-                _context.Add(chitiet_Doituong);
+            {   
+                _context.Add(moiquanhePLO_Muctieudaotao);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Create");
+                return RedirectToAction("Edit");
             }
             return View();
         }
+        //createListMT
+         public async Task<IActionResult> createListMT(int[] arrayDCMT)
+        {
+            if (ModelState.IsValid)
+            {
+                foreach(var item in arrayDCMT)
+                {
+                    
+                    var DCMT = new CTDT_Muctieudaotao();
+                    DCMT.ma_ctdt = (int)TempData["id_ctdt_tmp_create"];
+                    DCMT.ma_mtdt = item; 
+                    _context.Add(DCMT); 
+                    await _context.SaveChangesAsync();
+                }
+                
+                    return RedirectToAction("Create");  
+            }
+            return View();
+        }
+        public async Task<IActionResult> EditListMT(int[] arrayDCMT)
+        {
+            if (ModelState.IsValid)
+            {
+                foreach(var item in arrayDCMT)
+                {
+                    
+                    var DCMT = new CTDT_Muctieudaotao();
+                    DCMT.ma_ctdt = (int)TempData["id_edit_ctdt_after"];
+                    DCMT.ma_mtdt = item; 
+                    _context.Add(DCMT); 
+                    await _context.SaveChangesAsync();
+                }
+                
+                    return RedirectToAction("Edit");  
+            }
+            return View();
+        }
+        //createdoituong
+         
     }
 }

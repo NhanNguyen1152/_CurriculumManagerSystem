@@ -1,0 +1,37 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.CTDT_Muctieudaotao>
+@{
+    var i = 0;
+}
+<div class="body table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    STT
+                </th>
+                <th>
+                    Nội dung
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            @foreach (var item in Model)
+            {
+                i++;
+                <tr>
+                    <td>
+                        @i
+                    </td>
+                    <td>@item.Muctieu_Daotao.noi_dung</td>
+                    <td>
+                        <a class="material-icons" data-type="confirm" asp-controller="Chuongtrinh_Daotaos"
+                        asp-action="DeleteCTDT_decuong" asp-route-id="@item.ma_ctdt_mtdt" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

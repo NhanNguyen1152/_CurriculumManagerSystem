@@ -154,6 +154,24 @@
                                 </div>
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <label asp-for="yeucau_hocphan">Yêu cầu học phần</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group">
+
+                                            <div class="form-line">
+                                                @* <textarea required asp-for="yeucau_hocphan"
+                                                    class="form-control"
+                                                    placeholder="Yêu cầu học phần"></textarea> *@
+                                                <input type="text" asp-for="yeucau_hocphan"
+                                                    class="form-control" placeholder="Yêu cầu học phần">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label asp-for="hp_tienquyet">Học phần học trước</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
@@ -224,9 +242,10 @@
                                 </div>
                                 <div class="row clearfix">
                                     <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
-                                        <a asp-action="Index" class="btn btn-default waves-effect">Trở lại</a> |
+                                        <a asp-action="Index" class="btn btn-default waves-effect" style="margin-left: 82%;">Trở về trang chủ</a> |
                                         <input type="submit" class="btn btn-primary waves-effect"
                                             value="Tạo mới"></input>
+                                            
                                     </div>
                                 </div>
                             </form>

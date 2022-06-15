@@ -16,73 +16,76 @@
                     int tongcong = 0;
                     string tuchon = "";
                     string luanvan = "Luận văn tốt nghiệp";
+                    int temp_tong_bb = 0;
+                    int temp_tong_tuchon = 0;
                 }
                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                     <thead>
                         @foreach (var dulieu_hocky in ((List<Thoigianhoc>)TempData["listData"]).GroupBy(x =>x.Hockys.tenhk))
                         {
-                            tongcong = 0;
+                            temp_tong_bb = 0;
+                            temp_tong_tuchon = 0;
+                            tuchon = "";
                             <tr>
                                 <th style="background-color: #84c7c1; color: black;"><b>@dulieu_hocky.Key</b></th>
                                 <th style="background-color: #84c7c1; color: black;">Tín chỉ</th>
                             </tr>
                             <tbody>
-                                    @foreach (var dulieu_decuong in ((List<Thoigianhoc>)TempData["listData"]).Where(x => x.Hockys.tenhk == dulieu_hocky.Key))
+                                    @foreach (var dulieu_decuong in ((List<Thoigianhoc>)TempData["listData"]).Where(x => x.Hockys.tenhk == dulieu_hocky.Key && x.DeCuongchiTiet.yeucau_hocphan == "Bắt buộc"))
                                     {
-
-                                        tongtc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
-                                        @if (@dulieu_decuong.DeCuongchiTiet.tenhp_tviet.Contains(luanvan))
-                                        {
-                                            @* tongcong = tongcong + tongtc; *@
-                                            <tr>
-                                                <td>
-                                                    @dulieu_decuong.DeCuongchiTiet.tenhp_tviet
+                                        <tr>
+                                            @{
+                                                tongtc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
+                                            }
+                                            @{
+                                                temp_tong_bb = temp_tong_bb + tongtc;
+                                            }
+                                        
+                                            <td>
+                                                <a asp-action="Extract" asp-controller="ExtractPDFs" asp-route-id="@dulieu_decuong.DeCuongchiTiet.mahp"> @dulieu_decuong.DeCuongchiTiet.tenhp_tviet </a> 
+                                            </td>
+                                            <td>
+                                                @tongtc
+                                            </td>
+                                        </tr>
+                                    }
+                                    @foreach (var dulieu_decuong in ((List<Thoigianhoc>)TempData["listData"]).Where(x => x.Hockys.tenhk == dulieu_hocky.Key && x.DeCuongchiTiet.yeucau_hocphan == "Tự chọn"))
+                                    {
+                                        <tr>
+                                            @if(dulieu_decuong.DeCuongchiTiet.yeucau_hocphan != tuchon)
+                                            {
+                                            
+                                                tongtc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
+                                                temp_tong_tuchon = temp_tong_tuchon + tongtc;
+                                                tuchon = dulieu_decuong.DeCuongchiTiet.yeucau_hocphan;
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <b>Học phần tự chọn</b>
+                                                    </td>
+                                                </tr>
+                                                <td style="padding-left: 30px;">
+                                                    <a asp-action="Extract" asp-controller="ExtractPDFs" asp-route-id="@dulieu_decuong.DeCuongchiTiet.mahp"> @dulieu_decuong.DeCuongchiTiet.tenhp_tviet </a> 
                                                 </td>
                                                 <td>
                                                     @tongtc
                                                 </td>
-                                            </tr>
-                                        }
-                                        else
-                                        {
-                                            @if (@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != null &&
-                                                @dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != tuchon)
-                                            {
-                                            <tr>
-                                                <td style="background-color: #1b6ec2; color: white;">@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon</td>
-                                                <td style="background-color: #1b6ec2; color: white;">@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota</td>
-                                            </tr>
                                             }
-
-                                            <tr>
-                                                @if (@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon == null )
-                                                {
-                                                    tongcong = tongcong + tongtc;
-                                                    <td>
-                                                            @dulieu_decuong.DeCuongchiTiet.tenhp_tviet
-                                                    </td>
-                                                    <td>
-                                                            @tongtc
-                                                    </td>
-                                                }
-                                                else
-                                                {
-
-                                                    @if (tuchon != dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon)
-                                                    {
-                                                        tuchon = dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon;
-                                                        tongcong = tongcong + int.Parse(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota);
-                                                    }
-                                                    <td style="font-style: italic; padding-left: 30px;">
-                                                        <a asp-action="Edit" asp-controller="DecuongchiTiets" asp-route-id="@dulieu_decuong.DeCuongchiTiet.mahp"> @dulieu_decuong.DeCuongchiTiet.tenhp_tviet </a>
-                                                    </td>
-                                                    <td style="font-style: italic;">
-                                                            @tongtc
-                                                    </td>
-                                                }
-                                            </tr>
-                                        }
-                                            
+                                            else
+                                            {
+                                                tongtc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
+                                                temp_tong_tuchon = temp_tong_tuchon + tongtc;
+                                                <td style="padding-left: 30px;">
+                                                    <a asp-action="Extract" asp-controller="ExtractPDFs" asp-route-id="@dulieu_decuong.DeCuongchiTiet.mahp"> @dulieu_decuong.DeCuongchiTiet.tenhp_tviet </a> 
+                                                </td>
+                                                <td>
+                                                    @tongtc
+                                                </td> 
+                                            }
+                                           
+                                        </tr>
+                                    }
+                                    @{
+                                        tongcong = temp_tong_bb + temp_tong_tuchon;
                                     }
                             </tbody>
                             <tr>

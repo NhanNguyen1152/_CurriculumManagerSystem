@@ -1,3 +1,5 @@
+using System.Threading;
+using System.ComponentModel;
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,19 +12,19 @@ using Microsoft.EntityFrameworkCore;
 using _CurriculumManagerSystem.Models;
 using Microsoft.AspNetCore.Http;
 
-namespace _CurriculumManagerSystem.Views.Shared.Components.Create_CTDT_tuyensinh
+namespace _CurriculumManagerSystem.Views.Shared.Components.Edit_CTDT_plo_muctieudaotao
 {
-    public class Create_CTDT_tuyensinh : ViewComponent
+    public class Edit_CTDT_plo_muctieudaotao : ViewComponent
     {
         private readonly acomptec_lvthainhanContext _context;
 
-        public Create_CTDT_tuyensinh(acomptec_lvthainhanContext context)
+        public Edit_CTDT_plo_muctieudaotao(acomptec_lvthainhanContext context)
         {
             _context = context;
         }
-
-         public async Task<IViewComponentResult> InvokeAsync(int? id)
-        { 
+        public async Task<IViewComponentResult> InvokeAsync(int id)
+        {
+            var moiquanhePLO_Muctieudaotao = await _context.MoiquanhePLO_Muctieudaotaos.FindAsync(id);
             return View();
         }
     }

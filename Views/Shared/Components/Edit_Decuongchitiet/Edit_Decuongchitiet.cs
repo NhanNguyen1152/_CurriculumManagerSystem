@@ -25,16 +25,7 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Edit_Decuongchitiet
             HttpContext.Session.SetInt32("id_edit_dccht_after", id );
             TempData["id_dc_after"] = id;
             
-            if (id == null)
-            {
-                return View();
-            }
-
             var deCuongchiTiet = await _context.DeCuongchiTiets.FindAsync(id);
-            if (deCuongchiTiet == null)
-            {
-                 return View();
-            }
             return View(deCuongchiTiet);
         }
     }

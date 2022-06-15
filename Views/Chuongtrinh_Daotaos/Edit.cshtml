@@ -1,13 +1,71 @@
-@model _CurriculumManagerSystem.Models.Chuongtrinh_Daotao
-
+@using Microsoft.AspNetCore.Http;
+@using System.Data;
 @{
     ViewData["Title"] = "Edit";
+
 }
 
-<h1>Edit</h1>
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2 class="titile-table"> SỬA ĐỔI CHƯƠNG TRÌNH ĐÀO TẠO</h2>
+            </div>
+            <div class="body">
+                <!-- Nav tabs -->
+                <ul id="myTab" class="nav nav-tabs tab-nav-right" role="tablist">
+                    <li role="presentation" class="active"><a role="tab" href="#chuongtrinhdaotao" data-toggle="tab">CHƯƠNG TRÌNH ĐÀO TẠO</a></li>
+                    <li role="presentation"><a role="tab" href="#decuong_chuongtrinh" data-toggle="tab">CÁC HỌC PHẦN TRONG CHƯƠNG TRÌNH ĐÀO TẠO</a></li>
+                    
+                     <li role="presentation"><a role="tab" href="#muctieudaotao" data-toggle="tab">MỤC TIÊU ĐÀO TẠO</a></li>
+                    <li role="presentation"><a role="tab" href="#plo_muctieudaotao" data-toggle="tab">MỐI QUAN HỆ PLO VÀ MỤC TIÊU ĐÀO TẠO</a></li>
+                    <li role="presentation"><a role="tab" href="#decuongquytrinh" data-toggle="tab">QUY TRÌNH ĐÀO TẠO, ĐIỀU KIỆN TỐT NGHIỆP</a></li>
+                </ul>
 
-<h4>Chuongtrinh_Daotao</h4>
-<hr />
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="chuongtrinhdaotao">
+                         
+                         @if(@Context.Session.GetInt32("id_edit_ctdt_after") == null)
+                       {
+                            @await Component.InvokeAsync("Edit_CTDT_chuongtrinhdaotao", new { id = Context.Session.GetInt32("id_edit_ctdt")})
+                       }
+                       else
+                       {
+                             @await Component.InvokeAsync("Edit_CTDT_chuongtrinhdaotao" , new {id = @Context.Session.GetInt32("id_edit_ctdt_after")});
+                       }
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="decuong_chuongtrinh">
+                        @await Component.InvokeAsync("Get_CTDT_decuong_chuongtrinh", new {id = @Context.Session.GetInt32("id_edit_ctdt_after")})
+                        @if(@Context.Session.GetInt32("id_edit_ctdt_decuongchitiet") == null)
+                        {
+                             @await Component.InvokeAsync("Edit_CTDT_decuong_chuongtrinhdaotao", new { id = 0})
+                        }
+                        else
+                        {
+                             @await Component.InvokeAsync("Edit_CTDT_decuong_chuongtrinhdaotao", new { id = Context.Session.GetInt32("id_edit_ctdt")})
+                        }
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="decuongquytrinh">
+                        @await Component.InvokeAsync("Get_CTDT_decuongquydinh", new {id = @Context.Session.GetInt32("id_edit_ctdt_after")})
+                         @await Component.InvokeAsync("Edit_CTDT_decuongquytrinh", new { id = 0})
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="muctieudaotao">
+                        @await Component.InvokeAsync("Get_CTDT_muctieudaotao", new {id = @Context.Session.GetInt32("id_edit_ctdt_after")})
+                        @await Component.InvokeAsync("Edit_CTDT_muctieudaotao", new { id = 0})
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="plo_muctieudaotao">
+                        @await Component.InvokeAsync("Edit_CTDT_plo_muctieudaotao", new { id = 0})
+                        @await Component.InvokeAsync("Get_CTDT_PLO_Muctieudaotao", new {id = @Context.Session.GetInt32("id_edit_ctdt_after")})
+                    </div>
+               
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@* 
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -58,4 +116,4 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
+ *@

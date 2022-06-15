@@ -27,21 +27,22 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Get_CTDT_PLO_Muctieud
        
         public async Task<IViewComponentResult> InvokeAsync()
         {   
-            var result = await _context.MoiquanhePLO_Muctieudaotaos.Include(m => m.PLO).Include(m=> m.Muctieu_Daotao).ToListAsync();
-                     return View<List<MoiquanhePLO_Muctieudaotao>>(result);
             
-            // if(ViewData["Title"] == "Create")
-            // {
-            //     var result = await _context.DeCuongNhiemvus.Include(m => m.DeCuongchiTiet).Include(m=> m.NhiemvuSV).Where(m => m.DeCuongchiTiet.mahp == HttpContext.Session.GetInt32("idDecuong")).ToListAsync();
-            //          return View<List<DeCuongNhiemvu>>(result);
+            if(ViewData["Title"] == "Create")
+            {
+                  var listMuctieu_ct = _context.CTDT_Muctieudaotaos.Include(m => m.Chuongtrinh_Daotao).Include(m => m.Muctieu_Daotao).Where(m=> m.ma_ctdt == HttpContext.Session.GetInt32("id_ctdt_ss_create")).ToList();
+                     ViewBag.listMuctieu_ct = listMuctieu_ct.ToList();
+                var result = await _context.MoiquanhePLO_Muctieudaotaos.Include(m=> m.PLO).Include(m=> m.Muctieu_Daotao).OrderBy(m=> m.PLO.chisoplo).ToListAsync();
+            return View(result);
                
-            // }
-            // else
-            // {
-            //      var result = await _context.DeCuongNhiemvus.Include(m => m.DeCuongchiTiet).Include(m=> m.NhiemvuSV).Where(m => m.DeCuongchiTiet.mahp == HttpContext.Session.GetInt32("id_edit_dccht_after")).ToListAsync();
-                 
-            //          return View<List<DeCuongNhiemvu>>(result);
-            // }
+            }
+            else
+            {
+                  var listMuctieu_ct = _context.CTDT_Muctieudaotaos.Include(m => m.Chuongtrinh_Daotao).Include(m => m.Muctieu_Daotao).Where(m=> m.ma_ctdt == HttpContext.Session.GetInt32("id_edit_ctdt_after")).ToList();
+                    ViewBag.listMuctieu_ct = listMuctieu_ct.ToList();
+                 var result = await _context.MoiquanhePLO_Muctieudaotaos.Include(m=> m.PLO).Include(m=> m.Muctieu_Daotao).OrderBy(m=> m.PLO.chisoplo).ToListAsync();
+            return View(result);
+            }
             
             return View();
             

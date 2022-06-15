@@ -1,6 +1,9 @@
-@model IEnumerable<_CurriculumManagerSystem.Models.DeCuongQuyDinh>
-
+@model IEnumerable<_CurriculumManagerSystem.Models.Quydinh_Kiemtra>
+<h2>8. Nội dung chương trình đào tạo</h2>
+<p>Chương trình đào tạo ngành Hệ thống thông tin văn bằng 2 được xây dựng trên cơ
+sở tham khảo các quy định về đào tạo bao gồm:
+</p>
 @foreach(var item in Model)
 {
-    <p>- @item.Quydinh_Kiemtra.tenqd</p>
+    <p>- @item.tenqd</p>
 }

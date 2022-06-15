@@ -163,7 +163,7 @@ namespace _CurriculumManagerSystem.Controllers
         public IActionResult getThoikhoabieu(string khoahoc)
         {
             ViewBag.kk = khoahoc;
-            var dataTimetable = _context.Thoigianhocs.Include(t => t.DeCuongchiTiet).ThenInclude(t => t.Khoikienthuc).Include(t => t.Hockys).Include(t => t.Khoahocs).Where(t => t.Khoahocs.tenkh == khoahoc);
+            var dataTimetable = _context.Thoigianhocs.Include(t => t.DeCuongchiTiet).ThenInclude(t => t.Khoikienthuc).Include(t => t.Hockys).Include(t => t.Khoahocs).Where(t => t.Khoahocs.tenkh == khoahoc).OrderBy(t => t.Hockys.tenhk);
             TempData["listData"] = dataTimetable.ToList();
             return View();
         }

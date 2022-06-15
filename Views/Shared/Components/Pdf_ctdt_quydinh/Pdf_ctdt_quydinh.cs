@@ -26,7 +26,7 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Pdf_ctdt_quydinh
        
         public IViewComponentResult Invoke()
         {   
-            var result = _context.DeCuongQuyDinhs.Include(d => d.Quydinh_Kiemtra).Include(d => d.DeCuongchiTiet).ToList();
+            var result = _context.Quydinh_Kiemtras.ToList();
             return View(result);
         }
     }

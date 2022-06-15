@@ -30,6 +30,8 @@ namespace _CurriculumManagerSystem.Models
         public string yeucaukhacvoi_hocphan { get; set; }
         [DisplayName("Tóm tắt nội dung học phần")]
         public string tomtat_noidunghocphan { get; set; }
+        [DisplayName("Yêu cầu của học phần")]
+        public string yeucau_hocphan { get; set; }
 
         [ForeignKey("makkt")]
         [DisplayName("Mã khối kiến thức")]

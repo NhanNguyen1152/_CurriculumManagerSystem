@@ -8,7 +8,8 @@ namespace _CurriculumManagerSystem.Models
 {
     [Table("DeCuongchiTiet")]
     public partial class DeCuongchiTiet
-    {
+    {   
+
         [Key]
         [Required]
         // [DisplayName("Mã học phần")]

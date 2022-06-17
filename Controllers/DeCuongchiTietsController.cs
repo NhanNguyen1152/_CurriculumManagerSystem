@@ -144,6 +144,23 @@ namespace _CurriculumManagerSystem.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Edit_copy(int id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var chuandaura_monhoc = await _context.DeCuongchiTiets.FindAsync(id);
+            if (chuandaura_monhoc == null)
+            {
+                return NotFound();
+            }
+            ViewData["makkt"] = new SelectList(_context.Khoikienthucs, "makkt", "kkt_ten");
+            return View(chuandaura_monhoc);
+            //return View();
+        }
+
         // POST: DeCuongchiTiets/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -178,6 +195,39 @@ namespace _CurriculumManagerSystem.Controllers
                 return RedirectToAction("Edit");
             }
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit_copy(int id, [Bind("mahp,mahp_decuong,tenhp_tviet,tenhp_tanh,sotc_lt,sotc_th,yeucaukhacvoi_hocphan,tomtat_noidunghocphan,makkt,hp_tienquyet,yeucau_hocphan")] DeCuongchiTiet deCuongchiTiet)
+        {
+            if (id != deCuongchiTiet.mahp)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(deCuongchiTiet);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!DeCuongchiTietExists(deCuongchiTiet.mahp))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                // HttpContext.Session.SetInt32("id_edit_dccht_after", deCuongchiTiet.mahp);
+                // return RedirectToAction("Edit");
+            }
+            return View(deCuongchiTiet);
         }
 
         // GET: DeCuongchiTiets/Delete/5

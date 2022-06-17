@@ -40,23 +40,28 @@
                             int tongcong_tuchon = 0;
                             string tuchon = "";
                             string luanvan = "Luận văn tốt nghiệp";
+							List<int> list_check = new List<int>();
                         }
                         @foreach (var dulieu_kkt in ((List<Decuong_Chuongtrinh>)TempData["listData"]).GroupBy(x =>
                         x.DeCuongchiTiet.Khoikienthuc.kkt_ten))
                         {
+							tuchon = "";
                             <th colspan="9" style="color: black;"><b>@dulieu_kkt.Key</b></th>
 
                             <tbody>
-                                @foreach (var dulieu_decuong in ((List<Decuong_Chuongtrinh>)TempData["listData"]).Where(x =>
-                               x.DeCuongchiTiet.Khoikienthuc.kkt_ten == dulieu_kkt.Key))
+                            @foreach (var dulieu_decuong in ((List<Decuong_Chuongtrinh>)TempData["listData"]).Where(x =>
+                               x.DeCuongchiTiet.Khoikienthuc.kkt_ten == dulieu_kkt.Key && x.DeCuongchiTiet.yeucau_hocphan == "Bắt buộc"))
                                 {
                                     stt = stt + 1;
                                     tong_sotiet_lt = dulieu_decuong.DeCuongchiTiet.sotc_lt * 15;
                                     tong_sotiet_th = dulieu_decuong.DeCuongchiTiet.sotc_th * 30;
-                 
-                                    @if(dulieu_decuong.DeCuongchiTiet.tenhp_tviet.Contains(luanvan))
-                                            {
-                                                
+                					 tong_tc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
+                                    
+                                            if(dulieu_decuong.DeCuongchiTiet.yeucaukhacvoi_hocphan != "*")
+												{
+													tongcong_tc += tong_tc;
+													tongcong_bb += tong_tc;
+												}
 												<tr> 
 													<td>
 														@stt
@@ -68,105 +73,19 @@
 														@dulieu_decuong.DeCuongchiTiet.tenhp_tviet
 													</td>
 													<td>
-														
+														@tong_tc
 													</td>
 													<td>
-														
+														@tong_tc
 													</td>
-													<td>
-														@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota
-													</td>
+													<td></td>	
 													<td>
 														@tong_sotiet_lt
 													</td>
 													<td>
 														@tong_sotiet_th
 													</td>
-													@if(@dulieu_decuong.DeCuongchiTiet.hp_tienquyet == "Không")
-														{
-															<td>
-															
-															</td>
-														}
-														else
-														{
-															<td>
-																@dulieu_decuong.DeCuongchiTiet.hp_tienquyet
-															</td>
-														}
 													
-												</tr>
-                                            }
-                                        else
-                                            { 
-                                               @if(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != null && dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != tuchon)
-													{ 
-														tongcong_tuchon += int.Parse(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota);
-														tuchon = dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon;
-														<tr>
-															<th rowspan="1"></th>
-															<th colspan="4" ><b>@tuchon</b></th>
-															<th><b>@dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota</b></th>
-														</tr>
-													}
-												<tr> 
-													<td>
-														@stt
-													</td>
-													<td>
-														@dulieu_decuong.DeCuongchiTiet.mahp_decuong
-													</td>
-													<td>
-														@dulieu_decuong.DeCuongchiTiet.tenhp_tviet
-													</td>
-
-
-													@* bat dau  *@
-													
-															
-															@{
-																tong_tc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
-															}
-															@if(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != null && dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota != null)
-																{  
-																	@* tuchon = dulieu_decuong.Khoikienthuc.kkt_tuchon; *@
-																	
-																	tongcong_tc += tong_tc;
-																	<td>
-																		@tong_tc
-																	</td>
-																	<td>
-																		
-																	</td>
-																	<td>
-																		@* @dulieu_decuong.Khoikienthuc.kkt_mota *@
-																	</td>
-																}
-															else
-																{
-																	tongcong_bb += tong_tc;
-																	tongcong_tc += tong_tc;
-																	<td>
-																		@tong_tc
-																	</td>
-																	<td>
-																		@tong_tc
-																	</td>
-																	<td>
-																		
-																	</td>
-																}
-														
-													
-													
-													@* ket thuc *@
-					
-													<td>
-														@tong_sotiet_lt
-													</td>
-													<td>
-														@tong_sotiet_th
-													</td>
 													@if(@dulieu_decuong.DeCuongchiTiet.hp_tienquyet == "Không")
 													{
 														<td>
@@ -181,11 +100,138 @@
 													}
 													
 												</tr>
-                                            }
-											tongcong_tc = tongcong_bb + tongcong_tuchon;
+											
+											}
+
+										@foreach (var dulieu_decuong in ((List<Decuong_Chuongtrinh>)TempData["listData"]).Where(x => x.DeCuongchiTiet.Khoikienthuc.kkt_ten == dulieu_kkt.Key && x.DeCuongchiTiet.yeucau_hocphan == "Tự chọn"))
+										{
+											stt = stt + 1;
+											tong_sotiet_lt = dulieu_decuong.DeCuongchiTiet.sotc_lt * 15;
+											tong_sotiet_th = dulieu_decuong.DeCuongchiTiet.sotc_th * 30;
+											tong_tc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
+											if (dulieu_decuong.DeCuongchiTiet.yeucau_hocphan != tuchon)
+											{
+												tuchon = dulieu_decuong.DeCuongchiTiet.yeucau_hocphan;
+												<tr>
+												<td colspan="6">
+													<b>Học phần tự chọn</b>
+												</td>
+												@foreach (var dulieu_thoigianhoc in @ViewBag.listtgh)
+												{
+													if(dulieu_thoigianhoc.mahp == dulieu_decuong.DeCuongchiTiet.mahp && !list_check.Contains(dulieu_thoigianhoc.mahk))
+													{
+														int tranfer = int.Parse(dulieu_thoigianhoc.yeucauhocphan);
+														tongcong_tuchon += tranfer;
+														list_check.Add(dulieu_thoigianhoc.mahk);
+													}
+												
+												}
+												</tr>
+												tongcong_tc += tong_tc;
+												//tongcong_tuchon += tong_tc;
+												<tr> 
+													<td>
+														@stt
+													</td>
+													<td>
+														@dulieu_decuong.DeCuongchiTiet.mahp_decuong
+													</td>
+													<td>
+														@dulieu_decuong.DeCuongchiTiet.tenhp_tviet
+													</td>
+													<td>
+														@tong_tc
+													</td>
+													<td>
+														
+													</td>
+													<td>
+														@tong_tc
+													</td>
+													<td>
+														@tong_sotiet_lt
+													</td>
+													<td>
+														@tong_sotiet_th
+													</td>
+													
+													@if(@dulieu_decuong.DeCuongchiTiet.hp_tienquyet == "Không")
+													{
+														<td>
+														
+														</td>
+													}
+													else
+													{
+														<td>
+															@dulieu_decuong.DeCuongchiTiet.hp_tienquyet
+														</td>
+													}
+												</tr>
+											}
+											else
+											{
+												tongcong_tc += tong_tc;
+												@foreach (var dulieu_thoigianhoc in @ViewBag.listtgh)
+												{
+													if(dulieu_thoigianhoc.mahp == dulieu_decuong.DeCuongchiTiet.mahp && !list_check.Contains(dulieu_thoigianhoc.mahk))
+													{
+														int tranfer = int.Parse(dulieu_thoigianhoc.yeucauhocphan);
+														tongcong_tuchon += tranfer;
+														list_check.Add(dulieu_thoigianhoc.mahk);
+													}
+											
+												}
+												@* tongcong_tuchon += tong_tc; *@
+												<tr> 
+													<td>
+														@stt
+													</td>
+													<td>
+														@dulieu_decuong.DeCuongchiTiet.mahp_decuong
+													</td>
+													<td>
+														@dulieu_decuong.DeCuongchiTiet.tenhp_tviet
+													</td>
+													<td>
+														@tong_tc
+													</td>
+													<td>
+														
+													</td>
+													<td>
+														@tong_tc
+													</td>
+													
+													
+
+													<td>
+														@tong_sotiet_lt
+													</td>
+													<td>
+														@tong_sotiet_th
+													</td>
+													@* ket thuc *@
+													@if(@dulieu_decuong.DeCuongchiTiet.hp_tienquyet == "Không")
+													{
+														<td>
+														
+														</td>
+													}
+													else
+													{
+														<td>
+															@dulieu_decuong.DeCuongchiTiet.hp_tienquyet
+														</td>
+													}
+													
+												</tr>
+                                            
+											}	
                                 }
 
                             </tbody>
+							tongcong_tc = tongcong_bb + tongcong_tuchon;
                         }
                         <tr>
                             <td></td>

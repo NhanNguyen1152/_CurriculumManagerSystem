@@ -54,13 +54,16 @@
                                         <tr>
                                             @if(dulieu_decuong.DeCuongchiTiet.yeucau_hocphan != tuchon)
                                             {
-                                            
+                                                int tranfer = int.Parse(dulieu_decuong.yeucauhocphan);
                                                 tongtc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
-                                                temp_tong_tuchon = temp_tong_tuchon + tongtc;
+                                                temp_tong_tuchon += tranfer;
                                                 tuchon = dulieu_decuong.DeCuongchiTiet.yeucau_hocphan;
                                                 <tr>
-                                                    <td colspan="2">
+                                                    <td>
                                                         <b>Học phần tự chọn</b>
+                                                    </td>
+                                                    <td>
+                                                        <b>@dulieu_decuong.yeucauhocphan</b>
                                                     </td>
                                                 </tr>
                                                 <td style="padding-left: 30px;">
@@ -73,7 +76,7 @@
                                             else
                                             {
                                                 tongtc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
-                                                temp_tong_tuchon = temp_tong_tuchon + tongtc;
+                                                @* temp_tong_tuchon = temp_tong_tuchon + tongtc; *@
                                                 <td style="padding-left: 30px;">
                                                     <a asp-action="Extract" asp-controller="ExtractPDFs" asp-route-id="@dulieu_decuong.DeCuongchiTiet.mahp"> @dulieu_decuong.DeCuongchiTiet.tenhp_tviet </a> 
                                                 </td>
@@ -88,8 +91,8 @@
                                     }
                             </tbody>
                             <tr>
-                                <td style="background-color: #c63939; color: white;"><b>Tổng cộng</b></td>
-                                <td style="background-color: #c63939; color: white;">@tongcong</td>
+                                <td><b>Tổng cộng</b></td>
+                                <td><b>@tongcong</b></td>
                             </tr>
                         }
                     </thead>

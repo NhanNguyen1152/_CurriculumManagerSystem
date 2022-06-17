@@ -24,6 +24,9 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Pdf_ctdt_noidung_ctdt
        
         public async Task<IViewComponentResult> InvokeAsync(int id)
         {   
+            var listtgh = _context.Thoigianhocs.Include(t => t.Hockys).ToList();
+            ViewBag.listtgh = listtgh;
+            
             var result = await _context.Decuong_Chuongtrinhs.Where(m=> m.ma_ctdt == id).ToListAsync();
             return View<List<Decuong_Chuongtrinh>>(result);
         }

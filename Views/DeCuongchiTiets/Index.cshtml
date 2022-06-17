@@ -31,7 +31,10 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.sotc_th)
                                 </th>
-                                 <th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.yeucau_hocphan)
+                                </th>
+                                <th>
                                     @Html.DisplayNameFor(model => model.hp_tienquyet)
                                 </th>
                                 <th>
@@ -44,7 +47,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model)
+                            @foreach (var item in Model.OrderBy(d => d.tenhp_tviet))
                             {
                                 <tr>
                                     <td>
@@ -62,7 +65,10 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.sotc_th)
                                     </td>
-                                       <td>
+                                     <td>
+                                        @Html.DisplayFor(modelItem => item.yeucau_hocphan)
+                                    </td>
+                                    <td>
                                         @Html.DisplayFor(modelItem => item.hp_tienquyet)
                                     </td>
                                     <td>

@@ -31,8 +31,9 @@
             int tongcong_tuchon = 0;
             string tuchon = "";
             string luanvan = "Luận văn tốt nghiệp";
+            List<int> list_check = new List<int>();
         }
-
+       
         @foreach (var dulieu_kkt in ((List<Decuong_Chuongtrinh>)TempData["listData"]).GroupBy(x => x.DeCuongchiTiet.Khoikienthuc.kkt_ten))
         {
             tuchon = "";
@@ -44,8 +45,13 @@
                     @* tong_sotiet_lt = dulieu_decuong.DeCuongchiTiet.sotc_lt * 15;
                     tong_sotiet_th = dulieu_decuong.DeCuongchiTiet.sotc_th * 30; *@
                     tong_tc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
-                    tongcong_tc += tong_tc;
-                    tongcong_bb += tong_tc;
+                    
+                    if(dulieu_decuong.DeCuongchiTiet.yeucaukhacvoi_hocphan != "*")
+                    {
+                        tongcong_tc += tong_tc;
+                        tongcong_bb += tong_tc;
+                    }
+                    
                     <tr> 
                         <td>
                             @stt
@@ -78,12 +84,22 @@
                     {
                         tuchon = dulieu_decuong.DeCuongchiTiet.yeucau_hocphan;
                         <tr>
-                        <td colspan="9">
+                        <td colspan="6">
                             <b>Học phần tự chọn</b>
                         </td>
+                        @foreach (var dulieu_thoigianhoc in @ViewBag.listtgh)
+                        {
+                            if(dulieu_thoigianhoc.mahp == dulieu_decuong.DeCuongchiTiet.mahp && !list_check.Contains(dulieu_thoigianhoc.mahk))
+                            {
+                                int tranfer = int.Parse(dulieu_thoigianhoc.yeucauhocphan);
+                                tongcong_tuchon += tranfer;
+                                list_check.Add(dulieu_thoigianhoc.mahk);
+                            }
+                           
+                        }
                         </tr>
                         tongcong_tc += tong_tc;
-                        tongcong_tuchon += tong_tc;
+                        //tongcong_tuchon += tong_tc;
                         <tr> 
                             <td>
                                 @stt
@@ -108,7 +124,17 @@
                     else
                     {
                         tongcong_tc += tong_tc;
-                        tongcong_tuchon += tong_tc;
+                        @foreach (var dulieu_thoigianhoc in @ViewBag.listtgh)
+                        {
+                            if(dulieu_thoigianhoc.mahp == dulieu_decuong.DeCuongchiTiet.mahp && !list_check.Contains(dulieu_thoigianhoc.mahk))
+                            {
+                                int tranfer = int.Parse(dulieu_thoigianhoc.yeucauhocphan);
+                                tongcong_tuchon += tranfer;
+                                list_check.Add(dulieu_thoigianhoc.mahk);
+                            }
+                    
+                        }
+                        @* tongcong_tuchon += tong_tc; *@
                         <tr> 
                             <td>
                                 @stt

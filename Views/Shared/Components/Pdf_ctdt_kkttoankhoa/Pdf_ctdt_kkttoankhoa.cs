@@ -24,8 +24,8 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Pdf_ctdt_kkttoankhoa
 
         public async Task<IViewComponentResult> InvokeAsync(int id)
         {   
-            // var result = await _context.CLOPhuongphapdays.Include(c => c.Chuandaura_monhoc).Include(c => c.Phuongphap_Giangday).Where(m => m.Chuandaura_monhoc.mahp == HttpContext.Session.GetInt32("id_edit_dccht_after")).ToListAsync();
-            // return View<List<CLOPhuongphapday>>(result);
+            var listtgh = _context.Thoigianhocs.Include(t => t.Hockys).ToList();
+            ViewBag.listtgh = listtgh;
             var appDbContext = _context.Decuong_Chuongtrinhs.Include(d => d.DeCuongchiTiet).ThenInclude(d => d.Khoikienthuc).Where(d => d.ma_ctdt == id);
             TempData["listData"] = appDbContext.ToList();
             return View();

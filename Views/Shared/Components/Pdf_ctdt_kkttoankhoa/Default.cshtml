@@ -12,6 +12,7 @@
         string luanvan = "Luận văn tốt nghiệp";
         int sophantram = 0;
         int temp_tongcong = 0;
+        List<int> list_check = new List<int>();
     }
 <h2>7. Khối lượng kiến thức toàn khóa</h2>
 <div class="row clearfix">
@@ -24,45 +25,52 @@
                 @foreach (var dulieu_kkt in ((List<Decuong_Chuongtrinh>)TempData["listData"]).GroupBy(x =>
                     x.DeCuongchiTiet.Khoikienthuc.kkt_ten))
                     {
-                        stt = stt + 1;
                         temp *= 0;
-                            @foreach (var dulieu_decuong in ((List<Decuong_Chuongtrinh>)TempData["listData"]).Where(x =>
-                            x.DeCuongchiTiet.Khoikienthuc.kkt_ten == dulieu_kkt.Key))
+                        @foreach (var dulieu_decuong in ((List<Decuong_Chuongtrinh>)TempData["listData"]).Where(x =>
+                            x.DeCuongchiTiet.Khoikienthuc.kkt_ten == dulieu_kkt.Key && x.DeCuongchiTiet.yeucau_hocphan == "Bắt buộc"))
                             {
-                                
-                                tong_sotiet_lt = dulieu_decuong.DeCuongchiTiet.sotc_lt * 15;
-                                tong_sotiet_th = dulieu_decuong.DeCuongchiTiet.sotc_th * 30;
-                
-                                @if(dulieu_decuong.DeCuongchiTiet.tenhp_tviet.Contains(luanvan))
+                                tong_tc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
+                                if(dulieu_decuong.DeCuongchiTiet.yeucaukhacvoi_hocphan != "*")
+                                {
+                                    tongcong_tc += tong_tc;
+                                    tongcong_bb += tong_tc;
+                                }
+                            }
+                            @foreach (var dulieu_decuong in ((List<Decuong_Chuongtrinh>)TempData["listData"]).Where(x => x.DeCuongchiTiet.Khoikienthuc.kkt_ten == dulieu_kkt.Key 
+                                && x.DeCuongchiTiet.yeucau_hocphan == "Tự chọn"))
+                            {
+                                tong_tc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
+                                if(dulieu_decuong.DeCuongchiTiet.yeucau_hocphan != tuchon)
+                                {
+                                    tuchon = dulieu_decuong.DeCuongchiTiet.yeucau_hocphan;
+                                    
+                                    @foreach (var dulieu_thoigianhoc in @ViewBag.listtgh)
+                                    {
+                                        if(dulieu_thoigianhoc.mahp == dulieu_decuong.DeCuongchiTiet.mahp && !list_check.Contains(dulieu_thoigianhoc.mahk))
                                         {
-                                            
+                                            int tranfer = int.Parse(dulieu_thoigianhoc.yeucauhocphan);
+                                            tongcong_tuchon += tranfer;
+                                            list_check.Add(dulieu_thoigianhoc.mahk);
                                         }
-                                    else
-                                        { 
-                                            @if(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != null && dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != tuchon)
-                                                { 
-                                                    tongcong_tuchon += int.Parse(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota);
-                                                    tuchon = dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon;
-                                                    temp += int.Parse(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota);
-                                                }
-                                                tong_tc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
-                                            @if(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != null && dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota != null)
-                                                {  
-                                                    tuchon = dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon;
-                                                    if(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != tuchon)
-                                                    {
-                                                        temp += tong_tc;
-                                                    }
-                                                }
-                                            else
-                                                {
-                                                    tongcong_bb += tong_tc;
-                                                    temp += tong_tc;
-                                                }												
-                                        } 
-                                tongcong_tc = tongcong_bb + tongcong_tuchon;
-                            }     
-                                temp_tongcong = tongcong_tc;
+                                    }
+                                    tongcong_tc += tong_tc;
+                                }
+                                else
+                                {
+                                    tongcong_tc += tong_tc;
+                                    @foreach (var dulieu_thoigianhoc in @ViewBag.listtgh)
+                                    {
+                                        if(dulieu_thoigianhoc.mahp == dulieu_decuong.DeCuongchiTiet.mahp && !list_check.Contains(dulieu_thoigianhoc.mahk))
+                                        {
+                                            int tranfer = int.Parse(dulieu_thoigianhoc.yeucauhocphan);
+                                            tongcong_tuchon += tranfer;
+                                            list_check.Add(dulieu_thoigianhoc.mahk);
+                                        }
+                                    }
+                                }
+                            } 
+                            tongcong_tc = tongcong_bb + tongcong_tuchon;
+                            temp_tongcong = tongcong_tc;
                         }
             <div class="body">
                 <div class="table-responsive">
@@ -84,8 +92,7 @@
                         </thead>
                        
                         <tbody style="text-align: center;">
-                        @foreach (var dulieu_kkt in ((List<Decuong_Chuongtrinh>)TempData["listData"]).GroupBy(x =>
-                        x.DeCuongchiTiet.Khoikienthuc.kkt_ten))
+                        @foreach (var dulieu_kkt in ((List<Decuong_Chuongtrinh>)TempData["listData"]).GroupBy(x => x.DeCuongchiTiet.Khoikienthuc.kkt_ten))
                         {
                             stt = stt + 1;
                             temp *= 0;
@@ -93,44 +100,52 @@
                                 <td>@stt</td>
                                 <td>@dulieu_kkt.Key</td>
                                 @foreach (var dulieu_decuong in ((List<Decuong_Chuongtrinh>)TempData["listData"]).Where(x =>
-                               x.DeCuongchiTiet.Khoikienthuc.kkt_ten == dulieu_kkt.Key))
+                                x.DeCuongchiTiet.Khoikienthuc.kkt_ten == dulieu_kkt.Key && x.DeCuongchiTiet.yeucau_hocphan == "Bắt buộc"))
                                 {
-                                    
-                                    tong_sotiet_lt = dulieu_decuong.DeCuongchiTiet.sotc_lt * 15;
-                                    tong_sotiet_th = dulieu_decuong.DeCuongchiTiet.sotc_th * 30;
-                 
-                                    @if(dulieu_decuong.DeCuongchiTiet.tenhp_tviet.Contains(luanvan))
-                                            {
-                                                
-                                            }
-                                        else
-                                            { 
-                                               @if(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != null && dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != tuchon)
-													{ 
-														tongcong_tuchon += int.Parse(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota);
-														tuchon = dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon;
-                                                        temp += int.Parse(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota);
-													}
-                                                    tong_tc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
-                                                @if(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != null && dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_mota != null)
-                                                    {  
-                                                        tuchon = dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon;
-                                                        if(dulieu_decuong.DeCuongchiTiet.Khoikienthuc.kkt_tuchon != tuchon)
-                                                        {
-                                                            temp += tong_tc;
-                                                        }
-                                                    }
-                                                else
-                                                    {
-                                                        tongcong_bb += tong_tc;
-                                                        temp += tong_tc;
-                                                    }												
-                                            } 
-                                    tongcong_tc = tongcong_bb + tongcong_tuchon;
-                                    
+                                    tong_tc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
+                                    if(dulieu_decuong.DeCuongchiTiet.yeucaukhacvoi_hocphan != "*")
+                                    {
+                                        temp += tong_tc;
+                                    }
                                 }
+                                @foreach (var dulieu_decuong in ((List<Decuong_Chuongtrinh>)TempData["listData"]).Where(x => x.DeCuongchiTiet.Khoikienthuc.kkt_ten == dulieu_kkt.Key 
+                                    && x.DeCuongchiTiet.yeucau_hocphan == "Tự chọn"))
+                                {
+                                    tong_tc = dulieu_decuong.DeCuongchiTiet.sotc_lt + dulieu_decuong.DeCuongchiTiet.sotc_th;
+                                    if(dulieu_decuong.DeCuongchiTiet.yeucau_hocphan != tuchon)
+                                    {
+                                        tongcong_tc += tong_tc;
+                                       
+                                        @foreach (var dulieu_thoigianhoc in @ViewBag.listtgh)
+                                        {
+                                            if(dulieu_thoigianhoc.mahp == dulieu_decuong.DeCuongchiTiet.mahp && !list_check.Contains(dulieu_thoigianhoc.mahk))
+                                            {
+                                                int tranfer = int.Parse(dulieu_thoigianhoc.yeucauhocphan);
+                                                tongcong_tuchon += tranfer;
+                                                list_check.Add(dulieu_thoigianhoc.mahk);
+                                            }
+                                        } 
+                                        temp += tong_tc;
+                                    }
+                                    else
+                                    {
+                                        tongcong_tc += tong_tc;
+                                       
+                                        @foreach (var dulieu_thoigianhoc in @ViewBag.listtgh)
+                                        {
+                                            if(dulieu_thoigianhoc.mahp == dulieu_decuong.DeCuongchiTiet.mahp && !list_check.Contains(dulieu_thoigianhoc.mahk))
+                                            {
+                                                int tranfer = int.Parse(dulieu_thoigianhoc.yeucauhocphan);
+                                                tongcong_tuchon += tranfer;
+                                                list_check.Add(dulieu_thoigianhoc.mahk);
+                                            }
+                                        }
+                                         temp += tong_tc;
+                                    }
+                                }
+                                
                                 @{
-                                    //bi dung cho nay
+                                    
                                     sophantram = (temp * 100) / temp_tongcong;
                                 }
                                 

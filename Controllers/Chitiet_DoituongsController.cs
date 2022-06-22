@@ -66,8 +66,6 @@ namespace _CurriculumManagerSystem.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ma_ctdt"] = new SelectList(_context.Chuongtrinh_Daotaos, "ma_ctdt", "ma_ctdt", chitiet_Doituong.ma_ctdt);
-            ViewData["ma_dtts"] = new SelectList(_context.Doituong_Tuyensinhs, "ma_dtts", "ma_dtts", chitiet_Doituong.ma_dtts);
             return View(chitiet_Doituong);
         }
 

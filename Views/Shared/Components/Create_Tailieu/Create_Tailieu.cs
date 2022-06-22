@@ -21,35 +21,11 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Create_Tailieu
             _context = context;
         }
 
-        // [Route("DeCuongchiTiets/Create/{id:int}")]
-        // public async Task<IViewComponentResult> InvokeAsync(int? id)
-        // { 
-        //     // if (id == null)
-        //     // {                     
-        //     //     return View();
-        //     // }
-
-        //     // var muctieu = await _context.Muctieus.FindAsync(id);
-        //     // if (muctieu == null)
-        //     // {
-        //     //     return View();
-        //     // }
-        //     return View();
-        // }
-
-         public async Task<IViewComponentResult> InvokeAsync(int? id)
+         public async Task<IViewComponentResult> InvokeAsync(int matailieu)
         { 
-             if (id == null)
-            {                     
-                return View();
-            }
-
-            var muctieu = await _context.Muctieus.FindAsync(id);
-            if (muctieu == null)
-            {
-                return View();
-            }
-            return View();
+            // HttpContext.Session.SetInt32("id_create_tl", id );
+            var tailieu = await _context.Tailieus.FindAsync(matailieu);
+            return View(tailieu);
         }
     }
 }

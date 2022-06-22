@@ -25,7 +25,7 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Get_Tailieu
         
         // [HttpGet, ActionName("getmt"), Route("DeCuongchiTiets/Create/{id:int}")]
        
-        public async Task<IViewComponentResult> InvokeAsync(int? id)
+        public async Task<IViewComponentResult> InvokeAsync()
         {   
            
             if(ViewData["Title"] == "Create")

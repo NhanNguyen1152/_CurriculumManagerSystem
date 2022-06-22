@@ -2,10 +2,10 @@
 @using Microsoft.AspNetCore.Http;
 @using System.Data;
 <div class="body">
-    <form class="form-horizontal" asp-action="CreateThoigianhoc">
-        @if(@Context.Session.GetInt32("id_edit_Thoigianhoc") != null)
+    <form class="form-horizontal" asp-action="EditThoigianhoc">
+        @if(@Context.Session.GetInt32("MaThoigianhoc") != null)
         {
-            <input type="hidden" value=@Context.Session.GetInt32("id_edit_Thoigianhoc") asp-for="matg" />
+            <input type="hidden" value=@Context.Session.GetInt32("MaThoigianhoc") asp-for="matg" />
         }
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="row clearfix">

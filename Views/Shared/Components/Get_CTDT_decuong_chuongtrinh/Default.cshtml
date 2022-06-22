@@ -34,8 +34,17 @@
                     </td>
                   
                     <td>
-                        <a class="material-icons" data-type="confirm" asp-controller="Chuongtrinh_Daotaos"
+                        @if (ViewData["Title"] == "Create")
+                        {
+                            <a class="material-icons" data-type="confirm" asp-controller="Chuongtrinh_Daotaos"
                         asp-action="DeleteCTDT_decuong" asp-route-id="@item.ma_dc_ct" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        }
+                        else
+                        {
+                           <a class="material-icons" data-type="confirm" asp-controller="Chuongtrinh_Daotaos"
+                        asp-action="DeleteCTDT_decuong_edit" asp-route-id="@item.ma_dc_ct" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        }
+                        
                     </td>
 
                 </tr>

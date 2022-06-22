@@ -21,20 +21,12 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Edit_Chuandauramonhoc
             _context = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(int id)
+        public async Task<IViewComponentResult> InvokeAsync(int machuandaura)
         { 
-            HttpContext.Session.SetInt32("id_edit_cdrmh", id );
-            if (id == null)
-            {                     
-                return View();
-            }
 
-            var muctieu = await _context.Chuandaura_Monhocs.FindAsync(id);
-            if (muctieu == null)
-            {
-                return View();
-            }
-            return View(muctieu);
+            var chuandaura = await _context.Chuandaura_Monhocs.FindAsync(machuandaura);
+     
+            return View(chuandaura);
         }
     }
 }

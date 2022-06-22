@@ -4,10 +4,11 @@
 <div class="body">
     <form class="form-horizontal" asp-action="CreateChitietmonhoc">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        @if (@Context.Session.GetInt32("idChitietmonhoc") != null)
+        @if (@Context.Session.GetInt32("MaChitietmonhoc") != null)
         {
-            <input type="hidden" value=@Context.Session.GetInt32("idChitietmonhoc") asp-for="mact" />
+            <input type="hidden" value=@Context.Session.GetInt32("MaChitietmonhoc") asp-for="mact" />
         }
+        @* <input type="hidden" asp-for="mact" /> *@
         <input hidden required asp-for="mahp" value=@Context.Session.GetInt32("idDecuong")>
         <div class="row clearfix">
             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">

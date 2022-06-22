@@ -22,18 +22,10 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.EditMucTieu
         }
 
         // [Route("DeCuongchiTiets/Create/{id:int}")]
-        public async Task<IViewComponentResult> InvokeAsync(int? id)
-        { 
-            if (id == null)
-            {                     
-                return View();
-            }
+        public async Task<IViewComponentResult> InvokeAsync(int mamuctieu)
+        {
 
-            var muctieu = await _context.Muctieus.FindAsync(id);
-            if (muctieu == null)
-            {
-                return View();
-            }
+            var muctieu = await _context.Muctieus.FindAsync(mamuctieu);
             return View(muctieu);
         }
     }

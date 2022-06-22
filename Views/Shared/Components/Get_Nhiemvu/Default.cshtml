@@ -30,8 +30,17 @@
                             @item.NhiemvuSV.noidung
                         </td>
                         <td>
-                            <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
-                        asp-action="DeleteNhiemvu" asp-route-id="@item.dcnv_id" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                             @if (ViewData["Title"] == "Create")
+                        {
+                          <a class="material-icons" data-type="confirm" asp-action="DeleteNhiemvu" 
+                          asp-route-id="@item.dcnv_id" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        }
+                        else
+                        {
+                            <a class="material-icons" data-type="confirm" 
+                            asp-action="DeleteNhiemvuEdit" asp-route-id="@item.dcnv_id" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        }
+                            
                         </td>
 
                     </tr>

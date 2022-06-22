@@ -22,9 +22,10 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Create_CTDT_plo_mucti
         {
             _context = context;
         }
-        public async Task<IViewComponentResult> InvokeAsync(int id)
+        public async Task<IViewComponentResult> InvokeAsync(int moiquanhe_plo_mt)
         { 
-            return View();
+              var moiquanhePLO_Muctieudaotao = await _context.MoiquanhePLO_Muctieudaotaos.FindAsync(moiquanhe_plo_mt);
+            return View(moiquanhePLO_Muctieudaotao);
         }
     }
 }

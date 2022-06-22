@@ -47,7 +47,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Bomons/Create
         public IActionResult Create()
         {
-            ViewData["makh"] = new SelectList(_context.Khoas, "makh", "makh");
+            ViewData["makh"] = new SelectList(_context.Khoas, "makh", "tenkh");
             return View();
         }
 

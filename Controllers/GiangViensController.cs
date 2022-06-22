@@ -47,7 +47,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: GiangViens/Create
         public IActionResult Create()
         {
-            ViewData["mabm"] = new SelectList(_context.Bomons, "mabm", "mabm");
+            ViewData["mabm"] = new SelectList(_context.Bomons, "mabm", "tenbm");
             return View();
         }
 

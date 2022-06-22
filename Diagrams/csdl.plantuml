@@ -1,0 +1,354 @@
+@startuml
+skinparam linetype ortho
+entity DeCuongchiTiet{
+    + mahp: int [PK] <<generated>>
+    --
+    * mahp_decuong: string
+    * tenhp_tviet: string
+    * tenhp_tanh: string
+    * sotc_lt: int
+    * sotc_th: int
+    * hp_tienquyet: string
+    * yeucau_hocphan: string
+    * yeucaukhacvoi_voihocphan: string
+    * tomtat_noidunghocphan: string
+    --
+    * ma_kkt: int [FK]
+}
+
+entity Thoigianhoc{
+    + matg: int [PK] <<generated>>
+    --
+    * yeucauhocphan: string
+    --
+    * mahp: int [FK]
+    * mahk: int [FK]
+    * makh: int [FK]
+}
+
+entity Hocky{
+    + mahk: int [PK] <<generated>>
+    --
+    * tenhk: string
+}
+
+entity Khoahoc{
+    + makh: int [PK] <<generated>>
+    --
+    * tenkh: string
+    * nienkhoa: string
+}
+
+entity GiangVien{
+    + magv: int [PK] <<generated>>
+    --
+    * hoten: string
+    * chucdanh: string
+    * hocham: string
+    * hocvi: string
+    * diachilienhe: string
+    * vaitro: string
+    --
+    * mabm: int [FK]
+
+}
+entity Phutrach{
+    + mapt: int [PK] <<generated>>
+    --
+    * vaitro: string
+    --
+    * mahp: int [FK]
+    * magv: int [FK]
+}
+
+entity Bomon{
+    + mabm: int [PK] <<generated>>
+    --
+    * tenbm: string
+    --
+    * makh: int [FK]
+}
+
+entity Khoa{
+    + makh: int [PK] <<generated>>
+    --
+    * tenkh: string
+    --
+    * makh: int [FK]
+}
+
+entity Muctieu{
+    + mamt: int [PK] <<generated>>
+    --
+    * noidung: string
+    * mtchinh: string
+    * mtphu: string
+    --
+    * mahp: int [FK]
+}
+
+entity Chuandaura_monhoc{
+    + macdrmon: int [PK] <<generated>>
+    --
+    * chisoclo: int
+    * noidung: string
+    * loai: string
+    --
+    * mahp: int [FK]
+}
+
+entity PLO{
+    + maplo: int [PK] <<generated>>
+    --
+    * tenloai_plo
+    * chitietten_plo
+    * chisoplo: string
+    * noidung: string
+}
+
+entity CLPO{
+    + maclpo: int [PK] <<generated>>
+    --
+    * ngayupdate: datetime
+    --
+    * macdmon: int [FK]
+    * maplo: int [FK]
+}
+
+entity Chitietmonhoc{
+    + mact: int [PK] <<generated>>
+    --
+    * chiso: int
+    * tenchuong: string
+    * tietlt: int
+    * tietth: int
+    --
+    * mahp: int [FK]
+}
+
+entity Chitiet_Chuong{
+    + mactchuong: int [PK] <<generated>>
+    --
+    * chiso: int
+    * tentieumuc: string
+    * tuanhoc: int
+    * thoiluonghoc:double
+    * thoiluonghoc_thuchanh:double
+    --
+    * mact: int [FK]
+}
+
+entity Phuongphap_Giangday{
+    + mappday: int [PK] <<generated>>
+    --
+    * tenpp: string
+}
+
+entity CLOPhuongphapday{
+    + macloppday: int [PK] <<generated>>
+    --
+    * mucdo: string
+    --
+    * mappday: int [FK]
+    * macdmon: int [FK]
+}
+
+entity Phuongphap_hoc{
+    + mapphoc: int [PK] <<generated>>
+    --
+    * tenpp: string
+}
+
+entity CLOPhuongphaphoc{
+    + maclopphoc: int [PK] <<generated>>
+    --
+    * mucdo:  string
+    --
+    * mapphoc: int [FK]
+    * macdmon: int [FK]
+}
+
+entity Quydinh_Kiemtra{
+    + maqd: int [PK] <<generated>>
+    --
+    * tenqd: string
+}
+
+entity Hinhthuc_Danhgia{
+    + mahtdg: int [PK] <<generated>>
+    --
+    * thanhphan_danhgia: string
+    * hinhthuc: string
+    * trongso: int
+}
+
+entity NhiemvuSV{
+    + manv: int [PK] <<generated>>
+    --
+    * noidung: string
+}
+
+entity Tailieu{
+    + matl: int [PK] <<generated>>
+    --
+    * taccgia: string
+    * tentailieu: string
+    * thongtinkhac: string
+    * loaitl: string
+}
+ 
+entity Khoikienthuc{
+    + makkt: int [PK] <<generated>>
+    --
+    * kkt_ten: string
+    * kkt_tuchon: string
+    * kkt_mota: string
+}
+ 
+entity Quytrinhdaotao_Dieukientotnghiep{
+    + ma_qt_dktn: int [PK] <<generated>>
+    --
+    * noi_dung: string
+}
+entity Muctieu_Daotao{
+    + ma_mtdt: int [PK] <<generated>>
+    --
+    * noi_dung: string
+    * mtdt_chinh: string
+    * mtdt_phu: string
+}
+entity MoiquanhePLO_Muctieudaotao{
+    + ma_plo_mtdt: int [PK] <<generated>>
+    --
+    * ngay_update : date
+    --
+    * maplo: int [FK]
+    * ma_mtdt: int [FK]
+}
+entity Doituong_Tuyensinh{
+    + ma_dtts : int [PK] <<generated>>
+    --
+    * noi_dung : string
+}
+
+entity Chuongtrinh_daotao{
+    + ma_ctdt: int [PK] <<generated>>
+    --
+    * nganh_daotao: 
+    * trinhdo_daotao: string
+    * loaihinh_daotao: string
+    * thoigian_daotao: string
+    * tenvanbang: string
+    * noidaotao: string
+}
+
+entity Decuong_Chuongtrinh{
+    + ma_dc_ct: int [PK] <<generated>>
+    --
+    --
+    * mahp: int [FK]
+    * ma_ctdt: int [FK]
+}
+
+entity Chitiet_Doituong{
+    + ma_ct_dt: int [PK] <<generated>>
+    --
+    --
+    * ma_ctdt: int [FK]
+    * ma_dtts: int [FK]
+}
+
+entity CTDT_Muctieudaotao{
+    + ma_ctdt_mtdt: int [PK] <<generated>>
+    --
+    --
+    * ma_ctdt: int [FK]
+    * ma_mtdt: int [FK]
+}
+
+entity Decuong_Quytrinh{
+    + dcht_id: int [PK] <<generated>>
+    --
+    --
+    * ma_ctdt: int [FK]
+    * ma_qt_dktn: int [FK]
+}
+
+entity Decuong_Chuongtrinh{
+    + ma_dc_ct: int [PK] <<generated>>
+    --
+    --
+    * mahp: int [FK]
+    * ma_ctdt: int [FK]
+}
+
+entity DeCuong_QuyDinh{
+    + dcqd_id: int [PK] <<generated>>
+    --
+    --
+    * mahp: int [FK]
+    * maqd: int [FK]
+}
+
+entity Decuong_Hinhthuc{
+    + dcht_id: int [PK] <<generated>>
+    --
+    --
+    * mahp: int [FK]
+    * mahtdg: int [FK]
+}
+
+entity Decuong_Nhiemvu{
+    + dcnv_id: int [PK] <<generated>>
+    --
+    --
+    * mahp: int [FK]
+    * manv: int [FK]
+}
+
+entity Decuong_Tailieu{
+    + dctl_id: int [PK] <<generated>>
+    --
+    --
+    * mahp: int [FK]
+    * matl: int [FK]
+}
+
+Khoikienthuc ||--|{ DeCuongchiTiet
+DeCuongchiTiet ||--|{ Muctieu
+DeCuongchiTiet ||--|{ Chitietmonhoc
+DeCuongchiTiet ||---|{ Decuong_Chuongtrinh
+DeCuongchiTiet ||--|{ Chuandaura_monhoc 
+DeCuongchiTiet ||--|{ Thoigianhoc
+DeCuongchiTiet ||--|{ Phutrach
+DeCuongchiTiet ||---|{ DeCuong_QuyDinh
+DeCuongchiTiet ||--|{ Decuong_Hinhthuc
+DeCuongchiTiet ||--|{ Decuong_Nhiemvu
+DeCuongchiTiet ||---|{ Decuong_Tailieu
+Hocky ||--|{ Thoigianhoc
+Chitietmonhoc ||--|{ Chitiet_Chuong
+Khoahoc ||--|{ Thoigianhoc
+Khoa ||--|{ Bomon
+Bomon ||--|{ GiangVien
+GiangVien ||--|{ Phutrach
+PLO ||--|{ CLPO
+Quydinh_Kiemtra ||--|{ DeCuong_QuyDinh
+Hinhthuc_Danhgia ||--|{ Decuong_Hinhthuc
+NhiemvuSV ||--|{ Decuong_Nhiemvu
+Tailieu ||---|{ Decuong_Tailieu
+Phuongphap_hoc ||--|{ CLOPhuongphaphoc
+Phuongphap_Giangday ||--|{ CLOPhuongphapday
+Chuongtrinh_daotao ||--|{ Decuong_Chuongtrinh
+Chuongtrinh_daotao ||---|{ Chitiet_Doituong
+Chuongtrinh_daotao ||--|{ CTDT_Muctieudaotao
+Chuongtrinh_daotao ||---|{ Decuong_Quytrinh
+Chuandaura_monhoc ||--|{ CLPO
+Chuandaura_monhoc ||---|{ CLOPhuongphaphoc
+Chuandaura_monhoc ||--|{ CLOPhuongphapday
+Doituong_Tuyensinh ||--|{ Chitiet_Doituong
+Muctieu_Daotao ||--|{ CTDT_Muctieudaotao 
+Quytrinhdaotao_Dieukientotnghiep ||-|{ Decuong_Quytrinh
+Muctieu_Daotao ||--|{ MoiquanhePLO_Muctieudaotao
+PLO ||---|{ MoiquanhePLO_Muctieudaotao
+
+@enduml

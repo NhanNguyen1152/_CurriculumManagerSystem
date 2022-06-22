@@ -7,6 +7,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
+                    <th>STT</th>
                     <th>
                         Tên tài liệu
                     </th>
@@ -46,20 +47,22 @@
                             @item.Tailieu.thongtinkhac
                             @* @Html.DisplayFor(modelItem => item.mtphu) *@
                         </td>
-                     
                             <td>
                              @if (ViewData["Title"] == "Create")
                         {
                             <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Create"
-                        asp-route-id="@item.matl">mode_edit</a>
+                        asp-route-matailieu="@item.matl">mode_edit</a>
+                        <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
+                        asp-action="DeleteTailieu" asp-route-id="@item.matl" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
                         }
                         else
                         {
                             <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Edit"
-                        asp-route-id="@item.matl">mode_edit</a>
-                        }
+                        asp-route-matailieu="@item.matl">mode_edit</a>
                         <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
-                        asp-action="DeleteTailieu" asp-route-id="@item.matl" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        asp-action="DeleteTailieuEdit" asp-route-id="@item.matl" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        }
+                        
                     </td>
                       
        

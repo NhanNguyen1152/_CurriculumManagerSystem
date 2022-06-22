@@ -3,14 +3,14 @@
 @using System.Data;
 <div class="body">
     <form class="form-horizontal" asp-action="CreateThoigianhoc">
-        @if(@Context.Session.GetInt32("idThoigianhoc") != null)
+        @if(@Context.Session.GetInt32("MaThoigianhoc") != null)
         {
-            <input type="hidden" value=@Context.Session.GetInt32("idThoigianhoc") asp-for="matg" />
+            <input type="hidden" value=@Context.Session.GetInt32("MaThoigianhoc") asp-for="matg" />
         }
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="row clearfix">
             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                <label asp-for="yeucauhocphan">Yêu cầu học phần <span class="text-danger">*</span></label>
+                <label asp-for="yeucauhocphan">Số tín chỉ tự chọn học kỳ <span class="text-danger"></span></label>
             </div>
             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                 <div class="form-group">

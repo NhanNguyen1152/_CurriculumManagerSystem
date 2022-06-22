@@ -57,7 +57,7 @@
             }
         }
 }
-<h2>2.3. Yêu cầu về năng lực tự chủ và trách nhiệm</h2>
+<h2>2.2. Yêu cầu về năng lực tự chủ và trách nhiệm</h2>
 @foreach (var plo_item in ViewBag.listplo)
 {
     bool flag = false ;
@@ -84,15 +84,17 @@
 </p>
 <h2>Bảng 1. Mối quan hệ giữa chuẩn đầu ra và mục tiêu</h2>
 <p>(Xem diễn giải nội dung từ MT1 đến MT7 trong phần mục tiêu đào tạo bên trên)</p>
-<table cellspacing="0" cellpadding="5" style="text-align:center;border-style: solid;">
+<table cellspacing="0" cellpadding="5" style="text-align:center;border-style: solid;border-bottom: 2px solid; color: black;">
     <thead>
         <tr>
-            <td>Chuẩn đầu ra</td>
+            <td style="border-top: 2px solid black;text-align: center;border-bottom: 2px solid black">Chuẩn đầu ra</td>
             @foreach (var muctieu in ViewBag.listmuctieudaotao)
             {
                 @if (muctieu.mtdt_chiso != null)
                 {
-                    <td>@muctieu.mtdt_chiso</td>
+                    string str2 = (muctieu.mtdt_chiso).Substring(11);
+                    <td style="border-top: 2px solid black;text-align: center;border-bottom: 2px solid black">
+                        @str2</td>
                 }
 
             }

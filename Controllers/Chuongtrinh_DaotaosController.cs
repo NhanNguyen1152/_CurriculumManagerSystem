@@ -52,13 +52,14 @@ namespace _CurriculumManagerSystem.Controllers
         }
 
         // GET: Chuongtrinh_Daotaos/Create
-        public IActionResult Create()
+        public IActionResult Create(int moiquanhe_plo_mt)
         {
-            
+            HttpContext.Session.SetInt32("Mamoiquanhe_plo_mt",moiquanhe_plo_mt);
             ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "tenhp_tviet");
             ViewData["ma_mtdt"] = new SelectList(_context.CTDT_Muctieudaotaos.Include(m=> m.Muctieu_Daotao).Where(m=> m.ma_ctdt ==  HttpContext.Session.GetInt32("id_ctdt_ss_create")), "ma_mtdt", "Muctieu_Daotao.mtdt_chiso");
             ViewData["maplo"] = new SelectList(_context.PLOs, "maplo", "chisoplo");
             ViewData["ma_dtts"] = new SelectList(_context.Doituong_Tuyensinhs, "ma_dtts", "noi_dung_dtts");
+
             return View();
         }
 
@@ -74,6 +75,7 @@ namespace _CurriculumManagerSystem.Controllers
                 _context.Add(chuongtrinh_Daotao);
                 await _context.SaveChangesAsync();
                 HttpContext.Session.SetInt32("id_ctdt_ss_create", chuongtrinh_Daotao.ma_ctdt);
+                 HttpContext.Session.SetString("Name_ctdt", chuongtrinh_Daotao.nganh_daotao);
                 TempData["id_ctdt_tmp_create"] = chuongtrinh_Daotao.ma_ctdt;
                 return RedirectToAction("Create");
             }
@@ -196,9 +198,21 @@ namespace _CurriculumManagerSystem.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Edit");
             }
-            // ViewData["ma_ctdt"] = new SelectList(_context.Chuongtrinh_Daotaos, "ma_ctdt", "ma_ctdt", decuong_Chuongtrinh.ma_ctdt);
-            // ViewData["mahp"] = new SelectList(_context.DeCuongchiTiets, "mahp", "mahp_decuong", decuong_Chuongtrinh.mahp);
             return View();
+        }
+        public async Task<IActionResult> DeleteCTDT_decuong(int id)
+        {
+            var decuong_Chuongtrinh = await _context.Decuong_Chuongtrinhs.FindAsync(id);
+            _context.Decuong_Chuongtrinhs.Remove(decuong_Chuongtrinh);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Create));
+        }
+        public async Task<IActionResult> DeleteCTDT_decuong_edit(int id)
+        {
+            var decuong_Chuongtrinh = await _context.Decuong_Chuongtrinhs.FindAsync(id);
+            _context.Decuong_Chuongtrinhs.Remove(decuong_Chuongtrinh);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Edit));
         }
         
          public async Task<IActionResult> createListQT(int[] arrayDCQT)
@@ -237,6 +251,35 @@ namespace _CurriculumManagerSystem.Controllers
             }
             return View();
         }
+        public async Task<IActionResult> DeleteCTDT_quydinh(int id)
+        {
+            var decuong_Quytrinh = await _context.Decuong_Quytrinhs.FindAsync(id);
+            _context.Decuong_Quytrinhs.Remove(decuong_Quytrinh);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Create));
+        }
+        public async Task<IActionResult> DeleteCTDT_quydinh_edit(int id)
+        {
+            var decuong_Quytrinh = await _context.Decuong_Quytrinhs.FindAsync(id);
+            _context.Decuong_Quytrinhs.Remove(decuong_Quytrinh);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Edit));
+        }
+
+        public async Task<IActionResult> DeleteCTDT_muctieu(int id)
+        {
+            var cTDT_Muctieudaotao = await _context.CTDT_Muctieudaotaos.FindAsync(id);
+            _context.CTDT_Muctieudaotaos.Remove(cTDT_Muctieudaotao);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Create));
+        }
+        public async Task<IActionResult> DeleteCTDT_muctieu_edit(int id)
+        {
+            var cTDT_Muctieudaotao = await _context.CTDT_Muctieudaotaos.FindAsync(id);
+            _context.CTDT_Muctieudaotaos.Remove(cTDT_Muctieudaotao);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Edit));
+        }
         //CreatePLO-Muctieudaotao
         public async Task<IActionResult> CreatePLO_Muctieudaotao([Bind("ma_plo_mtdt,ngay_update,maplo,ma_mtdt")] MoiquanhePLO_Muctieudaotao moiquanhePLO_Muctieudaotao)
         {
@@ -257,6 +300,21 @@ namespace _CurriculumManagerSystem.Controllers
                 return RedirectToAction("Edit");
             }
             return View();
+        }
+        //delete
+        public async Task<IActionResult> DeleteCTDT_moiquanhe(int id)
+        {
+            var moiquanhePLO_Muctieudaotao = await _context.MoiquanhePLO_Muctieudaotaos.FindAsync(id);
+            _context.MoiquanhePLO_Muctieudaotaos.Remove(moiquanhePLO_Muctieudaotao);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Create));
+        }
+        public async Task<IActionResult> DeleteCTDT_moiquanhe_edit(int id)
+        {
+            var moiquanhePLO_Muctieudaotao = await _context.MoiquanhePLO_Muctieudaotaos.FindAsync(id);
+            _context.MoiquanhePLO_Muctieudaotaos.Remove(moiquanhePLO_Muctieudaotao);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Edit));
         }
         //createListMT
          public async Task<IActionResult> createListMT(int[] arrayDCMT)
@@ -296,6 +354,55 @@ namespace _CurriculumManagerSystem.Controllers
             return View();
         }
         //createdoituong
-         
+        public async Task<IActionResult> CreateListTS(int[] arrayTS)
+        {
+            if (ModelState.IsValid)
+            {
+                foreach(var item in arrayTS)
+                {
+                    
+                    var TS = new Chitiet_Doituong();
+                    TS.ma_ctdt = (int)TempData["id_ctdt_tmp_create"];
+                    TS.ma_dtts = item; 
+                    _context.Add(TS); 
+                    await _context.SaveChangesAsync();
+                }
+                
+                    return RedirectToAction("Create");  
+            }
+            return View();
+        }
+        public async Task<IActionResult> EditListTS(int[] arrayTS)
+        {
+            if (ModelState.IsValid)
+            {
+                foreach(var item in arrayTS)
+                {
+                    
+                    var TS = new Chitiet_Doituong();
+                    TS.ma_ctdt = (int)TempData["id_edit_ctdt_after"];
+                    TS.ma_dtts = item; 
+                    _context.Add(TS); 
+                    await _context.SaveChangesAsync();
+                }
+                
+                    return RedirectToAction("Edit");  
+            }
+            return View();
+        }
+        public async Task<IActionResult> DeleteCTDT_doituongtuyensinh(int id)
+        {
+            var doituong_Tuyensinh = await _context.Chitiet_Doituongs.FindAsync(id);
+            _context.Chitiet_Doituongs.Remove(doituong_Tuyensinh);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Create));
+        }
+        public async Task<IActionResult> DeleteCTDT_doituongtuyensinh_edit(int id)
+        {
+            var doituong_Tuyensinh = await _context.Chitiet_Doituongs.FindAsync(id);
+            _context.Chitiet_Doituongs.Remove(doituong_Tuyensinh);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Edit));
+        }
     }
 }

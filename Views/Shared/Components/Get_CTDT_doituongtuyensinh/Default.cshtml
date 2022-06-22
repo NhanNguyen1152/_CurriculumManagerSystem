@@ -1,0 +1,47 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.Chitiet_Doituong>
+@{
+    var i = 0;
+}
+<div class="body table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    STT
+                </th>
+                <th>
+                    Nội dung
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                i++;
+                <tr>
+                    <td>
+                        @i
+                    </td>
+                    <td>
+                        @item.Doituong_Tuyensinh.noi_dung_dtts
+                    </td>
+                    <td>
+                        @if (ViewData["Title"] == "Create")
+                        {
+                            <a class="material-icons" data-type="confirm" asp-controller="Chuongtrinh_Daotaos"
+                        asp-action="DeleteCTDT_doituongtuyensinh" asp-route-id="@item.ma_ct_dt" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        }
+                        else
+                        {
+                           <a class="material-icons" data-type="confirm" asp-controller="Chuongtrinh_Daotaos"
+                        asp-action="DeleteCTDT_doituongtuyensinh" asp-route-id="@item.ma_ct_dt" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        }
+                        
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

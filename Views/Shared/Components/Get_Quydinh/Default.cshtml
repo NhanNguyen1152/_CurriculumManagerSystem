@@ -30,8 +30,17 @@
                         </td>
                         
                      <td>
-                            <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
+                        @if (ViewData["Title"] == "Create")
+                        {
+                           <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
                         asp-action="DeleteQuydinh" asp-route-id="@item.dcqd_id" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        }
+                        else
+                        {
+                       <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
+                        asp-action="DeleteQuydinhEdit" asp-route-id="@item.dcqd_id" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        }
+                            
                         </td>
        
                     </tr>

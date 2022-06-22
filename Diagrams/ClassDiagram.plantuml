@@ -8,6 +8,7 @@ class DeCuongchiTiet{
     + sotc_lt: int
     + sotc_th: int
     + hp_tienquyet: string
+    + yeucau_hocphan: string
     + yeucaukhacvoi_voihocphan: string
     + tomtat_noidunghocphan: string
 }
@@ -35,6 +36,7 @@ class GiangVien{
     + hocham: string
     + hocvi: string
     + diachilienhe: string
+    + vaitro: string
 }
 class Phutrach{
     + mapt: int
@@ -174,6 +176,12 @@ class Chuongtrinh_daotao{
     + thoigian_daotao: string
     + tenvanbang: string
     + noidaotao: string
+}
+
+class Giangvien {
+    + gv_ma_so: int
+    + gv_matkhau: string
+    + gv_hoten: 
 }
 
 

@@ -33,8 +33,17 @@
                         </td>
                         <td>@item.Hinhthuc_Danhgia.hinhthuc</td>
                             <td>
-                            <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
+                                 @if (ViewData["Title"] == "Create")
+                        {
+                          <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
                         asp-action="DeleteHinhthuc" asp-route-id="@item.dcht_id" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        }
+                        else
+                        {
+                            <a class="material-icons" data-type="confirm" 
+                            asp-action="DeleteHinhthucEdit" asp-route-id="@item.dcht_id" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        }
+                            
                         </td>
        
                     </tr>

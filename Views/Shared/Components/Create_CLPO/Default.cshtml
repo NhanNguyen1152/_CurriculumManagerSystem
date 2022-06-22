@@ -3,9 +3,9 @@
 @using System.Data;
 <div class="body">
     <form class="form-horizontal" asp-action="CreateCLPO">
-        @if (@Context.Session.GetInt32("idClpo") != null)
+        @if (@Context.Session.GetInt32("MaClpo") != null)
         {
-            <input type="hidden" value=@Context.Session.GetInt32("idClpo") asp-for="maclpo" />
+            <input type="hidden" value=@Context.Session.GetInt32("MaClpo") asp-for="maclpo" />
         }
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="row clearfix">

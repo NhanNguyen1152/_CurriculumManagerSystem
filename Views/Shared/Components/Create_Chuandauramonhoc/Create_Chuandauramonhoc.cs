@@ -21,18 +21,11 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Create_Chuandauramonh
             _context = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(int? id)
+        public async Task<IViewComponentResult> InvokeAsync(int machuandaura)
         { 
-            if (id == null)
-            {                     
-                return View();
-            }
 
-            var muctieu = await _context.Chuandaura_Monhocs.FindAsync(id);
-            if (muctieu == null)
-            {
-                return View();
-            }
+            var muctieu = await _context.Chuandaura_Monhocs.FindAsync(machuandaura);
+     
             return View(muctieu);
         }
     }

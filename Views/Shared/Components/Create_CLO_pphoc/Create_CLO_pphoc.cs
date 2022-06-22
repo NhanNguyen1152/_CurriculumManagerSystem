@@ -21,18 +21,10 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Create_CLO_pphoc
             _context = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(int? id)
+        public async Task<IViewComponentResult> InvokeAsync(int maclopphoc)
         { 
-            if (id == null)
-            {                     
-                return View();
-            }
 
-            var clpo = await _context.CLOPhuongphaphocs.FindAsync(id);
-            if (clpo == null)
-            {
-                return View();
-            }
+            var clpo = await _context.CLOPhuongphaphocs.FindAsync(maclopphoc);
             return View(clpo);
         }
     }

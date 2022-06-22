@@ -21,18 +21,9 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Create_CLPO
             _context = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(int? id)
+        public async Task<IViewComponentResult> InvokeAsync(int maclpo)
         { 
-            if (id == null)
-            {                     
-                return View();
-            }
-
-            var clpo = await _context.CLPOs.FindAsync(id);
-            if (clpo == null)
-            {
-                return View();
-            }
+            var clpo = await _context.CLPOs.FindAsync(maclpo);
             return View(clpo);
         }
     }

@@ -3,10 +3,10 @@
 @using System.Data;
 <div class="body">
                 <form class="form-horizontal" asp-action="EditPhutrach">
-                     @if (@Context.Session.GetInt32("id_edit_pt") != null)
-        {
-            <input type="hidden" value=@Context.Session.GetInt32("id_edit_pt") asp-for="mapt" />
-        }
+                     @if (@Context.Session.GetInt32("MaPhutrach") != null)
+                        {
+                            <input type="hidden" value=@Context.Session.GetInt32("MaPhutrach") asp-for="mapt" />
+                        }
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">

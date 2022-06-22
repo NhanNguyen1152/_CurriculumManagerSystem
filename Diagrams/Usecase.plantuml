@@ -1,33 +1,63 @@
-@startuml uc
+@startuml
 left to right direction
 skinparam packageStyle rectangle
 actor "Quản trị viên" as ad
 actor "Giảng viên" as urs
 rectangle "Hệ thống chương trình đào tạo và đề cương chi tiết"{
- urs -- (Quản lý Đề cương chi tiết)
- (Quản lý Đề cương chi tiết) <. (Xuất file PDF ĐCCTHP) : extends
- urs -- (Quản lý Chương trình đào tạo)
- (Quản lý Chương trình đào tạo) <. (Xuất file PDF CTDT) : extends 
- urs -- (Quản lý Tài liệu tham khảo)
-urs -- (Quản lý Mục tiêu đề cương học phần)
-urs -- (Quản lý Hình thức đánh giá)
-urs -- (Quản lý Quy trình đào tạo và Điểu kiện tốt nghiệp)
-urs -- (Quản lý Đối tượng tuyển sinh)
-urs -- (Quản lý Nhiệm vụ sinh viên)
-urs -- (Quản lý Quy định kiểm tra)
-urs -- (Quản lý Khối kiến thức)
-urs -- (Quản lý Giảng viên)
-urs -- (Quản lý Bộ môn)
-urs -- (Quản lý Khoa)
-urs -- (Quản lý Chi tiết môn học)
-urs -- (Quản lý Chi tiết chương)
-urs -- (Quản lý Học kỳ)
-urs -- (Quản lý Thời gian học)
-urs -- (Quản lý Khóa học)
-urs -- (Quản lý Phương pháp học)
-urs -- (Quản lý Phương pháp dạy)
-urs -- (Quản lý Chuẩn đầu ra đề cương học phần)
-urs -- (Quản lý Chuẩn đầu ra chương trình đào tạo)
-urs -- (Quản lý Mục tiêu đào tạo)
+
+  together {
+        ad -- (Quản lý Chương trình đào tạo)
+        (Quản lý Chương trình đào tạo) <... (Xuất file PDF CTDT) : extends 
+        ad -- (Quản lý Hình thức đánh giá)
+        (Quản lý Hình thức đánh giá) ..> (Đăng nhập) : include
+        ad -- (Quản lý Quy trình đào tạo và Điểu kiện tốt nghiệp)
+        (Quản lý Quy trình đào tạo và Điểu kiện tốt nghiệp)..> (Đăng nhập) : include
+        ad -- (Quản lý Đối tượng tuyển sinh)
+        (Quản lý Đối tượng tuyển sinh) ...> (Đăng nhập) : include
+        ad -- (Quản lý Khối kiến thức)
+        (Quản lý Khối kiến thức) ..> (Đăng nhập) : include
+        ad -- (Quản lý Giảng viên)
+        (Quản lý Giảng viên) ..> (Đăng nhập) : include
+        ad -- (Quản lý Bộ môn)
+        (Quản lý Bộ môn) ..> (Đăng nhập) : include
+        ad -- (Quản lý Khoa)
+        (Quản lý Khoa) ..> (Đăng nhập) : include
+        ad -- (Quản lý Học kỳ)
+        (Quản lý Học kỳ) ..> (Đăng nhập) : include
+        ad -- (Quản lý Khóa học)
+        (Quản lý Khóa học) ..> (Đăng nhập) : include
+        ad -- (Quản lý Chuẩn đầu ra chương trình đào tạo)
+        (Quản lý Chuẩn đầu ra chương trình đào tạo) ..> (Đăng nhập) : include
+        ad -- (Quản lý Mục tiêu đào tạo)
+        (Quản lý Mục tiêu đào tạo) ..> (Đăng nhập) : include 
+        (Quản lý Chương trình đào tạo) ...> (Đăng nhập) : include
+    }
+
+    together {
+        urs -- (Quản lý Đề cương chi tiết)
+        (Quản lý Đề cương chi tiết) <.. (Xuất file PDF ĐCCTHP) : extends
+        urs -- (Quản lý Tài liệu tham khảo)
+        (Quản lý Tài liệu tham khảo) ...> (Đăng nhập) : include
+        urs -- (Quản lý Mục tiêu đề cương học phần)
+        (Quản lý Mục tiêu đề cương học phần) ...> (Đăng nhập) : include
+        urs -- (Quản lý Nhiệm vụ sinh viên)
+        (Quản lý Nhiệm vụ sinh viên) ..> (Đăng nhập) : include
+        urs -- (Quản lý Quy định kiểm tra)
+        (Quản lý Quy định kiểm tra) ...> (Đăng nhập) : include
+        urs -- (Quản lý Chi tiết môn học)
+        (Quản lý Chi tiết môn học) ...> (Đăng nhập) : include
+        urs -- (Quản lý Chi tiết chương)
+        (Quản lý Chi tiết chương) ...> (Đăng nhập) : include
+        urs -- (Quản lý Thời gian học)
+        (Quản lý Thời gian học) ...> (Đăng nhập) : include
+        urs -- (Quản lý Phương pháp học)
+        (Quản lý Phương pháp học) ...> (Đăng nhập) : include
+        urs -- (Quản lý Phương pháp dạy)
+        (Quản lý Phương pháp dạy) ...> (Đăng nhập) : include
+        urs -- (Quản lý Chuẩn đầu ra đề cương học phần)
+        (Quản lý Chuẩn đầu ra đề cương học phần) ...> (Đăng nhập) : include
+        (Quản lý Đề cương chi tiết) ...> (Đăng nhập) : include
+        urs -- (Xuất file PDF CTDT)
+    }
 }
 @enduml

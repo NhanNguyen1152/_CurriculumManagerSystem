@@ -42,15 +42,18 @@
                         @if (ViewData["Title"] == "Create")
                         {
                             <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Create"
-                        asp-route-id="@item.mapphoc">mode_edit</a>
+                        asp-route-maclopphoc="@item.maclopphoc">mode_edit</a>
+                        <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
+                        asp-action="DeleteClopphoc" asp-route-id="@item.maclopphoc" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
                         }
                         else
                         {
                             <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Edit"
-                        asp-route-id="@item.mapphoc">mode_edit</a>
-                        }
+                        asp-route-maclopphoc="@item.maclopphoc">mode_edit</a>
                         <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
-                        asp-action="DeleteClopphoc" asp-route-id="@item.mapphoc" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        asp-action="DeleteClopphocEdit" asp-route-id="@item.maclopphoc" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        }
+                        
                     </td>
 
                 </tr>

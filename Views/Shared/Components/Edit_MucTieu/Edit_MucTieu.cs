@@ -22,21 +22,10 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Edit_MucTieu
             _context = context;
         }
   
-        public async Task<IViewComponentResult> InvokeAsync(int id)
-        { 
-           
-            HttpContext.Session.SetInt32("id_edit_mt", id );
-            if (id == null)
-            {                     
-                return View();
-            }
+        public async Task<IViewComponentResult> InvokeAsync(int mamuctieu)
+        {
 
-            var muctieu = await _context.Muctieus.FindAsync(id);
-            if (muctieu == null)
-            {
-                return View();
-            }
-           
+            var muctieu = await _context.Muctieus.FindAsync(mamuctieu);
             return View(muctieu);
         }
         

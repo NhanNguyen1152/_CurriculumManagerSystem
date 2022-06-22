@@ -54,24 +54,17 @@
                         @if (ViewData["Title"] == "Create")
                         {
                             <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Create"
-                        asp-route-id="@item.mapt">mode_edit</a>
-                        }
-                        else
-                        {
-                            <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Edit"
-                        asp-route-id="@item.mapt">mode_edit</a>
-                        }
-                        @if (ViewData["Title"] == "Create")
-                        {
-                            <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
+                        asp-route-maphutrach="@item.mapt">mode_edit</a>
+                          <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
                         asp-action="DeletePhutrach" asp-route-id="@item.mapt" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
                         }
                         else
                         {
-                           <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
+                            <a class="material-icons" asp-controller="DeCuongchiTiets" asp-action="Edit"
+                        asp-route-maphutrach="@item.mapt">mode_edit</a>
+                        <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
                         asp-action="DeletePhutrach_Edit" asp-route-id="@item.mapt" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
                         }
-                        
                     </td>
        
                     </tr>

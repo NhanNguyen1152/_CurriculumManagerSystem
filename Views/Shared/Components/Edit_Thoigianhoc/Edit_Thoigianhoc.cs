@@ -20,19 +20,9 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Edit_Thoigianhoc
         {
             _context = context;
         }
-        public async Task<IViewComponentResult> InvokeAsync(int id)
-        {   
-            HttpContext.Session.SetInt32("id_edit_Thoigianhoc", id);
-            if (id == null)
-            {                     
-                return View();
-            }
-
-            var thoigianhoc = await _context.Thoigianhocs.FindAsync(id);
-            if (thoigianhoc == null)
-            {
-                return View();
-            }
+         public async Task<IViewComponentResult> InvokeAsync(int mathoigianhoc)
+        { 
+            var thoigianhoc = await _context.Thoigianhocs.FindAsync(mathoigianhoc);
             return View(thoigianhoc);
         }
     }

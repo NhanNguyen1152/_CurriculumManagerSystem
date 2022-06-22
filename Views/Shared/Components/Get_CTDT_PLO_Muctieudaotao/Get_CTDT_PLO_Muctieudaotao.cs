@@ -27,13 +27,14 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Get_CTDT_PLO_Muctieud
        
         public async Task<IViewComponentResult> InvokeAsync()
         {   
-            
             if(ViewData["Title"] == "Create")
             {
-                  var listMuctieu_ct = _context.CTDT_Muctieudaotaos.Include(m => m.Chuongtrinh_Daotao).Include(m => m.Muctieu_Daotao).Where(m=> m.ma_ctdt == HttpContext.Session.GetInt32("id_ctdt_ss_create")).ToList();
+                
+                var listMuctieu_ct = _context.CTDT_Muctieudaotaos.Include(m => m.Chuongtrinh_Daotao).Include(m => m.Muctieu_Daotao).Where(m=> m.ma_ctdt == HttpContext.Session.GetInt32("id_ctdt_ss_create")).ToList();
                      ViewBag.listMuctieu_ct = listMuctieu_ct.ToList();
                 var result = await _context.MoiquanhePLO_Muctieudaotaos.Include(m=> m.PLO).Include(m=> m.Muctieu_Daotao).OrderBy(m=> m.PLO.chisoplo).ToListAsync();
             return View(result);
+            
                
             }
             else

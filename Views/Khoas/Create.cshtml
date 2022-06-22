@@ -4,6 +4,43 @@
     ViewData["Title"] = "Create";
 }
 
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h3 class="titile-table">
+                   KHOA
+                </h3>
+            </div>
+            <div class="body">
+                <form class="form-horizontal" asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="tenkh">Tên khoa <span class="text-danger">*</span></label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input asp-for="tenkh" class="form-control" placeholder="Tên khoa"></input>
+                                    <span asp-validation-for="tenkh" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                            <a asp-action="Index" class="btn btn-default waves-effect">Trở lại</a> |
+                            <button type="submit" class="btn btn-primary waves-effect">Tạo mới</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* 
 <h1>Create</h1>
 
 <h4>Khoa</h4>
@@ -26,5 +63,5 @@
 
 <div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div> *@
 

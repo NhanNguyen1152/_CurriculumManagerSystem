@@ -3,10 +3,11 @@
 @using System.Data;
 <div class="body">
     <form class="form-horizontal" asp-action="CreatePPhoc">
-        @if (@Context.Session.GetInt32("idClo_pphoc") != null)
+        @if (@Context.Session.GetInt32("MaClo_pphoc") != null)
         {
-            <input type="hidden" value=@Context.Session.GetInt32("idClo_pphoc") asp-for="maclopphoc" />
+            <input type="hidden" value=@Context.Session.GetInt32("MaClo_pphoc") asp-for="maclopphoc" />
         }
+        
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">

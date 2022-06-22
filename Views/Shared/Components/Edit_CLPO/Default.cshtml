@@ -3,11 +3,12 @@
 @using System.Data;
 <div class="body">
     <form class="form-horizontal" asp-action="EditCLPO">
-        @if (@Context.Session.GetInt32("id_edit_Clpo") != null)
+        @if (@Context.Session.GetInt32("MaClpo") != null)
         {
-            <input type="hidden" value=@Context.Session.GetInt32("id_edit_Clpo") asp-for="maclpo" />
+            <input type="hidden" value=@Context.Session.GetInt32("MaClpo") asp-for="maclpo" />
         }
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        
         <div class="row clearfix">
             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                 <label asp-for="ngayupdate"></label> <span class="text-danger">*</span>

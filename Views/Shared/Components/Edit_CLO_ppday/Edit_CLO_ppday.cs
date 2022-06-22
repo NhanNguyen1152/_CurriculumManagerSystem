@@ -21,20 +21,9 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Edit_CLO_ppday
             _context = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(int id)
+        public async Task<IViewComponentResult> InvokeAsync(int macloppday)
         { 
-            HttpContext.Session.SetInt32("id_edit_Clpo_ppday", id);
-            
-            if (id == null)
-            {                     
-                return View();
-            }
-
-            var clpo = await _context.CLOPhuongphapdays.FindAsync(id);
-            if (clpo == null)
-            {
-                return View();
-            }
+            var clpo = await _context.CLOPhuongphapdays.FindAsync(macloppday);
             return View(clpo);
         }
     }

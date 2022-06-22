@@ -27,8 +27,17 @@
                         @item.Quytrinhdaotao_Dieukientotnghiep.noi_dung_quytrinhdieukien
                     </td>
                     <td>
+                        
+                        @if (ViewData["Title"] == "Create")
+                        {
                         <a class="material-icons" data-type="confirm" asp-controller="Chuongtrinh_Daotaos"
-                        asp-action="DeleteCTDT_decuong" asp-route-id="@item.dcht_id" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        asp-action="DeleteCTDT_quydinh" asp-route-id="@item.dcht_id" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        }
+                        else
+                        {
+                           <a class="material-icons" data-type="confirm" asp-controller="Chuongtrinh_Daotaos"
+                        asp-action="DeleteCTDT_quydinh_edit" asp-route-id="@item.dcht_id" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        }
                     </td>
 
                 </tr>

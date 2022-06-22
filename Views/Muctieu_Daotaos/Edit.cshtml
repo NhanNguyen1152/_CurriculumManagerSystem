@@ -3,8 +3,82 @@
 @{
     ViewData["Title"] = "Edit";
 }
-
-<h1>Edit</h1>
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h3 class="titile-table">
+                    TẠO MỚI MỤC TIÊU ĐÀO TẠO
+                </h3>
+            </div>
+            <div class="body">
+                <form class="form-horizontal" asp-action="Edit">
+                     <input type="hidden" asp-for="ma_mtdt" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="mtdt_chiso">Chỉ số<span class="text-danger">*</span></label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input required asp-for="mtdt_chiso" class="form-control" placeholder="Chỉ số"></input>
+                                    <span asp-validation-for="mtdt_chiso" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="noi_dung">Nội dung <span class="text-danger">*</span></label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input required asp-for="noi_dung" class="form-control" placeholder="Nội dung"></input>
+                                    <span asp-validation-for="noi_dung" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="mtdt_chinh">Mục tiêu chính <span class="text-danger">*</span></label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input required asp-for="mtdt_chinh" class="form-control" placeholder="Mục tiêu chính"></input>
+                                    <span asp-validation-for="mtdt_chinh" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label asp-for="mtdt_phu">Mục tiêu phụ </label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input asp-for="mtdt_phu" class="form-control" placeholder="Mục tiêu phụ"></input>
+                                    <span asp-validation-for="mtdt_phu" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                            <a asp-action="Index" class="btn btn-default waves-effect">Trở lại</a> |
+                            <button type="submit" class="btn btn-primary waves-effect">Tạo mới</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@* <h1>Edit</h1>
 
 <h4>Muctieu_Daotao</h4>
 <hr />
@@ -42,5 +116,5 @@
 
 <div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div> *@
 

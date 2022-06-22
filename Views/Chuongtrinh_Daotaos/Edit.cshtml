@@ -20,6 +20,8 @@
                      <li role="presentation"><a role="tab" href="#muctieudaotao" data-toggle="tab">MỤC TIÊU ĐÀO TẠO</a></li>
                     <li role="presentation"><a role="tab" href="#plo_muctieudaotao" data-toggle="tab">MỐI QUAN HỆ PLO VÀ MỤC TIÊU ĐÀO TẠO</a></li>
                     <li role="presentation"><a role="tab" href="#decuongquytrinh" data-toggle="tab">QUY TRÌNH ĐÀO TẠO, ĐIỀU KIỆN TỐT NGHIỆP</a></li>
+                     <li role="presentation"><a role="tab" href="#doituongtuyensinh" data-toggle="tab">ĐỐI TƯỢNG TUYỂN SINH</a></li>
+                    
                 </ul>
 
                 <!-- Tab panes -->
@@ -58,7 +60,10 @@
                         @await Component.InvokeAsync("Edit_CTDT_plo_muctieudaotao", new { id = 0})
                         @await Component.InvokeAsync("Get_CTDT_PLO_Muctieudaotao", new {id = @Context.Session.GetInt32("id_edit_ctdt_after")})
                     </div>
-               
+                <div role="tabpanel" class="tab-pane fade" id="doituongtuyensinh">
+                        @await Component.InvokeAsync("Edit_CTDT_doituongtuyensinh")
+                        @await Component.InvokeAsync("Get_CTDT_doituongtuyensinh")
+                    </div>
                    
                 </div>
             </div>

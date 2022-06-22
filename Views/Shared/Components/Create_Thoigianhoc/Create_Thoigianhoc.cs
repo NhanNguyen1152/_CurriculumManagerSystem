@@ -20,18 +20,9 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Create_Thoigianhoc
         {
             _context = context;
         }
-        public async Task<IViewComponentResult> InvokeAsync(int? id)
+        public async Task<IViewComponentResult> InvokeAsync(int mathoigianhoc)
         { 
-            if (id == null)
-            {                     
-                return View();
-            }
-
-            var thoigianhoc = await _context.Thoigianhocs.FindAsync(id);
-            if (thoigianhoc == null)
-            {
-                return View();
-            }
+            var thoigianhoc = await _context.Thoigianhocs.FindAsync(mathoigianhoc);
             return View(thoigianhoc);
         }
     }

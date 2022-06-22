@@ -26,8 +26,17 @@
                     </td>
                     <td>@item.Muctieu_Daotao.noi_dung</td>
                     <td>
-                        <a class="material-icons" data-type="confirm" asp-controller="Chuongtrinh_Daotaos"
-                        asp-action="DeleteCTDT_decuong" asp-route-id="@item.ma_ctdt_mtdt" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                         @if (ViewData["Title"] == "Create")
+                        {
+                            <a class="material-icons" data-type="confirm" asp-controller="Chuongtrinh_Daotaos"
+                        asp-action="DeleteCTDT_muctieu" asp-route-id="@item.ma_ctdt_mtdt" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        }
+                        else
+                        {
+                           <a class="material-icons" data-type="confirm" asp-controller="Chuongtrinh_Daotaos"
+                        asp-action="DeleteCTDT_muctieu_edit" asp-route-id="@item.ma_ctdt_mtdt" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                        }
+                        
                     </td>
 
                 </tr>

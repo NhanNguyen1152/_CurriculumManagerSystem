@@ -79,7 +79,9 @@
                                     </td>
                                     <td>
                                         <a class="material-icons" aso-controller="Decuongchitiets" asp-action="Edit" asp-route-id="@item.mahp">mode_edit</a>
-                                        <a class="material-icons" asp-action="Delete" asp-route-id="@item.mahp">delete_forever</a>
+                                        @* <a class="material-icons" asp-action="" asp-route-id="@item.">delete_forever</a> *@
+                                           <a class="material-icons" data-type="confirm" asp-action="DeleteConfirmed" asp-route-id="@item.mahp" 
+                                           onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
                                         <a class="material-icons" asp-controller="ExtractPDFs" asp-action="Extract" asp-route-id="@item.mahp">print</a>
                                     </td>
                                 </tr>

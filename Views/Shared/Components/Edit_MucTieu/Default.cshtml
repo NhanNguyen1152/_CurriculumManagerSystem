@@ -2,14 +2,14 @@
 @using Microsoft.AspNetCore.Http;
 @using System.Data;
 @{
-    ViewData["Title"] = "Edit_Muctieu";
+    ViewData["Title"] = "Edit";
 }
 <div class="body">
     <form class="form-horizontal" asp-action="Edit_Muctieu">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        @if(@Context.Session.GetInt32("id_edit_mt") != null)
+        @if(@Context.Session.GetInt32("MaMuctieu") != null)
         {
-            <input type="hidden" value=@Context.Session.GetInt32("id_edit_mt") asp-for="mamt" />
+            <input type="hidden" value=@Context.Session.GetInt32("MaMuctieu") asp-for="mamt" />
         }
         <input type="hidden" required asp-for="mahp" value=@Context.Session.GetInt32("id_edit_dccht_after") />
         <div class="row clearfix">
@@ -40,12 +40,12 @@
         </div>
         <div class="row clearfix">
             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                <label asp-for="mtphu">Mục tiêu phụ <span class="text-danger">*</span></label>
+                <label asp-for="mtphu">Mục tiêu phụ <span class="text-danger"></span></label>
             </div>
             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                 <div class="form-group">
                     <div class="form-line">
-                        <input required asp-for="mtphu" class="form-control" placeholder="Mục tiêu phụ"></input>
+                        <input asp-for="mtphu" class="form-control" placeholder="Mục tiêu phụ"></input>
                         <span asp-validation-for="mtphu" class="text-danger"></span>
                     </div>
                 </div>

@@ -1,0 +1,65 @@
+@model IEnumerable<_CurriculumManagerSystem.Models.Decuong_Chuongtrinh>
+@{
+    var i = 0;
+}
+<h2>Bảng 5: Ma trận mối quan hệ giữa chuẩn đầu ra ngành nghề và chuẩn đầu ra của từng học phần.</h2>
+<table cellspacing="0" cellpadding="5" style="text-align:left;border-style: solid;border-bottom: 2px solid; color: black;">
+    <thead>
+        <tr>
+            <td colspan="2" rowspan="2" style="width: 40%;border-top: 2px solid black;border-bottom: 2px solid black;text-align: center;";> <b>CÁC HỌC PHẦN TRONG <br>
+                CHƯƠNG TRÌNH ĐÀO TẠO</b></td>
+            <td colspan="10" style="border-top: 2px solid black;text-align: center;"> <b>Chuẩn đầu ra</b></td>
+            
+        </tr>
+        <tr>
+            @foreach (var cdr in ViewBag.listplo)
+            {
+                @if (cdr.chisoplo != null)
+                {
+                    <td style="border-bottom: 2px solid black;"><b>@cdr.chisoplo</b></td>
+                }
+
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var decuonghocphan in Model)
+        {
+            i++;
+
+            bool flag = false;
+            <tr>
+                <td style="text-align: center;">@i</td>
+                <td>@decuonghocphan.DeCuongchiTiet.tenhp_tviet</td>
+            @foreach (var clpo in ViewBag.listClpo)
+                {
+                    
+                    @foreach (var plo in ViewBag.listplo)
+                    {
+                        if(clpo.maplo == plo.maplo)
+                        {
+                            @foreach (var cdr in ViewBag.listchuandaura)
+                                {
+                                    if(clpo.macdmon == cdr.macdmon && decuonghocphan.mahp == cdr.mahp)
+                                    {
+                                        flag = true;
+                                        break;
+                                    }
+                                }
+                        }
+                    }
+                    if(flag)
+                        {
+                        <td style="text-algin: center;">@clpo.PLO.chisoplo</td>
+                        }
+                        else
+                        {
+                        <td></td>
+                        }
+                    }
+                    
+            </tr>
+        }
+    </tbody style="border-bottom: 2px solid;
+    color: black;">
+</table>

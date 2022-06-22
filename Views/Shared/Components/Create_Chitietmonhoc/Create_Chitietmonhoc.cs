@@ -20,19 +20,9 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Create_Chitietmonhoc
         {
             _context = context;
         }
-        public async Task<IViewComponentResult> InvokeAsync(int id)
+        public async Task<IViewComponentResult> InvokeAsync(int machitietmonhoc)
         { 
-            // HttpContext.Session.SetInt32("idChitietmonhoc", id);
-            if (id == null)
-            {                     
-                return View();
-            }
-
-            var chitietmonhoc = await _context.Chitietmonhocs.FindAsync(id);
-            if (chitietmonhoc == null)
-            {
-                return View();
-            }
+            var chitietmonhoc = await _context.Chitietmonhocs.FindAsync(machitietmonhoc);
             return View(chitietmonhoc);
         }
     }

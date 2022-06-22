@@ -8,9 +8,9 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>
+                    @* <th>
                         STT
-                    </th>
+                    </th> *@
                     <th>
                         PLO
                     </th>
@@ -20,8 +20,6 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
-
                 @foreach (var item in Model)
                 { 
                     bool flag = false;
@@ -47,10 +45,18 @@
                                     @item.Muctieu_Daotao.mtdt_chiso
                                 </td>
                                 <td>
+                                     @if (ViewData["Title"] == "Create")
+                                    {
+                                        <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
+                                asp-action="DeleteCTDT_moiquanhe" asp-route-id="" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                                    }
+                                    else
+                                    {
                                     <a class="material-icons" data-type="confirm" asp-controller="DeCuongchiTiets"
-                                asp-action="DeleteNhiemvu" asp-route-id="" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                                asp-action="DeleteCTDT_moiquanhe_edit" asp-route-id="" onclick="return confirm('Bạn chắc chứ?')">delete_forever</a>
+                                    }
+                                
                                 </td>
-
                         </tr>
                     }
                 }

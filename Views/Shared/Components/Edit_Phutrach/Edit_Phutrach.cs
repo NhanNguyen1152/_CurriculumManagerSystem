@@ -20,19 +20,9 @@ namespace _CurriculumManagerSystem.Views.Shared.Components.Edit_Phutrach
         {
             _context = context;
         }
-        public async Task<IViewComponentResult> InvokeAsync(int id)
+        public async Task<IViewComponentResult> InvokeAsync(int maphutrach)
         { 
-            HttpContext.Session.SetInt32("id_edit_pt", id);
-            if (id == null)
-            {                     
-                return View();
-            }
-
-            var phutrach = await _context.Phutrachs.FindAsync(id);
-            if (phutrach == null)
-            {
-                return View();
-            }
+            var phutrach = await _context.Phutrachs.FindAsync(maphutrach);
             return View(phutrach);
         }
     }

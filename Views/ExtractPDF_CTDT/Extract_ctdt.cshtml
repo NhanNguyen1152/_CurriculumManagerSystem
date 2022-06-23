@@ -91,7 +91,7 @@
       <div class="content_item" id="8">
         @await Component.InvokeAsync("Pdf_ctdt_quydinh")
         @await Component.InvokeAsync("Pdf_ctdt_noidung_ctdt", new { id = @Context.Session.GetInt32("id_pdf_ctdt")} )
-        @await Component.InvokeAsync("Pdf_ctdt_chuandaura_decuonghocphan", new { id = @Context.Session.GetInt32("id_pdf_ctdt")} )
+      
       </div>
       <div class="content_item" id="9">
         @await Component.InvokeAsync("Pdf_ctdt_kehoachgiangday", new { id = @Context.Session.GetInt32("id_pdf_ctdt")} )

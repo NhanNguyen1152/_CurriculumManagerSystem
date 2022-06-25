@@ -19,6 +19,10 @@ namespace _CurriculumManagerSystem.Models
         public string hinhthuc { get; set; }
         [DisplayName("Trọng số")]
         public int trongso { get; set; }
+        [DisplayName("Người tạo")]
+        public int manguoitao { get; set; }
+        [DisplayName("Thời gian tạo")]
+        public DateTime thoigiantao { get; set; }
         
         public virtual IList<DeCuongHinhthuc> DeCuongHinhthucs { get; set; } 
     }

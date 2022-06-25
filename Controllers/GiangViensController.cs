@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using _CurriculumManagerSystem.Models;
 
+
 namespace _CurriculumManagerSystem.Controllers
 {
     public class GiangViensController : Controller
@@ -154,6 +155,11 @@ namespace _CurriculumManagerSystem.Controllers
         private bool GiangVienExists(int id)
         {
             return _context.GiangViens.Any(e => e.magv == id);
+        }
+
+        public IActionResult Login()
+        {
+            return View();
         }
     }
 }

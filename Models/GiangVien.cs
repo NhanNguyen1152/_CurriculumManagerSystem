@@ -22,6 +22,12 @@ namespace _CurriculumManagerSystem.Models
         public string hocvi { get; set; }
         [DisplayName("Địa chỉ liên hệ")]
         public string diachilienhe { get; set; }
+        [DisplayName("Mã số giảng viên")]
+        public int maso_giangvien { get; set; }
+        [DisplayName("Mật khẩu")]
+        public string matkhau { get; set; }
+        [DisplayName("Vai trò đối với hệ thống")]
+        public string vaitro { get; set; }
 
         [ForeignKey("mabm")]
         [DisplayName("Mã bộ môn")]

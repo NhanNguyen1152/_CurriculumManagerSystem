@@ -33,6 +33,10 @@ namespace _CurriculumManagerSystem.Models
         public string tomtat_noidunghocphan { get; set; }
         [DisplayName("Yêu cầu của học phần")]
         public string yeucau_hocphan { get; set; }
+        [DisplayName("Người tạo")]
+        public int manguoitao { get; set; }
+        [DisplayName("Thời gian tạo")]
+        public DateTime thoigiantao { get; set; }
 
         [ForeignKey("makkt")]
         [DisplayName("Mã khối kiến thức")]

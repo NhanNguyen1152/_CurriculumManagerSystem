@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http;
+@using System.Data;  
+@{
+	if (Context.Session.GetString("userName") == null)
+	{
+		Context.Response.Redirect("/Login/Index");
+	}
+}
+<!DOCTYPE html>
 <html>
 
 <head>

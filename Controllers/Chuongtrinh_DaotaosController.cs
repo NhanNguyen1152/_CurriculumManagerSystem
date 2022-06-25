@@ -29,7 +29,7 @@ namespace _CurriculumManagerSystem.Controllers
         // GET: Chuongtrinh_Daotaos
         public async Task<IActionResult> Index()
         {
-             HttpContext.Session.Clear();
+            //HttpContext.Session.Clear();
             return View(await _context.Chuongtrinh_Daotaos.ToListAsync());
         }
 

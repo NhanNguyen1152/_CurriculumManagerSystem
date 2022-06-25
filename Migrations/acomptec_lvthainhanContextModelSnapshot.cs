@@ -254,8 +254,14 @@ namespace _CurriculumManagerSystem.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("khoahoc_apdung")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("loaihinh_daotao")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("manguoitao")
+                        .HasColumnType("int");
 
                     b.Property<string>("maso_ctdt")
                         .HasColumnType("nvarchar(max)");
@@ -274,6 +280,9 @@ namespace _CurriculumManagerSystem.Migrations
 
                     b.Property<string>("thoigian_daotao")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("thoigiantao")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("trinhdo_daotao")
                         .HasColumnType("nvarchar(max)");
@@ -366,6 +375,9 @@ namespace _CurriculumManagerSystem.Migrations
                     b.Property<int>("makkt")
                         .HasColumnType("int");
 
+                    b.Property<int>("manguoitao")
+                        .HasColumnType("int");
+
                     b.Property<int>("sotc_lt")
                         .HasColumnType("int");
 
@@ -377,6 +389,9 @@ namespace _CurriculumManagerSystem.Migrations
 
                     b.Property<string>("tenhp_tviet")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("thoigiantao")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("tomtat_noidunghocphan")
                         .HasColumnType("nvarchar(max)");
@@ -500,6 +515,15 @@ namespace _CurriculumManagerSystem.Migrations
                     b.Property<int>("mabm")
                         .HasColumnType("int");
 
+                    b.Property<int>("maso_giangvien")
+                        .HasColumnType("int");
+
+                    b.Property<string>("matkhau")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("vaitro")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("magv");
 
                     b.HasIndex("mabm");
@@ -517,8 +541,14 @@ namespace _CurriculumManagerSystem.Migrations
                     b.Property<string>("hinhthuc")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("manguoitao")
+                        .HasColumnType("int");
+
                     b.Property<string>("thanhphan_danhgia")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("thoigiantao")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("trongso")
                         .HasColumnType("int");
@@ -679,8 +709,14 @@ namespace _CurriculumManagerSystem.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("manguoitao")
+                        .HasColumnType("int");
+
                     b.Property<string>("noidung")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("thoigiantao")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("manv");
 
@@ -718,8 +754,14 @@ namespace _CurriculumManagerSystem.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("manguoitao")
+                        .HasColumnType("int");
+
                     b.Property<string>("tenpp")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("thoigiantao")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("mappday");
 
@@ -733,8 +775,14 @@ namespace _CurriculumManagerSystem.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("manguoitao")
+                        .HasColumnType("int");
+
                     b.Property<string>("tenpp")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("thoigiantao")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("mapphoc");
 
@@ -806,11 +854,17 @@ namespace _CurriculumManagerSystem.Migrations
                     b.Property<string>("loaitl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("manguoitao")
+                        .HasColumnType("int");
+
                     b.Property<string>("tacgia")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("tentailieu")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("thoigiantao")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("thongtinkhac")
                         .HasColumnType("nvarchar(max)");

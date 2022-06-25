@@ -40,6 +40,7 @@ namespace _CurriculumManagerSystem.Controllers
             {
                 HttpContext.Session.SetString("userName", user_Details.hoten);
                 HttpContext.Session.SetInt32("userID", user_Details.maso_giangvien);
+                HttpContext.Session.SetString("role", user_Details.vaitro);
                 return RedirectToAction("Index","Home");
             }
         }
@@ -50,6 +51,7 @@ namespace _CurriculumManagerSystem.Controllers
         {
             HttpContext.Session.Remove("userName");
             HttpContext.Session.Remove("userID");
+            HttpContext.Session.Remove("role");
             return RedirectToAction("Index", "Login");
         }        
     }

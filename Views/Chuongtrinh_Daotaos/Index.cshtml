@@ -36,6 +36,15 @@
                             <th>
                                 @Html.DisplayNameFor(model => model.noidaotao)
                             </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.khoahoc_apdung)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.manguoitao)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.thoigiantao)
+                            </th>
                             <th></th>
                         </tr>
                     </thead>
@@ -62,6 +71,15 @@
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.noidaotao)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.khoahoc_apdung)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.manguoitao)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.thoigiantao)
                             </td>
                             <td>
                                 <a class="material-icons" asp-action="Edit" asp-route-id="@item.ma_ctdt">mode_edit</a> 

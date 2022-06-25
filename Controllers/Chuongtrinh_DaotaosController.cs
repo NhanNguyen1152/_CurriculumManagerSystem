@@ -68,16 +68,17 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ma_ctdt,nganh_daotao,trinhdo_daotao,loaihinh_daotao,thoigian_daotao,tenvanbang,noidaotao,maso_ctdt,noidung_ctdt")] Chuongtrinh_Daotao chuongtrinh_Daotao)
+        public async Task<IActionResult> Create([Bind("ma_ctdt,nganh_daotao,trinhdo_daotao,loaihinh_daotao,thoigian_daotao,tenvanbang,noidaotao,maso_ctdt,noidung_ctdt,khoahoc_apdung,manguoitao,thoigiantao")] Chuongtrinh_Daotao chuongtrinh_Daotao)
         {
             if (ModelState.IsValid)
             {
+                chuongtrinh_Daotao.thoigiantao = DateTime.Today;
                 _context.Add(chuongtrinh_Daotao);
                 await _context.SaveChangesAsync();
                 HttpContext.Session.SetInt32("id_ctdt_ss_create", chuongtrinh_Daotao.ma_ctdt);
-                 HttpContext.Session.SetString("Name_ctdt", chuongtrinh_Daotao.nganh_daotao);
+                HttpContext.Session.SetString("Name_ctdt", chuongtrinh_Daotao.nganh_daotao);
                 TempData["id_ctdt_tmp_create"] = chuongtrinh_Daotao.ma_ctdt;
-                return RedirectToAction("Create");
+                return RedirectToAction("Create"); 
             }
             return View(chuongtrinh_Daotao);
         }
@@ -98,7 +99,7 @@ namespace _CurriculumManagerSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ma_ctdt,nganh_daotao,trinhdo_daotao,loaihinh_daotao,thoigian_daotao,tenvanbang,noidaotao,maso_ctdt,noidung_ctdt")] Chuongtrinh_Daotao chuongtrinh_Daotao)
+        public async Task<IActionResult> Edit(int id, [Bind("ma_ctdt,nganh_daotao,trinhdo_daotao,loaihinh_daotao,thoigian_daotao,tenvanbang,noidaotao,maso_ctdt,noidung_ctdt,khoahoc_apdung,manguoitao,thoigiantao")] Chuongtrinh_Daotao chuongtrinh_Daotao)
         {
             if (id != chuongtrinh_Daotao.ma_ctdt)
             {

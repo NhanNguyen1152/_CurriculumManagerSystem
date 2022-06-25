@@ -1510,3 +1510,4 @@ C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Get_CTDT_doituongtuyensinh\Default.cshtml.g.cs
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\Components\Pdf_ctdt_chuandaura_decuonghocphan\Default.cshtml.g.cs
 C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
+C:\Users\ADMIN\OneDrive\Documents\GitHub\_CurriculumManagerSystem\obj\Debug\net5.0\Razor\Views\Shared\_Layout copy.cshtml.g.cs

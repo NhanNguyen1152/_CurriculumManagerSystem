@@ -102,20 +102,30 @@
                 </div>
             </div>
         </div>
-        @* <div class="row clearfix">
+        <div class="row clearfix">
             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                <label asp-for="noidung_ctdt">Nội dung đào tạo<span class="text-danger">*</span></label>
+                <label asp-for="khoahoc_apdung">Khóa học áp dụng<span class="text-danger">*</span></label>
             </div>
             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                 <div class="form-group">
                     <div class="form-line">
-                        <input asp-for="noidung_ctdt" class="form-control"
-                            placeholder="Nội dung đào tạo"></input>
-                        <span asp-validation-for="noidung_ctdt" class="text-danger"></span>
+                        <input required asp-for="khoahoc_apdung" class="form-control"
+                            placeholder="Khóa học áp dụng"></input>
+                        <span asp-validation-for="khoahoc_apdung" class="text-danger"></span>
                     </div>
                 </div>
             </div>
-        </div> *@
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                <div class="form-group">
+                    <input type="hidden" asp-for="manguoitao" class="form-control"
+                        placeholder="Mã người tạo" value=@Context.Session.GetInt32("userID")></input>
+                    <span asp-validation-for="manguoitao" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
         <div class="row clearfix">
             <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
                 <a asp-action="Index" class="btn btn-default waves-effect" style="margin-left: 82%;">Trở về trang chủ</a> |

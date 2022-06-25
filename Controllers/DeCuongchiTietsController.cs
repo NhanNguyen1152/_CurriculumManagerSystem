@@ -32,7 +32,7 @@ namespace _CurriculumManagerSystem.Controllers
         {
             // HttpContext.Session.Remove("idDecuong");
             // HttpContext.Session.Remove("nameDecuong");
-             HttpContext.Session.Clear();
+             //HttpContext.Session.Clear();
             var appDbContext = _context.DeCuongchiTiets
             .Include(d => d.Khoikienthuc)
             .Include(d => d.DeCuongNhiemvus);
